@@ -1,0 +1,49 @@
+
+Set up ValheimBlueprintCruncher as library
+  Fix .csproj references
+  Import; Check World Edit/Infinity Hammer
+Create activator for use in template Unity project
+
+
+instance Valheim::Prefab({creature name})
+Valheim::SpawnData
+Valheim::SpawnSystem ?
+Valheim::Humanoid
+Valheim::VisEquipment
+Valheim::StatusEffect ?
+Valheim::ItemDrops
+Valheim::MonsterAI ?
+
+
+Monster/Creature effects
+  Size, modifiers
+
+Spawn
+  Default "home"
+  Extra Spawngroups?
+
+Weapon Options
+  Humanoid object Component in Prefab
+  VisEquipment object Component in Prefab
+    Chain update vid specialval
+    Visuella modifiers
+
+YAML
+  CreatureConfig, relevanta props
+  Spawn
+  Drops
+
+Optionals ?
+  My::SpawnDataDetails till SpawnSystem ?
+  CustomLocation ?
+
+Bonus projects?
+  Custom StatusEffect ?
+  Custom AI Expansion ?
+    Abilities
+  Custom Locations ?
+    Location
+    ZoneLocation & ExteriorPrefab ??
+    LocationPrefabLoadData = dungeonstarter ??
+    .blueprint => Location ???
+      .blueprint => Prefab, need processor to make into actual unity prefab asset on disk?

@@ -1,0 +1,4012 @@
+Name 	AssetID 	Components 	DamageModifiers 	Items 	Drops
+Abomination
+	b63d601dcd3f6b14ebe6bdfa8da6f541 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    VisEquipment
+    FootStep
+
+	
+
+    Blunt: Resistant
+    Slash: Normal
+    Pierce: VeryResistant
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Weak
+    Frost: Immune
+    Lightning: Normal
+    Poison: Immune
+    Spirit: Immune
+
+	Default Items:
+
+    Abomination_attack1
+    Abomination_attack2
+    Abomination_attack3
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    TrophyAbomination (50%)
+    Root (5x)
+    Guck (3-5x)
+
+Asksvin
+	b0a0f588374c76e4abb3b1a978a81b28 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    MonsterAI
+    CharacterDrop
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    FootStep
+    Tameable
+    Procreation
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Resistant
+    Frost: Normal
+    Lightning: Normal
+    Poison: Resistant
+    Spirit: Immune
+
+	Default Items:
+
+    Asksvin_Bite
+    Asksvin_Headbutt
+    Asksvin_Pounce
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    TrophyAsksvin (10%)
+    AskBladder (1x)
+    AskHide (2-3x)
+    AsksvinMeat (2-3x)
+
+Asksvin_hatchling
+	fcd34191395a609428c46a74a7742d55 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    MonsterAI
+    CharacterDrop
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    FootStep
+    Growup
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Resistant
+    Frost: Normal
+    Lightning: Normal
+    Poison: Resistant
+    Spirit: Immune
+
+	Default Items:
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    AskBladder (20%)
+    AskHide (20%)
+    AsksvinMeat (20%)
+
+Bat
+	ef16424fb1f71cb4bbfd44dd397b4a14 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+
+	
+
+    Blunt: Resistant
+    Slash: Resistant
+    Pierce: Resistant
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Weak
+    Frost: Immune
+    Lightning: Normal
+    Poison: Immune
+    Spirit: Weak
+
+	Default Items:
+
+    bat_melee
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    LeatherScraps (50%)
+
+Blob
+	27ef07c232c9f4b3baa3b9c64f552942 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    CharacterDrop
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    FootStep
+
+	
+
+    Blunt: Weak
+    Slash: Resistant
+    Pierce: Resistant
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Resistant
+    Frost: Weak
+    Lightning: Weak
+    Poison: Immune
+    Spirit: Normal
+
+	Default Items:
+
+    blob_attack_aoe
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    TrophyBlob (10%)
+    Ooze (1-2x)
+
+BlobElite
+	d82e42fe3004940b38e08536dd161db5 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    CharacterDrop
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    FootStep
+
+	
+
+    Blunt: Weak
+    Slash: Resistant
+    Pierce: Resistant
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Resistant
+    Frost: Weak
+    Lightning: Weak
+    Poison: Immune
+    Spirit: Normal
+
+	Default Items:
+
+    blobelite_attack_aoe
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    Ooze (2-3x)
+    IronScrap (33%)
+    TrophyBlob (10%)
+    Blob (2x)
+
+BlobLava
+	1dcac82eb81c7fa44b2a52a3e2a61f27 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    CharacterDrop
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    FootStep
+
+	
+
+    Blunt: Weak
+    Slash: Normal
+    Pierce: Resistant
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Immune
+    Frost: Weak
+    Lightning: Weak
+    Poison: Resistant
+    Spirit: Normal
+
+	Default Items:
+
+    blobLava_attack_aoe
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    ProustitePowder (1-2x)
+    SulfurStone (1-2x)
+
+BlobTar
+	145774455187204d2a3d4769066d38d2 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    CharacterDrop
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    FootStep
+
+	
+
+    Blunt: Weak
+    Slash: Resistant
+    Pierce: Resistant
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Weak
+    Frost: Resistant
+    Lightning: Normal
+    Poison: Immune
+    Spirit: Normal
+
+	Default Items:
+
+    blobtar_attack
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    TrophyGrowth (10%)
+    Tar (1x)
+
+Boar
+	5a260692ff9dc4863998e29c9ac6f011 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    MonsterAI
+    CharacterDrop
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    FootStep
+    Procreation
+    Tameable
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Normal
+    Frost: Normal
+    Lightning: Normal
+    Poison: Normal
+    Spirit: Immune
+
+	Default Items:
+
+    boar_base_attack
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    RawMeat (1x)
+    LeatherScraps (1x)
+    TrophyBoar (15%)
+
+Boar_piggy
+	acc1433d19aa64dd480a3d82894a7af0 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    AnimalAI
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    Growup
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Normal
+    Frost: Normal
+    Lightning: Normal
+    Poison: Normal
+    Spirit: Immune
+
+	Default Items:
+Random Weapon:
+Random Armor:
+Random Shield: 	
+BogWitchKvastur
+	76f2b34d1ed64064584b8c270ce013f3 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Weak
+    Pickaxe: Ignore
+    Fire: VeryWeak
+    Frost: Normal
+    Lightning: Normal
+    Poison: Immune
+    Spirit: Immune
+
+	Default Items:
+
+    BogWitchKvastur_attack
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    Wood (1x)
+    Resin (1x)
+    TrophyKvastur (1x)
+
+Bonemass
+	3247070449b194583b7635b1ae3d188b 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    VisEquipment
+
+	
+
+    Blunt: Weak
+    Slash: Resistant
+    Pierce: VeryResistant
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: VeryResistant
+    Frost: Weak
+    Lightning: Normal
+    Poison: Immune
+    Spirit: Normal
+
+	Default Items:
+
+    bonemass_attack_aoe
+    bonemass_attack_punch
+    bonemass_attack_throw
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    TrophyBonemass (1x)
+    Wishbone (1x)
+
+BonemawSerpent
+	f42eb4fc59357b54fa1708f4dd7c5383 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    Tail
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Immune
+    Frost: Weak
+    Lightning: Normal
+    Poison: Resistant
+    Spirit: Immune
+
+	Default Items:
+
+    BonemawSerpent_spit
+    BonemawSerpent_taunt
+    BonemawSerpent_bite
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    TrophyBonemawSerpent (33%)
+    BoneMawSerpentMeat (6-8x)
+    BonemawSerpentTooth (8-10x)
+
+Charred_Archer
+	ff349399906d367438b9b0eb98e5833e 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    VisEquipment
+    FootStep
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Resistant
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: VeryResistant
+    Frost: Normal
+    Lightning: Normal
+    Poison: Immune
+    Spirit: Weak
+
+	Default Items:
+
+    Charred_HipCloth
+    charred_bow
+    charred_bow_volley
+
+Random Weapon:
+Random Armor:
+
+Random Shield: 	
+
+    CharredBone (1-3x)
+    TrophyCharredArcher (5%)
+
+Charred_Archer_Fader
+	ff6422ff07346764fbc396c7d1a6c5d2 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    VisEquipment
+    FootStep
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Resistant
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Immune
+    Frost: Normal
+    Lightning: Normal
+    Poison: Immune
+    Spirit: Weak
+
+	Default Items:
+
+    Charred_HipCloth
+    charred_bow_Fader
+    charred_bow_volley_Fader
+
+Random Weapon:
+Random Armor:
+
+Random Shield: 	
+
+Charred_Mage
+	fb9dec745d79c904c9cb472a38880ae9 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    VisEquipment
+    FootStep
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Resistant
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: VeryResistant
+    Frost: Resistant
+    Lightning: Normal
+    Poison: Immune
+    Spirit: Weak
+
+	Default Items:
+
+    Charred_HipCloth
+    charred_magestaff_fire
+    Charred_MageCloths
+    charred_magestaff_summon
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    CharredBone (1-3x)
+    TrophyCharredMage (5%)
+
+Charred_Melee
+	e8a243ca955d7b741ab4c88085592691 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    VisEquipment
+    FootStep
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Resistant
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: VeryResistant
+    Frost: Normal
+    Lightning: Normal
+    Poison: Immune
+    Spirit: Weak
+
+	Default Items:
+
+    Charred_HipCloth
+    charred_greatsword_swing
+    charred_greatsword_thrust
+    charred_greatsword_feint
+    charred_greatsword_thrustfeint
+
+Random Weapon:
+Random Armor:
+
+Random Shield: 	
+
+    CharredBone (1-3x)
+    TrophyCharredMelee (5%)
+
+Charred_Melee_Dyrnwyn
+	833c72f2aeb0d54afb6db4f3988d911a 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    VisEquipment
+    FootStep
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Resistant
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Resistant
+    Frost: Resistant
+    Lightning: Normal
+    Poison: Immune
+    Spirit: Weak
+
+	Default Items:
+
+    Charred_HipCloth
+    charred_dyrnwyn_greatsword_swing
+    charred_dyrnwyn_greatsword_thrust
+    charred_dyrnwyn_greatsword_feint
+    charred_dyrnwyn_greatsword_thrustfeint
+    Charred_Helmet
+    Charred_Breastplate
+
+Random Weapon:
+Random Armor:
+
+Random Shield: 	
+
+    DyrnwynHiltFragment (1x)
+
+Charred_Melee_Fader
+	fe5c7e1a35920cb48aacb442548f7ff0 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    VisEquipment
+    FootStep
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Resistant
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Immune
+    Frost: Normal
+    Lightning: Normal
+    Poison: Immune
+    Spirit: Weak
+
+	Default Items:
+
+    Charred_HipCloth
+    charred_fader_greatsword_swing
+    charred_fader_greatsword_thrust
+    charred_fader_greatsword_feint
+    charred_fader_greatsword_thrustfeint
+
+Random Weapon:
+Random Armor:
+
+Random Shield: 	
+
+Charred_Twitcher
+	855ce64a381fd1448a83481db63ebb4a 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    VisEquipment
+    FootStep
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Resistant
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: VeryResistant
+    Frost: Normal
+    Lightning: Normal
+    Poison: Immune
+    Spirit: Weak
+
+	Default Items:
+
+    charred_twitcher_scratch_l
+    charred_twitcher_scratch_r
+    charred_twitcher_throw
+
+Random Weapon:
+Random Armor:
+
+Random Shield: 	
+
+    CharredBone (1-2x)
+
+Charred_Twitcher_Summoned
+	e7cbdb95e1a94dc499e6751ea5398436 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    VisEquipment
+    FootStep
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Resistant
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: VeryResistant
+    Frost: Normal
+    Lightning: Normal
+    Poison: Immune
+    Spirit: Weak
+
+	Default Items:
+
+    charred_twitcher_scratch_l
+    charred_twitcher_scratch_r
+    charred_twitcher_throw
+
+Random Weapon:
+Random Armor:
+
+Random Shield: 	
+
+    CharredBone (1-2x)
+
+Chicken
+	03ae3fc38ddcdfe4a9f347a574043d7e 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    AnimalAI
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    Growup
+    CharacterDrop
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Normal
+    Frost: Normal
+    Lightning: Normal
+    Poison: Normal
+    Spirit: Immune
+
+	Default Items:
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    ChickenMeat (25%)
+    Feathers (50% 1-2x)
+
+Deathsquito
+	5da6b1360cdf8443d8bf8c7c878684be 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Normal
+    Frost: Normal
+    Lightning: Normal
+    Poison: Normal
+    Spirit: Immune
+
+	Default Items:
+
+    Deathsquito_sting
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    Needle (1x)
+    TrophyDeathsquito (5%)
+
+Deer
+	832c19c9b5ffd4dad8a929f92772de53 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Character
+    CharacterDrop
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    AnimalAI
+    FootStep
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Normal
+    Frost: Normal
+    Lightning: Normal
+    Poison: Normal
+    Spirit: Immune
+
+		
+
+    DeerMeat (2x)
+    DeerHide (1-3x)
+    TrophyDeer (50%)
+
+Dragon
+	7564afc3e44ac4b59bbba627acb853a8 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    FootStep
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Weak
+    Frost: Immune
+    Lightning: Normal
+    Poison: Normal
+    Spirit: Immune
+
+	Default Items:
+
+    dragon_taunt
+    dragon_bite
+    dragon_claw_left
+    dragon_claw_right
+    dragon_spit_shotgun
+    dragon_coldbreath
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    TrophyDragonQueen (1x)
+    DragonTear (10x)
+
+Draugr
+	129759deae6a346e098ce914eda746b1 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    VisEquipment
+    FootStep
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Resistant
+    Frost: Normal
+    Lightning: Normal
+    Poison: Immune
+    Spirit: Normal
+
+	Default Items:
+Random Weapon:
+
+    draugr_axe
+    draugr_axe
+    draugr_axe
+    draugr_bow
+
+Random Armor:
+Random Shield:
+
+    ShieldWood
+    ShieldBanded
+
+	
+
+    Entrails (1x)
+    TrophyDraugr (10%)
+
+Draugr_Elite
+	965c9045caa7a494a88af80990319fb0 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    VisEquipment
+    FootStep
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Resistant
+    Frost: Normal
+    Lightning: Normal
+    Poison: Immune
+    Spirit: Normal
+
+	Default Items:
+Random Weapon:
+
+    draugr_sword
+
+Random Armor:
+Random Shield: 	
+
+    Entrails (2-3x)
+    TrophyDraugrElite (10%)
+
+Draugr_Ranged
+	a927a6185eb3f4b04a6b24d54a8f3f20 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    VisEquipment
+    FootStep
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Resistant
+    Frost: Normal
+    Lightning: Normal
+    Poison: Immune
+    Spirit: Normal
+
+	Default Items:
+Random Weapon:
+
+    draugr_bow
+
+Random Armor:
+Random Shield: 	
+
+    Entrails (1x)
+    TrophyDraugr (10%)
+
+Dverger
+	b780f1078c33d2344836ccefd3bf9352 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    VisEquipment
+    FootStep
+    NpcTalk
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Normal
+    Frost: Normal
+    Lightning: Normal
+    Poison: Normal
+    Spirit: Immune
+
+	Default Items:
+
+    DvergerArbalest
+    DvergerArbalest_shoot
+    Dverger_melee
+    DvergerSuitArbalest
+
+Random Weapon:
+Random Armor:
+Random Shield:
+
+    DvergerHairMale
+    DvergerHairFemale
+
+	
+
+    Softtissue (25% 1-2x)
+    BlackMarble (50% 1-2x)
+    Coins (2-15x)
+    TrophyDvergr (5%)
+
+DvergerAshlands
+	2ece1cf15f2885a4da6da84af9d5c542 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    VisEquipment
+    FootStep
+    NpcTalk
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Normal
+    Frost: Normal
+    Lightning: Normal
+    Poison: Normal
+    Spirit: Immune
+
+	Default Items:
+
+    DvergerArbalest
+    DvergerArbalest_shootAshlands
+    Dverger_meleeAshlands
+    DvergerSuitArbalest_Ashlands
+
+Random Weapon:
+Random Armor:
+Random Shield:
+
+    DvergerHairMale_Redbeard
+    DvergerHairFemale_Redhair
+
+	
+
+    Softtissue (25% 1-2x)
+    BlackMarble (50% 1-2x)
+    Coins (2-15x)
+    TrophyDvergr (5%)
+
+DvergerMage
+	8c3b1095f7874dc469e0e324a6fb82d7 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    VisEquipment
+    FootStep
+    NpcTalk
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Resistant
+    Frost: Resistant
+    Lightning: Normal
+    Poison: Normal
+    Spirit: Immune
+
+	Default Items:
+Random Weapon:
+Random Armor:
+Random Shield:
+
+    DvergerHairMale
+    DvergerHairFemale
+
+	
+
+    Softtissue (25% 1-2x)
+    BlackMarble (50% 1-2x)
+    Coins (2-15x)
+    TrophyDvergr (5%)
+
+DvergerMageFire
+	1ed38d388ceda5f4e89f5be4d1768fab 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    VisEquipment
+    FootStep
+    NpcTalk
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Resistant
+    Frost: Resistant
+    Lightning: Normal
+    Poison: Normal
+    Spirit: Immune
+
+	Default Items:
+
+    Dverger_melee
+    DvergerStaffFire_fireball
+    DvergerStaffFire
+    DvergerSuitFire
+    DvergerStaffFire_clusterbomb
+
+Random Weapon:
+Random Armor:
+Random Shield:
+
+    DvergerHairMale
+    DvergerHairFemale
+
+	
+
+    Softtissue (25% 1-2x)
+    BlackMarble (50% 1-2x)
+    Coins (2-15x)
+    TrophyDvergr (5%)
+
+DvergerMageIce
+	8ad104a536dd94d4bb764f8a9f3d8ee7 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    VisEquipment
+    FootStep
+    NpcTalk
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Resistant
+    Frost: Resistant
+    Lightning: Normal
+    Poison: Normal
+    Spirit: Immune
+
+	Default Items:
+
+    Dverger_melee
+    DvergerStaffIce_icebolt
+    DvergerStaffNova
+    DvergerSuitIce
+    DvergerStaffIce
+
+Random Weapon:
+Random Armor:
+Random Shield:
+
+    DvergerHairMale
+    DvergerHairFemale
+
+	
+
+    Softtissue (25% 1-2x)
+    BlackMarble (50% 1-2x)
+    Coins (2-15x)
+    TrophyDvergr (5%)
+
+DvergerMageSupport
+	c0e85e3d180619047bdf97cd98271a4d 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    VisEquipment
+    FootStep
+    NpcTalk
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Resistant
+    Frost: Resistant
+    Lightning: Normal
+    Poison: Normal
+    Spirit: Immune
+
+	Default Items:
+
+    DvergerStaffSupport_buff
+    DvergerStaffHeal
+    DvergerStaffHeal_heal
+    DvergerSuitSupport
+    DvergerMistile
+
+Random Weapon:
+Random Armor:
+Random Shield:
+
+    DvergerHairMale
+    DvergerHairFemale
+
+	
+
+    Softtissue (25% 1-2x)
+    BlackMarble (50% 1-2x)
+    Coins (2-15x)
+    TrophyDvergr (5%)
+
+DvergerTest
+	be5f8415ba1871e49acbad0cb3bb9c7d 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    RandomAnimation
+    VisEquipment
+    FootStep
+    NpcTalk
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Normal
+    Frost: Normal
+    Lightning: Normal
+    Poison: Normal
+    Spirit: Immune
+
+	Default Items:
+
+    GoblinShaman_attack_poke
+    GoblinShaman_attack_fireball
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    Coins (25% 20-40x)
+    BlackMetalScrap (1-2x)
+    Pukeberries (1-2x)
+    TrophyGoblinShaman (10%)
+
+Eikthyr
+	107b5763fe7c7439d9a217510c21c3bc 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    CharacterDrop
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    RandomAnimation
+    MonsterAI
+    FootStep
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Normal
+    Frost: Normal
+    Lightning: Normal
+    Poison: Normal
+    Spirit: Normal
+
+	Default Items:
+
+    Eikthyr_antler
+    Eikthyr_charge
+    Eikthyr_stomp
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    TrophyEikthyr (1x)
+    HardAntler (3x)
+
+Fader
+	c8fa6cc2b4990d143bb07d312467bc84 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    FootStep
+    MovementDamage
+    DropProjectileOverDistance
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Resistant
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Immune
+    Frost: Normal
+    Lightning: Normal
+    Poison: Normal
+    Spirit: Immune
+
+	Default Items:
+
+    Fader_Fissure
+    Fader_Bite
+    Fader_Claw_Left
+    Fader_Claw_Right
+    Fader_Spin
+    Fader_Flamebreath
+    Fader_Meteors
+    Fader_Roar
+    Fader_WallOfFire
+    Fader_Meteors_Intense
+    Fader_Fissure_Intense
+    Fader_Roar_Intense
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    TrophyFader (1x)
+    FaderDrop (5x)
+
+FallenValkyrie
+	32c070da36946da4491f324c8e38e80a 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Resistant
+    Frost: Normal
+    Lightning: Normal
+    Poison: Immune
+    Spirit: Weak
+
+	Default Items:
+
+    fallenvalkyrie_spit
+    fallenvalkyrie_claws
+    fallenvalkyrie_spin
+    fallenvalkyrie_taunt
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    CelestialFeather (2-4x)
+    TrophyFallenValkyrie (5%)
+
+Fenring
+	b682a8e8643824ad49d6addac5d54740 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    FootStep
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Weak
+    Frost: Normal
+    Lightning: Normal
+    Poison: Resistant
+    Spirit: Normal
+
+	Default Items:
+
+    Fenring_taunt
+    Fenring_attack_claw
+    Fenring_attack_jump
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    WolfFang (1-2x)
+    TrophyFenring (10%)
+
+Fenring_Cultist
+	e65ce25e7aff620d6b01bacee88544e0 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    FootStep
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Immune
+    Frost: Normal
+    Lightning: Normal
+    Poison: Weak
+    Spirit: Normal
+
+	Default Items:
+
+    Fenring_attack_fireclaw_double
+    Fenring_attack_fireclaw
+    Fenring_attack_flames
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    JuteRed (1-3x)
+    TrophyCultist (10%)
+
+Fenring_Cultist_Hildir
+	93d1b6785cba88f45a2bf901321683ff 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    FootStep
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Weak
+    Frost: Immune
+    Lightning: Normal
+    Poison: Normal
+    Spirit: Normal
+
+	Default Items:
+
+    Fenring_attack_iceclaw_double
+    Fenring_attack_iceclaw
+    Fenring_attack_frost
+    Fenring_attack_IceNova
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    chest_hildir2 (1x)
+    TrophyCultist_Hildir (1x)
+
+Fenring_Cultist_Hildir_nochest
+	946f19634bfcc35479131789bdc8b71b 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    FootStep
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Weak
+    Frost: Immune
+    Lightning: Normal
+    Poison: Normal
+    Spirit: Normal
+
+	Default Items:
+
+    Fenring_attack_iceclaw_double
+    Fenring_attack_iceclaw
+    Fenring_attack_frost
+    Fenring_attack_IceNova
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    TrophyCultist_Hildir (1x)
+
+gd_king
+	0fa47df856bbd4999bf273e87ec6fc18 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    FootStep
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: VeryWeak
+    Frost: Normal
+    Lightning: Normal
+    Poison: Immune
+    Spirit: Immune
+
+	Default Items:
+
+    gd_king_rootspawn
+    gd_king_scream
+    gd_king_shoot
+    gd_king_stomp
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    TrophyTheElder (1x)
+    CryptKey (1x)
+
+Ghost
+	382605027a7164c8f9d8cf27c735ecdb 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    VisEquipment
+    FootStep
+
+	
+
+    Blunt: Resistant
+    Slash: Resistant
+    Pierce: Resistant
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Normal
+    Frost: Normal
+    Lightning: Normal
+    Poison: Immune
+    Spirit: Weak
+
+	Default Items:
+Random Weapon:
+
+    Ghost_attack
+
+Random Armor:
+Random Shield: 	
+
+Gjall
+	66747140c6a2a5a418564bf413e4387c 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Resistant
+    Frost: Normal
+    Lightning: Normal
+    Poison: Normal
+    Spirit: Immune
+
+	Default Items:
+
+    gjall_attack_spit
+    gjall_attack_egg
+    gjall_attack_shake
+    gjall_attack_taunt
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    Bilebag (1x)
+    TrophyGjall (30%)
+
+Goblin
+	940a656e0860c435d8c4dc6ced8fcae8 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    RandomAnimation
+    VisEquipment
+    FootStep
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Normal
+    Frost: Normal
+    Lightning: Normal
+    Poison: Normal
+    Spirit: Immune
+
+	Default Items:
+
+    GoblinLoin
+
+Random Weapon:
+
+    GoblinClub
+    GoblinClub
+    GoblinSpear
+    GoblinSword
+    GoblinSword
+    GoblinTorch
+
+Random Armor:
+
+    GoblinHelmet
+    GoblinArmband
+    GoblinShoulders
+    GoblinLegband
+
+Random Shield:
+
+    ShieldWood
+
+	
+
+    Coins (25% 5-10x)
+    BlackMetalScrap (1-2x)
+    TrophyGoblin (10%)
+
+Goblin_Gem
+	ae81b6af45957f142a5e24300c79b4eb 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Character
+    AnimalAI
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    CharacterDrop
+    RandomAnimation
+    VisEquipment
+    FootStep
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Normal
+    Frost: Normal
+    Lightning: Normal
+    Poison: Normal
+    Spirit: Immune
+
+		
+
+    GemstoneBlue (2-4x)
+    GemstoneGreen (2-4x)
+    GemstoneRed (2-4x)
+
+GoblinArcher
+	233880cb8ca8f4940ab240f1bf2a560e 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    RandomAnimation
+    VisEquipment
+    FootStep
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Normal
+    Frost: Normal
+    Lightning: Normal
+    Poison: Normal
+    Spirit: Immune
+
+	Default Items:
+
+    GoblinLoin
+
+Random Weapon:
+
+    GoblinSpear
+
+Random Armor:
+
+    GoblinHelmet
+    GoblinArmband
+    GoblinShoulders
+    GoblinLegband
+
+Random Shield:
+
+    ShieldWood
+
+	
+
+    Coins (25% 5-10x)
+    BlackMetalScrap (1-2x)
+    TrophyGoblin (10%)
+
+GoblinBrute
+	128c5f89e5de147fdb513a98f3083c6c 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    VisEquipment
+    FootStep
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Normal
+    Frost: Normal
+    Lightning: Normal
+    Poison: Normal
+    Spirit: Immune
+
+	Default Items:
+
+    GoblinBrute_Attack
+    GoblinBrute_RageAttack
+    GoblinBrute_Taunt
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    Coins (5-20x)
+    BlackMetalScrap (3-5x)
+    GoblinTotem (10%)
+    TrophyGoblinBrute (5%)
+
+GoblinBrute_Hildir
+	c4e718fa216ec744fbe8c6361bb2414f 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    VisEquipment
+    FootStep
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Normal
+    Frost: Normal
+    Lightning: Normal
+    Poison: Normal
+    Spirit: Immune
+
+	Default Items:
+
+    GoblinBrute_Attack
+    GoblinBrute_RageAttack
+    GoblinBrute_Taunt
+    GoblinBrute_HipCloth
+    GoblinBrute_ShoulderGuard
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    chest_hildir3 (1x)
+
+GoblinBruteBros
+	078f5cfec42ff774686c494aa9a9d4a2 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    VisEquipment
+    FootStep
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Normal
+    Frost: Normal
+    Lightning: Normal
+    Poison: Normal
+    Spirit: Immune
+
+	Default Items:
+
+    GoblinBruteBros_Attack
+    GoblinBruteBros_RageAttack
+    GoblinBrute_Taunt
+    GoblinBrute_HipCloth
+    GoblinBrute_ShoulderGuard
+    GoblinShaman_attack_fireball_hildir
+    GoblinShaman_attack_protect_hildir
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    GoblinShaman_Hildir (1x)
+    TrophyGoblinBruteBrosBrute (1x)
+
+GoblinBruteBros_nochest
+	637d9efba46fdca4789fe0a8225bc369 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    VisEquipment
+    FootStep
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Normal
+    Frost: Normal
+    Lightning: Normal
+    Poison: Normal
+    Spirit: Immune
+
+	Default Items:
+
+    GoblinBruteBros_Attack
+    GoblinBruteBros_RageAttack
+    GoblinBrute_Taunt
+    GoblinBrute_HipCloth
+    GoblinBrute_ShoulderGuard
+    GoblinShaman_attack_fireball_hildir
+    GoblinShaman_attack_protect_hildir
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    GoblinShaman_Hildir_nochest (1x)
+    TrophyGoblinBruteBrosBrute (1x)
+
+GoblinKing
+	2434001871e1d4a8faf75f7dfdb8bdbc 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    FootStep
+    LODGroup
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: VeryResistant
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Resistant
+    Frost: Normal
+    Lightning: Normal
+    Poison: Immune
+    Spirit: Normal
+
+	Default Items:
+
+    GoblinKing_Beam
+    GoblinKing_Meteors
+    GoblinKing_Nova
+    GoblinKing_Taunt
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    TrophyGoblinKing (1x)
+    YagluthDrop (3x)
+
+GoblinShaman
+	bde8a65d482333c99bd5470db5cc1dce 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    RandomAnimation
+    VisEquipment
+    FootStep
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Normal
+    Frost: Normal
+    Lightning: Normal
+    Poison: Normal
+    Spirit: Immune
+
+	Default Items:
+
+    GoblinShaman_attack_protect
+    GoblinShaman_attack_poke
+    GoblinShaman_attack_fireball
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    Coins (25% 20-40x)
+    BlackMetalScrap (1-2x)
+    Pukeberries (1-2x)
+    TrophyGoblinShaman (10%)
+
+GoblinShaman_Hildir
+	8e8f34dc693ccc54fab3fa945b67a1b3 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    RandomAnimation
+    VisEquipment
+    FootStep
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Normal
+    Frost: Normal
+    Lightning: Normal
+    Poison: Normal
+    Spirit: Immune
+
+	Default Items:
+
+    GoblinShaman_attack_protect
+    GoblinShaman_attack_poke
+    GoblinShaman_attack_fireball
+    GoblinShaman_Staff_Hildir
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    chest_hildir3 (1x)
+    TrophyGoblinBruteBrosShaman (1x)
+
+GoblinShaman_Hildir_nochest
+	7cbd0b1a151b1c44fa28f73168703d49 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    RandomAnimation
+    VisEquipment
+    FootStep
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Normal
+    Frost: Normal
+    Lightning: Normal
+    Poison: Normal
+    Spirit: Immune
+
+	Default Items:
+
+    GoblinShaman_attack_protect
+    GoblinShaman_attack_poke
+    GoblinShaman_attack_fireball
+    GoblinShaman_Staff_Hildir
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    TrophyGoblinBruteBrosShaman (1x)
+
+Greydwarf
+	d5328849a8a6e419bac24bb604865cbd 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    FootStep
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: VeryWeak
+    Frost: Normal
+    Lightning: Normal
+    Poison: Resistant
+    Spirit: Immune
+
+	Default Items:
+
+    Greydwarf_attack
+    Greydwarf_throw
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    GreydwarfEye (50%)
+    Stone (1x)
+    Wood (1x)
+    Resin (1x)
+    TrophyGreydwarf (5%)
+
+Greydwarf_Elite
+	8d791824a0ffc41708ce047f5a02b85f 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    FootStep
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: VeryWeak
+    Frost: Normal
+    Lightning: Normal
+    Poison: Resistant
+    Spirit: Immune
+
+	Default Items:
+
+    Greydwarf_elite_attack
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    GreydwarfEye (50% 2x)
+    Stone (2x)
+    Wood (3-5x)
+    Dandelion (1x)
+    AncientSeed (33%)
+    TrophyGreydwarfBrute (10%)
+
+Greydwarf_Shaman
+	a298f87fb48ea422eb3f463ec86675dc 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    FootStep
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: VeryWeak
+    Frost: Normal
+    Lightning: Normal
+    Poison: Resistant
+    Spirit: Immune
+
+	Default Items:
+
+    Greydwarf_shaman_attack
+    Greydwarf_attack
+    Greydwarf_shaman_heal
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    GreydwarfEye (50%)
+    Wood (1x)
+    Resin (1-2x)
+    TrophyGreydwarfShaman (10%)
+    Pukeberries (1-2x)
+
+Greyling
+	55150b54f4c96a662b4eb69f518ae0d4 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    FootStep
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: VeryWeak
+    Frost: Normal
+    Lightning: Normal
+    Poison: Resistant
+    Spirit: Immune
+
+	Default Items:
+
+    Greyling_attack
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    Resin (1x)
+
+Hare
+	1d3a992994f2cec4c85ecdb09608293d 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Character
+    CharacterDrop
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    AnimalAI
+    FootStep
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Normal
+    Frost: Normal
+    Lightning: Normal
+    Poison: Normal
+    Spirit: Immune
+
+		
+
+    HareMeat (1x)
+    ScaleHide (1-3x)
+    TrophyHare (5%)
+
+Hatchling
+	207d578028fd33743bfd4ce4a424c436 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Weak
+    Frost: Immune
+    Lightning: Normal
+    Poison: Normal
+    Spirit: Immune
+
+	Default Items:
+
+    hatchling_spit_cold
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    TrophyHatchling (10%)
+    FreezeGland (1-2x)
+
+Hen
+	aadd94569e15c4246a23f2bd2bd01222 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    MonsterAI
+    CharacterDrop
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    FootStep
+    Procreation
+    Tameable
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Normal
+    Frost: Normal
+    Lightning: Normal
+    Poison: Normal
+    Spirit: Immune
+
+	Default Items:
+
+    boar_base_attack
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    ChickenMeat (1x)
+    Feathers (1-3x)
+
+Hive
+	5444809c3455c0a458086a1223801dbb 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    VisEquipment
+
+	
+
+    Blunt: Weak
+    Slash: Resistant
+    Pierce: VeryResistant
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: VeryResistant
+    Frost: Weak
+    Lightning: Normal
+    Poison: Immune
+    Spirit: Normal
+
+	Default Items:
+
+    hive_attack_aoe
+    hive_attack_punch
+    hive_attack_throw
+    hive_attack_ranged
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    TrophySeekerQueen (1x)
+    QueenDrop (1x)
+
+Leech
+	15f55f31ecb32804a973906c189d63a3 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Immune
+    Frost: Normal
+    Lightning: Normal
+    Poison: Resistant
+    Spirit: Immune
+
+	Default Items:
+
+    Leech_BiteAttack
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    TrophyLeech (10%)
+    Bloodbag (1x)
+
+Leech_cave
+	17ac30a0fec299a4a9f9df72c1ca11b8 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Immune
+    Frost: Normal
+    Lightning: Normal
+    Poison: Resistant
+    Spirit: Immune
+
+	Default Items:
+
+    Leech_BiteAttack
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    TrophyLeech (10%)
+    Bloodbag (1x)
+
+Lox
+	8d6e0217be4fb4e3fa885424b17258f0 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    MonsterAI
+    CharacterDrop
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    FootStep
+    Tameable
+    Procreation
+    MovementDamage
+
+	
+
+    Blunt: Resistant
+    Slash: Resistant
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Weak
+    Frost: Resistant
+    Lightning: Normal
+    Poison: Normal
+    Spirit: Immune
+
+	Default Items:
+
+    lox_bite
+    lox_stomp
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    LoxMeat (4-6x)
+    TrophyLox (10%)
+    LoxPelt (2-3x)
+
+Lox_Calf
+	920337e1b791cb6ad93134fdccd274ea 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    AnimalAI
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    Growup
+    CharacterDrop
+
+	
+
+    Blunt: Resistant
+    Slash: Resistant
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Weak
+    Frost: Resistant
+    Lightning: Normal
+    Poison: Normal
+    Spirit: Immune
+
+	Default Items:
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    LoxMeat (1x)
+
+Mistile
+	9c6c41b2143057144a7b225afbb3255b 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterTimedDestruction
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Normal
+    Frost: Normal
+    Lightning: Normal
+    Poison: Normal
+    Spirit: Immune
+
+	Default Items:
+
+    Mistile_kamikaze
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+Morgen
+	0781a10ce77e7d94081d6e5181a0c083 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    FootStep
+
+	
+
+    Blunt: Resistant
+    Slash: Resistant
+    Pierce: Resistant
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Resistant
+    Frost: Normal
+    Lightning: Weak
+    Poison: Normal
+    Spirit: Normal
+
+	Default Items:
+
+    Morgen_bite
+    Morgen_roll_right
+    Morgen_roll_left
+    Morgen_swipe_1
+    Morgen_swipe_2
+    Morgen_swipe_3
+    Morgen_swipe_4
+    Morgen_bodyslam
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    MorgenSinew (1-2x)
+    MorgenHeart (80%)
+    TrophyMorgen (5%)
+
+Morgen_NonSleeping
+	bd46e0c120a5ff245b8aeda77663aeed 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    FootStep
+
+	
+
+    Blunt: Resistant
+    Slash: Resistant
+    Pierce: Resistant
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Resistant
+    Frost: Normal
+    Lightning: Weak
+    Poison: Normal
+    Spirit: Normal
+
+	Default Items:
+
+    Morgen_bite
+    Morgen_roll_right
+    Morgen_roll_left
+    Morgen_swipe_1
+    Morgen_swipe_2
+    Morgen_swipe_3
+    Morgen_swipe_4
+    Morgen_bodyslam
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    MorgenSinew (1-2x)
+    MorgenHeart (80%)
+    TrophyMorgen (5%)
+
+Neck
+	8e54825a7ad8249fcb3737b0a4944e78 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Weak
+    Frost: Normal
+    Lightning: Normal
+    Poison: Resistant
+    Spirit: Immune
+
+	Default Items:
+
+    Neck_BiteAttack
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    NeckTail (70%)
+    TrophyNeck (5%)
+
+Player
+	3cc4f440c0f1043fc9f35cc14d2699cd 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    PlayerController
+    Player
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    Talker
+    VisEquipment
+    Skills
+    FootStep
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Immune
+    Pickaxe: Immune
+    Fire: Normal
+    Frost: Normal
+    Lightning: Normal
+    Poison: Normal
+    Spirit: Immune
+
+	Default Items:
+
+    Torch
+    ArmorRagsChest
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+Seeker
+	0a463f1c35c426e1b84ecf3a34148c1f 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    FootStep
+
+	
+
+    Blunt: Resistant
+    Slash: Resistant
+    Pierce: Resistant
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Normal
+    Frost: Normal
+    Lightning: Normal
+    Poison: Normal
+    Spirit: Immune
+
+	Default Items:
+
+    seeker_takeoff
+    seeker_land
+    seeker_pincers
+    seeker_claw_left
+    seeker_claw_right
+    seeker_groundslam
+    seeker_groundslam_flying
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    BugMeat (1-2x)
+    Carapace (1-2x)
+    TrophySeeker (5%)
+
+SeekerBrood
+	bf34eefe9987139b784a8bb8a4a05276 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    FootStep
+
+	
+
+    Blunt: Resistant
+    Slash: Resistant
+    Pierce: Resistant
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Normal
+    Frost: Normal
+    Lightning: Normal
+    Poison: Normal
+    Spirit: Immune
+
+	Default Items:
+
+    babyseeker_attack
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    RoyalJelly (50%)
+
+SeekerBrute
+	0bae86e43cdc98f0ba3656c2ffa7f175 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    FootStep
+
+	
+
+    Blunt: Resistant
+    Slash: Resistant
+    Pierce: Resistant
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Normal
+    Frost: Normal
+    Lightning: Normal
+    Poison: Normal
+    Spirit: Immune
+
+	Default Items:
+
+    SeekerBrute_Taunt
+    SeekerBrute_ram
+    SeekerBrute_bite
+    SeekerBrute_groundslam
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    BugMeat (1-2x)
+    Carapace (2-4x)
+    TrophySeekerBrute (5%)
+    Mandible (1-2x)
+
+SeekerQueen
+	6fc0fad84c3dfcf7eaca86b392dbef65 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    FootStep
+    MovementDamage
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Resistant
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Normal
+    Frost: Normal
+    Lightning: Normal
+    Poison: Normal
+    Spirit: Immune
+
+	Default Items:
+
+    SeekerQueen_Teleport
+    SeekerQueen_Rush
+    SeekerQueen_Bite
+    SeekerQueen_Call
+    SeekerQueen_Spit
+    SeekerQueen_Slap
+    SeekerQueen_PierceAOE
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    TrophySeekerQueen (1x)
+    QueenDrop (5x)
+
+Serpent
+	32e793ffc634d454e938e5439ccdb7c3 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    Tail
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Immune
+    Frost: Weak
+    Lightning: Normal
+    Poison: Resistant
+    Spirit: Immune
+
+	Default Items:
+
+    Serpent_attack
+    Serpent_taunt
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    TrophySerpent (33%)
+    SerpentMeat (6-8x)
+    SerpentScale (8-10x)
+
+Skeleton
+	dfe80d96eac904f7dba16a7f8b45bf45 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    VisEquipment
+    FootStep
+
+	
+
+    Blunt: Weak
+    Slash: Normal
+    Pierce: Resistant
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Weak
+    Frost: Resistant
+    Lightning: Normal
+    Poison: Immune
+    Spirit: Normal
+
+	Default Items:
+Random Weapon:
+
+    skeleton_sword
+    skeleton_sword
+    skeleton_bow
+    skeleton_sword
+    skeleton_sword
+
+Random Armor:
+Random Shield:
+
+    ShieldWood
+    ShieldBronzeBuckler
+
+	
+
+    TrophySkeleton (10%)
+    BoneFragments (1x)
+
+Skeleton_Friendly
+	047901b3b1c76704f8c1ad58783730eb 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    VisEquipment
+    FootStep
+    Tameable
+
+	
+
+    Blunt: Weak
+    Slash: Normal
+    Pierce: Resistant
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Weak
+    Frost: Resistant
+    Lightning: Normal
+    Poison: Immune
+    Spirit: Normal
+
+	Default Items:
+Random Weapon:
+
+    skeleton_sword2
+    skeleton_sword2
+    skeleton_bow2
+    skeleton_sword2
+    skeleton_sword2
+
+Random Armor:
+Random Shield:
+
+    ShieldWood
+    ShieldBronzeBuckler
+
+	
+Skeleton_Hildir
+	194a21555916704379ac6dd80c1f130a 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    VisEquipment
+    FootStep
+
+	
+
+    Blunt: Weak
+    Slash: Normal
+    Pierce: Resistant
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Immune
+    Frost: Weak
+    Lightning: Normal
+    Poison: Immune
+    Spirit: Normal
+
+	Default Items:
+
+    skeleton_sword_hildir
+    skeleton_hildir_firenova
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    chest_hildir1 (1x)
+    TrophySkeletonHildir (1x)
+
+Skeleton_Hildir_nochest
+	eb0c01494a5240948b21521d73bf57b9 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    VisEquipment
+    FootStep
+
+	
+
+    Blunt: Weak
+    Slash: Normal
+    Pierce: Resistant
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Immune
+    Frost: Weak
+    Lightning: Normal
+    Poison: Immune
+    Spirit: Normal
+
+	Default Items:
+
+    skeleton_sword_hildir
+    skeleton_hildir_firenova
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    TrophySkeletonHildir (1x)
+
+Skeleton_NoArcher
+	5a9ae1b73ed980145ac2f3a1f09c8759 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    VisEquipment
+    FootStep
+
+	
+
+    Blunt: Weak
+    Slash: Normal
+    Pierce: Resistant
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Weak
+    Frost: Resistant
+    Lightning: Normal
+    Poison: Immune
+    Spirit: Normal
+
+	Default Items:
+Random Weapon:
+
+    skeleton_sword
+
+Random Armor:
+Random Shield:
+
+    ShieldWood
+    ShieldBronzeBuckler
+
+	
+
+    TrophySkeleton (10%)
+    BoneFragments (1x)
+
+Skeleton_Poison
+	0bd5ad5bed5904ac69022069c03b2d63 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    VisEquipment
+    FootStep
+
+	
+
+    Blunt: Weak
+    Slash: Normal
+    Pierce: Resistant
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Weak
+    Frost: Resistant
+    Lightning: Normal
+    Poison: Immune
+    Spirit: Normal
+
+	Default Items:
+
+    skeleton_mace
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    TrophySkeletonPoison (10%)
+    BoneFragments (3x)
+
+staff_greenroots_tentaroot
+	8dcbfef893c37ce4fa505797955f0169 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterTimedDestruction
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Resistant
+    Frost: Normal
+    Lightning: Normal
+    Poison: Immune
+    Spirit: Normal
+
+	Default Items:
+Random Weapon:
+
+    staff_greenroots_tentaroot_attack
+
+Random Armor:
+Random Shield:
+
+    ShieldWood
+    ShieldBronzeBuckler
+
+	
+StoneGolem
+	75bd44cceee674d3b9d25a986c5d26c3 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    VisEquipment
+    FootStep
+
+	
+
+    Blunt: Normal
+    Slash: Resistant
+    Pierce: Resistant
+    Chop: Ignore
+    Pickaxe: VeryWeak
+    Fire: Immune
+    Frost: Immune
+    Lightning: Normal
+    Poison: Immune
+    Spirit: Immune
+
+	Default Items:
+Random Weapon:
+Random Armor:
+
+    StoneGolem_hat
+
+Random Shield: 	
+
+    TrophySGolem (5%)
+    Stone (5-10x)
+    Crystal (8-12x)
+
+Surtling
+	a0388a62fcae341e390fced0c9bbb1d4 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    ZSyncTransform
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Immune
+    Frost: Weak
+    Lightning: Normal
+    Poison: Immune
+    Spirit: Immune
+
+	Default Items:
+
+    imp_fireball_attack
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    Coal (4-5x)
+    SurtlingCore (50%)
+    TrophySurtling (5%)
+
+TentaRoot
+	b34a8b30828fc427185aab7cba26f9f1 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterTimedDestruction
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Weak
+    Frost: Resistant
+    Lightning: Normal
+    Poison: Immune
+    Spirit: Normal
+
+	Default Items:
+Random Weapon:
+
+    tentaroot_attack
+
+Random Armor:
+Random Shield:
+
+    ShieldWood
+    ShieldBronzeBuckler
+
+	
+TheHive
+	b995384b3e1efe58ca02ac20a51f32ec 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+
+	
+
+    Blunt: Immune
+    Slash: Immune
+    Pierce: Immune
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Immune
+    Frost: Immune
+    Lightning: Immune
+    Poison: Immune
+    Spirit: Immune
+
+	Default Items:
+
+    gjall_attack_spit
+    gjall_attack_egg
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    TrophyHatchling (10%)
+    FreezeGland (1-2x)
+
+Tick
+	84ad1f2248da577f9aad789689c3c80f 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    MonsterAI
+    CharacterDrop
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    FootStep
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Weak
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Normal
+    Frost: Normal
+    Lightning: Normal
+    Poison: Normal
+    Spirit: Immune
+
+	Default Items:
+
+    tick_attack_attach
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    GiantBloodSack (1x)
+    TrophyTick (5%)
+
+TrainingDummy
+	f3709365b254c9a428ec71fe38172f5d 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    VisEquipment
+    FootStep
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Immune
+    Pickaxe: Immune
+    Fire: Normal
+    Frost: Normal
+    Lightning: Normal
+    Poison: Normal
+    Spirit: Normal
+
+	Default Items:
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    Entrails (50%)
+    TrophyDraugr (10%)
+
+Troll
+	b4903b8bdf49bd8488b1e90b78d6d03e 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    VisEquipment
+    FootStep
+
+	
+
+    Blunt: Resistant
+    Slash: Normal
+    Pierce: Weak
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Normal
+    Frost: Normal
+    Lightning: Normal
+    Poison: Normal
+    Spirit: Immune
+
+	Default Items:
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    Coins (20-30x)
+    TrophyFrostTroll (50%)
+    TrollHide (5x)
+
+Troll_Summoned
+	5e200c93a0fa29f4d93bc9321922d73b 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+    VisEquipment
+    FootStep
+    CinderSpawner
+
+	
+
+    Blunt: Resistant
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Immune
+    Frost: Weak
+    Lightning: Normal
+    Poison: Normal
+    Spirit: Immune
+
+	Default Items:
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+Ulv
+	d3cafa7549c180d4f9b869f55851ca49 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    CharacterDrop
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    FootStep
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: VeryResistant
+    Frost: Normal
+    Lightning: Normal
+    Poison: Weak
+    Spirit: Normal
+
+	Default Items:
+
+    Ulv_attack1_bite
+    Ulv_attack2_slash
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    WolfFang (50% 1-2x)
+    TrophyUlv (10%)
+
+Volture
+	a43fc1d3f36714546a7b8399fc3fc082 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Normal
+    Frost: Weak
+    Lightning: Normal
+    Poison: Immune
+    Spirit: Normal
+
+	Default Items:
+
+    volture_talons
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    TrophyVolture (10%)
+    VoltureMeat (1x)
+    Feathers (50% 2-3x)
+    VoltureEgg (50% 1-2x)
+
+Wolf
+	8f76acb8fc394437ca3833692f74390b 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    CharacterDrop
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    FootStep
+    Tameable
+    Procreation
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Normal
+    Frost: Normal
+    Lightning: Normal
+    Poison: Normal
+    Spirit: Immune
+
+	Default Items:
+
+    Wolf_Attack1
+    Wolf_Attack2
+    Wolf_Attack3
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    TrophyWolf (10%)
+    WolfMeat (1x)
+    WolfPelt (1-2x)
+    WolfFang (40%)
+
+Wolf_cub
+	a7b45741a24fa21bbb2cd4e4de89f045 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    FootStep
+    AnimalAI
+    Growup
+
+	
+
+    Blunt: Normal
+    Slash: Normal
+    Pierce: Normal
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Normal
+    Frost: Normal
+    Lightning: Normal
+    Poison: Normal
+    Spirit: Immune
+
+	Default Items:
+Random Weapon:
+Random Armor:
+Random Shield: 	
+Wraith
+	f9ec8127e15d8407eaa278f5c9931bfb 	
+
+    Transform
+    CapsuleCollider
+    Rigidbody
+    Humanoid
+    ZNetView
+    ZSyncTransform
+    ZSyncAnimation
+    MonsterAI
+    CharacterDrop
+
+	
+
+    Blunt: Resistant
+    Slash: Resistant
+    Pierce: Resistant
+    Chop: Ignore
+    Pickaxe: Ignore
+    Fire: Weak
+    Frost: Immune
+    Lightning: Normal
+    Poison: Immune
+    Spirit: Weak
+
+	Default Items:
+
+    wraith_melee
+
+Random Weapon:
+Random Armor:
+Random Shield: 	
+
+    TrophyWraith (5%)
+    Chain (1x)
