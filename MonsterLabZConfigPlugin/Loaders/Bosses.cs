@@ -20,9 +20,8 @@ namespace MonsterLabZConfig.Loaders
         private static void LoadQuestBosses(ConfigFile config)
         {
             BossAddAsh.init(config);
-            BossAddFrigga.init(config);
 
-            BossNightmareDragon.init(config);
+            BossBalderNightmareDragon.init(config);
             BossKraken.init(config);
             BossHuldra.init(config);
             BossSpiderFrigga.init(config);

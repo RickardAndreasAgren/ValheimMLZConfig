@@ -15,20 +15,34 @@ namespace MonsterLabZConfig.PrefabIniters
     {
         public static void init(BepInEx.Configuration.ConfigFile config)
         {
-            Creature creature = new Creature("dybassets", "KrakenLD")
+            if ((short)config[PluginConfig.DefQuestToggle].BoxedValue < 1) return;
+            if ((bool)config[PluginConfig.DefKraken].BoxedValue == false) return;
+
+            Creature creature;
+            if ((short)config[PluginConfig.DefQuestToggle].BoxedValue == 1)
             {
-                Biome = Heightmap.Biome.Ocean,
-                SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Center,
-                RequiredAltitude = new Range(-1000f, -5f),
-                RequiredOceanDepth = new Range(20f, 30f),
-                CheckSpawnInterval = 600,
-                RequiredGlobalKey = GlobalKey.KilledBonemass,
-                RequiredWeather = Weather.ThunderStorm,
-                SpawnChance = 2f,
-                GroupSize = new Range(1f, 1f),
-                Maximum = 1,
-                SpecificSpawnTime = SpawnTime.Always
-            };
+                creature = new Creature("dybassets", "KrakenLD")
+                {
+                    Biome = Heightmap.Biome.Ocean,
+                };
+            } else
+            {
+                creature = new Creature("dybassets", "KrakenLD")
+                {
+                    Biome = Heightmap.Biome.Ocean,
+                    SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Center,
+                    RequiredAltitude = new Range(-1000f, -5f),
+                    RequiredOceanDepth = new Range(20f, 30f),
+                    CheckSpawnInterval = 600,
+                    RequiredGlobalKey = GlobalKey.KilledBonemass,
+                    RequiredWeather = Weather.ThunderStorm,
+                    SpawnChance = 2f,
+                    GroupSize = new Range(1f, 1f),
+                    Maximum = 1,
+                    SpecificSpawnTime = SpawnTime.Always
+                };
+            }
+                
             creature.Drops["KrakenMeat"].Amount = new Range(10f, 15f);
             creature.Drops["KrakenMeat"].DropChance = 100f;
             creature.Drops["KrakenMeat"].DropOnePerPlayer = false;

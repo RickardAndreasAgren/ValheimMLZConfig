@@ -10,10 +10,13 @@ using System.Threading.Tasks;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
-    internal class BossNightmareDragon
+    internal class BossBalderNightmareDragon
     {
         public static void init(BepInEx.Configuration.ConfigFile config)
         {
+            if ((short)config[PluginConfig.DefQuestToggle].BoxedValue < 1) return;
+            if ((bool)config[PluginConfig.DefBalder].BoxedValue == false) return;
+
             Creature creature = new Creature("dybassets", "NightmareDragon")
             {
                 Biome = Heightmap.Biome.None

@@ -1,5 +1,6 @@
 ﻿extern alias MonsterLabZN;
 
+using Jotunn.Managers;
 using MonsterLabZN::CreatureManager;
 using MonsterLabZN::ItemManager;
 using System;
@@ -104,6 +105,46 @@ namespace MonsterLabZConfig.PrefabIniters
             MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_goblin_loot_taunt");
             MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "DwarfGoblinSpear_projectile");
             MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "DwarfGoblinSpearChitin_projectile");
+
+            GoblinRider(config);
+        }
+
+        private static void GoblinRider(BepInEx.Configuration.ConfigFile config)
+        {
+            Creature creature = new Creature("dybassets", "ML_GoblinLox")
+            {
+                Biome = Heightmap.Biome.Plains,
+                SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Edge,
+                RequiredAltitude = new Range(1f, 1000f),
+                CheckSpawnInterval = 1000,
+                SpawnChance = 5f,
+                GroupSize = new Range(2f, 2f),
+                Maximum = 2,
+                SpecificSpawnTime = SpawnTime.Always
+            };
+            creature.Drops["LoxMeat"].Amount = new Range(4f, 6f);
+            creature.Drops["LoxMeat"].DropChance = 100f;
+            creature.Drops["LoxMeat"].DropOnePerPlayer = false;
+            creature.Drops["LoxMeat"].MultiplyDropByLevel = true;
+            creature.Drops["TrophyLox"].Amount = new Range(1f, 1f);
+            creature.Drops["TrophyLox"].DropChance = 10f;
+            creature.Drops["TrophyLox"].DropOnePerPlayer = false;
+            creature.Drops["TrophyLox"].MultiplyDropByLevel = true;
+            creature.Drops["LoxPelt"].Amount = new Range(2f, 3f);
+            creature.Drops["LoxPelt"].DropChance = 100f;
+            creature.Drops["LoxPelt"].DropOnePerPlayer = false;
+            creature.Drops["LoxPelt"].MultiplyDropByLevel = true;
+
+            Creature creature2 = new Creature("dybassets", "GoblinLoxRider")
+            {
+                Biome = Heightmap.Biome.None
+            };
+            creature2.ConfigurationEnabled = false;
+            creature2.Drops["Coins"].Amount = new Range(3f, 5f);
+            creature2.Drops["Coins"].DropChance = 100f;
+            creature2.Drops["Coins"].DropOnePerPlayer = false;
+            creature2.Drops["Coins"].MultiplyDropByLevel = true;
+            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_GoblinLox_Ragdoll");
         }
     }
 }

@@ -20,17 +20,32 @@ namespace MonsterLabZConfig.PrefabIniters
 
         private static void FireGolem(BepInEx.Configuration.ConfigFile config)
         {
-            Creature creature = new Creature("dybassets", "FireGolem")
+            
+            if ((short)config[PluginConfig.DefWildBosses].BoxedValue < 1) return;
+            if ((bool)config[PluginConfig.DefFireGolem].BoxedValue == false) return;
+
+            Creature creature;
+            if ((short)config[PluginConfig.DefWildBosses].BoxedValue == 1)
             {
-                Biome = Heightmap.Biome.AshLands,
-                SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Everywhere,
-                RequiredAltitude = new Range(5f, 1000f),
-                CheckSpawnInterval = 1000,
-                SpawnChance = 5f,
-                GroupSize = new Range(1f, 1f),
-                Maximum = 1,
-                SpecificSpawnTime = SpawnTime.Always
-            };
+                creature = new Creature("dybassets", "FireGolem")
+                {
+                    Biome = Heightmap.Biome.AshLands
+                };
+            } else
+            {
+                creature = new Creature("dybassets", "FireGolem")
+                {
+                    Biome = Heightmap.Biome.AshLands,
+                    SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Everywhere,
+                    RequiredAltitude = new Range(5f, 1000f),
+                    CheckSpawnInterval = 1000,
+                    SpawnChance = 5f,
+                    GroupSize = new Range(1f, 1f),
+                    Maximum = 1,
+                    SpecificSpawnTime = SpawnTime.Always
+                };
+            }
+            
             creature.Drops["Stone"].Amount = new Range(3f, 5f);
             creature.Drops["Stone"].DropChance = 100f;
             creature.Drops["Stone"].DropOnePerPlayer = false;
@@ -59,18 +74,31 @@ namespace MonsterLabZConfig.PrefabIniters
 
         private static void IceGolem(BepInEx.Configuration.ConfigFile config)
         {
+            if ((short)config[PluginConfig.DefWildBosses].BoxedValue < 1) return;
+            if ((bool)config[PluginConfig.DefIceGolem].BoxedValue == false) return;
 
-            Creature creature = new Creature("dybassets", "IceGolem")
+            Creature creature;
+            if ((short)config[PluginConfig.DefWildBosses].BoxedValue == 1)
             {
-                Biome = Heightmap.Biome.DeepNorth,
-                SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Everywhere,
-                RequiredAltitude = new Range(5f, 1000f),
-                CheckSpawnInterval = 1000,
-                SpawnChance = 5f,
-                GroupSize = new Range(1f, 1f),
-                Maximum = 1,
-                SpecificSpawnTime = SpawnTime.Always
-            };
+                creature = new Creature("dybassets", "IceGolem")
+                {
+                    Biome = Heightmap.Biome.DeepNorth
+                };
+            }
+            else
+            {
+                creature = new Creature("dybassets", "IceGolem")
+                {
+                    Biome = Heightmap.Biome.DeepNorth,
+                    SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Everywhere,
+                    RequiredAltitude = new Range(5f, 1000f),
+                    CheckSpawnInterval = 1000,
+                    SpawnChance = 5f,
+                    GroupSize = new Range(1f, 1f),
+                    Maximum = 1,
+                    SpecificSpawnTime = SpawnTime.Always
+                };
+            }
             creature.Drops["Crystal"].Amount = new Range(5f, 8f);
             creature.Drops["Crystal"].DropChance = 100f;
             creature.Drops["Crystal"].DropOnePerPlayer = false;

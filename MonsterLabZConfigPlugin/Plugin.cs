@@ -1,5 +1,4 @@
 ﻿extern alias ServerSyncStandalone;
-extern alias MonsterLabZN;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -46,7 +45,7 @@ namespace MonsterLabZConfig
         public void Awake()
         {
             Config.Reload();
-            _serverConfigLocked = new ConfigData<Toggle>("1 - General", "Lock Configuration", true)
+            (_, _serverConfigLocked) = new ConfigData<Toggle>("1 - General", "Lock Configuration", true)
                 .Describe("If on, the configuration is locked and can be changed by server admins only.")
                 .Bind(Config, Toggle.On);
             _ = Sync.AddLockingConfigEntry(_serverConfigLocked);
@@ -56,8 +55,8 @@ namespace MonsterLabZConfig
             HarmonyInstance = Harmony.CreateAndPatchAll(assembly, harmonyInstanceId: ModGUID);
 
             LocalizationLoader.Load();
-            LocationsLoader.Load(Config);
             OtherLoader.Load(Config);
+            LocationsLoader.Load(Config);
             BossesLoader.Load(Config);
             CreaturesLoader.Load(Config);
 
