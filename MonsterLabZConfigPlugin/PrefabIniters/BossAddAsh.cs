@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
-    internal class BossAddAsh
+    internal static class BossAddAsh
     {
         public static void init(BepInEx.Configuration.ConfigFile config)
         {
@@ -20,11 +20,6 @@ namespace MonsterLabZConfig.PrefabIniters
             Creature creature;
             Creature creature2;
             if ((short)config[PluginConfig.DefWildBosses].BoxedValue == 1)
-            {
-                creature = new Creature("dybassets", "ML_AshHatchling");
-                creature2 = new Creature("dybassets", "ML_FrostHatchling");
-            }
-            else
             {
                 creature = new Creature("dybassets", "ML_AshHatchling")
                 {
@@ -49,6 +44,17 @@ namespace MonsterLabZConfig.PrefabIniters
                     SpecificSpawnTime = SpawnTime.Always
                 };
             }
+            else
+            {
+                creature = new Creature("dybassets", "ML_AshHatchling")
+                {
+                    Biome = Heightmap.Biome.AshLands
+                };
+                creature2 = new Creature("dybassets", "ML_FrostHatchling")
+                {
+                    Biome = Heightmap.Biome.None
+                };
+            }
             
             creature.ConfigurationEnabled = true;
             creature.Drops["ML_TrophyAshHatchling"].Amount = new Range(1f, 1f);
@@ -59,17 +65,7 @@ namespace MonsterLabZConfig.PrefabIniters
             creature.Drops["FireGland"].DropChance = 100f;
             creature.Drops["FireGland"].DropOnePerPlayer = false;
             creature.Drops["FireGland"].MultiplyDropByLevel = true;
-            creature2 = new Creature("dybassets", "ML_FrostHatchling")
-            {
-                Biome = Heightmap.Biome.None,
-                SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Everywhere,
-                RequiredAltitude = new Range(5f, 1000f),
-                CheckSpawnInterval = 1000,
-                SpawnChance = 10f,
-                GroupSize = new Range(1f, 1f),
-                Maximum = 1,
-                SpecificSpawnTime = SpawnTime.Always
-            };
+
 
             creature2.ConfigurationEnabled = false;
             creature2.Drops["TrophyHatchling"].Amount = new Range(1f, 1f);

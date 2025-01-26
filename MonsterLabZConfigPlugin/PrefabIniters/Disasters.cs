@@ -12,44 +12,64 @@ using static Heightmap;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
-    static internal class Disasters
+    internal static class Disasters
     {
         internal static void init(ConfigFile config)
         {
-            new Creature("dybassets", "ML_HailStorm")
+            if (!(bool)config[PluginConfig.DefDisasters].BoxedValue) return;
+
+            if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue > 0)
             {
-                Biome = (Heightmap.Biome.Mountain | Heightmap.Biome.DeepNorth),
-                SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Center,
-                RequiredAltitude = new Range(5f, 1000f),
-                CheckSpawnInterval = 1000,
-                SpawnChance = 5f,
-                GroupSize = new Range(1f, 1f),
-                Maximum = 1,
-                SpecificSpawnTime = SpawnTime.Always
-            };
-            new Creature("dybassets", "ML_LightningStorm")
+                new Creature("dybassets", "ML_HailStorm")
+                {
+                    Biome = (Heightmap.Biome.Mountain | Heightmap.Biome.DeepNorth)
+                };
+                new Creature("dybassets", "ML_LightningStorm")
+                {
+                    Biome = (Heightmap.Biome.Meadows | Heightmap.Biome.Plains)
+                };
+                new Creature("dybassets", "ML_MeteorShower")
+                {
+                    Biome = Heightmap.Biome.AshLands
+                };
+            } else
             {
-                Biome = (Heightmap.Biome.Meadows | Heightmap.Biome.Plains),
-                SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Everywhere,
-                RequiredAltitude = new Range(5f, 1000f),
-                CheckSpawnInterval = 1000,
-                RequiredWeather = Weather.ThunderStorm,
-                SpawnChance = 5f,
-                GroupSize = new Range(1f, 1f),
-                Maximum = 1,
-                SpecificSpawnTime = SpawnTime.Always
-            };
-            new Creature("dybassets", "ML_MeteorShower")
-            {
-                Biome = Heightmap.Biome.AshLands,
-                SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Center,
-                RequiredAltitude = new Range(5f, 1000f),
-                CheckSpawnInterval = 1000,
-                SpawnChance = 5f,
-                GroupSize = new Range(1f, 1f),
-                Maximum = 1,
-                SpecificSpawnTime = SpawnTime.Always
-            };
+                new Creature("dybassets", "ML_HailStorm")
+                {
+                    Biome = (Heightmap.Biome.Mountain | Heightmap.Biome.DeepNorth),
+                    SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Center,
+                    RequiredAltitude = new Range(5f, 1000f),
+                    CheckSpawnInterval = 1000,
+                    SpawnChance = 5f,
+                    GroupSize = new Range(1f, 1f),
+                    Maximum = 1,
+                    SpecificSpawnTime = SpawnTime.Always
+                };
+                new Creature("dybassets", "ML_LightningStorm")
+                {
+                    Biome = (Heightmap.Biome.Meadows | Heightmap.Biome.Plains),
+                    SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Everywhere,
+                    RequiredAltitude = new Range(5f, 1000f),
+                    CheckSpawnInterval = 1000,
+                    RequiredWeather = Weather.ThunderStorm,
+                    SpawnChance = 5f,
+                    GroupSize = new Range(1f, 1f),
+                    Maximum = 1,
+                    SpecificSpawnTime = SpawnTime.Always
+                };
+                new Creature("dybassets", "ML_MeteorShower")
+                {
+                    Biome = Heightmap.Biome.AshLands,
+                    SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Center,
+                    RequiredAltitude = new Range(5f, 1000f),
+                    CheckSpawnInterval = 1000,
+                    SpawnChance = 5f,
+                    GroupSize = new Range(1f, 1f),
+                    Maximum = 1,
+                    SpecificSpawnTime = SpawnTime.Always
+                };
+            }
+            
             new Item("dybassets", "ML_MeteorShower_Start").Configurable = Configurability.Disabled;
             new Item("dybassets", "ML_HailStorm_Start").Configurable = Configurability.Disabled;
             new Item("dybassets", "ML_LightningStorm_Start").Configurable = Configurability.Disabled;

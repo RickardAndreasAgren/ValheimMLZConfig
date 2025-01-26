@@ -11,21 +11,34 @@ using System.Threading.Tasks;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
-    internal class Huldra
+    internal static class Huldra
     {
         public static void init(BepInEx.Configuration.ConfigFile config)
         {
-            Creature creature = new Creature("dybassets", "ML_AshHuldra")
+            if (!(bool)config[PluginConfig.DefHuldra].BoxedValue) return;
+
+            Creature creature;
+            if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue > 0)
             {
-                Biome = Heightmap.Biome.AshLands,
-                SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Everywhere,
-                RequiredAltitude = new Range(5f, 1000f),
-                CheckSpawnInterval = 500,
-                SpawnChance = 10f,
-                GroupSize = new Range(1f, 3f),
-                Maximum = 3,
-                SpecificSpawnTime = SpawnTime.Always
-            };
+                creature = new Creature("dybassets", "ML_AshHuldra")
+                {
+                    Biome = Heightmap.Biome.AshLands
+                };
+            }
+            else
+            {
+                creature = new Creature("dybassets", "ML_AshHuldra")
+                {
+                    Biome = Heightmap.Biome.AshLands,
+                    SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Everywhere,
+                    RequiredAltitude = new Range(5f, 1000f),
+                    CheckSpawnInterval = 500,
+                    SpawnChance = 10f,
+                    GroupSize = new Range(1f, 3f),
+                    Maximum = 3,
+                    SpecificSpawnTime = SpawnTime.Always
+                };
+            }
             creature.Drops["ML_HuldraTail"].Amount = new Range(1f, 1f);
             creature.Drops["ML_HuldraTail"].DropChance = 10f;
             creature.Drops["ML_HuldraTail"].DropOnePerPlayer = false;

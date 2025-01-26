@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
-    internal class BossSpiderFrigga
+    internal static class BossSpiderFrigga
     {
         public static void init(BepInEx.Configuration.ConfigFile config)
         {
@@ -34,8 +34,7 @@ namespace MonsterLabZConfig.PrefabIniters
             };
             new Creature("dybassets", "Spider_Hatchling")
             {
-                Biome = Heightmap.Biome.None,
-                ConfigurationEnabled = false
+                Biome = Heightmap.Biome.None
             };
             new Creature("dybassets", "BlackSpider").Biome = Heightmap.Biome.None;
             MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "Spider_Boss_Ragdoll");

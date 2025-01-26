@@ -5,7 +5,7 @@ namespace MonsterLabZConfig.Loaders
 {
     internal static class BossesLoader
     {
-        internal static void Load(BepInEx.Configuration.ConfigFile config)
+        internal static void Load(ConfigFile config)
         {
             LoadQuestBosses(config);
             LoadWildBosses(config);
@@ -15,6 +15,7 @@ namespace MonsterLabZConfig.Loaders
         {
             BossGolems.init(config);
             BossSurtr.init(config);
+            BossUndeadJarl.init(config);
         }
 
         private static void LoadQuestBosses(ConfigFile config)

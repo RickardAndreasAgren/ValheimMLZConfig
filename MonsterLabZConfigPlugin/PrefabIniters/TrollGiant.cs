@@ -10,15 +10,28 @@ using System.Threading.Tasks;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
-    internal class TrollGiant
+    internal static class TrollGiant
     {
         public static void init(BepInEx.Configuration.ConfigFile config)
         {
-            Creature creature = new Creature("dybassets", "TrollGiant")
+            if (!(bool)config[PluginConfig.DefTrollGiant].BoxedValue) return;
+
+            Creature creature;
+            if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue > 0)
             {
-                Biome = Heightmap.Biome.None,
-                ConfigurationEnabled = false
-            };
+                creature = new Creature("dybassets", "TrollGiant")
+                {
+                    Biome = Heightmap.Biome.None
+                };
+            }
+            else
+            {
+                creature = new Creature("dybassets", "TrollGiant")
+                {
+                    Biome = Heightmap.Biome.None
+                };
+            }
+            
             MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "TrollGiant_Ragdoll");
             new Item("dybassets", "trollgiant_slam").Configurable = Configurability.Disabled;
             new Item("dybassets", "trollgiant_stomp").Configurable = Configurability.Disabled;

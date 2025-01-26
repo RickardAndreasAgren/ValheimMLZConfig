@@ -7,6 +7,7 @@ using BepInEx.Configuration;
 using BepInEx.Logging;
 using HarmonyLib;
 using MonsterLabZConfig.Loaders;
+using MonsterLabZConfig.PrefabIniters;
 using ServerSyncStandalone::ServerSync;
 using UnityEngine;
 using static MonsterLabZConfig.PluginConfig;
@@ -55,8 +56,8 @@ namespace MonsterLabZConfig
             HarmonyInstance = Harmony.CreateAndPatchAll(assembly, harmonyInstanceId: ModGUID);
 
             LocalizationLoader.Load();
-            OtherLoader.Load(Config);
             LocationsLoader.Load(Config);
+            OtherLoader.Load(Config);
             BossesLoader.Load(Config);
             CreaturesLoader.Load(Config);
 

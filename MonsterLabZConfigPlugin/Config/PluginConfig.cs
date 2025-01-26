@@ -46,14 +46,47 @@ namespace MonsterLabZConfig
         public static ConfigDefinition DefFulingShip { get; set; }
         public static ConfigEntry<bool> DraugrShip { get; set; }
         public static ConfigDefinition DefDraugrShip { get; set; }
+        public static ConfigDefinition DefDisasters { get; internal set; }
+        public static ConfigDefinition Butterflies { get; internal set; }
+        public static ConfigDefinition DefDeepSeaSerpent { get; internal set; }
+        public static ConfigDefinition DefDwarfGoblin { get; internal set; }
+        public static ConfigDefinition DefDwarfGoblinLoot { get; internal set; }
+        public static ConfigDefinition DefGoblinShaman { get; internal set; }
+        public static ConfigDefinition DefDwarfGoblinShaman { get; internal set; }
+        public static ConfigDefinition DefDwarfGoblinRider { get; internal set; }
+        public static ConfigDefinition DefGhostWarrior { get; internal set; }
+        public static ConfigDefinition DefWraithWarrior { get; internal set; }
+        public static ConfigDefinition DefHuldra { get; internal set; }
+        public static ConfigDefinition DefJellyfish { get; internal set; }
+        public static ConfigDefinition DefMistileRedAggro { get; internal set; }
+        public static ConfigDefinition DefMistileRedPassive { get; internal set; }
+        public static ConfigDefinition DefMistileBlueAggro { get; internal set; }
+        public static ConfigDefinition DefMistileBluePassive { get; internal set; }
+        public static ConfigDefinition DefMolluscan { get; internal set; }
+        public static ConfigDefinition DefDeepMolluscan { get; internal set; }
+        public static ConfigDefinition DefObsidianGolem { get; internal set; }
+        public static ConfigDefinition DefNormalSkeleton { get; internal set; }
+        public static ConfigDefinition DefFireSkeleton { get; internal set; }
+        public static ConfigDefinition DefPoisonSkeleton { get; internal set; }
+        public static ConfigDefinition DefIceSkeleton { get; internal set; }
+        public static ConfigDefinition DefBossJarl { get; internal set; }
+        public static ConfigDefinition DefTreeSpider { get; internal set; }
+        public static ConfigDefinition DefGreenSpider { get; internal set; }
+        public static ConfigDefinition DefFrostSpider { get; internal set; }
+        public static ConfigDefinition DefFrigidSpider { get; internal set; }
+        public static ConfigDefinition DefForestSpider { get; internal set; }
+        public static ConfigDefinition DefBrownSpider { get; internal set; }
+        public static ConfigDefinition DefTanSpider { get; internal set; }
+        public static ConfigDefinition DefTrollGiant { get; internal set; }
+
         public static void MonsterSpawnDataConfig(ConfigFile config)
         {
             (DefMonsterSpawnData, MonsterSpawnData)  = new ConfigData<short>("1 - General", "Monster Spawn Data", true)
             .Describe("Handling of default spawn data. Does not apply to bosses.\r\n" +
                 "(0): Defaults. Use MonsterLabZ spawns.\r\n" +
                 "1: Remove default spawndata.\r\n" +
-                "2: Generate SpawnThat entries for all \r\n", new AcceptableValueList<short>(0, 1, 2), "MLZ", "Monster", "Spawn")
-            .Bind(config, (short)3);
+                "2: 1 and generate SpawnThat entries for all \r\n", new AcceptableValueList<short>(0, 1, 2), "MLZ", "Monster", "Spawn")
+            .Bind(config, (short)0);
         }
         public static void QuestToggleConfig(ConfigFile config)
         {

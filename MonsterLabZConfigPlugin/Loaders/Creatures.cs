@@ -12,7 +12,6 @@ namespace MonsterLabZConfig.Loaders
             LoadUndead(config);
             LoadHumanoids(config);
             LoadMonsters(config);
-            LoadNPCs(config);
 
             Disasters.init(config);
             LavaRoots.init(config);
@@ -30,7 +29,6 @@ namespace MonsterLabZConfig.Loaders
         {
             Ghosts.init(config);
             Skeletons.init(config);
-            SeaDraugr.init(config);
 
             // #No default MonsterLabZ spawns
             GreydwarfTypes.init(config);
@@ -38,14 +36,8 @@ namespace MonsterLabZConfig.Loaders
         private static void LoadHumanoids(ConfigFile config)
         {
             DwarfGoblinTypes.init(config);
-            SeaGoblins.init(config);
-        }
-        private static void LoadNPCs(ConfigFile config)
-        {
-            Svartalf.init(config);
             Huldra.init(config);
         }
-
         private static void LoadMonsters(ConfigFile config)
         {
             DeepseaSerpent.init(config);

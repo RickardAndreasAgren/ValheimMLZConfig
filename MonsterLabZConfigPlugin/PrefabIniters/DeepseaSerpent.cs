@@ -10,23 +10,37 @@ using System.Threading.Tasks;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
-    internal class DeepseaSerpent
+    internal static class DeepseaSerpent
     {
         public static void init(BepInEx.Configuration.ConfigFile config)
         {
-            Creature creature = new Creature("dybassets", "DeepSea_Serpent")
+            if (!(bool)config[PluginConfig.DefDeepSeaSerpent].BoxedValue) return;
+
+            Creature creature;
+            if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue > 0)
             {
-                Biome = Heightmap.Biome.Ocean,
-                SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Center,
-                RequiredAltitude = new Range(-1000f, -10f),
-                RequiredOceanDepth = new Range(20f, 30f),
-                CheckSpawnInterval = 800,
-                SpawnAltitude = -10f,
-                SpawnChance = 10f,
-                GroupSize = new Range(1f, 1f),
-                Maximum = 1,
-                SpecificSpawnTime = SpawnTime.Night
-            };
+                creature = new Creature("dybassets", "DeepSea_Serpent")
+                {
+                    Biome = Heightmap.Biome.Ocean
+                };
+            }
+            else
+            {
+                creature = new Creature("dybassets", "DeepSea_Serpent")
+                {
+                    Biome = Heightmap.Biome.Ocean,
+                    SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Center,
+                    RequiredAltitude = new Range(-1000f, -10f),
+                    RequiredOceanDepth = new Range(20f, 30f),
+                    CheckSpawnInterval = 800,
+                    SpawnAltitude = -10f,
+                    SpawnChance = 10f,
+                    GroupSize = new Range(1f, 1f),
+                    Maximum = 1,
+                    SpecificSpawnTime = SpawnTime.Night
+                };
+            }
+            
             creature.Drops["TrophyDeepSeaSerpent"].Amount = new Range(1f, 1f);
             creature.Drops["TrophyDeepSeaSerpent"].DropChance = 30f;
             creature.Drops["TrophyDeepSeaSerpent"].DropOnePerPlayer = false;

@@ -1,34 +1,44 @@
 ﻿extern alias MonsterLabZN;
 
-using Jotunn.Managers;
+using BepInEx.Configuration;
 using MonsterLabZN::CreatureManager;
 using MonsterLabZN::ItemManager;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
-    internal class Ghosts
+    internal static class Ghosts
     {
-        public static void init(BepInEx.Configuration.ConfigFile config)
+        public static void init(ConfigFile config)
         {
-            Creature ghost = new Creature("dybassets", "EvilShadow")
-            {
-                Biome = Heightmap.Biome.None,
-                ConfigurationEnabled = false
-            };
-            new Item("dybassets", "evilshadow_attack").Configurable = Configurability.Disabled;
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_evilspirit_attack");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_evilshadow_attack");
+            GhostWarrior(config);
+            WraithWarrior(config);
+        }
 
-            Creature warrior = new Creature("dybassets", "NormalGhostWarrior")
+        public static void GhostWarrior(ConfigFile config)
+        {
+            if (!(bool)config[PluginConfig.DefGhostWarrior].BoxedValue) return;
+
+            Creature warrior;
+            if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue > 0)
             {
-                Biome = Heightmap.Biome.None
-            };
-            warrior.ConfigurationEnabled = false;
+                warrior = new Creature("dybassets", "NormalGhostWarrior")
+                {
+                    Biome = Heightmap.Biome.None
+                };
+            }
+            else
+            {
+                warrior = new Creature("dybassets", "NormalGhostWarrior")
+                {
+                    Biome = Heightmap.Biome.None
+                };
+            }
             warrior.Drops["Ruby"].Amount = new Range(1f, 1f);
             warrior.Drops["Ruby"].DropChance = 100f;
             warrior.Drops["Ruby"].DropOnePerPlayer = false;
@@ -40,20 +50,37 @@ namespace MonsterLabZConfig.PrefabIniters
             MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_ghostpoison_hit");
             MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_ghost_poison_explosion");
             MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "ghost_poisonball_projectile");
+        }
 
-            Creature creature = new Creature("dybassets", "WraithWarrior")
+        public static void WraithWarrior(ConfigFile config)
+        {
+            if (!(bool)config[PluginConfig.DefWraithWarrior].BoxedValue) return;
+
+            Creature creature;
+            if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue > 0)
             {
-                Biome = Heightmap.Biome.Swamp,
-                SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Everywhere,
-                RequiredAltitude = new Range(1f, 1000f),
-                CheckSpawnInterval = 300,
-                SpawnChance = 70f,
-                SpawnAltitude = 15f,
-                GroupSize = new Range(1f, 1f),
-                Maximum = 2,
-                SpecificSpawnTime = SpawnTime.Night,
-                RequiredWeather = Weather.SwampRain
-            };
+                creature = new Creature("dybassets", "WraithWarrior")
+                {
+                    Biome = Heightmap.Biome.Swamp
+                };
+            }
+            else
+            {
+                creature = new Creature("dybassets", "WraithWarrior")
+                {
+                    Biome = Heightmap.Biome.Swamp,
+                    SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Everywhere,
+                    RequiredAltitude = new Range(1f, 1000f),
+                    CheckSpawnInterval = 300,
+                    SpawnChance = 70f,
+                    SpawnAltitude = 15f,
+                    GroupSize = new Range(1f, 1f),
+                    Maximum = 2,
+                    SpecificSpawnTime = SpawnTime.Night,
+                    RequiredWeather = Weather.SwampRain
+                };
+            }
+
             creature.Drops["TrophyWraith"].Amount = new Range(1f, 1f);
             creature.Drops["TrophyWraith"].DropChance = 5f;
             creature.Drops["TrophyWraith"].DropOnePerPlayer = false;

@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
-    internal class BossKraken
+    internal static class BossKraken
     {
         public static void init(BepInEx.Configuration.ConfigFile config)
         {

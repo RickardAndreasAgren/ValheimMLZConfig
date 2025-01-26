@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
-    internal class BossesShips
+    internal static class BossesShips
     {
         public static short wildSetting { get; set; }
         public static void init(BepInEx.Configuration.ConfigFile config)

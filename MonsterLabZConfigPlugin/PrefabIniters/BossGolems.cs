@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
-    internal class BossGolems
+    internal static class BossGolems
     {
         public static void init(BepInEx.Configuration.ConfigFile config)
         {

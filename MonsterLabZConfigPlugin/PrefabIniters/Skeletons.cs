@@ -1,5 +1,6 @@
 ﻿extern alias MonsterLabZN;
 
+using Jotunn.Managers;
 using MonsterLabZN::CreatureManager;
 using MonsterLabZN::ItemManager;
 using System;
@@ -7,10 +8,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Heightmap;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
-    internal class Skeletons
+    internal static class Skeletons
     {
         public static void init(BepInEx.Configuration.ConfigFile config)
         {
@@ -23,17 +25,30 @@ namespace MonsterLabZConfig.PrefabIniters
 
         private static void NormalSkeleton(BepInEx.Configuration.ConfigFile config)
         {
-
-            Creature creature = new Creature("dybassets", "NormalSkeletonWarrior")
+            if (!(bool)config[PluginConfig.DefNormalSkeleton].BoxedValue) return;
+            Creature creature;
+            if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue > 0)
             {
-                Biome = Heightmap.Biome.BlackForest,
-                SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Everywhere,
-                CheckSpawnInterval = 350,
-                SpawnChance = 30f,
-                GroupSize = new Range(1f, 2f),
-                Maximum = 3,
-                SpecificSpawnTime = SpawnTime.Night
-            };
+                creature = new Creature("dybassets", "NormalSkeletonWarrior")
+                {
+                    Biome = Heightmap.Biome.BlackForest
+                };
+            }
+            else
+            {
+                creature = new Creature("dybassets", "NormalSkeletonWarrior")
+                {
+                    Biome = Heightmap.Biome.BlackForest,
+                    SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Everywhere,
+                    CheckSpawnInterval = 350,
+                    SpawnChance = 30f,
+                    GroupSize = new Range(1f, 2f),
+                    Maximum = 3,
+                    SpecificSpawnTime = SpawnTime.Night
+                };
+            }
+
+            
             creature.Drops["TrophySkeleton"].Amount = new Range(1f, 1f);
             creature.Drops["TrophySkeleton"].DropChance = 10f;
             creature.Drops["TrophySkeleton"].DropOnePerPlayer = false;
@@ -71,11 +86,32 @@ namespace MonsterLabZConfig.PrefabIniters
         }
         private static void FireSkeleton(BepInEx.Configuration.ConfigFile config)
         {
-
-            Creature creature = new Creature("dybassets", "FireSkeletonWarrior")
+            if (!(bool)config[PluginConfig.DefFireSkeleton].BoxedValue) return;
+            Creature creature;
+            Creature creature2;
+            if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue > 0)
             {
-                Biome = Heightmap.Biome.None
-            };
+                creature = new Creature("dybassets", "FireSkeletonWarrior")
+                {
+                    Biome = Heightmap.Biome.None
+                };
+                creature2 = new Creature("dybassets", "FireSkeletonWarriorNoFx")
+                {
+                    Biome = Heightmap.Biome.None
+                };
+            }
+            else
+            {
+                creature = new Creature("dybassets", "FireSkeletonWarrior")
+                {
+                    Biome = Heightmap.Biome.None
+                };
+                creature2 = new Creature("dybassets", "FireSkeletonWarriorNoFx")
+                {
+                    Biome = Heightmap.Biome.None
+                };
+            }
+
             creature.ConfigurationEnabled = true;
             creature.Drops["TrophySkeletonFire"].Amount = new Range(1f, 1f);
             creature.Drops["TrophySkeletonFire"].DropChance = 10f;
@@ -85,10 +121,7 @@ namespace MonsterLabZConfig.PrefabIniters
             creature.Drops["BoneFragments"].DropChance = 100f;
             creature.Drops["BoneFragments"].DropOnePerPlayer = false;
             creature.Drops["BoneFragments"].MultiplyDropByLevel = true;
-            Creature creature2 = new Creature("dybassets", "FireSkeletonWarriorNoFx")
-            {
-                Biome = Heightmap.Biome.None
-            };
+            
             creature2.ConfigurationEnabled = true;
             creature2.Drops["TrophySkeletonFire"].Amount = new Range(1f, 1f);
             creature2.Drops["TrophySkeletonFire"].DropChance = 10f;
@@ -122,16 +155,49 @@ namespace MonsterLabZConfig.PrefabIniters
         }
         private static void IceSkeleton(BepInEx.Configuration.ConfigFile config)
         {
-            Creature creature = new Creature("dybassets", "IceSkeletonWarrior")
+            if (!(bool)config[PluginConfig.DefIceSkeleton].BoxedValue) return;
+            Creature creature;
+            Creature creature2;
+            Creature creature3;
+            if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue > 0)
             {
-                Biome = Heightmap.Biome.Mountain,
-                SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Everywhere,
-                CheckSpawnInterval = 350,
-                SpawnChance = 30f,
-                GroupSize = new Range(2f, 3f),
-                Maximum = 4,
-                SpecificSpawnTime = SpawnTime.Night
-            };
+                creature = new Creature("dybassets", "IceSkeletonWarrior")
+                {
+                    Biome = Heightmap.Biome.Mountain
+                };
+                creature2 = new Creature("dybassets", "IceSkeletonWarriorNoFx")
+                {
+                    Biome = Heightmap.Biome.Mountain
+                };
+                creature3 = new Creature("dybassets", "IceSkeletonWarriorT6")
+                {
+                    Biome = Heightmap.Biome.DeepNorth
+                };
+
+            }
+            else
+            {
+                creature = new Creature("dybassets", "IceSkeletonWarrior")
+                {
+                    Biome = Heightmap.Biome.Mountain,
+                    SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Everywhere,
+                    CheckSpawnInterval = 350,
+                    SpawnChance = 30f,
+                    GroupSize = new Range(2f, 3f),
+                    Maximum = 4,
+                    SpecificSpawnTime = SpawnTime.Night
+                };
+                creature2 = new Creature("dybassets", "IceSkeletonWarriorNoFx")
+                {
+                    Biome = Heightmap.Biome.Mountain
+                };
+                creature3 = new Creature("dybassets", "IceSkeletonWarriorT6")
+                {
+                    Biome = Heightmap.Biome.DeepNorth
+                };
+
+            }
+
             creature.Drops["TrophySkeletonIce"].Amount = new Range(1f, 1f);
             creature.Drops["TrophySkeletonIce"].DropChance = 10f;
             creature.Drops["TrophySkeletonIce"].DropOnePerPlayer = false;
@@ -140,8 +206,22 @@ namespace MonsterLabZConfig.PrefabIniters
             creature.Drops["BoneFragments"].DropChance = 100f;
             creature.Drops["BoneFragments"].DropOnePerPlayer = false;
             creature.Drops["BoneFragments"].MultiplyDropByLevel = true;
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "IceSkeletonWarriorNoFx");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "IceSkeletonWarriorT6");
+            creature2.Drops["TrophySkeletonIce"].Amount = new Range(1f, 1f);
+            creature2.Drops["TrophySkeletonIce"].DropChance = 10f;
+            creature2.Drops["TrophySkeletonIce"].DropOnePerPlayer = false;
+            creature2.Drops["TrophySkeletonIce"].MultiplyDropByLevel = false;
+            creature2.Drops["BoneFragments"].Amount = new Range(1f, 1f);
+            creature2.Drops["BoneFragments"].DropChance = 100f;
+            creature2.Drops["BoneFragments"].DropOnePerPlayer = false;
+            creature2.Drops["BoneFragments"].MultiplyDropByLevel = true;
+            creature3.Drops["TrophySkeletonIce"].Amount = new Range(1f, 1f);
+            creature3.Drops["TrophySkeletonIce"].DropChance = 10f;
+            creature3.Drops["TrophySkeletonIce"].DropOnePerPlayer = false;
+            creature3.Drops["TrophySkeletonIce"].MultiplyDropByLevel = false;
+            creature3.Drops["BoneFragments"].Amount = new Range(1f, 1f);
+            creature3.Drops["BoneFragments"].DropChance = 100f;
+            creature3.Drops["BoneFragments"].DropOnePerPlayer = false;
+            creature3.Drops["BoneFragments"].MultiplyDropByLevel = true;
             new Item("dybassets", "TrophySkeletonIce").Configurable = Configurability.Disabled;
             new Item("dybassets", "attack_atgeir_360_T3").Configurable = Configurability.Disabled;
             new Item("dybassets", "attack_atgeir_close_T3").Configurable = Configurability.Disabled;
@@ -179,16 +259,38 @@ namespace MonsterLabZConfig.PrefabIniters
         }
         private static void PoisonSkeleton(BepInEx.Configuration.ConfigFile config)
         {
-            Creature creature = new Creature("dybassets", "PoisonSkeletonWarrior")
+            if (!(bool)config[PluginConfig.DefPoisonSkeleton].BoxedValue) return;
+            Creature creature;
+            Creature creature2;
+            if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue > 0)
             {
-                Biome = Heightmap.Biome.Swamp,
-                SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Everywhere,
-                CheckSpawnInterval = 350,
-                SpawnChance = 30f,
-                GroupSize = new Range(1f, 3f),
-                Maximum = 4,
-                SpecificSpawnTime = SpawnTime.Night
-            };
+                creature = new Creature("dybassets", "PoisonSkeletonWarrior")
+                {
+                    Biome = Heightmap.Biome.Swamp
+                };
+                creature2 = new Creature("dybassets", "PoisonSkeletonWarriorNoFx")
+                {
+                    Biome = Heightmap.Biome.Swamp
+                };
+            }
+            else
+            {
+                creature = new Creature("dybassets", "PoisonSkeletonWarrior")
+                {
+                    Biome = Heightmap.Biome.Swamp,
+                    SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Everywhere,
+                    CheckSpawnInterval = 350,
+                    SpawnChance = 30f,
+                    GroupSize = new Range(1f, 3f),
+                    Maximum = 4,
+                    SpecificSpawnTime = SpawnTime.Night
+                };
+                creature2 = new Creature("dybassets", "PoisonSkeletonWarriorNoFx")
+                {
+                    Biome = Heightmap.Biome.Swamp
+                };
+            }
+            
             creature.Drops["TrophySkeletonPoison"].Amount = new Range(1f, 1f);
             creature.Drops["TrophySkeletonPoison"].DropChance = 10f;
             creature.Drops["TrophySkeletonPoison"].DropOnePerPlayer = false;
@@ -197,7 +299,7 @@ namespace MonsterLabZConfig.PrefabIniters
             creature.Drops["BoneFragments"].DropChance = 100f;
             creature.Drops["BoneFragments"].DropOnePerPlayer = false;
             creature.Drops["BoneFragments"].MultiplyDropByLevel = true;
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "PoisonSkeletonWarriorNoFx");
+
             new Item("dybassets", "attack_axe_left180_T2").Configurable = Configurability.Disabled;
             new Item("dybassets", "attack_axe_leftlong_T2").Configurable = Configurability.Disabled;
             new Item("dybassets", "attack_axe_right180_T2").Configurable = Configurability.Disabled;
@@ -222,8 +324,39 @@ namespace MonsterLabZConfig.PrefabIniters
         }
         private static void ChaosSkeleton(BepInEx.Configuration.ConfigFile config)
         {
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "ChaosSkeletonWarrior");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "ChaosSkeletonWarriorNoFX");
+            if (!(bool)config[PluginConfig.DefFireSkeleton].BoxedValue) return;
+            Creature creature;
+            Creature creature2;
+            if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue > 0)
+            {
+                creature = new Creature("dybassets", "ChaosSkeletonWarrior")
+                {
+                    Biome = Heightmap.Biome.AshLands
+                };
+                creature2 = new Creature("dybassets", "ChaosSkeletonWarriorNoFX")
+                {
+                    Biome = Heightmap.Biome.AshLands
+                };
+            }
+            else
+            {
+                creature = new Creature("dybassets", "ChaosSkeletonWarrior")
+                {
+                    Biome = Heightmap.Biome.AshLands
+                };
+                creature2 = new Creature("dybassets", "ChaosSkeletonWarriorNoFX")
+                {
+                    Biome = Heightmap.Biome.AshLands
+                };
+            }
+            creature.Drops["BoneFragments"].Amount = new Range(1f, 1f);
+            creature.Drops["BoneFragments"].DropChance = 100f;
+            creature.Drops["BoneFragments"].DropOnePerPlayer = false;
+            creature.Drops["BoneFragments"].MultiplyDropByLevel = true;
+            creature2.Drops["BoneFragments"].Amount = new Range(1f, 1f);
+            creature2.Drops["BoneFragments"].DropChance = 100f;
+            creature2.Drops["BoneFragments"].DropOnePerPlayer = false;
+            creature2.Drops["BoneFragments"].MultiplyDropByLevel = true;
         }
     }
 }
