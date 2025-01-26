@@ -1,4 +1,5 @@
-﻿extern alias ServerSyncStandalone;
+﻿#nullable enable
+extern alias ServerSyncStandalone;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -27,13 +28,13 @@ namespace MonsterLabZConfig
 
         internal const string DependencyModNameGUID = "monsterlabzconfigpatcher";
         internal const string DependencyAuthorGUID = "rickie26k";
-        private const string DependencyModGUID = AuthorGUID + ".valheim." + ModNameGUID;
+        private const string DependencyModGUID = DependencyAuthorGUID + ".valheim." + DependencyModNameGUID;
 
         internal static string ConnectionError = "MonsterLabZConfig: Failed to connect during application of plugin patches";
         public static string ConfigFileName = ModName + ".cfg";
-        public static string ConfigFileFullPath = Paths.ConfigPath;
+        public static string ConfigFileFullPath = Paths.ConfigPath + Path.DirectorySeparatorChar + ConfigFileName;
         public static bool fixedReferences;
-        public static Harmony HarmonyInstance { get; private set; }
+        public static Harmony? HarmonyInstance { get; private set; } = null;
 
         public static readonly ManualLogSource PluginLogger =
             BepInEx.Logging.Logger.CreateLogSource(ModName);
