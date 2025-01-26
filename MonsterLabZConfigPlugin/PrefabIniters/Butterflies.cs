@@ -9,7 +9,7 @@ namespace MonsterLabZConfig.PrefabIniters
     {
         public static void init(BepInEx.Configuration.ConfigFile config)
         {
-            if (!(bool)config[PluginConfig.Butterflies].BoxedValue) return;
+            if (!(bool)config[PluginConfig.DefButterflies].BoxedValue) return;
 
             Creature creature;
             Creature creature2;

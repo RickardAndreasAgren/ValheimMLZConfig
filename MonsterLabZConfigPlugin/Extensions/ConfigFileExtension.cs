@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using BepInEx.Configuration;
-using ServerSync;
 using static MonsterLabZConfig.PluginConfig;
 
 namespace MonsterLabZConfig.Extensions
@@ -48,7 +47,7 @@ namespace MonsterLabZConfig.Extensions
             string key,
             T defaultValue,
             string description,
-            Action<ConfigEntryBase> customDrawer = null,
+            Action<ConfigEntryBase> customDrawer,
             bool browsable = true,
             bool hideDefaultButton = false,
             bool hideSettingName = false)
