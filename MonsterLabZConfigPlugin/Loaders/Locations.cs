@@ -55,7 +55,6 @@ namespace MonsterLabZConfig.Loaders
                     Unique = false
                 };
             }
-
             if (questSetting > 1)
             {
                 new MonsterLabZN::LocationManager.Location("dybassets", "AshlandsCave_02")

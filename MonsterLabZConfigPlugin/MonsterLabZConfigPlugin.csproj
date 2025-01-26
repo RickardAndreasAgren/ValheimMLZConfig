@@ -157,7 +157,6 @@
     <Compile Include="PrefabIniters\BossSpiderFrigga.cs" />
     <Compile Include="PrefabIniters\LavaRoots.cs" />
     <Compile Include="PrefabIniters\Disasters.cs" />
-    <Compile Include="ResourceCode\AzuCreatureManager.cs" />
     <Compile Include="LocalizationManager.cs" />
     <Compile Include="Plugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -180,12 +179,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="ResourceCode\JotunnAssetManager.cs" />
-    <None Include="ResourceCode\JotunnCreatureManager.cs" />
-    <None Include="ResourceCode\JotunnDungeonManager.cs" />
-    <None Include="ResourceCode\JotunnItemManager.cs" />
-    <None Include="ResourceCode\JotunnPrefabManager.cs" />
-    <None Include="ResourceCode\JotunnZoneManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="ILRepack.Lib.MSBuild.Task" Version="2.0.18.2" />

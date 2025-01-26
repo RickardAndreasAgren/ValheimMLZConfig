@@ -324,7 +324,7 @@ namespace MonsterLabZConfig.PrefabIniters
         }
         private static void ChaosSkeleton(BepInEx.Configuration.ConfigFile config)
         {
-            if (!(bool)config[PluginConfig.DefFireSkeleton].BoxedValue) return;
+            if (!(bool)config[PluginConfig.DefChaosSkeleton].BoxedValue) return;
             Creature creature;
             Creature creature2;
             if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue > 0)

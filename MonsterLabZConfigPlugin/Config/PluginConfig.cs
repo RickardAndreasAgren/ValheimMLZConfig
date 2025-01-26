@@ -1,6 +1,10 @@
 ﻿extern alias ServerSyncStandalone;
+extern alias MonsterLabZN;
 
 using BepInEx.Configuration;
+using MonsterLabZConfig.PrefabIniters;
+using MonsterLabZN::MonsterLabZ;
+using static UnityEngine.EventSystems.EventTrigger;
 
 namespace MonsterLabZConfig
 {
@@ -94,6 +98,8 @@ namespace MonsterLabZConfig
         public static ConfigEntry<bool> PoisonSkeleton { get; internal set; }
         public static ConfigDefinition DefIceSkeleton { get; internal set; }
         public static ConfigEntry<bool> IceSkeleton { get; internal set; }
+        public static ConfigDefinition DefChaosSkeleton { get; internal set; }
+        public static ConfigEntry<bool> ChaosSkeleton { get; internal set; }
         public static ConfigDefinition DefTreeSpider { get; internal set; }
         public static ConfigEntry<bool> TreeSpider { get; internal set; }
         public static ConfigDefinition DefGreenSpider { get; internal set; }
@@ -219,79 +225,47 @@ namespace MonsterLabZConfig
                 "(true): Enable FulingShip.\r\n", null, "MLZ", "Boss")
             .Bind(config, true);
         }
-        public static void Mob(ConfigFile config)
+        public static void Mobs(ConfigFile config)
         {
-            (DefDisasters, Disasters) = new ConfigData<bool>("3 - Monsters", "Disasters", true)
+            (DefDisasters, Disasters) = MobConfig("Disasters", config);
+            (DefButterflies, Butterflies) = MobConfig("Butterflies", config);
+            (DefDeepSeaSerpent, DeepSeaSerpent) = MobConfig("DeepSeaSerpent", config);
+            (DefDwarfGoblin, DwarfGoblin) = MobConfig("DwarfGoblin", config);
+            (DefDwarfGoblinLoot, DwarfGoblinLoot) = MobConfig("DwarfGoblinLoot", config);
+            (DefDwarfGoblinShaman, DwarfGoblinShaman) = MobConfig("DwarfGoblinShaman", config);
+            (DefDwarfGoblinRider, DwarfGoblinRider) = MobConfig("DwarfGoblinRider", config);
+            (DefGhostWarrior, GhostWarrior) = MobConfig("GhostWarrior", config);
+            (DefWraithWarrior, WraithWarrior) = MobConfig("WraithWarrior", config);
+            (DefHuldra, Huldra) = MobConfig("Huldra", config);
+            (DefJellyfish, Jellyfish) = MobConfig("Jellyfish", config);
+            (DefMistileRedAggro, MistileRedAggro) = MobConfig("MistileRedAggro", config);
+            (DefMistileRedPassive, MistileRedPassive) = MobConfig("MistileRedPassive", config);
+            (DefMistileBlueAggro, MistileBlueAggro) = MobConfig("MistileBlueAggro", config);
+            (DefMistileBluePassive, MistileBluePassive) = MobConfig("MistileBluePassive", config);
+            (DefMolluscan, Molluscan) = MobConfig("Molluscan", config);
+            (DefDeepMolluscan, DeepMolluscan) = MobConfig("DeepMolluscan", config);
+            (DefObsidianGolem, ObsidianGolem) = MobConfig("ObsidianGolem", config);
+            (DefNormalSkeleton, NormalSkeleton) = MobConfig("NormalSkeleton", config);
+            (DefIceSkeleton, IceSkeleton) = MobConfig("IceSkeleton", config);
+            (DefFireSkeleton, FireSkeleton) = MobConfig("FireSkeleton", config);
+            (DefPoisonSkeleton, PoisonSkeleton) = MobConfig("PoisonSkeleton", config);
+            (DefChaosSkeleton, ChaosSkeleton) = MobConfig("ChaosSkeleton", config);
+            (DefTreeSpider, TreeSpider) = MobConfig("TreeSpider", config);
+            (DefGreenSpider, GreenSpider) = MobConfig("GreenSpider", config);
+            (DefFrostSpider, FrostSpider) = MobConfig("FrostSpider", config);
+            (DefFrigidSpider, FrigidSpider) = MobConfig("FrigidSpider", config);
+            (DefForestSpider, ForestSpider) = MobConfig("ForestSpider", config);
+            (DefBrownSpider, BrownSpider) = MobConfig("BrownSpider", config);
+            (DefTanSpider, TanSpider) = MobConfig("TanSpider", config);
+            (DefTrollGiant, TrollGiant) = MobConfig("TrollGiant", config);
+        }
+        public static (ConfigDefinition, ConfigEntry<bool>) MobConfig(string name, ConfigFile config)
+        {
+            return new ConfigData<bool>("3 - Monsters", $"{name}", true)
             .Describe("If WildBosses is set to 1, this can be used. Allows specific disablers. \r\n" +
-                "false: Disable Disasters.\r\n" +
-                "(true): Enable Disasters.\r\n", null, "MLZ", "Monster", "Creature")
+                $"false: Disable {name}.\r\n" +
+                $"(true): Enable {name}.\r\n", null, "MLZ", "Monster", "Creature")
             .Bind(config, true);
         }
     }
 }
-/*
-        public static ConfigDefinition DefDisasters { get; internal set; }
-        public static ConfigEntry<bool> Disasters { get; internal set; }
-        public static ConfigDefinition DefButterflies { get; internal set; }
-        public static ConfigEntry<bool> Butterflies { get; internal set; }
-        public static ConfigDefinition DefDeepSeaSerpent { get; internal set; }
-        public static ConfigEntry<bool> DeepSeaSerpent { get; internal set; }
-        public static ConfigDefinition DefDwarfGoblin { get; internal set; }
-        public static ConfigEntry<bool> DwarfGoblin { get; internal set; }
-        public static ConfigDefinition DefDwarfGoblinLoot { get; internal set; }
-        public static ConfigEntry<bool> DwarfGoblinLoot { get; internal set; }
-        public static ConfigDefinition DefGoblinShaman { get; internal set; }
-        public static ConfigEntry<bool> GoblinShaman { get; internal set; }
-        public static ConfigDefinition DefDwarfGoblinShaman { get; internal set; }
-        public static ConfigEntry<bool> DwarfGoblinShaman { get; internal set; }
-        public static ConfigDefinition DefDwarfGoblinRider { get; internal set; }
-        public static ConfigEntry<bool> DwarfGoblinRider { get; internal set; }
-        public static ConfigDefinition DefGhostWarrior { get; internal set; }
-        public static ConfigEntry<bool> GhostWarrior { get; internal set; }
-        public static ConfigDefinition DefWraithWarrior { get; internal set; }
-        public static ConfigEntry<bool> WraithWarrior { get; internal set; }
-        public static ConfigDefinition DefHuldra { get; internal set; }
-        public static ConfigEntry<bool> Huldra { get; internal set; }
-        public static ConfigDefinition DefJellyfish { get; internal set; }
-        public static ConfigEntry<bool> Jellyfish { get; internal set; }
-        public static ConfigDefinition DefMistileRedAggro { get; internal set; }
-        public static ConfigEntry<bool> MistileRedAggro { get; internal set; }
-        public static ConfigDefinition DefMistileRedPassive { get; internal set; }
-        public static ConfigEntry<bool> MistileRedPassive { get; internal set; }
-        public static ConfigDefinition DefMistileBlueAggro { get; internal set; }
-        public static ConfigEntry<bool> MistileBlueAggro { get; internal set; }
-        public static ConfigDefinition DefMistileBluePassive { get; internal set; }
-        public static ConfigEntry<bool> MistileBluePassive { get; internal set; }
-        public static ConfigDefinition DefMolluscan { get; internal set; }
-        public static ConfigEntry<bool> Molluscan { get; internal set; }
-        public static ConfigDefinition DefDeepMolluscan { get; internal set; }
-        public static ConfigEntry<bool> DeepMolluscan { get; internal set; }
-        public static ConfigDefinition DefObsidianGolem { get; internal set; }
-        public static ConfigEntry<bool> ObsidianGolem { get; internal set; }
-        public static ConfigDefinition DefNormalSkeleton { get; internal set; }
-        public static ConfigEntry<bool> NormalSkeleton { get; internal set; }
-        public static ConfigDefinition DefFireSkeleton { get; internal set; }
-        public static ConfigEntry<bool> FireSkeleton { get; internal set; }
-        public static ConfigDefinition DefPoisonSkeleton { get; internal set; }
-        public static ConfigEntry<bool> PoisonSkeleton { get; internal set; }
-        public static ConfigDefinition DefIceSkeleton { get; internal set; }
-        public static ConfigEntry<bool> IceSkeleton { get; internal set; }
-        public static ConfigDefinition DefTreeSpider { get; internal set; }
-        public static ConfigEntry<bool> TreeSpider { get; internal set; }
-        public static ConfigDefinition DefGreenSpider { get; internal set; }
-        public static ConfigEntry<bool> GreenSpider { get; internal set; }
-        public static ConfigDefinition DefFrostSpider { get; internal set; }
-        public static ConfigEntry<bool> FrostSpider { get; internal set; }
-        public static ConfigDefinition DefFrigidSpider { get; internal set; }
-        public static ConfigEntry<bool> FrigidSpider { get; internal set; }
-        public static ConfigDefinition DefForestSpider { get; internal set; }
-        public static ConfigEntry<bool> ForestSpider { get; internal set; }
-        public static ConfigDefinition DefBrownSpider { get; internal set; }
-        public static ConfigEntry<bool> BrownSpider { get; internal set; }
-        public static ConfigDefinition DefTanSpider { get; internal set; }
-        public static ConfigEntry<bool> TanSpider { get; internal set; }
-        public static ConfigDefinition DefTrollGiant { get; internal set; }
-        public static ConfigEntry<bool> TrollGiant { get; internal set; }
- * 
- * 
- * */
