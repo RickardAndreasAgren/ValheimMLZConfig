@@ -1,5 +1,4 @@
 ﻿extern alias ServerSyncStandalone;
-extern alias MonsterLabZN;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -8,6 +7,7 @@ using BepInEx.Configuration;
 using BepInEx.Logging;
 using HarmonyLib;
 using MonsterLabZConfig.Loaders;
+using MonsterLabZConfig.PrefabIniters;
 using ServerSyncStandalone::ServerSync;
 using UnityEngine;
 using static MonsterLabZConfig.PluginConfig;
@@ -46,7 +46,7 @@ namespace MonsterLabZConfig
         public void Awake()
         {
             Config.Reload();
-            _serverConfigLocked = new ConfigData<Toggle>("1 - General", "Lock Configuration", true)
+            (_, _serverConfigLocked) = new ConfigData<Toggle>("1 - General", "Lock Configuration", true)
                 .Describe("If on, the configuration is locked and can be changed by server admins only.")
                 .Bind(Config, Toggle.On);
             _ = Sync.AddLockingConfigEntry(_serverConfigLocked);

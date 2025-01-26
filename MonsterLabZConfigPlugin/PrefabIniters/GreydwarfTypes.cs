@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
-    internal class GreydwarfTypes
+    internal static class GreydwarfTypes
     {
         public static void init(BepInEx.Configuration.ConfigFile config)
         {

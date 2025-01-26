@@ -1,13 +1,7 @@
 ﻿extern alias MonsterLabZN;
 
-using Jotunn.Managers;
+using MonsterLabZConfig.PrefabIniters;
 using MonsterLabZN::MonsterLabZ;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
 
 namespace MonsterLabZConfig.Loaders
 {
@@ -15,9 +9,15 @@ namespace MonsterLabZConfig.Loaders
     {
         public static void Load(BepInEx.Configuration.ConfigFile config)
         {
+            // MonsterLabZN::CreatureManager.Creature;
             ML_CustomProps.init();
 
             NPC_Items.init();
+
+            Svartalf.init(config);
+            MLNPC.init(config);
+            Surtlings.init(config);
+            Shadow.init(config);
         }
     }
 }

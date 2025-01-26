@@ -1,6 +1,5 @@
 ﻿extern alias MonsterLabZN;
 
-using Jotunn.Managers;
 using MonsterLabZN::CreatureManager;
 using MonsterLabZN::ItemManager;
 using System;
@@ -11,10 +10,12 @@ using System.Threading.Tasks;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
-    internal class Svartalf
+    internal static class Svartalf
     {
         public static void init(BepInEx.Configuration.ConfigFile config)
         {
+            if ((short)config[PluginConfig.DefQuestToggle].BoxedValue < 3) return;
+
             Creature creature = new Creature("dybassets", "MLNPC_Svartalfar0")
             {
                 Biome = Heightmap.Biome.None,

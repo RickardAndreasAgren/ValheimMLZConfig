@@ -1,15 +1,15 @@
 ﻿using System.Reflection;
 using System.Runtime.InteropServices;
-using CreatureManagerModTemplate;
+using MonsterLabZConfig;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle(CreatureManagerModTemplatePlugin.ModName)]
+[assembly: AssemblyTitle(MonsterLabZConfig.MonsterLabZConfig.ModName)]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany(CreatureManagerModTemplatePlugin.Author)]
-[assembly: AssemblyProduct(CreatureManagerModTemplatePlugin.ModName)]
+[assembly: AssemblyCompany(MonsterLabZConfig.MonsterLabZConfig.Author)]
+[assembly: AssemblyProduct(MonsterLabZConfig.MonsterLabZConfig.ModName)]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using CreatureManagerModTemplate;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("29D394C1-8423-4048-B5A7-08ABE81DBA99")]
+[assembly: Guid("29D394C1-8423-4048-B5A7-18ABE81DBA99")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -32,5 +32,5 @@ using CreatureManagerModTemplate;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion(CreatureManagerModTemplatePlugin.ModVersion)]
-[assembly: AssemblyFileVersion(CreatureManagerModTemplatePlugin.ModVersion)]
+[assembly: AssemblyVersion(MonsterLabZConfig.MonsterLabZConfig.ModVersion)]
+[assembly: AssemblyFileVersion(MonsterLabZConfig.MonsterLabZConfig.ModVersion)]

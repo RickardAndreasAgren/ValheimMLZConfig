@@ -36,7 +36,7 @@ namespace MonsterLabZConfig
             Description = new ConfigDescription(description, okValues, tags);
             return this;
         }
-        public ConfigEntry<T> Bind(BepInEx.Configuration.ConfigFile config, T value)
+        public (ConfigDefinition, ConfigEntry<T>) Bind(BepInEx.Configuration.ConfigFile config, T value)
         {
             ConfigDescription extendedDescription =
                 new(
@@ -47,7 +47,7 @@ namespace MonsterLabZConfig
 
             SyncedConfigEntry<T> syncedConfigEntry = MonsterLabZConfig.Sync.AddConfigEntry(configEntry);
             syncedConfigEntry.SynchronizedConfig = SyncOn;
-            return configEntry;
+            return (Definition, configEntry);
         }
     }
 }

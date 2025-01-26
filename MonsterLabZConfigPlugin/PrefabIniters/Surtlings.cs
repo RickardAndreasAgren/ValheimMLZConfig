@@ -11,10 +11,11 @@ using System.Threading.Tasks;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
-    internal class Surtlings
+    internal static class Surtlings
     {
         public static void init(BepInEx.Configuration.ConfigFile config)
         {
+            if ((short)config[PluginConfig.DefQuestToggle].BoxedValue < 3) return;
             Creature creature = new Creature("dybassets", "Surtling_Spawn")
             {
                 Biome = Heightmap.Biome.None,

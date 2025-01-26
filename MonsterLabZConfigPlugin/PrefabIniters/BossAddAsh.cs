@@ -10,21 +10,52 @@ using System.Threading.Tasks;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
-    internal class BossAddAsh
+    internal static class BossAddAsh
     {
         public static void init(BepInEx.Configuration.ConfigFile config)
         {
-            Creature creature = new Creature("dybassets", "ML_AshHatchling")
+            if ((short)config[PluginConfig.DefQuestToggle].BoxedValue < 1) return;
+            if ((bool)config[PluginConfig.DefHuldraQueen].BoxedValue == false) return;
+
+            Creature creature;
+            Creature creature2;
+            if ((short)config[PluginConfig.DefWildBosses].BoxedValue == 1)
             {
-                Biome = Heightmap.Biome.AshLands,
-                SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Everywhere,
-                RequiredAltitude = new Range(5f, 1000f),
-                CheckSpawnInterval = 1000,
-                SpawnChance = 10f,
-                GroupSize = new Range(1f, 1f),
-                Maximum = 1,
-                SpecificSpawnTime = SpawnTime.Always
-            };
+                creature = new Creature("dybassets", "ML_AshHatchling")
+                {
+                    Biome = Heightmap.Biome.AshLands,
+                    SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Everywhere,
+                    RequiredAltitude = new Range(5f, 1000f),
+                    CheckSpawnInterval = 1000,
+                    SpawnChance = 10f,
+                    GroupSize = new Range(1f, 1f),
+                    Maximum = 1,
+                    SpecificSpawnTime = SpawnTime.Always
+                };
+                creature2 = new Creature("dybassets", "ML_FrostHatchling")
+                {
+                    Biome = Heightmap.Biome.None,
+                    SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Everywhere,
+                    RequiredAltitude = new Range(5f, 1000f),
+                    CheckSpawnInterval = 1000,
+                    SpawnChance = 10f,
+                    GroupSize = new Range(1f, 1f),
+                    Maximum = 1,
+                    SpecificSpawnTime = SpawnTime.Always
+                };
+            }
+            else
+            {
+                creature = new Creature("dybassets", "ML_AshHatchling")
+                {
+                    Biome = Heightmap.Biome.AshLands
+                };
+                creature2 = new Creature("dybassets", "ML_FrostHatchling")
+                {
+                    Biome = Heightmap.Biome.None
+                };
+            }
+            
             creature.ConfigurationEnabled = true;
             creature.Drops["ML_TrophyAshHatchling"].Amount = new Range(1f, 1f);
             creature.Drops["ML_TrophyAshHatchling"].DropChance = 10f;
@@ -34,37 +65,8 @@ namespace MonsterLabZConfig.PrefabIniters
             creature.Drops["FireGland"].DropChance = 100f;
             creature.Drops["FireGland"].DropOnePerPlayer = false;
             creature.Drops["FireGland"].MultiplyDropByLevel = true;
-            Creature creature2 = new Creature("dybassets", "ML_FrostHatchling")
-            {
-                Biome = Heightmap.Biome.None,
-                SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Everywhere,
-                RequiredAltitude = new Range(5f, 1000f),
-                CheckSpawnInterval = 1000,
-                SpawnChance = 10f,
-                GroupSize = new Range(1f, 1f),
-                Maximum = 1,
-                SpecificSpawnTime = SpawnTime.Always
-            };
-            creature2.ConfigurationEnabled = false;
-            creature2.Drops["TrophyHatchling"].Amount = new Range(1f, 1f);
-            creature2.Drops["TrophyHatchling"].DropChance = 5f;
-            creature2.Drops["TrophyHatchling"].DropOnePerPlayer = false;
-            creature2.Drops["TrophyHatchling"].MultiplyDropByLevel = false;
-            creature2.Drops["FreezeGland"].Amount = new Range(1f, 1f);
-            creature2.Drops["FreezeGland"].DropChance = 100f;
-            creature2.Drops["FreezeGland"].DropOnePerPlayer = false;
-            creature2.Drops["FreezeGland"].MultiplyDropByLevel = true;
-            new Creature("dybassets", "ML_FrostHatchling_Spawn")
-            {
-                Biome = Heightmap.Biome.None,
-                SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Everywhere,
-                RequiredAltitude = new Range(5f, 1000f),
-                CheckSpawnInterval = 1000,
-                SpawnChance = 10f,
-                GroupSize = new Range(1f, 1f),
-                Maximum = 1,
-                SpecificSpawnTime = SpawnTime.Always
-            };
+
+
             creature2.ConfigurationEnabled = false;
             creature2.Drops["TrophyHatchling"].Amount = new Range(1f, 1f);
             creature2.Drops["TrophyHatchling"].DropChance = 5f;

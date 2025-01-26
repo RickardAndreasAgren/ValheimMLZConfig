@@ -10,23 +10,36 @@ using System.Threading.Tasks;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
-    internal class Jellies
+    internal static class Jellies
     {
         public static void init(BepInEx.Configuration.ConfigFile config)
         {
-            Creature creature = new Creature("dybassets", "ML_JellyFish0")
+            if (!(bool)config[PluginConfig.DefJellyfish].BoxedValue) return;
+
+            Creature creature;
+            if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue > 0)
             {
-                Biome = Heightmap.Biome.Ocean,
-                SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Everywhere,
-                RequiredAltitude = new Range(-1000f, -10f),
-                RequiredOceanDepth = new Range(20f, 30f),
-                CheckSpawnInterval = 800,
-                SpawnAltitude = -10f,
-                SpawnChance = 55f,
-                GroupSize = new Range(1f, 3f),
-                Maximum = 6,
-                SpecificSpawnTime = SpawnTime.Always
-            };
+                creature = new Creature("dybassets", "ML_JellyFish0")
+                {
+                    Biome = Heightmap.Biome.Ocean
+                };
+            }
+            else
+            {
+                creature = new Creature("dybassets", "ML_JellyFish0")
+                {
+                    Biome = Heightmap.Biome.Ocean,
+                    SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Everywhere,
+                    RequiredAltitude = new Range(-1000f, -10f),
+                    RequiredOceanDepth = new Range(20f, 30f),
+                    CheckSpawnInterval = 800,
+                    SpawnAltitude = -10f,
+                    SpawnChance = 55f,
+                    GroupSize = new Range(1f, 3f),
+                    Maximum = 6,
+                    SpecificSpawnTime = SpawnTime.Always
+                };
+            }
             creature.Drops["Guck"].Amount = new Range(1f, 2f);
             creature.Drops["Guck"].DropChance = 100f;
             creature.Drops["Guck"].DropOnePerPlayer = false;

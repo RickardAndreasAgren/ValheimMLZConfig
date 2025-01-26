@@ -10,36 +10,91 @@ using System.Threading.Tasks;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
-    internal class Mistiles
+    internal static class Mistiles
     {
         public static void init(BepInEx.Configuration.ConfigFile config)
         {
-            new Creature("dybassets", "ML_RedMistile_Aggressive")
+            if ((bool)config[PluginConfig.DefMistileRedAggro].BoxedValue)
             {
-                Biome = Heightmap.Biome.None,
-                ConfigurationEnabled = false
-            };
-            new Creature("dybassets", "ML_BlueMistile_Aggressive")
+                if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue > 0)
+                {
+                    new Creature("dybassets", "ML_RedMistile_Aggressive")
+                    {
+                        Biome = Heightmap.Biome.None
+                    };
+                }
+                else
+                {
+                    new Creature("dybassets", "ML_RedMistile_Aggressive")
+                    {
+                        Biome = Heightmap.Biome.None
+                    };
+                }
+            }
+            if ((bool)config[PluginConfig.DefMistileRedPassive].BoxedValue)
             {
-                Biome = Heightmap.Biome.None,
-                ConfigurationEnabled = false
-            };
-            new Creature("dybassets", "ML_RedMistile_Passive")
+                if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue > 0)
+                {
+                    new Creature("dybassets", "ML_RedMistile_Passive")
+                    {
+                        Biome = Heightmap.Biome.None
+                    };
+                }
+                else
+                {
+                    new Creature("dybassets", "ML_RedMistile_Passive")
+                    {
+                        Biome = Heightmap.Biome.None
+                    };
+                }
+            }
+            if ((bool)config[PluginConfig.DefMistileBlueAggro].BoxedValue)
             {
-                Biome = Heightmap.Biome.None,
-                ConfigurationEnabled = false
-            };
-            new Creature("dybassets", "ML_BlueMistile_Passive")
+                if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue > 0)
+                {
+                    new Creature("dybassets", "ML_BlueMistile_Aggressive")
+                    {
+                        Biome = Heightmap.Biome.None
+                    };
+                }
+                else
+                {
+                    new Creature("dybassets", "ML_BlueMistile_Aggressive")
+                    {
+                        Biome = Heightmap.Biome.None
+                    };
+                }
+            }
+            if ((bool)config[PluginConfig.DefMistileBluePassive].BoxedValue)
             {
-                Biome = Heightmap.Biome.None,
-                ConfigurationEnabled = false
-            };
-            new Item("dybassets", "ML_RedMistile_kamikaze").Configurable = Configurability.Disabled;
-            new Item("dybassets", "ML_BlueMistile_kamikaze").Configurable = Configurability.Disabled;
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "fx_ML_RedMistile_attack");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "fx_ML_RedMistile_die");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "fx_ML_BlueMistile_attack");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "fx_ML_BlueMistile_die");
+                if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue > 0)
+                {
+                    new Creature("dybassets", "ML_BlueMistile_Passive")
+                    {
+                        Biome = Heightmap.Biome.None
+                    };
+                }
+                else
+                {
+                    new Creature("dybassets", "ML_BlueMistile_Passive")
+                    {
+                        Biome = Heightmap.Biome.None
+                    };
+                }
+            }
+
+            if ((bool)config[PluginConfig.DefMistileBluePassive].BoxedValue || (bool)config[PluginConfig.DefMistileBlueAggro].BoxedValue)
+            {
+                new Item("dybassets", "ML_BlueMistile_kamikaze").Configurable = Configurability.Disabled;
+                MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "fx_ML_BlueMistile_attack");
+                MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "fx_ML_BlueMistile_die");
+            }
+            if ((bool)config[PluginConfig.DefMistileRedPassive].BoxedValue || (bool)config[PluginConfig.DefMistileRedAggro].BoxedValue)
+            {
+                new Item("dybassets", "ML_RedMistile_kamikaze").Configurable = Configurability.Disabled;
+                MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "fx_ML_RedMistile_attack");
+                MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "fx_ML_RedMistile_die");
+            }
         }
     }
 }

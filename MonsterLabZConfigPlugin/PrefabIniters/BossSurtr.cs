@@ -10,14 +10,29 @@ using System.Threading.Tasks;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
-    internal class BossSurtr
+    internal static class BossSurtr
     {
         public static void init(BepInEx.Configuration.ConfigFile config)
         {
-            Creature creature = new Creature("dybassets", "Surtr")
+            if ((short)config[PluginConfig.DefWildBosses].BoxedValue < 1) return;
+            if ((bool)config[PluginConfig.DefSurtr].BoxedValue == false) return;
+
+            Creature creature;
+            if ((short)config[PluginConfig.DefWildBosses].BoxedValue == 1)
             {
-                Biome = Heightmap.Biome.None
-            };
+                creature = new Creature("dybassets", "Surtr")
+                {
+                    Biome = Heightmap.Biome.None
+                };
+            }
+            else
+            {
+                creature = new Creature("dybassets", "Surtr")
+                {
+                    Biome = Heightmap.Biome.None
+                };
+            }
+
             creature.Drops["TrophySurtr"].Amount = new Range(1f, 1f);
             creature.Drops["TrophySurtr"].DropChance = 100f;
             creature.Drops["TrophySurtr"].DropOnePerPlayer = false;

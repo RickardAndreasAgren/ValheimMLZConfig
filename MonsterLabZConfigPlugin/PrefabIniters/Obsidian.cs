@@ -10,14 +10,27 @@ using System.Threading.Tasks;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
-    internal class Obsidian
+    internal static class Obsidian
     {
         public static void init(BepInEx.Configuration.ConfigFile config)
         {
-            Creature creature = new Creature("dybassets", "ObsidianGolem")
+            if (!(bool)config[PluginConfig.DefObsidianGolem].BoxedValue) return;
+
+            Creature creature;
+            if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue > 0)
             {
-                Biome = Heightmap.Biome.None
-            };
+                creature = new Creature("dybassets", "ObsidianGolem")
+                {
+                    Biome = Heightmap.Biome.None
+                };
+            }
+            else
+            {
+                creature = new Creature("dybassets", "ObsidianGolem")
+                {
+                    Biome = Heightmap.Biome.None
+                };
+            }
             creature.ConfigurationEnabled = true;
             creature.Drops["TrophyObsidianGolem"].Amount = new Range(1f, 1f);
             creature.Drops["TrophyObsidianGolem"].DropChance = 10f;
