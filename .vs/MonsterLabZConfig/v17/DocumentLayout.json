@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "R:\\Dev\\Valheim\\MonsterLabZConfig\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{56096451-98F7-4AC4-9705-6E4BCB64952A}|MonsterLabZConfigPlugin\\MonsterLabZConfigPlugin.csproj|r:\\dev\\valheim\\monsterlabzconfig\\monsterlabzconfigplugin\\plugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56096451-98F7-4AC4-9705-6E4BCB64952A}|MonsterLabZConfigPlugin\\MonsterLabZConfigPlugin.csproj|solutionrelative:monsterlabzconfigplugin\\plugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{56096451-98F7-4AC4-9705-6E4BCB64952A}|MonsterLabZConfigPlugin\\MonsterLabZConfigPlugin.csproj|r:\\dev\\valheim\\monsterlabzconfig\\monsterlabzconfigplugin\\prefabiniters\\huldra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56096451-98F7-4AC4-9705-6E4BCB64952A}|MonsterLabZConfigPlugin\\MonsterLabZConfigPlugin.csproj|solutionrelative:monsterlabzconfigplugin\\prefabiniters\\huldra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Plugin.cs",
-              "DocumentMoniker": "R:\\Dev\\Valheim\\MonsterLabZConfig\\MonsterLabZConfigPlugin\\Plugin.cs",
-              "RelativeDocumentMoniker": "MonsterLabZConfigPlugin\\Plugin.cs",
-              "ToolTip": "R:\\Dev\\Valheim\\MonsterLabZConfig\\MonsterLabZConfigPlugin\\Plugin.cs",
-              "RelativeToolTip": "MonsterLabZConfigPlugin\\Plugin.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAWwCMAAAArAAAAAAAAAA==",
+              "Title": "Huldra.cs",
+              "DocumentMoniker": "R:\\Dev\\Valheim\\MonsterLabZConfig\\MonsterLabZConfigPlugin\\PrefabIniters\\Huldra.cs",
+              "RelativeDocumentMoniker": "MonsterLabZConfigPlugin\\PrefabIniters\\Huldra.cs",
+              "ToolTip": "R:\\Dev\\Valheim\\MonsterLabZConfig\\MonsterLabZConfigPlugin\\PrefabIniters\\Huldra.cs",
+              "RelativeToolTip": "MonsterLabZConfigPlugin\\PrefabIniters\\Huldra.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwCUAAACJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-26T12:34:09.771Z",
+              "WhenOpened": "2025-01-31T15:16:39.153Z",
               "EditorCaption": ""
             }
           ]

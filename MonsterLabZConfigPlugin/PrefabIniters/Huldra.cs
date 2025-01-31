@@ -31,7 +31,11 @@ namespace MonsterLabZConfig.PrefabIniters
                     SpecificSpawnTime = SpawnTime.Always
                 };
             }
+            MonsterLabZConfig.PluginLogger.LogWarning($"{(bool)config[PluginConfig.DefHuldraQueen].BoxedValue}");
+            MonsterLabZConfig.PluginLogger.LogWarning($"{(short)config[PluginConfig.DefQuestToggle].BoxedValue > (short)0}");
+            MonsterLabZConfig.PluginLogger.LogWarning($"{(short)config[PluginConfig.DefQuestToggle].BoxedValue}");
 
+            if ((bool)config[PluginConfig.DefHuldraQueen].BoxedValue == false || (short)config[PluginConfig.DefQuestToggle].BoxedValue == (short)0) HuldraAssets();
             creature.Drops["ML_HuldraTail"].Amount = new Range(1f, 1f);
             creature.Drops["ML_HuldraTail"].DropChance = 10f;
             creature.Drops["ML_HuldraTail"].DropOnePerPlayer = false;
@@ -39,9 +43,7 @@ namespace MonsterLabZConfig.PrefabIniters
             creature.Drops["Entrails"].Amount = new Range(1f, 1f);
             creature.Drops["Entrails"].DropChance = 100f;
             creature.Drops["Entrails"].DropOnePerPlayer = false;
-            creature.Drops["Entrails"].MultiplyDropByLevel = true;
-
-            if ((bool)config[PluginConfig.DefHuldraQueen].BoxedValue == false || (short)config[PluginConfig.DefQuestToggle].BoxedValue > 0) HuldraAssets();
+            creature.Drops["Entrails"].MultiplyDropByLevel = true;            
         }
 
         public static void HuldraAssets()
