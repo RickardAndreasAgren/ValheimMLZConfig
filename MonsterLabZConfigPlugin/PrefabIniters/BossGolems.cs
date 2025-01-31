@@ -1,5 +1,6 @@
 ﻿using CreatureManager;
 using ItemManager;
+using SpawnThat.Spawners;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
@@ -22,8 +23,20 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "FireGolem")
                 {
-                    Biome = Heightmap.Biome.AshLands
+                    Biome = Heightmap.Biome.None
                 };
+                if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
+                {
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(780)
+                            .SetPrefabName("FireGolem")
+                            .SetConditionBiomes(Heightmap.Biome.AshLands)
+                            .SetMinLevel(1)
+                            .SetMaxLevel(1);
+                    });
+                }
             } else
             {
                 creature = new Creature("dybassets", "FireGolem")
@@ -75,8 +88,17 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "IceGolem")
                 {
-                    Biome = Heightmap.Biome.DeepNorth
+                    Biome = Heightmap.Biome.None
                 };
+                MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                {
+                    collection
+                        .ConfigureWorldSpawner(781)
+                        .SetPrefabName("IceGolem")
+                        .SetConditionBiomes(Heightmap.Biome.DeepNorth)
+                        .SetMinLevel(1)
+                        .SetMaxLevel(1);
+                });
             }
             else
             {

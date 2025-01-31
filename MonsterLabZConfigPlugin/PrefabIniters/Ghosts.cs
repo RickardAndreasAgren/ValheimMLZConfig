@@ -32,7 +32,7 @@ namespace MonsterLabZConfig.PrefabIniters
                         collection
                             .ConfigureWorldSpawner(738)
                             .SetPrefabName("NormalGhostWarrior")
-                            .SetBiomeArea((Heightmap.BiomeArea?)(Heightmap.Biome.Plains))
+                            .SetConditionBiomes((Heightmap.Biome.Plains))
                             .SetMinLevel(1)
                             .SetMaxLevel(1);
                     });
@@ -67,7 +67,7 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "WraithWarrior")
                 {
-                    Biome = Heightmap.Biome.Swamp
+                    Biome = Heightmap.Biome.None
                 };
 
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
@@ -77,7 +77,7 @@ namespace MonsterLabZConfig.PrefabIniters
                         collection
                             .ConfigureWorldSpawner(739)
                             .SetPrefabName("WraithWarrior")
-                            .SetBiomeArea((Heightmap.BiomeArea?)(Heightmap.Biome.Swamp))
+                            .SetConditionBiomes((Heightmap.Biome.Swamp))
                             .SetMinLevel(1)
                             .SetMaxLevel(1);
                     });

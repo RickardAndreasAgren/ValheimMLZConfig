@@ -15,7 +15,7 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "ML_AshHuldra")
                 {
-                    Biome = Heightmap.Biome.AshLands
+                    Biome = Heightmap.Biome.None
                 };
 
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
@@ -25,9 +25,9 @@ namespace MonsterLabZConfig.PrefabIniters
                         collection
                             .ConfigureWorldSpawner(740)
                             .SetPrefabName("ML_AshHuldra")
-                            .SetBiomeArea((Heightmap.BiomeArea?)(Heightmap.Biome.AshLands))
+                            .SetConditionBiomes(Heightmap.Biome.AshLands)
                             .SetMinLevel(1)
-                            .SetMaxLevel(1);
+                            .SetMaxLevel(3);
                     });
                 }
             }
@@ -45,9 +45,6 @@ namespace MonsterLabZConfig.PrefabIniters
                     SpecificSpawnTime = SpawnTime.Always
                 };
             }
-            MonsterLabZConfig.PluginLogger.LogWarning($"{(bool)config[PluginConfig.DefHuldraQueen].BoxedValue}");
-            MonsterLabZConfig.PluginLogger.LogWarning($"{(short)config[PluginConfig.DefQuestToggle].BoxedValue > (short)0}");
-            MonsterLabZConfig.PluginLogger.LogWarning($"{(short)config[PluginConfig.DefQuestToggle].BoxedValue}");
 
             if ((bool)config[PluginConfig.DefHuldraQueen].BoxedValue == false || (short)config[PluginConfig.DefQuestToggle].BoxedValue == (short)0) HuldraAssets();
             creature.Drops["ML_HuldraTail"].Amount = new Range(1f, 1f);
@@ -62,7 +59,6 @@ namespace MonsterLabZConfig.PrefabIniters
 
         public static void HuldraAssets()
         {
-            MonsterLabZConfig.PluginLogger.LogWarning("Loading Huldra assets");
             ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_AshHuldra_Ragdoll");
             ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_AshHuldraQueen2_Transform");
             ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_AshHuldraQueen3_Ragdoll");

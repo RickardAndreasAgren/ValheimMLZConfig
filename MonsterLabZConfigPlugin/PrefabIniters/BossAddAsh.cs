@@ -43,7 +43,7 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "ML_AshHatchling")
                 {
-                    Biome = Heightmap.Biome.AshLands
+                    Biome = Heightmap.Biome.None
                 };
                 creature2 = new Creature("dybassets", "ML_FrostHatchling")
                 {
@@ -56,6 +56,7 @@ namespace MonsterLabZConfig.PrefabIniters
                         collection
                             .ConfigureWorldSpawner(700)
                             .SetPrefabName("ML_AshHatchling")
+                            .SetConditionBiomes(Heightmap.Biome.AshLands)
                             .SetMinLevel(1)
                             .SetMaxLevel(3);
                     });
@@ -64,6 +65,7 @@ namespace MonsterLabZConfig.PrefabIniters
                         collection
                             .ConfigureWorldSpawner(701)
                             .SetPrefabName("ML_FrostHatchling")
+                            .SetConditionBiomes(Heightmap.Biome.AshLands)
                             .SetMinLevel(1)
                             .SetMaxLevel(3);
                     });

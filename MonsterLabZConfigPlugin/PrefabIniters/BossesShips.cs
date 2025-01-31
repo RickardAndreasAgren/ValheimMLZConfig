@@ -44,7 +44,7 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "ML_GoblinShip")
                 {
-                    Biome = Heightmap.Biome.Plains
+                    Biome = Heightmap.Biome.None
                 };
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
                 {
@@ -53,7 +53,7 @@ namespace MonsterLabZConfig.PrefabIniters
                         collection
                             .ConfigureWorldSpawner(750)
                             .SetPrefabName("ML_GoblinShip")
-                            .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.Plains)
+                            .SetConditionBiomes(Heightmap.Biome.Plains)
                             .SetMinLevel(1)
                             .SetMaxLevel(1);
                     });
@@ -119,7 +119,7 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "ML_DraugrShip")
                 {
-                    Biome = Heightmap.Biome.BlackForest,
+                    Biome = Heightmap.Biome.None,
                 };
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
                 {
@@ -128,7 +128,7 @@ namespace MonsterLabZConfig.PrefabIniters
                         collection
                             .ConfigureWorldSpawner(751)
                             .SetPrefabName("ML_DraugrShip")
-                            .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.Swamp)
+                            .SetConditionBiomes(Heightmap.Biome.Swamp)
                             .SetMinLevel(1)
                             .SetMaxLevel(1);
                     });

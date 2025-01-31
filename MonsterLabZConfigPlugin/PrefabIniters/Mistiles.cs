@@ -31,7 +31,7 @@ namespace MonsterLabZConfig.PrefabIniters
                         collection
                             .ConfigureWorldSpawner(704)
                             .SetPrefabName("ML_RedMistile_Aggressive")
-                            .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.AshLands)
+                            .SetConditionBiomes(Heightmap.Biome.AshLands)
                             .SetMinLevel(1)
                             .SetMaxLevel(3);
                     });
@@ -60,7 +60,7 @@ namespace MonsterLabZConfig.PrefabIniters
                         collection
                             .ConfigureWorldSpawner(705)
                             .SetPrefabName("ML_RedMistile_Passive")
-                            .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.AshLands)
+                            .SetConditionBiomes(Heightmap.Biome.AshLands)
                             .SetMinLevel(1)
                             .SetMaxLevel(1);
                     });
@@ -89,7 +89,7 @@ namespace MonsterLabZConfig.PrefabIniters
                         collection
                             .ConfigureWorldSpawner(706)
                             .SetPrefabName("ML_BlueMistile_Aggressive")
-                            .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.Plains)
+                            .SetConditionBiomes(Heightmap.Biome.AshLands)
                             .SetMinLevel(1)
                             .SetMaxLevel(3);
                     });
@@ -119,7 +119,7 @@ namespace MonsterLabZConfig.PrefabIniters
                         collection
                             .ConfigureWorldSpawner(707)
                             .SetPrefabName("ML_BlueMistile_Passive")
-                            .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.Plains)
+                            .SetConditionBiomes(Heightmap.Biome.Meadows | Heightmap.Biome.AshLands)
                             .SetMinLevel(1)
                             .SetMaxLevel(1);
                     });

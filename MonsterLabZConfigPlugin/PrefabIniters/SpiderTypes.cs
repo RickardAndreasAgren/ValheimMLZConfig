@@ -65,7 +65,7 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "TreeSpider")
                 {
-                    Biome = Heightmap.Biome.Meadows
+                    Biome = Heightmap.Biome.None
                 };
 
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
@@ -74,8 +74,8 @@ namespace MonsterLabZConfig.PrefabIniters
                     {
                         collection
                             .ConfigureWorldSpawner(721)
-                            .SetPrefabName("ChaosSkeletonWarrior")
-                            .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.Meadows)
+                            .SetPrefabName("TreeSpider")
+                            .SetConditionBiomes(Heightmap.Biome.Meadows)
                             .SetMinLevel(1)
                             .SetMaxLevel(3);
                     });
@@ -121,7 +121,7 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "GreenSpider")
                 {
-                    Biome = Heightmap.Biome.Meadows
+                    Biome = Heightmap.Biome.None
                 };
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
                 {
@@ -130,7 +130,7 @@ namespace MonsterLabZConfig.PrefabIniters
                         collection
                             .ConfigureWorldSpawner(722)
                             .SetPrefabName("GreenSpider")
-                            .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.Meadows)
+                            .SetConditionBiomes(Heightmap.Biome.Meadows)
                             .SetMinLevel(1)
                             .SetMaxLevel(3);
                     });
@@ -179,7 +179,7 @@ namespace MonsterLabZConfig.PrefabIniters
                         collection
                             .ConfigureWorldSpawner(723)
                             .SetPrefabName("FrostSpider")
-                            .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.Mountain)
+                            .SetConditionBiomes(Heightmap.Biome.Mountain)
                             .SetMinLevel(1)
                             .SetMaxLevel(3);
                     });
@@ -223,7 +223,7 @@ namespace MonsterLabZConfig.PrefabIniters
                         collection
                             .ConfigureWorldSpawner(724)
                             .SetPrefabName("FrigidSpider")
-                            .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.DeepNorth)
+                            .SetConditionBiomes(Heightmap.Biome.DeepNorth)
                             .SetMinLevel(1)
                             .SetMaxLevel(3);
                     });
@@ -267,7 +267,7 @@ namespace MonsterLabZConfig.PrefabIniters
                         collection
                             .ConfigureWorldSpawner(725)
                             .SetPrefabName("ForestSpider")
-                            .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.BlackForest)
+                            .SetConditionBiomes(Heightmap.Biome.BlackForest)
                             .SetMinLevel(1)
                             .SetMaxLevel(3);
                     });
@@ -310,7 +310,7 @@ namespace MonsterLabZConfig.PrefabIniters
                         collection
                             .ConfigureWorldSpawner(726)
                             .SetPrefabName("BrownSpider")
-                            .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.Swamp)
+                            .SetConditionBiomes(Heightmap.Biome.Swamp)
                             .SetMinLevel(1)
                             .SetMaxLevel(3);
                     });
@@ -356,7 +356,7 @@ namespace MonsterLabZConfig.PrefabIniters
                         collection
                             .ConfigureWorldSpawner(727)
                             .SetPrefabName("TanSpider")
-                            .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.Plains)
+                            .SetConditionBiomes(Heightmap.Biome.Plains)
                             .SetMinLevel(1)
                             .SetMaxLevel(3);
                     });

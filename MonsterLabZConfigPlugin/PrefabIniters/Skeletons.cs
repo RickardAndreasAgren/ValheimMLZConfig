@@ -24,8 +24,21 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "NormalSkeletonWarrior")
                 {
-                    Biome = Heightmap.Biome.BlackForest
+                    Biome = Heightmap.Biome.None
                 };
+
+                if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
+                {
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(712)
+                            .SetPrefabName("NormalSkeletonWarrior")
+                            .SetConditionBiomes(Heightmap.Biome.BlackForest)
+                            .SetMinLevel(1)
+                            .SetMaxLevel(3);
+                    });
+                }
             }
             else
             {
@@ -41,18 +54,7 @@ namespace MonsterLabZConfig.PrefabIniters
                 };
             }
 
-            if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
-            {
-                MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
-                {
-                    collection
-                        .ConfigureWorldSpawner(712)
-                        .SetPrefabName("NormalSkeletonWarrior")
-                        .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.BlackForest)
-                        .SetMinLevel(1)
-                        .SetMaxLevel(3);
-                });
-            }
+            
 
             creature.Drops["TrophySkeleton"].Amount = new Range(1f, 1f);
             creature.Drops["TrophySkeleton"].DropChance = 10f;
@@ -112,7 +114,7 @@ namespace MonsterLabZConfig.PrefabIniters
                         collection
                             .ConfigureWorldSpawner(713)
                             .SetPrefabName("FireSkeletonWarrior")
-                            .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.AshLands)
+                            .SetConditionBiomes(Heightmap.Biome.AshLands)
                             .SetMinLevel(1)
                             .SetMaxLevel(3);
                     });
@@ -121,7 +123,7 @@ namespace MonsterLabZConfig.PrefabIniters
                         collection
                             .ConfigureWorldSpawner(714)
                             .SetPrefabName("FireSkeletonWarriorNoFx")
-                            .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.AshLands)
+                            .SetConditionBiomes(Heightmap.Biome.AshLands)
                             .SetMinLevel(1)
                             .SetMaxLevel(3);
                     });
@@ -191,15 +193,15 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "IceSkeletonWarrior")
                 {
-                    Biome = Heightmap.Biome.Mountain
+                    Biome = Heightmap.Biome.None
                 };
                 creature2 = new Creature("dybassets", "IceSkeletonWarriorNoFx")
                 {
-                    Biome = Heightmap.Biome.Mountain
+                    Biome = Heightmap.Biome.None
                 };
                 creature3 = new Creature("dybassets", "IceSkeletonWarriorT6")
                 {
-                    Biome = Heightmap.Biome.DeepNorth
+                    Biome = Heightmap.Biome.None
                 };
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
                 {
@@ -208,7 +210,7 @@ namespace MonsterLabZConfig.PrefabIniters
                         collection
                             .ConfigureWorldSpawner(715)
                             .SetPrefabName("IceSkeletonWarrior")
-                            .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.Mountain)
+                            .SetConditionBiomes(Heightmap.Biome.Mountain)
                             .SetMinLevel(1)
                             .SetMaxLevel(3);
                     });
@@ -217,7 +219,7 @@ namespace MonsterLabZConfig.PrefabIniters
                         collection
                             .ConfigureWorldSpawner(716)
                             .SetPrefabName("IceSkeletonWarriorNoFx")
-                            .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.Mountain)
+                            .SetConditionBiomes(Heightmap.Biome.Mountain)
                             .SetMinLevel(1)
                             .SetMaxLevel(3);
                     });
@@ -226,7 +228,7 @@ namespace MonsterLabZConfig.PrefabIniters
                         collection
                             .ConfigureWorldSpawner(717)
                             .SetPrefabName("IceSkeletonWarriorT6")
-                            .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.DeepNorth)
+                            .SetConditionBiomes(Heightmap.Biome.DeepNorth)
                             .SetMinLevel(1)
                             .SetMaxLevel(3);
                     });
@@ -322,11 +324,11 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "PoisonSkeletonWarrior")
                 {
-                    Biome = Heightmap.Biome.Swamp
+                    Biome = Heightmap.Biome.None
                 };
                 creature2 = new Creature("dybassets", "PoisonSkeletonWarriorNoFx")
                 {
-                    Biome = Heightmap.Biome.Swamp
+                    Biome = Heightmap.Biome.None
                 };
 
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
@@ -336,7 +338,7 @@ namespace MonsterLabZConfig.PrefabIniters
                         collection
                             .ConfigureWorldSpawner(717)
                             .SetPrefabName("PoisonSkeletonWarrior")
-                            .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.Swamp)
+                            .SetConditionBiomes(Heightmap.Biome.Swamp)
                             .SetMinLevel(1)
                             .SetMaxLevel(3);
                     });
@@ -345,7 +347,7 @@ namespace MonsterLabZConfig.PrefabIniters
                         collection
                             .ConfigureWorldSpawner(718)
                             .SetPrefabName("PoisonSkeletonWarriorNoFx")
-                            .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.Swamp)
+                            .SetConditionBiomes(Heightmap.Biome.Swamp)
                             .SetMinLevel(1)
                             .SetMaxLevel(3);
                     });
@@ -409,11 +411,11 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "ChaosSkeletonWarrior")
                 {
-                    Biome = Heightmap.Biome.AshLands
+                    Biome = Heightmap.Biome.None
                 };
                 creature2 = new Creature("dybassets", "ChaosSkeletonWarriorNoFX")
                 {
-                    Biome = Heightmap.Biome.AshLands
+                    Biome = Heightmap.Biome.None
                 };
 
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
@@ -423,7 +425,7 @@ namespace MonsterLabZConfig.PrefabIniters
                         collection
                             .ConfigureWorldSpawner(719)
                             .SetPrefabName("ChaosSkeletonWarrior")
-                            .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.AshLands)
+                            .SetConditionBiomes(Heightmap.Biome.AshLands)
                             .SetMinLevel(1)
                             .SetMaxLevel(3);
                     });
@@ -432,7 +434,7 @@ namespace MonsterLabZConfig.PrefabIniters
                         collection
                             .ConfigureWorldSpawner(720)
                             .SetPrefabName("ChaosSkeletonWarriorNoFX")
-                            .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.AshLands)
+                            .SetConditionBiomes(Heightmap.Biome.AshLands)
                             .SetMinLevel(1)
                             .SetMaxLevel(3);
                     });

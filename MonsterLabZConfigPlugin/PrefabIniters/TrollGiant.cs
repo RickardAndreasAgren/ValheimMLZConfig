@@ -25,7 +25,7 @@ namespace MonsterLabZConfig.PrefabIniters
                         collection
                             .ConfigureWorldSpawner(728)
                             .SetPrefabName("TrollGiant")
-                            .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.DeepNorth)
+                            .SetConditionBiomes(Heightmap.Biome.DeepNorth)
                             .SetMinLevel(1)
                             .SetMaxLevel(3);
                     });

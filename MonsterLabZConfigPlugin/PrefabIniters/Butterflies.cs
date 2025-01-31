@@ -18,17 +18,16 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "Rainbow_Butterfly")
                 {
-                    Biome = Heightmap.Biome.Meadows
+                    Biome = Heightmap.Biome.None,
                 };
                 creature2 = new Creature("dybassets", "Green_Butterfly")
                 {
-                    Biome = Heightmap.Biome.BlackForest
-                };
-
+                    Biome = Heightmap.Biome.None,
+                }; ;
                 creature3 = new Creature("dybassets", "Silkworm_Butterfly")
                 {
-                    Biome = Heightmap.Biome.Mistlands
-                };
+                    Biome = Heightmap.Biome.None,
+                }; ;
 
 
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
@@ -38,7 +37,7 @@ namespace MonsterLabZConfig.PrefabIniters
                         collection
                             .ConfigureWorldSpawner(733)
                             .SetPrefabName("Rainbow_Butterfly")
-                            .SetBiomeArea((Heightmap.BiomeArea?)(Heightmap.Biome.Meadows))
+                            .SetConditionBiomes(Heightmap.Biome.Meadows)
                             .SetMinLevel(1)
                             .SetMaxLevel(1);
                     });
@@ -47,7 +46,7 @@ namespace MonsterLabZConfig.PrefabIniters
                         collection
                             .ConfigureWorldSpawner(734)
                             .SetPrefabName("Green_Butterfly")
-                            .SetBiomeArea((Heightmap.BiomeArea?)(Heightmap.Biome.BlackForest))
+                            .SetConditionBiomes(Heightmap.Biome.BlackForest)
                             .SetMinLevel(1)
                             .SetMaxLevel(1);
                     });
@@ -56,7 +55,7 @@ namespace MonsterLabZConfig.PrefabIniters
                         collection
                             .ConfigureWorldSpawner(735)
                             .SetPrefabName("Silkworm_Butterfly")
-                            .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.Mistlands)
+                            .SetConditionBiomes(Heightmap.Biome.Mistlands)
                             .SetMinLevel(1)
                             .SetMaxLevel(1);
                     });

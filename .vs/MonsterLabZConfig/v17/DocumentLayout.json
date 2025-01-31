@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "R:\\Dev\\Valheim\\MonsterLabZConfig\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{56096451-98F7-4AC4-9705-6E4BCB64952A}|MonsterLabZConfigPlugin\\MonsterLabZConfigPlugin.csproj|R:\\Dev\\Valheim\\MonsterLabZConfig\\monsterlabzconfigplugin\\plugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56096451-98F7-4AC4-9705-6E4BCB64952A}|MonsterLabZConfigPlugin\\MonsterLabZConfigPlugin.csproj|solutionrelative:monsterlabzconfigplugin\\plugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{56096451-98F7-4AC4-9705-6E4BCB64952A}|MonsterLabZConfigPlugin\\MonsterLabZConfigPlugin.csproj|r:\\dev\\valheim\\monsterlabzconfig\\monsterlabzconfigplugin\\prefabiniters\\butterflies.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56096451-98F7-4AC4-9705-6E4BCB64952A}|MonsterLabZConfigPlugin\\MonsterLabZConfigPlugin.csproj|solutionrelative:monsterlabzconfigplugin\\prefabiniters\\butterflies.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{56096451-98F7-4AC4-9705-6E4BCB64952A}|MonsterLabZConfigPlugin\\MonsterLabZConfigPlugin.csproj|r:\\dev\\valheim\\monsterlabzconfig\\monsterlabzconfigplugin\\prefabiniters\\spidertypes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56096451-98F7-4AC4-9705-6E4BCB64952A}|MonsterLabZConfigPlugin\\MonsterLabZConfigPlugin.csproj|solutionrelative:monsterlabzconfigplugin\\prefabiniters\\spidertypes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,32 +14,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Butterflies.cs",
-              "DocumentMoniker": "R:\\Dev\\Valheim\\MonsterLabZConfig\\MonsterLabZConfigPlugin\\PrefabIniters\\Butterflies.cs",
-              "RelativeDocumentMoniker": "MonsterLabZConfigPlugin\\PrefabIniters\\Butterflies.cs",
-              "ToolTip": "R:\\Dev\\Valheim\\MonsterLabZConfig\\MonsterLabZConfigPlugin\\PrefabIniters\\Butterflies.cs",
-              "RelativeToolTip": "MonsterLabZConfigPlugin\\PrefabIniters\\Butterflies.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-31T16:49:21.411Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Plugin.cs",
-              "DocumentMoniker": "R:\\Dev\\Valheim\\MonsterLabZConfig\\MonsterLabZConfigPlugin\\Plugin.cs",
-              "RelativeDocumentMoniker": "MonsterLabZConfigPlugin\\Plugin.cs",
-              "ToolTip": "R:\\Dev\\Valheim\\MonsterLabZConfig\\MonsterLabZConfigPlugin\\Plugin.cs",
-              "RelativeToolTip": "MonsterLabZConfigPlugin\\Plugin.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAA1wDgAAAAfAAAAAAAAAA==",
+              "Title": "SpiderTypes.cs",
+              "DocumentMoniker": "R:\\Dev\\Valheim\\MonsterLabZConfig\\MonsterLabZConfigPlugin\\PrefabIniters\\SpiderTypes.cs",
+              "RelativeDocumentMoniker": "MonsterLabZConfigPlugin\\PrefabIniters\\SpiderTypes.cs",
+              "ToolTip": "R:\\Dev\\Valheim\\MonsterLabZConfig\\MonsterLabZConfigPlugin\\PrefabIniters\\SpiderTypes.cs",
+              "RelativeToolTip": "MonsterLabZConfigPlugin\\PrefabIniters\\SpiderTypes.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAgwEcAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-31T16:40:34.848Z",
+              "WhenOpened": "2025-01-31T19:18:48.847Z",
               "EditorCaption": ""
             }
           ]

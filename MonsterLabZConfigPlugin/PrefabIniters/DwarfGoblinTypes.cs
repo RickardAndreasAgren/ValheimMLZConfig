@@ -18,7 +18,7 @@ namespace MonsterLabZConfig.PrefabIniters
                 {
                     creature = new Creature("dybassets", "DwarfGoblin")
                     {
-                        Biome = Heightmap.Biome.Plains
+                        Biome = Heightmap.Biome.None,
                     };
                     DwarfGoblinParts(creature);
                 }
@@ -26,15 +26,15 @@ namespace MonsterLabZConfig.PrefabIniters
                 {
                     creature2 = new Creature("dybassets", "DwarfGoblinLoot")
                     {
-                        Biome = Heightmap.Biome.Plains
+                        Biome = Heightmap.Biome.None,
                     };
                     DwarfGoblinLootParts(creature2);
                 }
-                if ((bool)config[PluginConfig.DefGoblinShaman].BoxedValue)
+                if ((bool)config[PluginConfig.DefDwarfGoblinShaman].BoxedValue)
                 {
                     creature3 = new Creature("dybassets", "DwarfGoblinShaman")
                     {
-                        Biome = Heightmap.Biome.Plains
+                        Biome = Heightmap.Biome.None,
                     };
                     DwarfGoblinShamanParts(creature3);
                 }
@@ -46,7 +46,7 @@ namespace MonsterLabZConfig.PrefabIniters
                         collection
                             .ConfigureWorldSpawner(735)
                             .SetPrefabName("DwarfGoblin")
-                            .SetBiomeArea((Heightmap.BiomeArea?)(Heightmap.Biome.Plains))
+                            .SetConditionBiomes((Heightmap.Biome.Plains))
                             .SetMinLevel(1)
                             .SetMaxLevel(1);
                     });
@@ -55,7 +55,7 @@ namespace MonsterLabZConfig.PrefabIniters
                         collection
                             .ConfigureWorldSpawner(736)
                             .SetPrefabName("DwarfGoblinLoot")
-                            .SetBiomeArea((Heightmap.BiomeArea?)(Heightmap.Biome.Plains))
+                            .SetConditionBiomes((Heightmap.Biome.Plains))
                             .SetMinLevel(1)
                             .SetMaxLevel(1);
                     });
@@ -64,7 +64,7 @@ namespace MonsterLabZConfig.PrefabIniters
                         collection
                             .ConfigureWorldSpawner(737)
                             .SetPrefabName("DwarfGoblinShaman")
-                            .SetBiomeArea((Heightmap.BiomeArea?)(Heightmap.Biome.Plains))
+                            .SetConditionBiomes((Heightmap.Biome.Plains))
                             .SetMinLevel(1)
                             .SetMaxLevel(1);
                     });
@@ -204,8 +204,20 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "ML_GoblinLox")
                 {
-                    Biome = Heightmap.Biome.Plains
+                    Biome = Heightmap.Biome.None
                 };
+                if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
+                {
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(729)
+                            .SetPrefabName("ML_GoblinLox")
+                            .SetConditionBiomes((Heightmap.Biome.Plains))
+                            .SetMinLevel(1)
+                            .SetMaxLevel(1);
+                    });
+                }
             } else
             {
                 creature = new Creature("dybassets", "ML_GoblinLox")

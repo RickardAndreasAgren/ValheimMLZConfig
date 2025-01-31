@@ -1,5 +1,6 @@
 ﻿using CreatureManager;
 using ItemManager;
+using SpawnThat.Spawners;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
@@ -15,8 +16,20 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "KrakenLD")
                 {
-                    Biome = Heightmap.Biome.Ocean,
+                    Biome = Heightmap.Biome.None,
                 };
+                if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
+                {
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(783)
+                            .SetPrefabName("KrakenLD")
+                            .SetConditionBiomes(Heightmap.Biome.Ocean)
+                            .SetMinLevel(1)
+                            .SetMaxLevel(1);
+                    });
+                }
             } else
             {
                 creature = new Creature("dybassets", "KrakenLD")

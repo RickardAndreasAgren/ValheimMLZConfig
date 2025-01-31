@@ -18,7 +18,7 @@ namespace MonsterLabZConfig.PrefabIniters
                     collection
                         .ConfigureWorldSpawner(702)
                         .SetPrefabName("Greydwarf_Purple")
-                        .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.BlackForest)
+                        .SetConditionBiomes(Heightmap.Biome.BlackForest)
                         .SetMinLevel(1)
                         .SetMaxLevel(3);
                 });
@@ -28,7 +28,7 @@ namespace MonsterLabZConfig.PrefabIniters
                     collection
                         .ConfigureWorldSpawner(703)
                         .SetPrefabName("Greydwarf_Purple_Shroom")
-                        .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.BlackForest)
+                        .SetConditionBiomes(Heightmap.Biome.BlackForest)
                         .SetMinLevel(1)
                         .SetMaxLevel(3);
                 });

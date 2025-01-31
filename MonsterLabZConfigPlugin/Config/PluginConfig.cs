@@ -62,8 +62,6 @@ namespace MonsterLabZConfig
         public static ConfigEntry<bool> DwarfGoblin { get; internal set; }
         public static ConfigDefinition DefDwarfGoblinLoot { get; internal set; }
         public static ConfigEntry<bool> DwarfGoblinLoot { get; internal set; }
-        public static ConfigDefinition DefGoblinShaman { get; internal set; }
-        public static ConfigEntry<bool> GoblinShaman { get; internal set; }
         public static ConfigDefinition DefDwarfGoblinShaman { get; internal set; }
         public static ConfigEntry<bool> DwarfGoblinShaman { get; internal set; }
         public static ConfigDefinition DefDwarfGoblinRider { get; internal set; }

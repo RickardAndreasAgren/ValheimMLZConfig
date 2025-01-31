@@ -33,7 +33,7 @@ namespace MonsterLabZConfig.PrefabIniters
                     collection
                         .ConfigureWorldSpawner(708)
                         .SetPrefabName("ObsidianGolem")
-                        .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.Mountain)
+                        .SetConditionBiomes(Heightmap.Biome.Mountain)
                         .SetMinLevel(1)
                         .SetMaxLevel(1);
                 });

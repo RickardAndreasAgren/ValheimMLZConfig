@@ -14,7 +14,7 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "ML_JellyFish0")
                 {
-                    Biome = Heightmap.Biome.Ocean
+                    Biome = Heightmap.Biome.None
                 };
 
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
@@ -24,7 +24,7 @@ namespace MonsterLabZConfig.PrefabIniters
                         collection
                             .ConfigureWorldSpawner(741)
                             .SetPrefabName("ML_JellyFish0")
-                            .SetBiomeArea((Heightmap.BiomeArea?)(Heightmap.Biome.Ocean))
+                            .SetConditionBiomes(Heightmap.Biome.Ocean)
                             .SetMinLevel(1)
                             .SetMaxLevel(1);
                     });

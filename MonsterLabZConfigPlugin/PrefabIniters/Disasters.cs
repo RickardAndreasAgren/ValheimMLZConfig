@@ -16,15 +16,15 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 new Creature("dybassets", "ML_HailStorm")
                 {
-                    Biome = (Heightmap.Biome.Mountain | Heightmap.Biome.DeepNorth)
+                    Biome = Heightmap.Biome.None,
                 };
                 new Creature("dybassets", "ML_LightningStorm")
                 {
-                    Biome = (Heightmap.Biome.Meadows | Heightmap.Biome.Plains)
+                    Biome = Heightmap.Biome.None,
                 };
                 new Creature("dybassets", "ML_MeteorShower")
                 {
-                    Biome = Heightmap.Biome.AshLands
+                    Biome = Heightmap.Biome.None,
                 };
 
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
@@ -34,7 +34,7 @@ namespace MonsterLabZConfig.PrefabIniters
                         collection
                             .ConfigureWorldSpawner(730)
                             .SetPrefabName("ML_HailStorm")
-                            .SetBiomeArea((Heightmap.BiomeArea?)(Heightmap.Biome.Mountain | Heightmap.Biome.DeepNorth))
+                            .SetConditionBiomes(Heightmap.Biome.Mountain | Heightmap.Biome.DeepNorth)
                             .SetMinLevel(1)
                             .SetMaxLevel(1);
                     });
@@ -43,7 +43,7 @@ namespace MonsterLabZConfig.PrefabIniters
                         collection
                             .ConfigureWorldSpawner(731)
                             .SetPrefabName("ML_LightningStorm")
-                            .SetBiomeArea((Heightmap.BiomeArea?)(Heightmap.Biome.Meadows | Heightmap.Biome.Plains))
+                            .SetConditionBiomes(Heightmap.Biome.Meadows | Heightmap.Biome.Plains)
                             .SetMinLevel(1)
                             .SetMaxLevel(1);
                     });
@@ -52,7 +52,7 @@ namespace MonsterLabZConfig.PrefabIniters
                         collection
                             .ConfigureWorldSpawner(732)
                             .SetPrefabName("ML_MeteorShower")
-                            .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.AshLands)
+                            .SetConditionBiomes(Heightmap.Biome.AshLands)
                             .SetMinLevel(1)
                             .SetMaxLevel(1);
                     });

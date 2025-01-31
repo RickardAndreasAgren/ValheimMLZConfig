@@ -50,7 +50,7 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature2 = new Creature("dybassets", "MolluscanLand")
                 {
-                    Biome = Heightmap.Biome.BlackForest
+                    Biome = Heightmap.Biome.None
                 };
 
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
@@ -60,7 +60,7 @@ namespace MonsterLabZConfig.PrefabIniters
                         collection
                             .ConfigureWorldSpawner(742)
                             .SetPrefabName("MolluscanLand")
-                            .SetBiomeArea((Heightmap.BiomeArea?)(Heightmap.Biome.BlackForest))
+                            .SetConditionBiomes(Heightmap.Biome.BlackForest | Heightmap.Biome.Swamp)
                             .SetMinLevel(1)
                             .SetMaxLevel(3);
                     });
@@ -102,7 +102,7 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "Molluscan")
                 {
-                    Biome = Heightmap.Biome.Ocean
+                    Biome = Heightmap.Biome.None
                 };
 
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
@@ -112,7 +112,7 @@ namespace MonsterLabZConfig.PrefabIniters
                         collection
                             .ConfigureWorldSpawner(743)
                             .SetPrefabName("Molluscan")
-                            .SetBiomeArea((Heightmap.BiomeArea?)(Heightmap.Biome.Ocean))
+                            .SetConditionBiomes(Heightmap.Biome.Ocean)
                             .SetMinLevel(1)
                             .SetMaxLevel(3);
                     });

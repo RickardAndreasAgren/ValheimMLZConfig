@@ -61,7 +61,9 @@ namespace MonsterLabZConfig
             BindConfig(Config);
 
             LoadAssembly();
-            if(BepInExUtils.GetDependentPlugins().Keys.Any(p => p == "asharppen.valheim.spawn_that"))
+
+            var AllAss = AccessTools.AllAssemblies();
+            if (AllAss.Any(ass => ass.GetName().ToString().Contains("SpawnThat")))
             {
                 SpawnThatPresent = true;
                 SpawnerConfigurationManager.OnConfigure += MonsterLabZSpawnConfigs;

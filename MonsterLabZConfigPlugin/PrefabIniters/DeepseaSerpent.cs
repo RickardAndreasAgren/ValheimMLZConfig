@@ -15,7 +15,7 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "DeepSea_Serpent")
                 {
-                    Biome = Heightmap.Biome.Ocean
+                    Biome = Heightmap.Biome.None,
                 };
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
                 {
@@ -24,7 +24,7 @@ namespace MonsterLabZConfig.PrefabIniters
                         collection
                             .ConfigureWorldSpawner(734)
                             .SetPrefabName("DeepSea_Serpent")
-                            .SetBiomeArea((Heightmap.BiomeArea?)(Heightmap.Biome.Ocean))
+                            .SetConditionBiomes(Heightmap.Biome.Ocean)
                             .SetMinLevel(1)
                             .SetMaxLevel(1);
                     });

@@ -22,7 +22,7 @@ namespace MonsterLabZConfig.PrefabIniters
                     collection
                         .ConfigureWorldSpawner(709)
                         .SetPrefabName("EvilShadow")
-                        .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.Swamp)
+                        .SetConditionBiomes(Heightmap.Biome.Swamp)
                         .SetMinLevel(1)
                         .SetMaxLevel(3);
                 });
