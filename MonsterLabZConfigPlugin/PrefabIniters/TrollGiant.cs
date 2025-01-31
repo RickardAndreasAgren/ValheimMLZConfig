@@ -1,5 +1,6 @@
 ﻿using CreatureManager;
 using ItemManager;
+using SpawnThat.Spawners;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
@@ -16,6 +17,19 @@ namespace MonsterLabZConfig.PrefabIniters
                 {
                     Biome = Heightmap.Biome.None
                 };
+
+                if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
+                {
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(728)
+                            .SetPrefabName("TrollGiant")
+                            .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.DeepNorth)
+                            .SetMinLevel(1)
+                            .SetMaxLevel(3);
+                    });
+                }
             }
             else
             {

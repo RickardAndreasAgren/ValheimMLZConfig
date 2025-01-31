@@ -1,4 +1,5 @@
 ﻿using CreatureManager;
+using SpawnThat.Spawners;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
@@ -15,6 +16,19 @@ namespace MonsterLabZConfig.PrefabIniters
                 {
                     Biome = Heightmap.Biome.Ocean
                 };
+
+                if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
+                {
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(741)
+                            .SetPrefabName("ML_JellyFish0")
+                            .SetBiomeArea((Heightmap.BiomeArea?)(Heightmap.Biome.Ocean))
+                            .SetMinLevel(1)
+                            .SetMaxLevel(1);
+                    });
+                }
             }
             else
             {

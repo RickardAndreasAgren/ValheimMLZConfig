@@ -1,6 +1,7 @@
 ﻿using BepInEx.Configuration;
 using CreatureManager;
 using ItemManager;
+using SpawnThat.Spawners;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
@@ -51,6 +52,19 @@ namespace MonsterLabZConfig.PrefabIniters
                 {
                     Biome = Heightmap.Biome.BlackForest
                 };
+
+                if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
+                {
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(742)
+                            .SetPrefabName("MolluscanLand")
+                            .SetBiomeArea((Heightmap.BiomeArea?)(Heightmap.Biome.BlackForest))
+                            .SetMinLevel(1)
+                            .SetMaxLevel(3);
+                    });
+                }
             }
             else
             {
@@ -90,6 +104,19 @@ namespace MonsterLabZConfig.PrefabIniters
                 {
                     Biome = Heightmap.Biome.Ocean
                 };
+
+                if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
+                {
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(743)
+                            .SetPrefabName("Molluscan")
+                            .SetBiomeArea((Heightmap.BiomeArea?)(Heightmap.Biome.Ocean))
+                            .SetMinLevel(1)
+                            .SetMaxLevel(3);
+                    });
+                }
             }
             else
             {

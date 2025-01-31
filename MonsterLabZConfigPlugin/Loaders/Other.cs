@@ -1,6 +1,4 @@
-﻿//extern alias MonsterLabZN;
-
-using MonsterLabZConfig.PrefabIniters;
+﻿using MonsterLabZConfig.PrefabIniters;
 using CreatureManager;
 using ItemManager;
 using LocationManager;
@@ -12,16 +10,6 @@ namespace MonsterLabZConfig.Loaders
     {
         public static void Load(BepInEx.Configuration.ConfigFile config)
         {
-            /*
-            MonsterLabZN::ItemManager.Item;
-            MonsterLabZN::CreatureManager.Creature;
-            MonsterLabZN::LocationManager.Location;
-            MonsterLabZN::MonsterLabZ.MonsterLabZ;
-            MonsterLabZN.MonsterLabZ.ML_CustomProps;
-            MonsterLabZN.MonsterLabZ.NPC_Items;
-            MonsterLabZN.MonsterLabZ.Succubus;
-            LocationManager.Location;
-            // */
             ML_CustomProps();
             NPC_Items();
 

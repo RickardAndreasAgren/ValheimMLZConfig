@@ -1,5 +1,6 @@
 ﻿using CreatureManager;
 using ItemManager;
+using SpawnThat.Spawners;
 using static Heightmap;
 
 namespace MonsterLabZConfig.PrefabIniters
@@ -40,7 +41,19 @@ namespace MonsterLabZConfig.PrefabIniters
                 };
             }
 
-            
+            if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
+            {
+                MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                {
+                    collection
+                        .ConfigureWorldSpawner(712)
+                        .SetPrefabName("NormalSkeletonWarrior")
+                        .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.BlackForest)
+                        .SetMinLevel(1)
+                        .SetMaxLevel(3);
+                });
+            }
+
             creature.Drops["TrophySkeleton"].Amount = new Range(1f, 1f);
             creature.Drops["TrophySkeleton"].DropChance = 10f;
             creature.Drops["TrophySkeleton"].DropOnePerPlayer = false;
@@ -91,6 +104,28 @@ namespace MonsterLabZConfig.PrefabIniters
                 {
                     Biome = Heightmap.Biome.None
                 };
+
+                if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
+                {
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(713)
+                            .SetPrefabName("FireSkeletonWarrior")
+                            .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.AshLands)
+                            .SetMinLevel(1)
+                            .SetMaxLevel(3);
+                    });
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(714)
+                            .SetPrefabName("FireSkeletonWarriorNoFx")
+                            .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.AshLands)
+                            .SetMinLevel(1)
+                            .SetMaxLevel(3);
+                    });
+                }
             }
             else
             {
@@ -103,6 +138,7 @@ namespace MonsterLabZConfig.PrefabIniters
                     Biome = Heightmap.Biome.None
                 };
             }
+
 
             creature.ConfigurationEnabled = true;
             creature.Drops["TrophySkeletonFire"].Amount = new Range(1f, 1f);
@@ -165,7 +201,36 @@ namespace MonsterLabZConfig.PrefabIniters
                 {
                     Biome = Heightmap.Biome.DeepNorth
                 };
-
+                if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
+                {
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(715)
+                            .SetPrefabName("IceSkeletonWarrior")
+                            .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.Mountain)
+                            .SetMinLevel(1)
+                            .SetMaxLevel(3);
+                    });
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(716)
+                            .SetPrefabName("IceSkeletonWarriorNoFx")
+                            .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.Mountain)
+                            .SetMinLevel(1)
+                            .SetMaxLevel(3);
+                    });
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(717)
+                            .SetPrefabName("IceSkeletonWarriorT6")
+                            .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.DeepNorth)
+                            .SetMinLevel(1)
+                            .SetMaxLevel(3);
+                    });
+                }
             }
             else
             {
@@ -187,7 +252,6 @@ namespace MonsterLabZConfig.PrefabIniters
                 {
                     Biome = Heightmap.Biome.DeepNorth
                 };
-
             }
 
             creature.Drops["TrophySkeletonIce"].Amount = new Range(1f, 1f);
@@ -264,6 +328,28 @@ namespace MonsterLabZConfig.PrefabIniters
                 {
                     Biome = Heightmap.Biome.Swamp
                 };
+
+                if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
+                {
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(717)
+                            .SetPrefabName("PoisonSkeletonWarrior")
+                            .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.Swamp)
+                            .SetMinLevel(1)
+                            .SetMaxLevel(3);
+                    });
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(718)
+                            .SetPrefabName("PoisonSkeletonWarriorNoFx")
+                            .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.Swamp)
+                            .SetMinLevel(1)
+                            .SetMaxLevel(3);
+                    });
+                }
             }
             else
             {
@@ -329,6 +415,28 @@ namespace MonsterLabZConfig.PrefabIniters
                 {
                     Biome = Heightmap.Biome.AshLands
                 };
+
+                if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
+                {
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(719)
+                            .SetPrefabName("ChaosSkeletonWarrior")
+                            .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.AshLands)
+                            .SetMinLevel(1)
+                            .SetMaxLevel(3);
+                    });
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(720)
+                            .SetPrefabName("ChaosSkeletonWarriorNoFX")
+                            .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.AshLands)
+                            .SetMinLevel(1)
+                            .SetMaxLevel(3);
+                    });
+                }
             }
             else
             {

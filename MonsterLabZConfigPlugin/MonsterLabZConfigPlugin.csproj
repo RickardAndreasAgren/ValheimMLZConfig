@@ -95,15 +95,12 @@
     <Reference Include="ItemManager">
       <HintPath>Libs\ItemManager.dll</HintPath>
     </Reference>
+    <Reference Include="Valheim.SpawnThat">
+      <HintPath>Libs\Valheim.SpawnThat.dll</HintPath>
+    </Reference>
     <!--
     <Reference Include="MonsterLabZ">
       <HintPath>Libs\MonsterLabZ.dll</HintPath>
-      <Aliases>MonsterLabZN</Aliases>
-    </Reference>
-    -->
-    <!--
-    <Reference Include="MonsterLabZ">
-      <HintPath>$(GamePath)\BepInEx\plugins\MonsterLabZ_publicized.dll</HintPath>
       <Aliases>MonsterLabZN</Aliases>
     </Reference>
     -->

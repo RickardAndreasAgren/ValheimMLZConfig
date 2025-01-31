@@ -1,5 +1,6 @@
 ﻿using CreatureManager;
 using ItemManager;
+using SpawnThat.Spawners;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
@@ -10,6 +11,28 @@ namespace MonsterLabZConfig.PrefabIniters
             ItemManager.PrefabManager.RegisterPrefab("dybassets", "Greydwarf_Purple_Shroom");
             ItemManager.PrefabManager.RegisterPrefab("dybassets", "Greydwarf_Purple");
             ItemManager.PrefabManager.RegisterPrefab("dybassets", "Greydwarf_Purple_ragdoll");
+            if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
+            {
+                MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                {
+                    collection
+                        .ConfigureWorldSpawner(702)
+                        .SetPrefabName("Greydwarf_Purple")
+                        .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.BlackForest)
+                        .SetMinLevel(1)
+                        .SetMaxLevel(3);
+                });
+
+                MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                {
+                    collection
+                        .ConfigureWorldSpawner(703)
+                        .SetPrefabName("Greydwarf_Purple_Shroom")
+                        .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.BlackForest)
+                        .SetMinLevel(1)
+                        .SetMaxLevel(3);
+                });
+            }
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using CreatureManager;
 using ItemManager;
+using SpawnThat.Spawners;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
@@ -23,6 +24,18 @@ namespace MonsterLabZConfig.PrefabIniters
                         Biome = Heightmap.Biome.None
                     };
                 }
+                if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
+                {
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(704)
+                            .SetPrefabName("ML_RedMistile_Aggressive")
+                            .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.AshLands)
+                            .SetMinLevel(1)
+                            .SetMaxLevel(3);
+                    });
+                }
             }
             if ((bool)config[PluginConfig.DefMistileRedPassive].BoxedValue)
             {
@@ -39,6 +52,18 @@ namespace MonsterLabZConfig.PrefabIniters
                     {
                         Biome = Heightmap.Biome.None
                     };
+                }
+                if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
+                {
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(705)
+                            .SetPrefabName("ML_RedMistile_Passive")
+                            .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.AshLands)
+                            .SetMinLevel(1)
+                            .SetMaxLevel(1);
+                    });
                 }
             }
             if ((bool)config[PluginConfig.DefMistileBlueAggro].BoxedValue)
@@ -57,6 +82,18 @@ namespace MonsterLabZConfig.PrefabIniters
                         Biome = Heightmap.Biome.None
                     };
                 }
+                if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
+                {
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(706)
+                            .SetPrefabName("ML_BlueMistile_Aggressive")
+                            .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.Plains)
+                            .SetMinLevel(1)
+                            .SetMaxLevel(3);
+                    });
+                }
             }
             if ((bool)config[PluginConfig.DefMistileBluePassive].BoxedValue)
             {
@@ -73,6 +110,19 @@ namespace MonsterLabZConfig.PrefabIniters
                     {
                         Biome = Heightmap.Biome.None
                     };
+                }
+
+                if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
+                {
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(707)
+                            .SetPrefabName("ML_BlueMistile_Passive")
+                            .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.Plains)
+                            .SetMinLevel(1)
+                            .SetMaxLevel(1);
+                    });
                 }
             }
 

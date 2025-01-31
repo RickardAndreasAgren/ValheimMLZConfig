@@ -1,5 +1,6 @@
 ﻿using CreatureManager;
 using ItemManager;
+using SpawnThat.Spawners;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
@@ -28,6 +29,38 @@ namespace MonsterLabZConfig.PrefabIniters
                 {
                     Biome = Heightmap.Biome.Mistlands
                 };
+
+
+                if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
+                {
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(733)
+                            .SetPrefabName("Rainbow_Butterfly")
+                            .SetBiomeArea((Heightmap.BiomeArea?)(Heightmap.Biome.Meadows))
+                            .SetMinLevel(1)
+                            .SetMaxLevel(1);
+                    });
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(734)
+                            .SetPrefabName("Green_Butterfly")
+                            .SetBiomeArea((Heightmap.BiomeArea?)(Heightmap.Biome.BlackForest))
+                            .SetMinLevel(1)
+                            .SetMaxLevel(1);
+                    });
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(735)
+                            .SetPrefabName("Silkworm_Butterfly")
+                            .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.Mistlands)
+                            .SetMinLevel(1)
+                            .SetMaxLevel(1);
+                    });
+                }
             } else
             {
                 creature = new Creature("dybassets", "Rainbow_Butterfly")

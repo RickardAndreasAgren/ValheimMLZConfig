@@ -1,5 +1,8 @@
 ﻿#nullable enable
 extern alias ServerSyncStandalone;
+
+using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -11,6 +14,7 @@ using Jotunn.Utils;
 //using MonsterLabZ;
 using MonsterLabZConfig.Loaders;
 using ServerSyncStandalone::ServerSync;
+using SpawnThat.Spawners;
 using UnityEngine;
 using static MonsterLabZConfig.PluginConfig;
 using Paths = BepInEx.Paths;
@@ -44,7 +48,8 @@ namespace MonsterLabZConfig
             { DisplayName = ModName, CurrentVersion = ModVersion, MinimumRequiredVersion = ModVersion };
 
         private static ConfigEntry<Toggle> _serverConfigLocked = null!;
-
+        private static bool SpawnThatPresent = false;
+        public static List<Action<ISpawnerConfigurationCollection>> SpawnThatMonsters { get; private set; } = new List<Action<ISpawnerConfigurationCollection>>();
         public static AssetBundle? EmbeddedResourceBundle { get; set; } = null;
         public void Awake()
         {
@@ -56,6 +61,17 @@ namespace MonsterLabZConfig
             BindConfig(Config);
 
             LoadAssembly();
+            if(BepInExUtils.GetDependentPlugins().Keys.Any(p => p == "asharppen.valheim.spawn_that"))
+            {
+                SpawnThatPresent = true;
+                SpawnerConfigurationManager.OnConfigure += MonsterLabZSpawnConfigs;
+            } else
+            {
+                if ((short)Config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
+                {
+                    PluginLogger.LogError("MLZC: SpawnThat is required to create worldspawners.");
+                }
+            }
 
             Assembly assembly = Assembly.GetExecutingAssembly();
             HarmonyInstance = Harmony.CreateAndPatchAll(assembly, harmonyInstanceId: ModGUID);
@@ -93,6 +109,14 @@ namespace MonsterLabZConfig
                 }
             }
             EmbeddedResourceBundle = AssetUtils.LoadAssetBundleFromResources("MonsterLabZ.assets.dybassets", original);
+        }
+        public void MonsterLabZSpawnConfigs(ISpawnerConfigurationCollection spawnerConfig)
+        {
+            if (!SpawnThatPresent) return;
+            foreach(var spawn in SpawnThatMonsters)
+            {
+                spawn(spawnerConfig);
+            }
         }
 
         [HarmonyPatch(typeof(ZNetScene), "Awake")]

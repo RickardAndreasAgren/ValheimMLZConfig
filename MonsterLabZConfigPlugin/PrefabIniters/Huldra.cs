@@ -1,5 +1,6 @@
 ﻿using CreatureManager;
 using ItemManager;
+using SpawnThat.Spawners;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
@@ -16,6 +17,19 @@ namespace MonsterLabZConfig.PrefabIniters
                 {
                     Biome = Heightmap.Biome.AshLands
                 };
+
+                if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
+                {
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(740)
+                            .SetPrefabName("ML_AshHuldra")
+                            .SetBiomeArea((Heightmap.BiomeArea?)(Heightmap.Biome.AshLands))
+                            .SetMinLevel(1)
+                            .SetMaxLevel(1);
+                    });
+                }
             }
             else
             {

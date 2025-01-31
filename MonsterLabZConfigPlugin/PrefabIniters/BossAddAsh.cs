@@ -1,5 +1,7 @@
 ﻿using CreatureManager;
 using ItemManager;
+using Jotunn.Configs;
+using SpawnThat.Spawners;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
@@ -47,8 +49,27 @@ namespace MonsterLabZConfig.PrefabIniters
                 {
                     Biome = Heightmap.Biome.None
                 };
+                if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
+                {
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(700)
+                            .SetPrefabName("ML_AshHatchling")
+                            .SetMinLevel(1)
+                            .SetMaxLevel(3);
+                    });
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(701)
+                            .SetPrefabName("ML_FrostHatchling")
+                            .SetMinLevel(1)
+                            .SetMaxLevel(3);
+                    });
+                }
             }
-            
+
             creature.ConfigurationEnabled = true;
             creature.Drops["ML_TrophyAshHatchling"].Amount = new Range(1f, 1f);
             creature.Drops["ML_TrophyAshHatchling"].DropChance = 10f;
@@ -59,8 +80,7 @@ namespace MonsterLabZConfig.PrefabIniters
             creature.Drops["FireGland"].DropOnePerPlayer = false;
             creature.Drops["FireGland"].MultiplyDropByLevel = true;
 
-
-            creature2.ConfigurationEnabled = false;
+            creature2.ConfigurationEnabled = true;
             creature2.Drops["TrophyHatchling"].Amount = new Range(1f, 1f);
             creature2.Drops["TrophyHatchling"].DropChance = 5f;
             creature2.Drops["TrophyHatchling"].DropOnePerPlayer = false;

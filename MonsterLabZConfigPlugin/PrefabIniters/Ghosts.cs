@@ -1,6 +1,7 @@
 ﻿using BepInEx.Configuration;
 using CreatureManager;
 using ItemManager;
+using SpawnThat.Spawners;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
@@ -23,6 +24,19 @@ namespace MonsterLabZConfig.PrefabIniters
                 {
                     Biome = Heightmap.Biome.None
                 };
+
+                if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
+                {
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(738)
+                            .SetPrefabName("NormalGhostWarrior")
+                            .SetBiomeArea((Heightmap.BiomeArea?)(Heightmap.Biome.Plains))
+                            .SetMinLevel(1)
+                            .SetMaxLevel(1);
+                    });
+                }
             }
             else
             {
@@ -55,6 +69,19 @@ namespace MonsterLabZConfig.PrefabIniters
                 {
                     Biome = Heightmap.Biome.Swamp
                 };
+
+                if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
+                {
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(739)
+                            .SetPrefabName("WraithWarrior")
+                            .SetBiomeArea((Heightmap.BiomeArea?)(Heightmap.Biome.Swamp))
+                            .SetMinLevel(1)
+                            .SetMaxLevel(1);
+                    });
+                }
             }
             else
             {

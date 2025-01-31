@@ -1,5 +1,6 @@
 ﻿using CreatureManager;
 using ItemManager;
+using SpawnThat.Spawners;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
@@ -36,6 +37,37 @@ namespace MonsterLabZConfig.PrefabIniters
                         Biome = Heightmap.Biome.Plains
                     };
                     DwarfGoblinShamanParts(creature3);
+                }
+
+                if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
+                {
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(735)
+                            .SetPrefabName("DwarfGoblin")
+                            .SetBiomeArea((Heightmap.BiomeArea?)(Heightmap.Biome.Plains))
+                            .SetMinLevel(1)
+                            .SetMaxLevel(1);
+                    });
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(736)
+                            .SetPrefabName("DwarfGoblinLoot")
+                            .SetBiomeArea((Heightmap.BiomeArea?)(Heightmap.Biome.Plains))
+                            .SetMinLevel(1)
+                            .SetMaxLevel(1);
+                    });
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(737)
+                            .SetPrefabName("DwarfGoblinShaman")
+                            .SetBiomeArea((Heightmap.BiomeArea?)(Heightmap.Biome.Plains))
+                            .SetMinLevel(1)
+                            .SetMaxLevel(1);
+                    });
                 }
             }
             else

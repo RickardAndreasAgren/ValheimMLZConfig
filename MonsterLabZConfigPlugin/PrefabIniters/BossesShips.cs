@@ -1,6 +1,7 @@
 ﻿using BepInEx.Configuration;
 using CreatureManager;
 using ItemManager;
+using SpawnThat.Spawners;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
@@ -45,6 +46,18 @@ namespace MonsterLabZConfig.PrefabIniters
                 {
                     Biome = Heightmap.Biome.Plains
                 };
+                if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
+                {
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(750)
+                            .SetPrefabName("ML_GoblinShip")
+                            .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.Plains)
+                            .SetMinLevel(1)
+                            .SetMaxLevel(1);
+                    });
+                }
             }
 
             creature.Drops["DeerHide"].Amount = new Range(1f, 2f);
@@ -108,6 +121,18 @@ namespace MonsterLabZConfig.PrefabIniters
                 {
                     Biome = Heightmap.Biome.BlackForest,
                 };
+                if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
+                {
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(751)
+                            .SetPrefabName("ML_DraugrShip")
+                            .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.Swamp)
+                            .SetMinLevel(1)
+                            .SetMaxLevel(1);
+                    });
+                }
             }
                 
             creature.Drops["DeerHide"].Amount = new Range(1f, 2f);

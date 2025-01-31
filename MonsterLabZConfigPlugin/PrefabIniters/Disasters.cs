@@ -1,6 +1,7 @@
 ﻿using BepInEx.Configuration;
 using CreatureManager;
 using ItemManager;
+using SpawnThat.Spawners;
 using static Heightmap;
 
 namespace MonsterLabZConfig.PrefabIniters
@@ -25,6 +26,37 @@ namespace MonsterLabZConfig.PrefabIniters
                 {
                     Biome = Heightmap.Biome.AshLands
                 };
+
+                if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
+                {
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(730)
+                            .SetPrefabName("ML_HailStorm")
+                            .SetBiomeArea((Heightmap.BiomeArea?)(Heightmap.Biome.Mountain | Heightmap.Biome.DeepNorth))
+                            .SetMinLevel(1)
+                            .SetMaxLevel(1);
+                    });
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(731)
+                            .SetPrefabName("ML_LightningStorm")
+                            .SetBiomeArea((Heightmap.BiomeArea?)(Heightmap.Biome.Meadows | Heightmap.Biome.Plains))
+                            .SetMinLevel(1)
+                            .SetMaxLevel(1);
+                    });
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(732)
+                            .SetPrefabName("ML_MeteorShower")
+                            .SetBiomeArea((Heightmap.BiomeArea?)Heightmap.Biome.AshLands)
+                            .SetMinLevel(1)
+                            .SetMaxLevel(1);
+                    });
+                }
             } else
             {
                 new Creature("dybassets", "ML_HailStorm")

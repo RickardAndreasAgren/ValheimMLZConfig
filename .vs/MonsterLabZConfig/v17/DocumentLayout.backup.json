@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "R:\\Dev\\Valheim\\MonsterLabZConfig\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{56096451-98F7-4AC4-9705-6E4BCB64952A}|MonsterLabZConfigPlugin\\MonsterLabZConfigPlugin.csproj|r:\\dev\\valheim\\monsterlabzconfig\\monsterlabzconfigplugin\\loaders\\other.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56096451-98F7-4AC4-9705-6E4BCB64952A}|MonsterLabZConfigPlugin\\MonsterLabZConfigPlugin.csproj|solutionrelative:monsterlabzconfigplugin\\loaders\\other.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56096451-98F7-4AC4-9705-6E4BCB64952A}|MonsterLabZConfigPlugin\\MonsterLabZConfigPlugin.csproj|r:\\dev\\valheim\\monsterlabzconfig\\monsterlabzconfigplugin\\plugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56096451-98F7-4AC4-9705-6E4BCB64952A}|MonsterLabZConfigPlugin\\MonsterLabZConfigPlugin.csproj|solutionrelative:monsterlabzconfigplugin\\plugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56096451-98F7-4AC4-9705-6E4BCB64952A}|MonsterLabZConfigPlugin\\MonsterLabZConfigPlugin.csproj|r:\\dev\\valheim\\monsterlabzconfig\\monsterlabzconfigplugin\\prefabinventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56096451-98F7-4AC4-9705-6E4BCB64952A}|MonsterLabZConfigPlugin\\MonsterLabZConfigPlugin.csproj|solutionrelative:monsterlabzconfigplugin\\prefabinventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{56096451-98F7-4AC4-9705-6E4BCB64952A}|MonsterLabZConfigPlugin\\MonsterLabZConfigPlugin.csproj|r:\\dev\\valheim\\monsterlabzconfig\\monsterlabzconfigplugin\\prefabiniters\\huldra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{56096451-98F7-4AC4-9705-6E4BCB64952A}|MonsterLabZConfigPlugin\\MonsterLabZConfigPlugin.csproj|solutionrelative:monsterlabzconfigplugin\\prefabiniters\\huldra.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -19,12 +31,51 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Other.cs",
+              "DocumentMoniker": "R:\\Dev\\Valheim\\MonsterLabZConfig\\MonsterLabZConfigPlugin\\Loaders\\Other.cs",
+              "RelativeDocumentMoniker": "MonsterLabZConfigPlugin\\Loaders\\Other.cs",
+              "ToolTip": "R:\\Dev\\Valheim\\MonsterLabZConfig\\MonsterLabZConfigPlugin\\Loaders\\Other.cs",
+              "RelativeToolTip": "MonsterLabZConfigPlugin\\Loaders\\Other.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-31T16:41:44.325Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PrefabInventory.cs",
+              "DocumentMoniker": "R:\\Dev\\Valheim\\MonsterLabZConfig\\MonsterLabZConfigPlugin\\PrefabInventory.cs",
+              "RelativeDocumentMoniker": "MonsterLabZConfigPlugin\\PrefabInventory.cs",
+              "ToolTip": "R:\\Dev\\Valheim\\MonsterLabZConfig\\MonsterLabZConfigPlugin\\PrefabInventory.cs",
+              "RelativeToolTip": "MonsterLabZConfigPlugin\\PrefabInventory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-31T16:40:37.752Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Plugin.cs",
+              "DocumentMoniker": "R:\\Dev\\Valheim\\MonsterLabZConfig\\MonsterLabZConfigPlugin\\Plugin.cs",
+              "RelativeDocumentMoniker": "MonsterLabZConfigPlugin\\Plugin.cs",
+              "ToolTip": "R:\\Dev\\Valheim\\MonsterLabZConfig\\MonsterLabZConfigPlugin\\Plugin.cs",
+              "RelativeToolTip": "MonsterLabZConfigPlugin\\Plugin.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAgwEAAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-31T16:40:34.848Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Huldra.cs",
               "DocumentMoniker": "R:\\Dev\\Valheim\\MonsterLabZConfig\\MonsterLabZConfigPlugin\\PrefabIniters\\Huldra.cs",
               "RelativeDocumentMoniker": "MonsterLabZConfigPlugin\\PrefabIniters\\Huldra.cs",
               "ToolTip": "R:\\Dev\\Valheim\\MonsterLabZConfig\\MonsterLabZConfigPlugin\\PrefabIniters\\Huldra.cs",
               "RelativeToolTip": "MonsterLabZConfigPlugin\\PrefabIniters\\Huldra.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAgwCUAAACJAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwCkAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-31T15:16:39.153Z",
               "EditorCaption": ""
