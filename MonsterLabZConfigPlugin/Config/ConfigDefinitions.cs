@@ -40,7 +40,7 @@ namespace MonsterLabZConfig
         {
             ConfigDescription extendedDescription =
                 new(
-                    Description +
+                    Description.Description +
                     (SyncOn? " [Synced with Server]" : " [Not Synced with Server]"),
                     Description.AcceptableValues, Description.Tags);
             ConfigEntry<T> configEntry = config.Bind(Definition, value, extendedDescription);

@@ -1,5 +1,4 @@
-﻿extern alias MonsterLabZN;
-using BepInEx.Configuration;
+﻿using BepInEx.Configuration;
 using MonsterLabZConfig.PrefabIniters;
 
 namespace MonsterLabZConfig.Loaders

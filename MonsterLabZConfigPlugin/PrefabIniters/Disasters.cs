@@ -1,13 +1,6 @@
-﻿extern alias MonsterLabZN;
-
-using BepInEx.Configuration;
-using MonsterLabZN::CreatureManager;
-using MonsterLabZN::ItemManager;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BepInEx.Configuration;
+using CreatureManager;
+using ItemManager;
 using static Heightmap;
 
 namespace MonsterLabZConfig.PrefabIniters
@@ -37,7 +30,7 @@ namespace MonsterLabZConfig.PrefabIniters
                 new Creature("dybassets", "ML_HailStorm")
                 {
                     Biome = (Heightmap.Biome.Mountain | Heightmap.Biome.DeepNorth),
-                    SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Center,
+                    SpecificSpawnArea = CreatureManager.SpawnArea.Center,
                     RequiredAltitude = new Range(5f, 1000f),
                     CheckSpawnInterval = 1000,
                     SpawnChance = 5f,
@@ -48,7 +41,7 @@ namespace MonsterLabZConfig.PrefabIniters
                 new Creature("dybassets", "ML_LightningStorm")
                 {
                     Biome = (Heightmap.Biome.Meadows | Heightmap.Biome.Plains),
-                    SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Everywhere,
+                    SpecificSpawnArea = CreatureManager.SpawnArea.Everywhere,
                     RequiredAltitude = new Range(5f, 1000f),
                     CheckSpawnInterval = 1000,
                     RequiredWeather = Weather.ThunderStorm,
@@ -60,7 +53,7 @@ namespace MonsterLabZConfig.PrefabIniters
                 new Creature("dybassets", "ML_MeteorShower")
                 {
                     Biome = Heightmap.Biome.AshLands,
-                    SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Center,
+                    SpecificSpawnArea = CreatureManager.SpawnArea.Center,
                     RequiredAltitude = new Range(5f, 1000f),
                     CheckSpawnInterval = 1000,
                     SpawnChance = 5f,
@@ -73,15 +66,15 @@ namespace MonsterLabZConfig.PrefabIniters
             new Item("dybassets", "ML_MeteorShower_Start").Configurable = Configurability.Disabled;
             new Item("dybassets", "ML_HailStorm_Start").Configurable = Configurability.Disabled;
             new Item("dybassets", "ML_LightningStorm_Start").Configurable = Configurability.Disabled;
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_ml_hailstorm");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_ml_hailstorm_hit");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "fx_ml_meteorshower_hit");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_HailStorm_Projectile");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_HailStorm_Spawn");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_LightningStorm_AOE");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_LightningStorm_Spawn");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_MeteorShower_AOE");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_MeteorShower_Spawn");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_ml_hailstorm");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_ml_hailstorm_hit");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "fx_ml_meteorshower_hit");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_HailStorm_Projectile");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_HailStorm_Spawn");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_LightningStorm_AOE");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_LightningStorm_Spawn");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_MeteorShower_AOE");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_MeteorShower_Spawn");
         }
     }
 }

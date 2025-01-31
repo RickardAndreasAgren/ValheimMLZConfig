@@ -1,7 +1,5 @@
-﻿extern alias MonsterLabZN;
-
-using MonsterLabZN::CreatureManager;
-using MonsterLabZN::ItemManager;
+﻿using CreatureManager;
+using ItemManager;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
@@ -35,7 +33,7 @@ namespace MonsterLabZConfig.PrefabIniters
                 creature = new Creature("dybassets", "Rainbow_Butterfly")
                 {
                     Biome = Heightmap.Biome.Meadows,
-                    SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Everywhere,
+                    SpecificSpawnArea = CreatureManager.SpawnArea.Everywhere,
                     CheckSpawnInterval = 300,
                     RequiredWeather = (Weather.ClearSkies | Weather.MeadowsClearSkies),
                     ForestSpawn = Forest.No,
@@ -48,7 +46,7 @@ namespace MonsterLabZConfig.PrefabIniters
                 creature2 = new Creature("dybassets", "Green_Butterfly")
                 {
                     Biome = Heightmap.Biome.BlackForest,
-                    SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Everywhere,
+                    SpecificSpawnArea = CreatureManager.SpawnArea.Everywhere,
                     CheckSpawnInterval = 300,
                     RequiredWeather = (Weather.ClearSkies | Weather.MeadowsClearSkies | Weather.BlackForestFog),
                     SpawnChance = 50f,
@@ -61,7 +59,7 @@ namespace MonsterLabZConfig.PrefabIniters
                 creature3 = new Creature("dybassets", "Silkworm_Butterfly")
                 {
                     Biome = Heightmap.Biome.Mistlands,
-                    SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Everywhere,
+                    SpecificSpawnArea = CreatureManager.SpawnArea.Everywhere,
                     CheckSpawnInterval = 300,
                     RequiredWeather = Weather.MistlandsDark,
                     SpawnChance = 50f,

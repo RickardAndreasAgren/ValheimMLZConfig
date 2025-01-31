@@ -1,12 +1,5 @@
-﻿extern alias MonsterLabZN;
-
-using MonsterLabZN::CreatureManager;
-using MonsterLabZN::ItemManager;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CreatureManager;
+using ItemManager;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
@@ -44,13 +37,13 @@ namespace MonsterLabZConfig.PrefabIniters
             creature.Drops["Obsidian"].DropChance = 100f;
             creature.Drops["Obsidian"].DropOnePerPlayer = false;
             creature.Drops["Obsidian"].MultiplyDropByLevel = true;
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "ObsidianGolem_ragdoll");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ObsidianGolem_ragdoll");
             new Item("dybassets", "TrophyObsidianGolem").Configurable = Configurability.Disabled;
             new Item("dybassets", "ObsidianGolem_clubs").Configurable = Configurability.Disabled;
             new Item("dybassets", "ObsidianGolem_hat").Configurable = Configurability.Disabled;
             new Item("dybassets", "ObsidianGolem_spikes").Configurable = Configurability.Disabled;
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_obsidiangolem_death");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_obsidiangolem_wakeup");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_obsidiangolem_death");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_obsidiangolem_wakeup");
         }
     }
 }

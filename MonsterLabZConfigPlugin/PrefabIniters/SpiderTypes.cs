@@ -1,9 +1,6 @@
-﻿extern alias MonsterLabZN;
-
-using BepInEx.Configuration;
-using MonsterLabZN::CreatureManager;
-using MonsterLabZN::ItemManager;
-using System;
+﻿using BepInEx.Configuration;
+using CreatureManager;
+using ItemManager;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
@@ -42,19 +39,19 @@ namespace MonsterLabZConfig.PrefabIniters
                 new Item("dybassets", "cavespider_leftattack").Configurable = Configurability.Disabled;
                 new Item("dybassets", "cavespider_rightattack").Configurable = Configurability.Disabled;
                 new Item("dybassets", "web_attack").Configurable = Configurability.Disabled;
-                MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_footstep_spider");
-                MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_spider_alerted");
-                MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_spider_death");
-                MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_spider_hit");
-                MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_spider_idle");
-                MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_jumpingspider_spit");
-                MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_web_hit");
-                MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_spider_death");
-                MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_spider_hit");
-                MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "swoop_trail");
-                MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_jumpingspider_spit");
-                MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "jumpingspider_poison_aoe");
-                MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "web_projectile");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_footstep_spider");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_spider_alerted");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_spider_death");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_spider_hit");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_spider_idle");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_jumpingspider_spit");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_web_hit");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_spider_death");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_spider_hit");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "swoop_trail");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_jumpingspider_spit");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "jumpingspider_poison_aoe");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "web_projectile");
             }
         }
 
@@ -75,7 +72,7 @@ namespace MonsterLabZConfig.PrefabIniters
                 creature = new Creature("dybassets", "TreeSpider")
                 {
                     Biome = Heightmap.Biome.Meadows,
-                    SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Center,
+                    SpecificSpawnArea = CreatureManager.SpawnArea.Center,
                     SpawnAltitude = 10f,
                     CheckSpawnInterval = 600,
                     ForestSpawn = Forest.Yes,
@@ -98,7 +95,7 @@ namespace MonsterLabZConfig.PrefabIniters
             creature.Drops["Ooze"].DropChance = 100f;
             creature.Drops["Ooze"].DropOnePerPlayer = false;
             creature.Drops["Ooze"].MultiplyDropByLevel = true;
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "TreeSpider_ragdoll");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "TreeSpider_ragdoll");
         }
 
         private static void SpidersGreen(ConfigFile config)
@@ -118,7 +115,7 @@ namespace MonsterLabZConfig.PrefabIniters
                 creature = new Creature("dybassets", "GreenSpider")
                 {
                     Biome = Heightmap.Biome.Meadows,
-                    SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Everywhere,
+                    SpecificSpawnArea = CreatureManager.SpawnArea.Everywhere,
                     CheckSpawnInterval = 600,
                     ForestSpawn = Forest.No,
                     SpawnChance = 15f,
@@ -135,7 +132,7 @@ namespace MonsterLabZConfig.PrefabIniters
             creature.Drops["Ooze"].DropChance = 100f;
             creature.Drops["Ooze"].DropOnePerPlayer = false;
             creature.Drops["Ooze"].MultiplyDropByLevel = true;
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "GreenSpider_ragdoll");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "GreenSpider_ragdoll");
         }
 
         private static void SpidersFrost(ConfigFile config)
@@ -166,7 +163,7 @@ namespace MonsterLabZConfig.PrefabIniters
             creature.Drops["Ooze"].DropChance = 100f;
             creature.Drops["Ooze"].DropOnePerPlayer = false;
             creature.Drops["Ooze"].MultiplyDropByLevel = true;
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "FrostSpider_ragdoll");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "FrostSpider_ragdoll");
         }
 
         private static void SpidersFrigid(ConfigFile config)
@@ -197,7 +194,7 @@ namespace MonsterLabZConfig.PrefabIniters
             creature.Drops["Ooze"].DropChance = 100f;
             creature.Drops["Ooze"].DropOnePerPlayer = false;
             creature.Drops["Ooze"].MultiplyDropByLevel = true;
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "FrigidSpider_ragdoll");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "FrigidSpider_ragdoll");
         }
 
         private static void SpidersForest(ConfigFile config)
@@ -227,7 +224,7 @@ namespace MonsterLabZConfig.PrefabIniters
             creature.Drops["Ooze"].DropChance = 100f;
             creature.Drops["Ooze"].DropOnePerPlayer = false;
             creature.Drops["Ooze"].MultiplyDropByLevel = true;
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "ForestSpider_ragdoll");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ForestSpider_ragdoll");
         }
 
         private static void SpidersBrown(ConfigFile config)
@@ -262,7 +259,7 @@ namespace MonsterLabZConfig.PrefabIniters
             creature.Drops["Ooze"].DropChance = 100f;
             creature.Drops["Ooze"].DropOnePerPlayer = false;
             creature.Drops["Ooze"].MultiplyDropByLevel = true;
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "BrownSpider_ragdoll");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "BrownSpider_ragdoll");
         }
         private static void SpidersTan(ConfigFile config)
         {
@@ -291,7 +288,7 @@ namespace MonsterLabZConfig.PrefabIniters
             creature.Drops["Ooze"].DropChance = 100f;
             creature.Drops["Ooze"].DropOnePerPlayer = false;
             creature.Drops["Ooze"].MultiplyDropByLevel = true;
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "TanSpider_ragdoll");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "TanSpider_ragdoll");
         }
     }
 }

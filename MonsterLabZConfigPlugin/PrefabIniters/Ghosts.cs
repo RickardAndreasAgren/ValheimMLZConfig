@@ -1,14 +1,6 @@
-﻿extern alias MonsterLabZN;
-
-using BepInEx.Configuration;
-using MonsterLabZN::CreatureManager;
-using MonsterLabZN::ItemManager;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using BepInEx.Configuration;
+using CreatureManager;
+using ItemManager;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
@@ -43,13 +35,13 @@ namespace MonsterLabZConfig.PrefabIniters
             warrior.Drops["Ruby"].DropChance = 100f;
             warrior.Drops["Ruby"].DropOnePerPlayer = false;
             warrior.Drops["Ruby"].MultiplyDropByLevel = false;
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "GhostWarrior");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "GhostWarrior");
             new Item("dybassets", "ghost_poisonball").Configurable = Configurability.Disabled;
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_ghost_poison_explode");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_ghost_poison_start");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_ghostpoison_hit");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_ghost_poison_explosion");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "ghost_poisonball_projectile");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_ghost_poison_explode");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_ghost_poison_start");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_ghostpoison_hit");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_ghost_poison_explosion");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ghost_poisonball_projectile");
         }
 
         public static void WraithWarrior(ConfigFile config)
@@ -69,7 +61,7 @@ namespace MonsterLabZConfig.PrefabIniters
                 creature = new Creature("dybassets", "WraithWarrior")
                 {
                     Biome = Heightmap.Biome.Swamp,
-                    SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Everywhere,
+                    SpecificSpawnArea = CreatureManager.SpawnArea.Everywhere,
                     RequiredAltitude = new Range(1f, 1000f),
                     CheckSpawnInterval = 300,
                     SpawnChance = 70f,
@@ -89,7 +81,7 @@ namespace MonsterLabZConfig.PrefabIniters
             creature.Drops["Chain"].DropChance = 100f;
             creature.Drops["Chain"].DropOnePerPlayer = false;
             creature.Drops["Chain"].MultiplyDropByLevel = true;
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "WraithWarrior_Ragdoll");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "WraithWarrior_Ragdoll");
             new Item("dybassets", "wraith_bow").Configurable = Configurability.Disabled;
             new Item("dybassets", "wraith_scythe_180").Configurable = Configurability.Disabled;
             new Item("dybassets", "wraith_scythe_360").Configurable = Configurability.Disabled;
@@ -103,7 +95,7 @@ namespace MonsterLabZConfig.PrefabIniters
             new Item("dybassets", "wraith_sword_rightlong").Configurable = Configurability.Disabled;
             new Item("dybassets", "wraith_sword_slash").Configurable = Configurability.Disabled;
             new Item("dybassets", "wraith_taunt").Configurable = Configurability.Disabled;
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_wraithwarrior_attack");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_wraithwarrior_attack");
         }
     }
 }

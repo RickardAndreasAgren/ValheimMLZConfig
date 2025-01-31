@@ -1,12 +1,5 @@
-﻿extern alias MonsterLabZN;
-
-using MonsterLabZN::CreatureManager;
-using MonsterLabZN::ItemManager;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CreatureManager;
+using ItemManager;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
@@ -37,7 +30,7 @@ namespace MonsterLabZConfig.PrefabIniters
             creature.Drops["TrophySurtr"].DropChance = 100f;
             creature.Drops["TrophySurtr"].DropOnePerPlayer = false;
             creature.Drops["TrophySurtr"].MultiplyDropByLevel = false;
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "Surtr_Ragdoll");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "Surtr_Ragdoll");
             new Item("dybassets", "TrophySurtr").Configurable = Configurability.Disabled;
             new Item("dybassets", "surtr_attack_jump").Configurable = Configurability.Disabled;
             new Item("dybassets", "surtr_attack_rage").Configurable = Configurability.Disabled;
@@ -46,25 +39,25 @@ namespace MonsterLabZConfig.PrefabIniters
             new Item("dybassets", "surtr_firewave").Configurable = Configurability.Disabled;
             new Item("dybassets", "surtr_meteors").Configurable = Configurability.Disabled;
             new Item("dybassets", "surtr_stomp").Configurable = Configurability.Disabled;
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_demon_flamewave_start");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_surtr_alert");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_surtr_attack");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_surtr_death");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_surtr_hit");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_surtr_idle");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_surtr_taunt");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_surtr_transform");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_demon_rise");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_meteor_flame_ring");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_surtr_boss_footsteps");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_demon_meteor_hit");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_demon_fireball_expl");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_surtr_firesword_impact");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_surtr_transform_firewave_verticle");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "demon_projectile_fireball");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "demon_projectile_fireskull");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "demon_projectile_meteor");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "demon_projectile_flamewave");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_demon_flamewave_start");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_surtr_alert");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_surtr_attack");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_surtr_death");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_surtr_hit");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_surtr_idle");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_surtr_taunt");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_surtr_transform");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_demon_rise");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_meteor_flame_ring");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_surtr_boss_footsteps");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_demon_meteor_hit");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_demon_fireball_expl");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_surtr_firesword_impact");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_surtr_transform_firewave_verticle");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "demon_projectile_fireball");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "demon_projectile_fireskull");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "demon_projectile_meteor");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "demon_projectile_flamewave");
         }
     }
 }

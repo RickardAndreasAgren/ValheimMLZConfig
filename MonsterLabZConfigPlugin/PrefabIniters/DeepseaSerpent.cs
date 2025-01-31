@@ -1,12 +1,5 @@
-﻿extern alias MonsterLabZN;
-
-using MonsterLabZN::CreatureManager;
-using MonsterLabZN::ItemManager;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CreatureManager;
+using ItemManager;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
@@ -29,7 +22,7 @@ namespace MonsterLabZConfig.PrefabIniters
                 creature = new Creature("dybassets", "DeepSea_Serpent")
                 {
                     Biome = Heightmap.Biome.Ocean,
-                    SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Center,
+                    SpecificSpawnArea = CreatureManager.SpawnArea.Center,
                     RequiredAltitude = new Range(-1000f, -10f),
                     RequiredOceanDepth = new Range(20f, 30f),
                     CheckSpawnInterval = 800,
@@ -53,16 +46,16 @@ namespace MonsterLabZConfig.PrefabIniters
             creature.Drops["SerpentScale"].DropChance = 100f;
             creature.Drops["SerpentScale"].DropOnePerPlayer = false;
             creature.Drops["SerpentScale"].MultiplyDropByLevel = true;
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "DeepSea_Serpent_Flying");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "DeepSea_Serpent_Flying");
             new Item("dybassets", "TrophyDeepSeaSerpent").Configurable = Configurability.Disabled;
             new Item("dybassets", "DeepSea_Serpent_Attack").Configurable = Configurability.Disabled;
             new Item("dybassets", "DeepSea_Serpent_Cast").Configurable = Configurability.Disabled;
             new Item("dybassets", "DeepSea_Serpent_Laser").Configurable = Configurability.Disabled;
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "projectile_serpent_laser");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_deepseaserpent_attack_trigger");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_serpent_laser");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_deepseaserpent_alerted");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_serpent_fire_launch");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "projectile_serpent_laser");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_deepseaserpent_attack_trigger");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_serpent_laser");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_deepseaserpent_alerted");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_serpent_fire_launch");
         }
     }
 }

@@ -1,8 +1,6 @@
-﻿extern alias MonsterLabZN;
-
-using BepInEx.Configuration;
-using MonsterLabZN::CreatureManager;
-using MonsterLabZN::ItemManager;
+﻿using BepInEx.Configuration;
+using CreatureManager;
+using ItemManager;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
@@ -15,8 +13,8 @@ namespace MonsterLabZConfig.PrefabIniters
 
             if ((bool)config[PluginConfig.DefDeepMolluscan].BoxedValue || (bool)config[PluginConfig.DefMolluscan].BoxedValue)
             {
-                MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "Molluscan_ragdoll");
-                MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "DeepSeaMolluscan_ragdoll");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "Molluscan_ragdoll");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "DeepSeaMolluscan_ragdoll");
                 new Item("dybassets", "TrophyMolluscan").Configurable = Configurability.Disabled;
                 new Item("dybassets", "TrophyDeepSeaMolluscan").Configurable = Configurability.Disabled;
                 new Item("dybassets", "Molluscan_attack").Configurable = Configurability.Disabled;
@@ -27,18 +25,18 @@ namespace MonsterLabZConfig.PrefabIniters
                 new Item("dybassets", "MolluscanLand_attack2").Configurable = Configurability.Disabled;
                 new Item("dybassets", "MolluscanLand_attack3").Configurable = Configurability.Disabled;
                 new Item("dybassets", "MolluscanLand_taunt").Configurable = Configurability.Disabled;
-                MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_molluscan_alert");
-                MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_molluscan_attack");
-                MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_molluscan_death");
-                MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_molluscan_hit");
-                MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_molluscan_idle");
-                MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_molluscan_taunt");
-                MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_molluscanland_alert");
-                MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_molluscanland_attack");
-                MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_molluscanland_death");
-                MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_molluscanland_hit");
-                MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_molluscanland_idle");
-                MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_molluscanland_taunt");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_molluscan_alert");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_molluscan_attack");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_molluscan_death");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_molluscan_hit");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_molluscan_idle");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_molluscan_taunt");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_molluscanland_alert");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_molluscanland_attack");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_molluscanland_death");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_molluscanland_hit");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_molluscanland_idle");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_molluscanland_taunt");
             }
         }
 
@@ -59,7 +57,7 @@ namespace MonsterLabZConfig.PrefabIniters
                 creature2 = new Creature("dybassets", "MolluscanLand")
                 {
                     Biome = Heightmap.Biome.BlackForest,
-                    SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Everywhere,
+                    SpecificSpawnArea = CreatureManager.SpawnArea.Everywhere,
                     RequiredOceanDepth = new Range(1f, 2f),
                     RequiredAltitude = new Range(-1f, 10f),
                     RequiredWeather = (Weather.LightRain | Weather.Rain | Weather.ThunderStorm),
@@ -98,7 +96,7 @@ namespace MonsterLabZConfig.PrefabIniters
                 creature = new Creature("dybassets", "Molluscan")
                 {
                     Biome = Heightmap.Biome.Ocean,
-                    SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Everywhere,
+                    SpecificSpawnArea = CreatureManager.SpawnArea.Everywhere,
                     RequiredAltitude = new Range(-1000f, -10f),
                     RequiredOceanDepth = new Range(15f, 30f),
                     CheckSpawnInterval = 450,

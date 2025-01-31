@@ -1,9 +1,7 @@
 ﻿extern alias ServerSyncStandalone;
-extern alias MonsterLabZN;
 
 using BepInEx.Configuration;
 using MonsterLabZConfig.PrefabIniters;
-using MonsterLabZN::MonsterLabZ;
 using static UnityEngine.EventSystems.EventTrigger;
 
 namespace MonsterLabZConfig
@@ -21,9 +19,11 @@ namespace MonsterLabZConfig
             KrakenConfig(config);
             SurtrConfig(config);
             IceGolemConfig(config);
+            UndeadJarlConfig(config);
             FireGolemConfig(config);
             FulingShipConfig(config);
             DraugrShipConfig(config);
+            Mobs(config);
         }
 
         public static ConfigEntry<short> MonsterSpawnData { get; internal set; }

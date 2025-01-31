@@ -1,12 +1,5 @@
-﻿extern alias MonsterLabZN;
-
-using MonsterLabZN::CreatureManager;
-using MonsterLabZN::ItemManager;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CreatureManager;
+using ItemManager;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
@@ -86,14 +79,14 @@ namespace MonsterLabZConfig.PrefabIniters
             if ((bool)config[PluginConfig.DefMistileBluePassive].BoxedValue || (bool)config[PluginConfig.DefMistileBlueAggro].BoxedValue)
             {
                 new Item("dybassets", "ML_BlueMistile_kamikaze").Configurable = Configurability.Disabled;
-                MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "fx_ML_BlueMistile_attack");
-                MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "fx_ML_BlueMistile_die");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "fx_ML_BlueMistile_attack");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "fx_ML_BlueMistile_die");
             }
             if ((bool)config[PluginConfig.DefMistileRedPassive].BoxedValue || (bool)config[PluginConfig.DefMistileRedAggro].BoxedValue)
             {
                 new Item("dybassets", "ML_RedMistile_kamikaze").Configurable = Configurability.Disabled;
-                MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "fx_ML_RedMistile_attack");
-                MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "fx_ML_RedMistile_die");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "fx_ML_RedMistile_attack");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "fx_ML_RedMistile_die");
             }
         }
     }
