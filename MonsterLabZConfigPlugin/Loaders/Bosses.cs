@@ -15,7 +15,8 @@ namespace MonsterLabZConfig.Loaders
         {
             BossGolems.init(config);
             BossSurtr.init(config);
-            BossUndeadJarl.init(config);
+            // BossUndeadJarl.init(config);
+            BossesShips.init(config);
         }
 
         private static void LoadQuestBosses(ConfigFile config)

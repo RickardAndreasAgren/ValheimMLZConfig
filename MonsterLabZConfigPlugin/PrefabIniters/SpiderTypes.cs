@@ -60,10 +60,15 @@ namespace MonsterLabZConfig.PrefabIniters
         {
             if (!(bool)config[PluginConfig.DefTreeSpider].BoxedValue) return;
 
+            new Creature("dybassets", "TreeSpider")
+            {
+                Biome = Heightmap.Biome.None,
+                ConfigurationEnabled = false
+            };
             Creature creature;
             if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue > 0)
             {
-                creature = new Creature("dybassets", "TreeSpider")
+                creature = new Creature("dybassets", "TreeSpider_Spawn")
                 {
                     Biome = Heightmap.Biome.None
                 };
@@ -74,7 +79,7 @@ namespace MonsterLabZConfig.PrefabIniters
                     {
                         collection
                             .ConfigureWorldSpawner(721)
-                            .SetPrefabName("TreeSpider")
+                            .SetPrefabName("TreeSpider_Spawn")
                             .SetConditionBiomes(Heightmap.Biome.Meadows)
                             .SetMinLevel(1)
                             .SetMaxLevel(3);
@@ -83,7 +88,7 @@ namespace MonsterLabZConfig.PrefabIniters
             }
             else
             {
-                creature = new Creature("dybassets", "TreeSpider")
+                creature = new Creature("dybassets", "TreeSpider_Spawn")
                 {
                     Biome = Heightmap.Biome.Meadows,
                     SpecificSpawnArea = CreatureManager.SpawnArea.Center,
@@ -96,11 +101,6 @@ namespace MonsterLabZConfig.PrefabIniters
                     SpecificSpawnTime = SpawnTime.Always
                 };
             }
-            new Creature("dybassets", "TreeSpider_Spawn")
-            {
-                Biome = Heightmap.Biome.None,
-                ConfigurationEnabled = false
-            };
             creature.Drops["SpiderFang"].Amount = new Range(1f, 1f);
             creature.Drops["SpiderFang"].DropChance = 10f;
             creature.Drops["SpiderFang"].DropOnePerPlayer = false;

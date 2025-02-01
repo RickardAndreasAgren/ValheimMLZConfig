@@ -18,7 +18,11 @@ namespace MonsterLabZConfig
         {
             if (col.tag == "Physical")
             {
-                col.GetComponent<Rigidbody>().AddForce(base.transform.up * power);
+                var rBody = col.GetComponent<Rigidbody>();
+                if (rBody != null && rBody.isKinematic == false)
+                {
+                    rBody.AddForce(base.transform.up * power);
+                }
             }
 
             if (col.tag == "Player")

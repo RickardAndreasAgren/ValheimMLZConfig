@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
+using MonsterLabZConfig;
 
-namespace MonsterLabZConfig
+//namespace MonsterLabZConfig
+namespace MonsterLabZ
 {
     public class InstantiatePrefabSpawn : MonoBehaviour
     {
@@ -19,10 +21,18 @@ namespace MonsterLabZConfig
             ZLog.Log(GetType().Name + "." + MethodBase.GetCurrentMethod().Name + "()");
             foreach (GameObject item in m_spawnPrefab)
             {
-                ZLog.Log("[" + GetType().Name + "] Spawning " + item.name);
                 GameObject gameObject = Object.Instantiate(item, base.transform.transform.position, base.transform.transform.rotation);
+                MonsterLabZConfig.MonsterLabZConfig.PluginLogger.LogWarning($"Adding {gameObject.name} to a parent");
+                ZLog.Log($"Adding {gameObject.name} to a parent");
                 gameObject.transform.SetParent(base.transform, worldPositionStays: true);
                 gameObject.layer = 17;
+                Rigidbody rBody = gameObject.GetComponent<Rigidbody>();
+                if (rBody != null)
+                {
+                    rBody.automaticCenterOfMass = false;
+                    rBody.automaticInertiaTensor = false;
+                    rBody.isKinematic = false;
+                }
                 m_spawnedMobs.Add(gameObject);
             }
         }
@@ -34,9 +44,12 @@ namespace MonsterLabZConfig
             {
                 if (spawnedMob != null)
                 {
-                    ZLog.Log("[" + GetType().Name + "] Reparent " + spawnedMob.name);
+                    ZLog.Log("[" + GetType().Name + "] Deparent " + spawnedMob.name);
                     spawnedMob.transform.parent = null;
-                    spawnedMob.GetComponent<Rigidbody>().isKinematic = false;
+                    var rBody = spawnedMob.GetComponent<Rigidbody>();
+                    rBody.automaticCenterOfMass = true;
+                    rBody.automaticInertiaTensor = true;
+                    rBody.isKinematic = false;
                     spawnedMob.layer = 9;
                     Humanoid component = spawnedMob.GetComponent<Humanoid>();
                     if (component != null)
