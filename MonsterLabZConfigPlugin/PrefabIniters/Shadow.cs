@@ -1,7 +1,6 @@
-﻿extern alias MonsterLabZN;
-
-using MonsterLabZN::CreatureManager;
-using MonsterLabZN::ItemManager;
+﻿using CreatureManager;
+using ItemManager;
+using SpawnThat.Spawners;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
@@ -15,9 +14,22 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 Biome = Heightmap.Biome.None
             };
+
+            if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
+            {
+                MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                {
+                    collection
+                        .ConfigureWorldSpawner(709)
+                        .SetPrefabName("EvilShadow")
+                        .SetConditionBiomes(Heightmap.Biome.Swamp)
+                        .SetMinLevel(1)
+                        .SetMaxLevel(3);
+                });
+            }
             new Item("dybassets", "evilshadow_attack").Configurable = Configurability.Disabled;
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_evilspirit_attack");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_evilshadow_attack");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_evilspirit_attack");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_evilshadow_attack");
         }
     }
 }

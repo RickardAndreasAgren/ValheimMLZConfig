@@ -1,13 +1,6 @@
-﻿extern alias MonsterLabZN;
-
-using Jotunn.Managers;
-using MonsterLabZN::CreatureManager;
-using MonsterLabZN::ItemManager;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CreatureManager;
+using ItemManager;
+using SpawnThat.Spawners;
 using static Heightmap;
 
 namespace MonsterLabZConfig.PrefabIniters
@@ -31,15 +24,28 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "NormalSkeletonWarrior")
                 {
-                    Biome = Heightmap.Biome.BlackForest
+                    Biome = Heightmap.Biome.None
                 };
+
+                if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
+                {
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(712)
+                            .SetPrefabName("NormalSkeletonWarrior")
+                            .SetConditionBiomes(Heightmap.Biome.BlackForest)
+                            .SetMinLevel(1)
+                            .SetMaxLevel(3);
+                    });
+                }
             }
             else
             {
                 creature = new Creature("dybassets", "NormalSkeletonWarrior")
                 {
                     Biome = Heightmap.Biome.BlackForest,
-                    SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Everywhere,
+                    SpecificSpawnArea = CreatureManager.SpawnArea.Everywhere,
                     CheckSpawnInterval = 350,
                     SpawnChance = 30f,
                     GroupSize = new Range(1f, 2f),
@@ -49,6 +55,7 @@ namespace MonsterLabZConfig.PrefabIniters
             }
 
             
+
             creature.Drops["TrophySkeleton"].Amount = new Range(1f, 1f);
             creature.Drops["TrophySkeleton"].DropChance = 10f;
             creature.Drops["TrophySkeleton"].DropOnePerPlayer = false;
@@ -78,11 +85,11 @@ namespace MonsterLabZConfig.PrefabIniters
             new Item("dybassets", "attack_sword_rightlong_T1").Configurable = Configurability.Disabled;
             new Item("dybassets", "attack_sword_slash_T1").Configurable = Configurability.Disabled;
             new Item("dybassets", "attack_unarmed_T1").Configurable = Configurability.Disabled;
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_mlskeleton_attack");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_mlskeleton_cast");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_mlskeleton_taunt");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_skeletonwarrior_tauntburn");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_skeletonwarrior_heal_aoe");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_mlskeleton_attack");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_mlskeleton_cast");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_mlskeleton_taunt");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_skeletonwarrior_tauntburn");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_skeletonwarrior_heal_aoe");
         }
         private static void FireSkeleton(BepInEx.Configuration.ConfigFile config)
         {
@@ -99,6 +106,28 @@ namespace MonsterLabZConfig.PrefabIniters
                 {
                     Biome = Heightmap.Biome.None
                 };
+
+                if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
+                {
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(713)
+                            .SetPrefabName("FireSkeletonWarrior")
+                            .SetConditionBiomes(Heightmap.Biome.AshLands)
+                            .SetMinLevel(1)
+                            .SetMaxLevel(3);
+                    });
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(714)
+                            .SetPrefabName("FireSkeletonWarriorNoFx")
+                            .SetConditionBiomes(Heightmap.Biome.AshLands)
+                            .SetMinLevel(1)
+                            .SetMaxLevel(3);
+                    });
+                }
             }
             else
             {
@@ -111,6 +140,7 @@ namespace MonsterLabZConfig.PrefabIniters
                     Biome = Heightmap.Biome.None
                 };
             }
+
 
             creature.ConfigurationEnabled = true;
             creature.Drops["TrophySkeletonFire"].Amount = new Range(1f, 1f);
@@ -131,8 +161,8 @@ namespace MonsterLabZConfig.PrefabIniters
             creature2.Drops["BoneFragments"].DropChance = 100f;
             creature2.Drops["BoneFragments"].DropOnePerPlayer = false;
             creature2.Drops["BoneFragments"].MultiplyDropByLevel = true;
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "BurningBonePileSpawner");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "FireSkeletonWarriorNoFx_Ragdoll");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "BurningBonePileSpawner");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "FireSkeletonWarriorNoFx_Ragdoll");
             new Item("dybassets", "TrophySkeletonFire").Configurable = Configurability.Disabled;
             new Item("dybassets", "attack_shield_T5").Configurable = Configurability.Disabled;
             new Item("dybassets", "axe_dualcombo_T5").Configurable = Configurability.Disabled;
@@ -151,7 +181,7 @@ namespace MonsterLabZConfig.PrefabIniters
             new Item("dybassets", "sword_right180_T5").Configurable = Configurability.Disabled;
             new Item("dybassets", "sword_rightlong_T5").Configurable = Configurability.Disabled;
             new Item("dybassets", "sword_slash_T5").Configurable = Configurability.Disabled;
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_skeleton_death_fire");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_skeleton_death_fire");
         }
         private static void IceSkeleton(BepInEx.Configuration.ConfigFile config)
         {
@@ -163,24 +193,53 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "IceSkeletonWarrior")
                 {
-                    Biome = Heightmap.Biome.Mountain
+                    Biome = Heightmap.Biome.None
                 };
                 creature2 = new Creature("dybassets", "IceSkeletonWarriorNoFx")
                 {
-                    Biome = Heightmap.Biome.Mountain
+                    Biome = Heightmap.Biome.None
                 };
                 creature3 = new Creature("dybassets", "IceSkeletonWarriorT6")
                 {
-                    Biome = Heightmap.Biome.DeepNorth
+                    Biome = Heightmap.Biome.None
                 };
-
+                if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
+                {
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(715)
+                            .SetPrefabName("IceSkeletonWarrior")
+                            .SetConditionBiomes(Heightmap.Biome.Mountain)
+                            .SetMinLevel(1)
+                            .SetMaxLevel(3);
+                    });
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(716)
+                            .SetPrefabName("IceSkeletonWarriorNoFx")
+                            .SetConditionBiomes(Heightmap.Biome.Mountain)
+                            .SetMinLevel(1)
+                            .SetMaxLevel(3);
+                    });
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(717)
+                            .SetPrefabName("IceSkeletonWarriorT6")
+                            .SetConditionBiomes(Heightmap.Biome.DeepNorth)
+                            .SetMinLevel(1)
+                            .SetMaxLevel(3);
+                    });
+                }
             }
             else
             {
                 creature = new Creature("dybassets", "IceSkeletonWarrior")
                 {
                     Biome = Heightmap.Biome.Mountain,
-                    SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Everywhere,
+                    SpecificSpawnArea = CreatureManager.SpawnArea.Everywhere,
                     CheckSpawnInterval = 350,
                     SpawnChance = 30f,
                     GroupSize = new Range(2f, 3f),
@@ -195,7 +254,6 @@ namespace MonsterLabZConfig.PrefabIniters
                 {
                     Biome = Heightmap.Biome.DeepNorth
                 };
-
             }
 
             creature.Drops["TrophySkeletonIce"].Amount = new Range(1f, 1f);
@@ -254,7 +312,7 @@ namespace MonsterLabZConfig.PrefabIniters
             new Item("dybassets", "attack_sword_right180_T3").Configurable = Configurability.Disabled;
             new Item("dybassets", "attack_sword_rightlong_T3").Configurable = Configurability.Disabled;
             new Item("dybassets", "attack_sword_slash_T3").Configurable = Configurability.Disabled;
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_skeleton_death_ice");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_skeleton_death_ice");
 
         }
         private static void PoisonSkeleton(BepInEx.Configuration.ConfigFile config)
@@ -266,19 +324,41 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "PoisonSkeletonWarrior")
                 {
-                    Biome = Heightmap.Biome.Swamp
+                    Biome = Heightmap.Biome.None
                 };
                 creature2 = new Creature("dybassets", "PoisonSkeletonWarriorNoFx")
                 {
-                    Biome = Heightmap.Biome.Swamp
+                    Biome = Heightmap.Biome.None
                 };
+
+                if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
+                {
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(717)
+                            .SetPrefabName("PoisonSkeletonWarrior")
+                            .SetConditionBiomes(Heightmap.Biome.Swamp)
+                            .SetMinLevel(1)
+                            .SetMaxLevel(3);
+                    });
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(718)
+                            .SetPrefabName("PoisonSkeletonWarriorNoFx")
+                            .SetConditionBiomes(Heightmap.Biome.Swamp)
+                            .SetMinLevel(1)
+                            .SetMaxLevel(3);
+                    });
+                }
             }
             else
             {
                 creature = new Creature("dybassets", "PoisonSkeletonWarrior")
                 {
                     Biome = Heightmap.Biome.Swamp,
-                    SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Everywhere,
+                    SpecificSpawnArea = CreatureManager.SpawnArea.Everywhere,
                     CheckSpawnInterval = 350,
                     SpawnChance = 30f,
                     GroupSize = new Range(1f, 3f),
@@ -319,7 +399,7 @@ namespace MonsterLabZConfig.PrefabIniters
             new Item("dybassets", "attack_sword_right180_T2").Configurable = Configurability.Disabled;
             new Item("dybassets", "attack_sword_rightlong_T2").Configurable = Configurability.Disabled;
             new Item("dybassets", "attack_sword_slash_T2").Configurable = Configurability.Disabled;
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_skeleton_death_poison");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_skeleton_death_poison");
 
         }
         private static void ChaosSkeleton(BepInEx.Configuration.ConfigFile config)
@@ -331,12 +411,34 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "ChaosSkeletonWarrior")
                 {
-                    Biome = Heightmap.Biome.AshLands
+                    Biome = Heightmap.Biome.None
                 };
                 creature2 = new Creature("dybassets", "ChaosSkeletonWarriorNoFX")
                 {
-                    Biome = Heightmap.Biome.AshLands
+                    Biome = Heightmap.Biome.None
                 };
+
+                if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
+                {
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(719)
+                            .SetPrefabName("ChaosSkeletonWarrior")
+                            .SetConditionBiomes(Heightmap.Biome.AshLands)
+                            .SetMinLevel(1)
+                            .SetMaxLevel(3);
+                    });
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(720)
+                            .SetPrefabName("ChaosSkeletonWarriorNoFX")
+                            .SetConditionBiomes(Heightmap.Biome.AshLands)
+                            .SetMinLevel(1)
+                            .SetMaxLevel(3);
+                    });
+                }
             }
             else
             {

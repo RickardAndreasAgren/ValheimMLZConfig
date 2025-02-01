@@ -1,13 +1,6 @@
-﻿extern alias MonsterLabZN;
-
-using Jotunn.Managers;
-using MonsterLabZN::CreatureManager;
-using MonsterLabZN::ItemManager;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CreatureManager;
+using ItemManager;
+using SpawnThat.Spawners;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
@@ -23,14 +16,26 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "KrakenLD")
                 {
-                    Biome = Heightmap.Biome.Ocean,
+                    Biome = Heightmap.Biome.None,
                 };
+                if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
+                {
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(783)
+                            .SetPrefabName("KrakenLD")
+                            .SetConditionBiomes(Heightmap.Biome.Ocean)
+                            .SetMinLevel(1)
+                            .SetMaxLevel(1);
+                    });
+                }
             } else
             {
                 creature = new Creature("dybassets", "KrakenLD")
                 {
                     Biome = Heightmap.Biome.Ocean,
-                    SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Center,
+                    SpecificSpawnArea = CreatureManager.SpawnArea.Center,
                     RequiredAltitude = new Range(-1000f, -5f),
                     RequiredOceanDepth = new Range(20f, 30f),
                     CheckSpawnInterval = 600,
@@ -58,7 +63,7 @@ namespace MonsterLabZConfig.PrefabIniters
                 Biome = Heightmap.Biome.None,
                 ConfigurationEnabled = false
             };
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "KrakenLD_ragdoll");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "KrakenLD_ragdoll");
             new Item("dybassets", "KrakenMeat").Configurable = Configurability.Disabled;
             new Item("dybassets", "kraken_attack1").Configurable = Configurability.Disabled;
             new Item("dybassets", "kraken_attack2").Configurable = Configurability.Disabled;
@@ -68,24 +73,24 @@ namespace MonsterLabZConfig.PrefabIniters
             new Item("dybassets", "kraken_poisonball").Configurable = Configurability.Disabled;
             new Item("dybassets", "kraken_taunt").Configurable = Configurability.Disabled;
             new Item("dybassets", "krakenblob_attack").Configurable = Configurability.Disabled;
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_kraken_alert");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_kraken_attack");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_kraken_death");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_kraken_hit");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_kraken_idle");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_kraken_taunt");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_krakenpoison_launch");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_kraken_attack");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_kraken_attacklightning");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_kraken_hit");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_kraken_spit");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_kraken_watersurface");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_krakenpoison_hit");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_krakenpoison_hitground");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_watersplash_kraken");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_krakenblob_attack");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_kraken_lightning_hit");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "inkblob_projectile");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_kraken_alert");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_kraken_attack");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_kraken_death");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_kraken_hit");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_kraken_idle");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_kraken_taunt");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_krakenpoison_launch");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_kraken_attack");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_kraken_attacklightning");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_kraken_hit");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_kraken_spit");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_kraken_watersurface");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_krakenpoison_hit");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_krakenpoison_hitground");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_watersplash_kraken");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_krakenblob_attack");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_kraken_lightning_hit");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "inkblob_projectile");
         }
     }
 }

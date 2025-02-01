@@ -1,13 +1,7 @@
-﻿extern alias MonsterLabZN;
-
-using BepInEx.Configuration;
-using MonsterLabZN::CreatureManager;
-using MonsterLabZN::ItemManager;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BepInEx.Configuration;
+using CreatureManager;
+using ItemManager;
+using SpawnThat.Spawners;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
@@ -33,7 +27,7 @@ namespace MonsterLabZConfig.PrefabIniters
                 creature = new Creature("dybassets", "ML_GoblinShip")
                 {
                     Biome = Heightmap.Biome.Plains,
-                    SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Edge,
+                    SpecificSpawnArea = CreatureManager.SpawnArea.Edge,
                     RequiredAltitude = new Range(-1000f, 0f),
                     SpawnAltitude = 20f,
                     RequiredOceanDepth = new Range(15f, 20f),
@@ -50,8 +44,20 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "ML_GoblinShip")
                 {
-                    Biome = Heightmap.Biome.Plains
+                    Biome = Heightmap.Biome.None
                 };
+                if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
+                {
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(750)
+                            .SetPrefabName("ML_GoblinShip")
+                            .SetConditionBiomes(Heightmap.Biome.Plains)
+                            .SetMinLevel(1)
+                            .SetMaxLevel(1);
+                    });
+                }
             }
 
             creature.Drops["DeerHide"].Amount = new Range(1f, 2f);
@@ -74,17 +80,17 @@ namespace MonsterLabZConfig.PrefabIniters
             creature.Drops["ML_GoblinShip_Cargo"].DropChance = 100f;
             creature.Drops["ML_GoblinShip_Cargo"].DropOnePerPlayer = false;
             creature.Drops["ML_GoblinShip_Cargo"].MultiplyDropByLevel = false;
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "DwarfGoblin_Boat");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "DwarfGoblinShaman_Boat");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "DwarfGoblin_NoAttack");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "DwarfGoblin_Spawn");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_GoblinShip_Cargo");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "DwarfGoblin_Boat");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "DwarfGoblinShaman_Boat");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "DwarfGoblin_NoAttack");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "DwarfGoblin_Spawn");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_GoblinShip_Cargo");
             new Item("dybassets", "ml_aiship_move").Configurable = Configurability.Disabled;
             new Item("dybassets", "ml_goblinship_spawn").Configurable = Configurability.Disabled;
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_shipwater_surface");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_ship_move_slow");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_ship_move_fast");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "ml_goblinship_spawn_projectile");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_shipwater_surface");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_ship_move_slow");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_ship_move_fast");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ml_goblinship_spawn_projectile");
         }
 
         private static void LoadDraugrShip(ConfigFile config)
@@ -96,7 +102,7 @@ namespace MonsterLabZConfig.PrefabIniters
                 creature = new Creature("dybassets", "ML_DraugrShip")
                 {
                     Biome = Heightmap.Biome.BlackForest,
-                    SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Edge,
+                    SpecificSpawnArea = CreatureManager.SpawnArea.Edge,
                     RequiredAltitude = new Range(-1000f, 0f),
                     SpawnAltitude = 20f,
                     RequiredOceanDepth = new Range(15f, 20f),
@@ -113,8 +119,20 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "ML_DraugrShip")
                 {
-                    Biome = Heightmap.Biome.BlackForest,
+                    Biome = Heightmap.Biome.None,
                 };
+                if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
+                {
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(751)
+                            .SetPrefabName("ML_DraugrShip")
+                            .SetConditionBiomes(Heightmap.Biome.Swamp)
+                            .SetMinLevel(1)
+                            .SetMaxLevel(1);
+                    });
+                }
             }
                 
             creature.Drops["DeerHide"].Amount = new Range(1f, 2f);
@@ -133,19 +151,19 @@ namespace MonsterLabZConfig.PrefabIniters
             creature.Drops["ML_DraugrShip_Cargo"].DropChance = 100f;
             creature.Drops["ML_DraugrShip_Cargo"].DropOnePerPlayer = false;
             creature.Drops["ML_DraugrShip_Cargo"].MultiplyDropByLevel = false;
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_Draugr_Boat");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_DraugrBomber_Boat");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_Draugr_Spawn");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_Draugr_ragdoll");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_DraugrShip_Cargo");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_Draugr_Boat");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_DraugrBomber_Boat");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_Draugr_Spawn");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_Draugr_ragdoll");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_DraugrShip_Cargo");
             new Item("dybassets", "ml_draugrship_spawn").Configurable = Configurability.Disabled;
             new Item("dybassets", "Draugr_OozeBomb").Configurable = Configurability.Disabled;
             new Item("dybassets", "ML_Draugr_Bow").Configurable = Configurability.Disabled;
             new Item("dybassets", "draugrboat_axe").Configurable = Configurability.Disabled;
             new Item("dybassets", "draugrboat_sword").Configurable = Configurability.Disabled;
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "ml_draugrship_spawn_projectile");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "draugr_oozebomb_projectile");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "draugr_oozebomb_explosion");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ml_draugrship_spawn_projectile");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "draugr_oozebomb_projectile");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "draugr_oozebomb_explosion");
         }
     }
 }

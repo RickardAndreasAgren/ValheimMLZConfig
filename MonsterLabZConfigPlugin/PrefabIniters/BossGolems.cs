@@ -1,12 +1,6 @@
-﻿extern alias MonsterLabZN;
-
-using MonsterLabZN::CreatureManager;
-using MonsterLabZN::ItemManager;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CreatureManager;
+using ItemManager;
+using SpawnThat.Spawners;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
@@ -29,14 +23,26 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "FireGolem")
                 {
-                    Biome = Heightmap.Biome.AshLands
+                    Biome = Heightmap.Biome.None
                 };
+                if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
+                {
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(780)
+                            .SetPrefabName("FireGolem")
+                            .SetConditionBiomes(Heightmap.Biome.AshLands)
+                            .SetMinLevel(1)
+                            .SetMaxLevel(1);
+                    });
+                }
             } else
             {
                 creature = new Creature("dybassets", "FireGolem")
                 {
                     Biome = Heightmap.Biome.AshLands,
-                    SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Everywhere,
+                    SpecificSpawnArea = CreatureManager.SpawnArea.Everywhere,
                     RequiredAltitude = new Range(5f, 1000f),
                     CheckSpawnInterval = 1000,
                     SpawnChance = 5f,
@@ -59,17 +65,17 @@ namespace MonsterLabZConfig.PrefabIniters
             new Item("dybassets", "firegolem_groundslam_jump").Configurable = Configurability.Disabled;
             new Item("dybassets", "firegolem_kick1").Configurable = Configurability.Disabled;
             new Item("dybassets", "firegolem_melee1").Configurable = Configurability.Disabled;
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_firegolem_death");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_firegolem_fireball_start");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_firegolem_footstep");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_firegolem_idle");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_firegolemrock_destroyed");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_firegolem_attack_hit");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_firegolem_fire_hit");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_firegolem_spray");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_firegolemrock_destroyed");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "firegolem_projectile");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "firegolem_groundslam_aoe");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_firegolem_death");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_firegolem_fireball_start");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_firegolem_footstep");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_firegolem_idle");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_firegolemrock_destroyed");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_firegolem_attack_hit");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_firegolem_fire_hit");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_firegolem_spray");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_firegolemrock_destroyed");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "firegolem_projectile");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "firegolem_groundslam_aoe");
         }
 
         private static void IceGolem(BepInEx.Configuration.ConfigFile config)
@@ -82,15 +88,24 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "IceGolem")
                 {
-                    Biome = Heightmap.Biome.DeepNorth
+                    Biome = Heightmap.Biome.None
                 };
+                MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                {
+                    collection
+                        .ConfigureWorldSpawner(781)
+                        .SetPrefabName("IceGolem")
+                        .SetConditionBiomes(Heightmap.Biome.DeepNorth)
+                        .SetMinLevel(1)
+                        .SetMaxLevel(1);
+                });
             }
             else
             {
                 creature = new Creature("dybassets", "IceGolem")
                 {
                     Biome = Heightmap.Biome.DeepNorth,
-                    SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Everywhere,
+                    SpecificSpawnArea = CreatureManager.SpawnArea.Everywhere,
                     RequiredAltitude = new Range(5f, 1000f),
                     CheckSpawnInterval = 1000,
                     SpawnChance = 5f,
@@ -103,24 +118,24 @@ namespace MonsterLabZConfig.PrefabIniters
             creature.Drops["Crystal"].DropChance = 100f;
             creature.Drops["Crystal"].DropOnePerPlayer = false;
             creature.Drops["Crystal"].MultiplyDropByLevel = true;
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "IceGolem_ragdoll");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "IceGolem_ragdoll");
             new Item("dybassets", "icegolem_groundslam").Configurable = Configurability.Disabled;
             new Item("dybassets", "icegolem_jump_groundslam").Configurable = Configurability.Disabled;
             new Item("dybassets", "icegolem_stomp").Configurable = Configurability.Disabled;
             new Item("dybassets", "icegolem_stomp_combo").Configurable = Configurability.Disabled;
             new Item("dybassets", "icegolem_taunt").Configurable = Configurability.Disabled;
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_icegolem_death");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_icegolem_footstep");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_icegolem_land");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_icegolem_taunt");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_icegolem_footstep");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_icegolem_land");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_icegolem_taunt_start");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_IceFissure0");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_IceFissure1");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_IceFissure2");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "spawn_icefissure");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_IceFissureExp");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_icegolem_death");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_icegolem_footstep");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_icegolem_land");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_icegolem_taunt");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_icegolem_footstep");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_icegolem_land");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_icegolem_taunt_start");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_IceFissure0");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_IceFissure1");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_IceFissure2");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "spawn_icefissure");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_IceFissureExp");
         }
     }
 }

@@ -1,12 +1,5 @@
-﻿extern alias MonsterLabZN;
-
-using MonsterLabZN::CreatureManager;
-using MonsterLabZN::ItemManager;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CreatureManager;
+using SpawnThat.Spawners;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
@@ -21,15 +14,28 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "ML_JellyFish0")
                 {
-                    Biome = Heightmap.Biome.Ocean
+                    Biome = Heightmap.Biome.None
                 };
+
+                if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
+                {
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(741)
+                            .SetPrefabName("ML_JellyFish0")
+                            .SetConditionBiomes(Heightmap.Biome.Ocean)
+                            .SetMinLevel(1)
+                            .SetMaxLevel(1);
+                    });
+                }
             }
             else
             {
                 creature = new Creature("dybassets", "ML_JellyFish0")
                 {
                     Biome = Heightmap.Biome.Ocean,
-                    SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Everywhere,
+                    SpecificSpawnArea = CreatureManager.SpawnArea.Everywhere,
                     RequiredAltitude = new Range(-1000f, -10f),
                     RequiredOceanDepth = new Range(20f, 30f),
                     CheckSpawnInterval = 800,
@@ -44,7 +50,7 @@ namespace MonsterLabZConfig.PrefabIniters
             creature.Drops["Guck"].DropChance = 100f;
             creature.Drops["Guck"].DropOnePerPlayer = false;
             creature.Drops["Guck"].MultiplyDropByLevel = true;
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_jellyfish_death");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_jellyfish_death");
         }
     }
 }

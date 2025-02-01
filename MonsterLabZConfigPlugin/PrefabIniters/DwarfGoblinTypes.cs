@@ -1,7 +1,7 @@
-﻿extern alias MonsterLabZN;
-
-using MonsterLabZN::CreatureManager;
-using MonsterLabZN::ItemManager;
+﻿using CreatureManager;
+using ItemManager;
+using MonsterLabZ;
+using SpawnThat.Spawners;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
@@ -19,7 +19,7 @@ namespace MonsterLabZConfig.PrefabIniters
                 {
                     creature = new Creature("dybassets", "DwarfGoblin")
                     {
-                        Biome = Heightmap.Biome.Plains
+                        Biome = Heightmap.Biome.None,
                     };
                     DwarfGoblinParts(creature);
                 }
@@ -27,17 +27,48 @@ namespace MonsterLabZConfig.PrefabIniters
                 {
                     creature2 = new Creature("dybassets", "DwarfGoblinLoot")
                     {
-                        Biome = Heightmap.Biome.Plains
+                        Biome = Heightmap.Biome.None,
                     };
                     DwarfGoblinLootParts(creature2);
                 }
-                if ((bool)config[PluginConfig.DefGoblinShaman].BoxedValue)
+                if ((bool)config[PluginConfig.DefDwarfGoblinShaman].BoxedValue)
                 {
                     creature3 = new Creature("dybassets", "DwarfGoblinShaman")
                     {
-                        Biome = Heightmap.Biome.Plains
+                        Biome = Heightmap.Biome.None,
                     };
                     DwarfGoblinShamanParts(creature3);
+                }
+
+                if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
+                {
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(735)
+                            .SetPrefabName("DwarfGoblin")
+                            .SetConditionBiomes((Heightmap.Biome.Plains))
+                            .SetMinLevel(1)
+                            .SetMaxLevel(1);
+                    });
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(736)
+                            .SetPrefabName("DwarfGoblinLoot")
+                            .SetConditionBiomes((Heightmap.Biome.Plains))
+                            .SetMinLevel(1)
+                            .SetMaxLevel(1);
+                    });
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(737)
+                            .SetPrefabName("DwarfGoblinShaman")
+                            .SetConditionBiomes((Heightmap.Biome.Plains))
+                            .SetMinLevel(1)
+                            .SetMaxLevel(1);
+                    });
                 }
             }
             else
@@ -47,7 +78,7 @@ namespace MonsterLabZConfig.PrefabIniters
                     creature = new Creature("dybassets", "DwarfGoblin")
                     {
                         Biome = Heightmap.Biome.Plains,
-                        SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Everywhere,
+                        SpecificSpawnArea = CreatureManager.SpawnArea.Everywhere,
                         RequiredAltitude = new Range(1f, 1000f),
                         CheckSpawnInterval = 300,
                         SpawnChance = 25f,
@@ -62,7 +93,7 @@ namespace MonsterLabZConfig.PrefabIniters
                     creature2 = new Creature("dybassets", "DwarfGoblinLoot")
                     {
                         Biome = Heightmap.Biome.Plains,
-                        SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Everywhere,
+                        SpecificSpawnArea = CreatureManager.SpawnArea.Everywhere,
                         RequiredAltitude = new Range(1f, 1000f),
                         CheckSpawnInterval = 300,
                         SpawnChance = 5f,
@@ -77,7 +108,7 @@ namespace MonsterLabZConfig.PrefabIniters
                     creature3 = new Creature("dybassets", "DwarfGoblinShaman")
                     {
                         Biome = Heightmap.Biome.Plains,
-                        SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Everywhere,
+                        SpecificSpawnArea = CreatureManager.SpawnArea.Everywhere,
                         RequiredAltitude = new Range(1f, 1000f),
                         CheckSpawnInterval = 450,
                         SpawnChance = 10f,
@@ -111,13 +142,13 @@ namespace MonsterLabZConfig.PrefabIniters
             new Item("dybassets", "DwarfGoblinSpear").Configurable = Configurability.Disabled;
             new Item("dybassets", "DwarfGoblinSpearLox").Configurable = Configurability.Disabled;
             new Item("dybassets", "DwarfGoblinSpearChitin").Configurable = Configurability.Disabled;
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_goblin_loot_alert");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_goblin_loot_die");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_goblin_loot_hit");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_goblin_loot_idle");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_goblin_loot_taunt");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "DwarfGoblinSpear_projectile");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "DwarfGoblinSpearChitin_projectile");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_goblin_loot_alert");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_goblin_loot_die");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_goblin_loot_hit");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_goblin_loot_idle");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_goblin_loot_taunt");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "DwarfGoblinSpear_projectile");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "DwarfGoblinSpearChitin_projectile");
 
             GoblinRider(config);
         }
@@ -128,7 +159,7 @@ namespace MonsterLabZConfig.PrefabIniters
             creature.Drops["Coins"].DropChance = 100f;
             creature.Drops["Coins"].DropOnePerPlayer = false;
             creature.Drops["Coins"].MultiplyDropByLevel = true;
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "DwarfGoblin_ragdoll");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "DwarfGoblin_ragdoll");
         }
 
         private static void DwarfGoblinLootParts(Creature creature2)
@@ -145,7 +176,7 @@ namespace MonsterLabZConfig.PrefabIniters
             creature2.Drops["Ruby"].DropChance = 100f;
             creature2.Drops["Ruby"].DropOnePerPlayer = false;
             creature2.Drops["Ruby"].MultiplyDropByLevel = true;
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "DwarfGoblinLoot_ragdoll");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "DwarfGoblinLoot_ragdoll");
             new Item("dybassets", "DwarfGoblinLoot_Run").Configurable = Configurability.Disabled;
 
         }
@@ -156,7 +187,7 @@ namespace MonsterLabZConfig.PrefabIniters
             creature3.Drops["Coins"].DropChance = 100f;
             creature3.Drops["Coins"].DropOnePerPlayer = false;
             creature3.Drops["Coins"].MultiplyDropByLevel = true;
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "DwarfGoblinShaman_ragdoll");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "DwarfGoblinShaman_ragdoll");
             new Item("dybassets", "DwarfGoblinShamanBoat_attack_fireball").Configurable = Configurability.Disabled;
             new Item("dybassets", "DwarfGoblinShaman_attack_fireball").Configurable = Configurability.Disabled;
             new Item("dybassets", "DwarfGoblinShaman_attack_poke").Configurable = Configurability.Disabled;
@@ -174,14 +205,26 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "ML_GoblinLox")
                 {
-                    Biome = Heightmap.Biome.Plains
+                    Biome = Heightmap.Biome.None
                 };
+                if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
+                {
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(729)
+                            .SetPrefabName("ML_GoblinLox")
+                            .SetConditionBiomes((Heightmap.Biome.Plains))
+                            .SetMinLevel(1)
+                            .SetMaxLevel(1);
+                    });
+                }
             } else
             {
                 creature = new Creature("dybassets", "ML_GoblinLox")
                 {
                     Biome = Heightmap.Biome.Plains,
-                    SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Edge,
+                    SpecificSpawnArea = CreatureManager.SpawnArea.Edge,
                     RequiredAltitude = new Range(1f, 1000f),
                     CheckSpawnInterval = 1000,
                     SpawnChance = 5f,
@@ -190,7 +233,12 @@ namespace MonsterLabZConfig.PrefabIniters
                     SpecificSpawnTime = SpawnTime.Always
                 };
             }
-                    
+            var instantiater = creature.Prefab.GetComponents<InstantiatePrefabLoxRider>();
+            MonsterLabZConfig.PluginLogger.LogWarning($"{(instantiater != null ? "Found" : "No")} child on {creature.Prefab.name}");
+
+            var instantiater2 = creature.Prefab.GetComponents<InstantiatePrefabSpawn>();
+            MonsterLabZConfig.PluginLogger.LogWarning($"{(instantiater2 != null ? "Found" : "No")} child on {creature.Prefab.name}");
+
             creature.Drops["LoxMeat"].Amount = new Range(4f, 6f);
             creature.Drops["LoxMeat"].DropChance = 100f;
             creature.Drops["LoxMeat"].DropOnePerPlayer = false;
@@ -208,12 +256,12 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 Biome = Heightmap.Biome.None
             };
-            creature2.ConfigurationEnabled = false;
+            creature2.ConfigurationEnabled = true;
             creature2.Drops["Coins"].Amount = new Range(3f, 5f);
             creature2.Drops["Coins"].DropChance = 100f;
             creature2.Drops["Coins"].DropOnePerPlayer = false;
             creature2.Drops["Coins"].MultiplyDropByLevel = true;
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_GoblinLox_Ragdoll");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_GoblinLox_Ragdoll");
         }
     }
 }

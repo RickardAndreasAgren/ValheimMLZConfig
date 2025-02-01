@@ -1,12 +1,5 @@
-﻿extern alias MonsterLabZN;
-
-using MonsterLabZN::CreatureManager;
-using MonsterLabZN::ItemManager;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CreatureManager;
+using ItemManager;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
@@ -20,10 +13,10 @@ namespace MonsterLabZConfig.PrefabIniters
                 ConfigurationEnabled = false
             };
                 
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_LavaRoot_Ragdoll");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_LavaRoot_Ragdoll");
             new Item("dybassets", "lavaroot_attack").Configurable = Configurability.Disabled;
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "fx_lavaroot_death");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_lavaroot_hit");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "fx_lavaroot_death");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_lavaroot_hit");
         }
     }
 }

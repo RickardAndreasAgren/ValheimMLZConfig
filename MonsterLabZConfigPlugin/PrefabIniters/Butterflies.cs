@@ -1,7 +1,6 @@
-﻿extern alias MonsterLabZN;
-
-using MonsterLabZN::CreatureManager;
-using MonsterLabZN::ItemManager;
+﻿using CreatureManager;
+using ItemManager;
+using SpawnThat.Spawners;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
@@ -19,23 +18,54 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "Rainbow_Butterfly")
                 {
-                    Biome = Heightmap.Biome.Meadows
+                    Biome = Heightmap.Biome.None,
                 };
                 creature2 = new Creature("dybassets", "Green_Butterfly")
                 {
-                    Biome = Heightmap.Biome.BlackForest
-                };
-
+                    Biome = Heightmap.Biome.None,
+                }; ;
                 creature3 = new Creature("dybassets", "Silkworm_Butterfly")
                 {
-                    Biome = Heightmap.Biome.Mistlands
-                };
+                    Biome = Heightmap.Biome.None,
+                }; ;
+
+
+                if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
+                {
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(733)
+                            .SetPrefabName("Rainbow_Butterfly")
+                            .SetConditionBiomes(Heightmap.Biome.Meadows)
+                            .SetMinLevel(1)
+                            .SetMaxLevel(1);
+                    });
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(734)
+                            .SetPrefabName("Green_Butterfly")
+                            .SetConditionBiomes(Heightmap.Biome.BlackForest)
+                            .SetMinLevel(1)
+                            .SetMaxLevel(1);
+                    });
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(735)
+                            .SetPrefabName("Silkworm_Butterfly")
+                            .SetConditionBiomes(Heightmap.Biome.Mistlands)
+                            .SetMinLevel(1)
+                            .SetMaxLevel(1);
+                    });
+                }
             } else
             {
                 creature = new Creature("dybassets", "Rainbow_Butterfly")
                 {
                     Biome = Heightmap.Biome.Meadows,
-                    SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Everywhere,
+                    SpecificSpawnArea = CreatureManager.SpawnArea.Everywhere,
                     CheckSpawnInterval = 300,
                     RequiredWeather = (Weather.ClearSkies | Weather.MeadowsClearSkies),
                     ForestSpawn = Forest.No,
@@ -48,7 +78,7 @@ namespace MonsterLabZConfig.PrefabIniters
                 creature2 = new Creature("dybassets", "Green_Butterfly")
                 {
                     Biome = Heightmap.Biome.BlackForest,
-                    SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Everywhere,
+                    SpecificSpawnArea = CreatureManager.SpawnArea.Everywhere,
                     CheckSpawnInterval = 300,
                     RequiredWeather = (Weather.ClearSkies | Weather.MeadowsClearSkies | Weather.BlackForestFog),
                     SpawnChance = 50f,
@@ -61,7 +91,7 @@ namespace MonsterLabZConfig.PrefabIniters
                 creature3 = new Creature("dybassets", "Silkworm_Butterfly")
                 {
                     Biome = Heightmap.Biome.Mistlands,
-                    SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Everywhere,
+                    SpecificSpawnArea = CreatureManager.SpawnArea.Everywhere,
                     CheckSpawnInterval = 300,
                     RequiredWeather = Weather.MistlandsDark,
                     SpawnChance = 50f,

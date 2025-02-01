@@ -1,4 +1,5 @@
-﻿using System;
+﻿#nullable enable
+using System;
 using System.Collections.Generic;
 using BepInEx.Configuration;
 using static MonsterLabZConfig.PluginConfig;
@@ -91,7 +92,7 @@ namespace MonsterLabZConfig.Extensions
 
         internal sealed class ConfigurationManagerAttributes
         {
-            public Action<ConfigEntryBase> CustomDrawer;
+            public Action<ConfigEntryBase>? CustomDrawer;
             public bool? Browsable;
             public bool? HideDefaultButton;
             public int? Order;

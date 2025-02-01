@@ -1,12 +1,4 @@
-﻿extern alias MonsterLabZN;
-
-using MonsterLabZN::LocationManager;
-using MonsterLabZN::MonsterLabZ;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using LocationManager;
 
 namespace MonsterLabZConfig.Loaders
 {
@@ -26,7 +18,8 @@ namespace MonsterLabZConfig.Loaders
         {
             if ((bool)config[PluginConfig.DefHuldraQueen].BoxedValue == true && questSetting > 1)
             {
-                new MonsterLabZN::LocationManager.Location("dybassets", "AshHuldraQueen_Altar")
+                Console.Log($"Loading HuldraQueen_Altar under settings DefHuldraQueen {(config[PluginConfig.DefHuldraQueen].BoxedValue).ToString()} and Quest {questSetting}");
+                new LocationManager.Location("dybassets", "AshHuldraQueen_Altar")
                 {
                     Prioritize = true,
                     MapIcon = "bossicon.png",
@@ -42,7 +35,7 @@ namespace MonsterLabZConfig.Loaders
             }
             if (questSetting > 1)
             {
-                new MonsterLabZN::LocationManager.Location("dybassets", "AshlandsCave_01")
+                new LocationManager.Location("dybassets", "AshlandsCave_01")
                 {
                     Prioritize = true,
                     MapIcon = "bossicon.png",
@@ -57,7 +50,7 @@ namespace MonsterLabZConfig.Loaders
             }
             if (questSetting > 1)
             {
-                new MonsterLabZN::LocationManager.Location("dybassets", "AshlandsCave_02")
+                new LocationManager.Location("dybassets", "AshlandsCave_02")
                 {
                     Prioritize = true,
                     MapIcon = "bossicon.png",
@@ -73,7 +66,7 @@ namespace MonsterLabZConfig.Loaders
 
             if ((bool)config[PluginConfig.DefFrigga].BoxedValue == true && questSetting > 1)
             {
-                new MonsterLabZN::LocationManager.Location("dybassets", "SpiderCave01")
+                new LocationManager.Location("dybassets", "SpiderCave01")
                 {
                     Prioritize = true,
                     MapIcon = "bossicon.png",
@@ -90,7 +83,7 @@ namespace MonsterLabZConfig.Loaders
 
             if (questSetting == 3)
             {
-                new MonsterLabZN::LocationManager.Location("dybassets", "Mystical_Well0")
+                new LocationManager.Location("dybassets", "Mystical_Well0")
                 {
                     Prioritize = true,
                     MapIcon = "ML_Hammer_Icon.png",
@@ -108,7 +101,7 @@ namespace MonsterLabZConfig.Loaders
         {
             if (questSetting > 1)
             {
-                new MonsterLabZN::LocationManager.Location("dybassets", "ML_ShipWreck03")
+                new LocationManager.Location("dybassets", "ML_ShipWreck03")
                 {
                     MapIcon = "bossicon.png",
                     ShowMapIcon = ShowIcon.Never,
@@ -121,7 +114,7 @@ namespace MonsterLabZConfig.Loaders
                     Unique = false
                 };
 
-                new MonsterLabZN::LocationManager.Location("dybassets", "ML_ShipWreck02")
+                new LocationManager.Location("dybassets", "ML_ShipWreck02")
                 {
                     MapIcon = "bossicon.png",
                     ShowMapIcon = ShowIcon.Never,
@@ -138,7 +131,7 @@ namespace MonsterLabZConfig.Loaders
 
             if ((bool)config[PluginConfig.DefBalder].BoxedValue == true && questSetting > 1)
             {
-                new MonsterLabZN::LocationManager.Location("dybassets", "Balder_Altar")
+                new LocationManager.Location("dybassets", "Balder_Altar")
                 {
                     Prioritize = true,
                     MapIcon = "bossicon.png",

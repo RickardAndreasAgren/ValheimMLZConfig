@@ -1,12 +1,5 @@
-﻿extern alias MonsterLabZN;
-
-using MonsterLabZN::CreatureManager;
-using MonsterLabZN::ItemManager;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CreatureManager;
+using ItemManager;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
@@ -43,8 +36,8 @@ namespace MonsterLabZConfig.PrefabIniters
             }
             creature.Localize().English("Undead Jarl").Japanese("骸骨");
             creature2.Localize().English("Skeleton").Japanese("骸骨");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "spawn_projectile_T1");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "attack_spawn_T1");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "spawn_projectile_T1");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "attack_spawn_T1");
         }
     }
 }

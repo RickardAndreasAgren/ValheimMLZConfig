@@ -1,12 +1,7 @@
-﻿extern alias MonsterLabZN;
-
-using MonsterLabZN::CreatureManager;
-using MonsterLabZN::ItemManager;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CreatureManager;
+using ItemManager;
+using Jotunn.Configs;
+using SpawnThat.Spawners;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
@@ -24,7 +19,7 @@ namespace MonsterLabZConfig.PrefabIniters
                 creature = new Creature("dybassets", "ML_AshHatchling")
                 {
                     Biome = Heightmap.Biome.AshLands,
-                    SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Everywhere,
+                    SpecificSpawnArea = CreatureManager.SpawnArea.Everywhere,
                     RequiredAltitude = new Range(5f, 1000f),
                     CheckSpawnInterval = 1000,
                     SpawnChance = 10f,
@@ -35,7 +30,7 @@ namespace MonsterLabZConfig.PrefabIniters
                 creature2 = new Creature("dybassets", "ML_FrostHatchling")
                 {
                     Biome = Heightmap.Biome.None,
-                    SpecificSpawnArea = MonsterLabZN::CreatureManager.SpawnArea.Everywhere,
+                    SpecificSpawnArea = CreatureManager.SpawnArea.Everywhere,
                     RequiredAltitude = new Range(5f, 1000f),
                     CheckSpawnInterval = 1000,
                     SpawnChance = 10f,
@@ -48,14 +43,35 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "ML_AshHatchling")
                 {
-                    Biome = Heightmap.Biome.AshLands
+                    Biome = Heightmap.Biome.None
                 };
                 creature2 = new Creature("dybassets", "ML_FrostHatchling")
                 {
                     Biome = Heightmap.Biome.None
                 };
+                if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
+                {
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(700)
+                            .SetPrefabName("ML_AshHatchling")
+                            .SetConditionBiomes(Heightmap.Biome.AshLands)
+                            .SetMinLevel(1)
+                            .SetMaxLevel(3);
+                    });
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(701)
+                            .SetPrefabName("ML_FrostHatchling")
+                            .SetConditionBiomes(Heightmap.Biome.AshLands)
+                            .SetMinLevel(1)
+                            .SetMaxLevel(3);
+                    });
+                }
             }
-            
+
             creature.ConfigurationEnabled = true;
             creature.Drops["ML_TrophyAshHatchling"].Amount = new Range(1f, 1f);
             creature.Drops["ML_TrophyAshHatchling"].DropChance = 10f;
@@ -66,8 +82,7 @@ namespace MonsterLabZConfig.PrefabIniters
             creature.Drops["FireGland"].DropOnePerPlayer = false;
             creature.Drops["FireGland"].MultiplyDropByLevel = true;
 
-
-            creature2.ConfigurationEnabled = false;
+            creature2.ConfigurationEnabled = true;
             creature2.Drops["TrophyHatchling"].Amount = new Range(1f, 1f);
             creature2.Drops["TrophyHatchling"].DropChance = 5f;
             creature2.Drops["TrophyHatchling"].DropOnePerPlayer = false;
@@ -76,23 +91,23 @@ namespace MonsterLabZConfig.PrefabIniters
             creature2.Drops["FreezeGland"].DropChance = 50f;
             creature2.Drops["FreezeGland"].DropOnePerPlayer = false;
             creature2.Drops["FreezeGland"].MultiplyDropByLevel = true;
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_AshHatchling_ragdoll");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_FrostHatchling_ragdoll");
+            ItemManager.PrefabManager.RegisterAssetBundle("dybassets", "ML_AshHatchling_ragdoll");
+            ItemManager.PrefabManager.RegisterAssetBundle("dybassets", "ML_FrostHatchling_ragdoll");
             new Item("dybassets", "ML_TrophyAshHatchling").Configurable = Configurability.Disabled;
             new Item("dybassets", "FireGland").Configurable = Configurability.Disabled;
             new Item("dybassets", "ashhatchling_spit_fire").Configurable = Configurability.Disabled;
             new Item("dybassets", "ml_frosthatchling_spit_cold").Configurable = Configurability.Disabled;
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_ashhatchling_fire_launch");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_ashhatchling_fire_start");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_ash_fire_launch");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_ashhatchling_death");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_ashhatchling_hurt");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_ml_frosthatchling_ice_hit");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_ml_ice_hit");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_ml_iceblocker_destroyed");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "ashhatchling_fireball_projectile");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_IceBlocker");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "ml_frosthatchling_projectile");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_ashhatchling_fire_launch");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_ashhatchling_fire_start");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_ash_fire_launch");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_ashhatchling_death");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_ashhatchling_hurt");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_ml_frosthatchling_ice_hit");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_ml_ice_hit");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_ml_iceblocker_destroyed");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ashhatchling_fireball_projectile");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_IceBlocker");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ml_frosthatchling_projectile");
         }
     }
 }

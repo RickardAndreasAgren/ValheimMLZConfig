@@ -1,12 +1,5 @@
-﻿extern alias MonsterLabZN;
-
-using MonsterLabZN::CreatureManager;
-using MonsterLabZN::ItemManager;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CreatureManager;
+using ItemManager;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
@@ -25,13 +18,13 @@ namespace MonsterLabZConfig.PrefabIniters
             creature.Drops["Entrails"].DropChance = 100f;
             creature.Drops["Entrails"].DropOnePerPlayer = false;
             creature.Drops["Entrails"].MultiplyDropByLevel = true;
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "MLNPC_Svartalfar0_Ragdoll");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_svartalfar_alert");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_svartalfar_attack");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_svartalfar_death");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_svartalfar_hit");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_svartalfar_idle");
-            MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_svartalfar_taunt");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "MLNPC_Svartalfar0_Ragdoll");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_svartalfar_alert");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_svartalfar_attack");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_svartalfar_death");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_svartalfar_hit");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_svartalfar_idle");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_svartalfar_taunt");
         }
     }
 }

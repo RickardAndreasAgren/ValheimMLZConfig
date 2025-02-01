@@ -1,12 +1,6 @@
-﻿extern alias MonsterLabZN;
-
-using MonsterLabZN::CreatureManager;
-using MonsterLabZN::ItemManager;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CreatureManager;
+using ItemManager;
+using SpawnThat.Spawners;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
@@ -30,6 +24,18 @@ namespace MonsterLabZConfig.PrefabIniters
                         Biome = Heightmap.Biome.None
                     };
                 }
+                if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
+                {
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(704)
+                            .SetPrefabName("ML_RedMistile_Aggressive")
+                            .SetConditionBiomes(Heightmap.Biome.AshLands)
+                            .SetMinLevel(1)
+                            .SetMaxLevel(3);
+                    });
+                }
             }
             if ((bool)config[PluginConfig.DefMistileRedPassive].BoxedValue)
             {
@@ -46,6 +52,18 @@ namespace MonsterLabZConfig.PrefabIniters
                     {
                         Biome = Heightmap.Biome.None
                     };
+                }
+                if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
+                {
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(705)
+                            .SetPrefabName("ML_RedMistile_Passive")
+                            .SetConditionBiomes(Heightmap.Biome.AshLands)
+                            .SetMinLevel(1)
+                            .SetMaxLevel(1);
+                    });
                 }
             }
             if ((bool)config[PluginConfig.DefMistileBlueAggro].BoxedValue)
@@ -64,6 +82,18 @@ namespace MonsterLabZConfig.PrefabIniters
                         Biome = Heightmap.Biome.None
                     };
                 }
+                if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
+                {
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(706)
+                            .SetPrefabName("ML_BlueMistile_Aggressive")
+                            .SetConditionBiomes(Heightmap.Biome.AshLands)
+                            .SetMinLevel(1)
+                            .SetMaxLevel(3);
+                    });
+                }
             }
             if ((bool)config[PluginConfig.DefMistileBluePassive].BoxedValue)
             {
@@ -81,19 +111,32 @@ namespace MonsterLabZConfig.PrefabIniters
                         Biome = Heightmap.Biome.None
                     };
                 }
+
+                if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
+                {
+                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    {
+                        collection
+                            .ConfigureWorldSpawner(707)
+                            .SetPrefabName("ML_BlueMistile_Passive")
+                            .SetConditionBiomes(Heightmap.Biome.Meadows | Heightmap.Biome.AshLands)
+                            .SetMinLevel(1)
+                            .SetMaxLevel(1);
+                    });
+                }
             }
 
             if ((bool)config[PluginConfig.DefMistileBluePassive].BoxedValue || (bool)config[PluginConfig.DefMistileBlueAggro].BoxedValue)
             {
                 new Item("dybassets", "ML_BlueMistile_kamikaze").Configurable = Configurability.Disabled;
-                MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "fx_ML_BlueMistile_attack");
-                MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "fx_ML_BlueMistile_die");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "fx_ML_BlueMistile_attack");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "fx_ML_BlueMistile_die");
             }
             if ((bool)config[PluginConfig.DefMistileRedPassive].BoxedValue || (bool)config[PluginConfig.DefMistileRedAggro].BoxedValue)
             {
                 new Item("dybassets", "ML_RedMistile_kamikaze").Configurable = Configurability.Disabled;
-                MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "fx_ML_RedMistile_attack");
-                MonsterLabZN::ItemManager.PrefabManager.RegisterPrefab("dybassets", "fx_ML_RedMistile_die");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "fx_ML_RedMistile_attack");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "fx_ML_RedMistile_die");
             }
         }
     }

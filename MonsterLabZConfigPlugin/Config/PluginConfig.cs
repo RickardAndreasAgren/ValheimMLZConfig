@@ -1,9 +1,7 @@
 ﻿extern alias ServerSyncStandalone;
-extern alias MonsterLabZN;
 
 using BepInEx.Configuration;
 using MonsterLabZConfig.PrefabIniters;
-using MonsterLabZN::MonsterLabZ;
 using static UnityEngine.EventSystems.EventTrigger;
 
 namespace MonsterLabZConfig
@@ -21,9 +19,11 @@ namespace MonsterLabZConfig
             KrakenConfig(config);
             SurtrConfig(config);
             IceGolemConfig(config);
+            UndeadJarlConfig(config);
             FireGolemConfig(config);
             FulingShipConfig(config);
             DraugrShipConfig(config);
+            Mobs(config);
         }
 
         public static ConfigEntry<short> MonsterSpawnData { get; internal set; }
@@ -62,8 +62,6 @@ namespace MonsterLabZConfig
         public static ConfigEntry<bool> DwarfGoblin { get; internal set; }
         public static ConfigDefinition DefDwarfGoblinLoot { get; internal set; }
         public static ConfigEntry<bool> DwarfGoblinLoot { get; internal set; }
-        public static ConfigDefinition DefGoblinShaman { get; internal set; }
-        public static ConfigEntry<bool> GoblinShaman { get; internal set; }
         public static ConfigDefinition DefDwarfGoblinShaman { get; internal set; }
         public static ConfigEntry<bool> DwarfGoblinShaman { get; internal set; }
         public static ConfigDefinition DefDwarfGoblinRider { get; internal set; }
