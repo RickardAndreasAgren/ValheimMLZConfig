@@ -231,6 +231,7 @@ namespace MonsterLabZConfig.PrefabIniters
                         collection
                             .ConfigureWorldSpawner(724)
                             .SetTemplateName("GenFrigidSpider")
+                            .SetPrefabName("FrigidSpider")
                             .SetConditionBiomes(Heightmap.Biome.DeepNorth)
                             .SetMinLevel(1)
                             .SetMaxLevel(3);
