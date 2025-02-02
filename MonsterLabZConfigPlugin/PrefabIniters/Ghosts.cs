@@ -22,7 +22,8 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 warrior = new Creature("dybassets", "NormalGhostWarrior")
                 {
-                    Biome = Heightmap.Biome.None
+                    Biome = Heightmap.Biome.None,
+                    CanSpawn = false
                 };
 
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
@@ -31,6 +32,7 @@ namespace MonsterLabZConfig.PrefabIniters
                     {
                         collection
                             .ConfigureWorldSpawner(738)
+                            .SetTemplateName("GenNormalGhostWarrior")
                             .SetPrefabName("NormalGhostWarrior")
                             .SetConditionBiomes((Heightmap.Biome.Plains))
                             .SetMinLevel(1)
@@ -42,7 +44,8 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 warrior = new Creature("dybassets", "NormalGhostWarrior")
                 {
-                    Biome = Heightmap.Biome.None
+                    Biome = Heightmap.Biome.None,
+                    CanSpawn = false
                 };
             }
             warrior.Drops["Ruby"].Amount = new Range(1f, 1f);
@@ -67,7 +70,8 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "WraithWarrior")
                 {
-                    Biome = Heightmap.Biome.None
+                    Biome = Heightmap.Biome.None,
+                    CanSpawn = false
                 };
 
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
@@ -76,6 +80,7 @@ namespace MonsterLabZConfig.PrefabIniters
                     {
                         collection
                             .ConfigureWorldSpawner(739)
+                            .SetTemplateName("GenWraithWarrior")
                             .SetPrefabName("WraithWarrior")
                             .SetConditionBiomes((Heightmap.Biome.Swamp))
                             .SetMinLevel(1)

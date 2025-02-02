@@ -15,7 +15,8 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "ML_AshHuldra")
                 {
-                    Biome = Heightmap.Biome.None
+                    Biome = Heightmap.Biome.None,
+                    CanSpawn = false
                 };
 
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
@@ -24,6 +25,7 @@ namespace MonsterLabZConfig.PrefabIniters
                     {
                         collection
                             .ConfigureWorldSpawner(740)
+                            .SetTemplateName("GenML_AshHuldra")
                             .SetPrefabName("ML_AshHuldra")
                             .SetConditionBiomes(Heightmap.Biome.AshLands)
                             .SetMinLevel(1)

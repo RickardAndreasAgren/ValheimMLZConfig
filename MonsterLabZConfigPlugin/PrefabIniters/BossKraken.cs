@@ -17,6 +17,7 @@ namespace MonsterLabZConfig.PrefabIniters
                 creature = new Creature("dybassets", "KrakenLD")
                 {
                     Biome = Heightmap.Biome.None,
+                    CanSpawn = false
                 };
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
                 {
@@ -24,6 +25,7 @@ namespace MonsterLabZConfig.PrefabIniters
                     {
                         collection
                             .ConfigureWorldSpawner(783)
+                            .SetTemplateName("GenKrakenLD")
                             .SetPrefabName("KrakenLD")
                             .SetConditionBiomes(Heightmap.Biome.Ocean)
                             .SetMinLevel(1)

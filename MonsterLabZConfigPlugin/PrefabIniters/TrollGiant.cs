@@ -15,7 +15,8 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "TrollGiant")
                 {
-                    Biome = Heightmap.Biome.None
+                    Biome = Heightmap.Biome.None,
+                    CanSpawn = false
                 };
 
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
@@ -24,6 +25,7 @@ namespace MonsterLabZConfig.PrefabIniters
                     {
                         collection
                             .ConfigureWorldSpawner(728)
+                            .SetTemplateName("GenTrollGiant")
                             .SetPrefabName("TrollGiant")
                             .SetConditionBiomes(Heightmap.Biome.DeepNorth)
                             .SetMinLevel(1)
@@ -35,7 +37,8 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "TrollGiant")
                 {
-                    Biome = Heightmap.Biome.None
+                    Biome = Heightmap.Biome.None,
+                    CanSpawn = false
                 };
             }
             

@@ -70,7 +70,8 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "TreeSpider_Spawn")
                 {
-                    Biome = Heightmap.Biome.None
+                    Biome = Heightmap.Biome.None,
+                    CanSpawn = false
                 };
 
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
@@ -79,6 +80,7 @@ namespace MonsterLabZConfig.PrefabIniters
                     {
                         collection
                             .ConfigureWorldSpawner(721)
+                            .SetTemplateName("GenTreeSpider_Spawn")
                             .SetPrefabName("TreeSpider_Spawn")
                             .SetConditionBiomes(Heightmap.Biome.Meadows)
                             .SetMinLevel(1)
@@ -121,7 +123,8 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "GreenSpider")
                 {
-                    Biome = Heightmap.Biome.None
+                    Biome = Heightmap.Biome.None,
+                    CanSpawn = false
                 };
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
                 {
@@ -129,6 +132,7 @@ namespace MonsterLabZConfig.PrefabIniters
                     {
                         collection
                             .ConfigureWorldSpawner(722)
+                            .SetTemplateName("GenGreenSpider")
                             .SetPrefabName("GreenSpider")
                             .SetConditionBiomes(Heightmap.Biome.Meadows)
                             .SetMinLevel(1)
@@ -170,7 +174,8 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "FrostSpider")
                 {
-                    Biome = Heightmap.Biome.None
+                    Biome = Heightmap.Biome.None,
+                    CanSpawn = false
                 };
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
                 {
@@ -178,6 +183,7 @@ namespace MonsterLabZConfig.PrefabIniters
                     {
                         collection
                             .ConfigureWorldSpawner(723)
+                            .SetTemplateName("GenFrostSpider")
                             .SetPrefabName("FrostSpider")
                             .SetConditionBiomes(Heightmap.Biome.Mountain)
                             .SetMinLevel(1)
@@ -189,7 +195,8 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "FrostSpider")
                 {
-                    Biome = Heightmap.Biome.None
+                    Biome = Heightmap.Biome.None,
+                    CanSpawn = false
                 };
             }
             
@@ -213,7 +220,8 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "FrigidSpider")
                 {
-                    Biome = Heightmap.Biome.None
+                    Biome = Heightmap.Biome.None,
+                    CanSpawn = false
                 };
 
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
@@ -222,7 +230,7 @@ namespace MonsterLabZConfig.PrefabIniters
                     {
                         collection
                             .ConfigureWorldSpawner(724)
-                            .SetPrefabName("FrigidSpider")
+                            .SetTemplateName("GenFrigidSpider")
                             .SetConditionBiomes(Heightmap.Biome.DeepNorth)
                             .SetMinLevel(1)
                             .SetMaxLevel(3);
@@ -233,7 +241,8 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "FrigidSpider")
                 {
-                    Biome = Heightmap.Biome.None
+                    Biome = Heightmap.Biome.None,
+                    CanSpawn = false
                 };
             }
             
@@ -258,6 +267,7 @@ namespace MonsterLabZConfig.PrefabIniters
                 creature = new Creature("dybassets", "ForestSpider")
                 {
                     Biome = Heightmap.Biome.None,
+                    CanSpawn = false
                 };
 
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
@@ -266,6 +276,7 @@ namespace MonsterLabZConfig.PrefabIniters
                     {
                         collection
                             .ConfigureWorldSpawner(725)
+                            .SetTemplateName("GenForestSpider")
                             .SetPrefabName("ForestSpider")
                             .SetConditionBiomes(Heightmap.Biome.BlackForest)
                             .SetMinLevel(1)
@@ -278,6 +289,7 @@ namespace MonsterLabZConfig.PrefabIniters
                 creature = new Creature("dybassets", "ForestSpider")
                 {
                     Biome = Heightmap.Biome.None,
+                    CanSpawn = false
                 };
             }
             creature.Drops["SpiderFang"].Amount = new Range(1f, 1f);
@@ -300,7 +312,8 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "BrownSpider")
                 {
-                    Biome = Heightmap.Biome.None
+                    Biome = Heightmap.Biome.None,
+                    CanSpawn = false
                 };
 
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
@@ -309,6 +322,7 @@ namespace MonsterLabZConfig.PrefabIniters
                     {
                         collection
                             .ConfigureWorldSpawner(726)
+                            .SetTemplateName("GenBrownSpider")
                             .SetPrefabName("BrownSpider")
                             .SetConditionBiomes(Heightmap.Biome.Swamp)
                             .SetMinLevel(1)
@@ -320,7 +334,8 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "BrownSpider")
                 {
-                    Biome = Heightmap.Biome.None
+                    Biome = Heightmap.Biome.None,
+                    CanSpawn = false
                 };
             }
             new Creature("dybassets", "BrownSpider_Spawn")
@@ -347,7 +362,8 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "TanSpider")
                 {
-                    Biome = Heightmap.Biome.None
+                    Biome = Heightmap.Biome.None,
+                    CanSpawn = false
                 };
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
                 {
@@ -355,6 +371,7 @@ namespace MonsterLabZConfig.PrefabIniters
                     {
                         collection
                             .ConfigureWorldSpawner(727)
+                            .SetTemplateName("GenTanSpider")
                             .SetPrefabName("TanSpider")
                             .SetConditionBiomes(Heightmap.Biome.Plains)
                             .SetMinLevel(1)
@@ -366,7 +383,8 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "TanSpider")
                 {
-                    Biome = Heightmap.Biome.None
+                    Biome = Heightmap.Biome.None,
+                    CanSpawn = false
                 };
             }
             creature.Drops["SpiderFang"].Amount = new Range(1f, 1f);

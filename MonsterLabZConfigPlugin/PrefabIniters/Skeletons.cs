@@ -2,6 +2,7 @@
 using CreatureManager;
 using ItemManager;
 using SpawnThat.Spawners;
+using SpawnThat.Spawners.WorldSpawner;
 using System;
 using static Heightmap;
 
@@ -33,8 +34,10 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "NormalSkeletonWarrior")
                 {
-                    Biome = Heightmap.Biome.None
+                    Biome = Heightmap.Biome.None,
+                    CanSpawn = false
                 };
+                SpawnSystem.m_instances.RemoveAll(spawn => spawn.gameObject.name == "NormalSkeletonWarrior");
 
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
                 {
@@ -42,6 +45,7 @@ namespace MonsterLabZConfig.PrefabIniters
                     {
                         collection
                             .ConfigureWorldSpawner(712)
+                            .SetTemplateName("GenNormalSkeletonWarrior")
                             .SetPrefabName("NormalSkeletonWarrior")
                             .SetConditionBiomes(Heightmap.Biome.BlackForest)
                             .SetMinLevel(1)
@@ -107,7 +111,8 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "FireSkeletonWarrior")
                 {
-                    Biome = Heightmap.Biome.None
+                    Biome = Heightmap.Biome.None,
+                    CanSpawn = false
                 };
 
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
@@ -116,6 +121,7 @@ namespace MonsterLabZConfig.PrefabIniters
                     {
                         collection
                             .ConfigureWorldSpawner(713)
+                            .SetTemplateName("GenFireSkeletonWarrior")
                             .SetPrefabName("FireSkeletonWarrior")
                             .SetConditionBiomes(Heightmap.Biome.AshLands)
                             .SetMinLevel(1)
@@ -127,7 +133,8 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "FireSkeletonWarrior")
                 {
-                    Biome = Heightmap.Biome.None
+                    Biome = Heightmap.Biome.None,
+                    CanSpawn = false
                 };
             }
 
@@ -151,7 +158,8 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature2 = new Creature("dybassets", "FireSkeletonWarriorNoFx")
                 {
-                    Biome = Heightmap.Biome.None
+                    Biome = Heightmap.Biome.None,
+                    CanSpawn = false
                 };
 
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
@@ -160,6 +168,7 @@ namespace MonsterLabZConfig.PrefabIniters
                     {
                         collection
                             .ConfigureWorldSpawner(714)
+                            .SetTemplateName("GenFireSkeletonWarriorNoFx")
                             .SetPrefabName("FireSkeletonWarriorNoFx")
                             .SetConditionBiomes(Heightmap.Biome.AshLands)
                             .SetMinLevel(1)
@@ -171,7 +180,8 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature2 = new Creature("dybassets", "FireSkeletonWarriorNoFx")
                 {
-                    Biome = Heightmap.Biome.None
+                    Biome = Heightmap.Biome.None,
+                    CanSpawn = false
                 };
             }
             creature2.ConfigurationEnabled = true;
@@ -218,7 +228,8 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "IceSkeletonWarrior")
                 {
-                    Biome = Heightmap.Biome.None
+                    Biome = Heightmap.Biome.None,
+                    CanSpawn = false
                 };
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
                 {
@@ -226,6 +237,7 @@ namespace MonsterLabZConfig.PrefabIniters
                     {
                         collection
                             .ConfigureWorldSpawner(715)
+                            .SetTemplateName("GenIceSkeletonWarrior")
                             .SetPrefabName("IceSkeletonWarrior")
                             .SetConditionBiomes(Heightmap.Biome.Mountain)
                             .SetMinLevel(1)
@@ -264,7 +276,8 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature2 = new Creature("dybassets", "IceSkeletonWarriorNoFx")
                 {
-                    Biome = Heightmap.Biome.None
+                    Biome = Heightmap.Biome.None,
+                    CanSpawn = false
                 };
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
                 {
@@ -272,6 +285,7 @@ namespace MonsterLabZConfig.PrefabIniters
                     {
                         collection
                             .ConfigureWorldSpawner(716)
+                            .SetTemplateName("GenIceSkeletonWarriorNoFx")
                             .SetPrefabName("IceSkeletonWarriorNoFx")
                             .SetConditionBiomes(Heightmap.Biome.Mountain)
                             .SetMinLevel(1)
@@ -283,7 +297,8 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature2 = new Creature("dybassets", "IceSkeletonWarriorNoFx")
                 {
-                    Biome = Heightmap.Biome.Mountain
+                    Biome = Heightmap.Biome.Mountain,
+                    CanSpawn = false
                 };
             }
 
@@ -304,7 +319,8 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature3 = new Creature("dybassets", "IceSkeletonWarriorT6")
                 {
-                    Biome = Heightmap.Biome.None
+                    Biome = Heightmap.Biome.None,
+                    CanSpawn = false
                 };
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
                 {
@@ -312,6 +328,7 @@ namespace MonsterLabZConfig.PrefabIniters
                     {
                         collection
                             .ConfigureWorldSpawner(717)
+                            .SetTemplateName("GenIceSkeletonWarriorT6")
                             .SetPrefabName("IceSkeletonWarriorT6")
                             .SetConditionBiomes(Heightmap.Biome.DeepNorth)
                             .SetMinLevel(1)
@@ -323,7 +340,8 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature3 = new Creature("dybassets", "IceSkeletonWarriorT6")
                 {
-                    Biome = Heightmap.Biome.DeepNorth
+                    Biome = Heightmap.Biome.DeepNorth,
+                    CanSpawn = false
                 };
             }
             creature3.Drops["TrophySkeletonIce"].Amount = new Range(1f, 1f);
@@ -380,7 +398,8 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "PoisonSkeletonWarrior")
                 {
-                    Biome = Heightmap.Biome.None
+                    Biome = Heightmap.Biome.None,
+                    CanSpawn = false
                 };
 
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
@@ -389,6 +408,7 @@ namespace MonsterLabZConfig.PrefabIniters
                     {
                         collection
                             .ConfigureWorldSpawner(717)
+                            .SetTemplateName("GenPoisonSkeletonWarrior")
                             .SetPrefabName("PoisonSkeletonWarrior")
                             .SetConditionBiomes(Heightmap.Biome.Swamp)
                             .SetMinLevel(1)
@@ -427,7 +447,8 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature2 = new Creature("dybassets", "PoisonSkeletonWarriorNoFx")
                 {
-                    Biome = Heightmap.Biome.None
+                    Biome = Heightmap.Biome.None,
+                    CanSpawn = false
                 };
 
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
@@ -436,6 +457,7 @@ namespace MonsterLabZConfig.PrefabIniters
                     {
                         collection
                             .ConfigureWorldSpawner(718)
+                            .SetTemplateName("GenPoisonSkeletonWarriorNoFx")
                             .SetPrefabName("PoisonSkeletonWarriorNoFx")
                             .SetConditionBiomes(Heightmap.Biome.Swamp)
                             .SetMinLevel(1)
@@ -447,7 +469,8 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature2 = new Creature("dybassets", "PoisonSkeletonWarriorNoFx")
                 {
-                    Biome = Heightmap.Biome.Swamp
+                    Biome = Heightmap.Biome.Swamp,
+                    CanSpawn = false
                 };
             }
         }
@@ -484,7 +507,8 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "ChaosSkeletonWarrior")
                 {
-                    Biome = Heightmap.Biome.None
+                    Biome = Heightmap.Biome.None,
+                    CanSpawn = false
                 };
 
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
@@ -493,6 +517,7 @@ namespace MonsterLabZConfig.PrefabIniters
                     {
                         collection
                             .ConfigureWorldSpawner(719)
+                            .SetTemplateName("GenChaosSkeletonWarrior")
                             .SetPrefabName("ChaosSkeletonWarrior")
                             .SetConditionBiomes(Heightmap.Biome.AshLands)
                             .SetMinLevel(1)
@@ -504,7 +529,8 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "ChaosSkeletonWarrior")
                 {
-                    Biome = Heightmap.Biome.AshLands
+                    Biome = Heightmap.Biome.AshLands,
+                    CanSpawn = false
                 };
             }
             creature.Drops["BoneFragments"].Amount = new Range(1f, 1f);
@@ -520,7 +546,8 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature2 = new Creature("dybassets", "ChaosSkeletonWarriorNoFX")
                 {
-                    Biome = Heightmap.Biome.None
+                    Biome = Heightmap.Biome.None,
+                    CanSpawn = false
                 };
 
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
@@ -529,6 +556,7 @@ namespace MonsterLabZConfig.PrefabIniters
                     {
                         collection
                             .ConfigureWorldSpawner(720)
+                            .SetTemplateName("GenChaosSkeletonWarriorNoFX")
                             .SetPrefabName("ChaosSkeletonWarriorNoFX")
                             .SetConditionBiomes(Heightmap.Biome.AshLands)
                             .SetMinLevel(1)
@@ -540,7 +568,8 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature2 = new Creature("dybassets", "ChaosSkeletonWarriorNoFX")
                 {
-                    Biome = Heightmap.Biome.AshLands
+                    Biome = Heightmap.Biome.AshLands,
+                    CanSpawn = false
                 };
             }
             creature2.Drops["BoneFragments"].Amount = new Range(1f, 1f);
