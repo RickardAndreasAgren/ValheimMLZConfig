@@ -98,6 +98,16 @@ namespace MonsterLabZConfig
         public static ConfigEntry<bool> IceSkeleton { get; internal set; }
         public static ConfigDefinition DefChaosSkeleton { get; internal set; }
         public static ConfigEntry<bool> ChaosSkeleton { get; internal set; }
+        public static ConfigDefinition DefIceSkeletonNoFx { get; internal set; }
+        public static ConfigEntry<bool> IceSkeletonNoFx { get; internal set; }
+        public static ConfigDefinition DefIceSkeletonT6 { get; internal set; }
+        public static ConfigEntry<bool> IceSkeletonT6 { get; internal set; }
+        public static ConfigDefinition DefFireSkeletonNoFx { get; internal set; }
+        public static ConfigEntry<bool> FireSkeletonNoFx { get; internal set; }
+        public static ConfigDefinition DefPoisonSkeletonNoFx { get; internal set; }
+        public static ConfigEntry<bool> PoisonSkeletonNoFx { get; internal set; }
+        public static ConfigDefinition DefChaosSkeletonNoFx { get; internal set; }
+        public static ConfigEntry<bool> ChaosSkeletonNoFx { get; internal set; }
         public static ConfigDefinition DefTreeSpider { get; internal set; }
         public static ConfigEntry<bool> TreeSpider { get; internal set; }
         public static ConfigDefinition DefGreenSpider { get; internal set; }
@@ -231,39 +241,44 @@ namespace MonsterLabZConfig
             (DefDwarfGoblin, DwarfGoblin) = MobConfig("DwarfGoblin", config);
             (DefDwarfGoblinLoot, DwarfGoblinLoot) = MobConfig("DwarfGoblinLoot", config);
             (DefDwarfGoblinShaman, DwarfGoblinShaman) = MobConfig("DwarfGoblinShaman", config);
-            (DefDwarfGoblinRider, DwarfGoblinRider) = MobConfig("DwarfGoblinRider", config);
-            (DefGhostWarrior, GhostWarrior) = MobConfig("GhostWarrior", config);
+            (DefDwarfGoblinRider, DwarfGoblinRider) = MobConfig("DwarfGoblinRider", config, false);
+            (DefGhostWarrior, GhostWarrior) = MobConfig("GhostWarrior", config, false);
             (DefWraithWarrior, WraithWarrior) = MobConfig("WraithWarrior", config);
             (DefHuldra, Huldra) = MobConfig("Huldra", config);
             (DefJellyfish, Jellyfish) = MobConfig("Jellyfish", config);
-            (DefMistileRedAggro, MistileRedAggro) = MobConfig("MistileRedAggro", config);
-            (DefMistileRedPassive, MistileRedPassive) = MobConfig("MistileRedPassive", config);
-            (DefMistileBlueAggro, MistileBlueAggro) = MobConfig("MistileBlueAggro", config);
-            (DefMistileBluePassive, MistileBluePassive) = MobConfig("MistileBluePassive", config);
+            (DefMistileRedAggro, MistileRedAggro) = MobConfig("MistileRedAggro", config, false);
+            (DefMistileRedPassive, MistileRedPassive) = MobConfig("MistileRedPassive", config, false);
+            (DefMistileBlueAggro, MistileBlueAggro) = MobConfig("MistileBlueAggro", config, false);
+            (DefMistileBluePassive, MistileBluePassive) = MobConfig("MistileBluePassive", config, false);
             (DefMolluscan, Molluscan) = MobConfig("Molluscan", config);
             (DefDeepMolluscan, DeepMolluscan) = MobConfig("DeepMolluscan", config);
             (DefObsidianGolem, ObsidianGolem) = MobConfig("ObsidianGolem", config);
             (DefNormalSkeleton, NormalSkeleton) = MobConfig("NormalSkeleton", config);
             (DefIceSkeleton, IceSkeleton) = MobConfig("IceSkeleton", config);
+            (DefIceSkeletonNoFx, IceSkeletonNoFx) = MobConfig("IceSkeletonNoFx", config, false);
+            (DefIceSkeletonT6, IceSkeletonT6) = MobConfig("IceSkeletonT6", config);
             (DefFireSkeleton, FireSkeleton) = MobConfig("FireSkeleton", config);
+            (DefFireSkeletonNoFx, FireSkeletonNoFx) = MobConfig("FireSkeletonNoFx", config);
             (DefPoisonSkeleton, PoisonSkeleton) = MobConfig("PoisonSkeleton", config);
-            (DefChaosSkeleton, ChaosSkeleton) = MobConfig("ChaosSkeleton", config);
+            (DefPoisonSkeletonNoFx, PoisonSkeletonNoFx) = MobConfig("PoisonSkeletonNoFx", config, false);
+            (DefChaosSkeleton, ChaosSkeleton) = MobConfig("ChaosSkeleton", config, false);
+            (DefChaosSkeletonNoFx, ChaosSkeletonNoFx) = MobConfig("ChaosSkeletonNoFx", config, false);
             (DefTreeSpider, TreeSpider) = MobConfig("TreeSpider", config);
             (DefGreenSpider, GreenSpider) = MobConfig("GreenSpider", config);
-            (DefFrostSpider, FrostSpider) = MobConfig("FrostSpider", config);
-            (DefFrigidSpider, FrigidSpider) = MobConfig("FrigidSpider", config);
-            (DefForestSpider, ForestSpider) = MobConfig("ForestSpider", config);
+            (DefFrostSpider, FrostSpider) = MobConfig("FrostSpider", config, false);
+            (DefFrigidSpider, FrigidSpider) = MobConfig("FrigidSpider", config, false);
+            (DefForestSpider, ForestSpider) = MobConfig("ForestSpider", config, false);
             (DefBrownSpider, BrownSpider) = MobConfig("BrownSpider", config);
-            (DefTanSpider, TanSpider) = MobConfig("TanSpider", config);
+            (DefTanSpider, TanSpider) = MobConfig("TanSpider", config, false);
             (DefTrollGiant, TrollGiant) = MobConfig("TrollGiant", config);
         }
-        public static (ConfigDefinition, ConfigEntry<bool>) MobConfig(string name, ConfigFile config)
+        public static (ConfigDefinition, ConfigEntry<bool>) MobConfig(string name, ConfigFile config, bool defaultEnabled = true)
         {
             return new ConfigData<bool>("3 - Monsters", $"{name}", true)
-            .Describe("If WildBosses is set to 1, this can be used. Allows specific disablers. \r\n" +
-                $"false: Disable {name}.\r\n" +
-                $"(true): Enable {name}.\r\n", null, "MLZ", "Monster", "Creature")
-            .Bind(config, true);
+            .Describe("Toggle individual monsters. \r\n" +
+                $"{(defaultEnabled ? "false" : "(false)")}: Disable {name}.\r\n" +
+                $"{(defaultEnabled ? "(true)" : "true")}: Enable {name}.\r\n", null, "MLZ", "Monster", "Creature")
+            .Bind(config, defaultEnabled);
         }
     }
 }

@@ -1,7 +1,11 @@
 ﻿using CreatureManager;
 using ItemManager;
-using MonsterLabZ;
 using SpawnThat.Spawners;
+using UnityEngine;
+using UnityEditor;
+using System.Linq;
+using System;
+using MonsterLabZConfig;
 
 namespace MonsterLabZConfig.PrefabIniters
 {
@@ -233,12 +237,6 @@ namespace MonsterLabZConfig.PrefabIniters
                     SpecificSpawnTime = SpawnTime.Always
                 };
             }
-            var instantiater = creature.Prefab.GetComponents<InstantiatePrefabLoxRider>();
-            MonsterLabZConfig.PluginLogger.LogWarning($"{(instantiater != null ? "Found" : "No")} child on {creature.Prefab.name}");
-
-            var instantiater2 = creature.Prefab.GetComponents<InstantiatePrefabSpawn>();
-            MonsterLabZConfig.PluginLogger.LogWarning($"{(instantiater2 != null ? "Found" : "No")} child on {creature.Prefab.name}");
-
             creature.Drops["LoxMeat"].Amount = new Range(4f, 6f);
             creature.Drops["LoxMeat"].DropChance = 100f;
             creature.Drops["LoxMeat"].DropOnePerPlayer = false;

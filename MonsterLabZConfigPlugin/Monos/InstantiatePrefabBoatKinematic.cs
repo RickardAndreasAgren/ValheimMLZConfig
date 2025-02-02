@@ -1,9 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using MonsterLabZConfig;
 
-//namespace MonsterLabZConfig
-namespace MonsterLabZ
+namespace MonsterLabZConfig
 {
     public class InstantiatePrefabBoatKinematic : MonoBehaviour
     {
@@ -20,7 +18,7 @@ namespace MonsterLabZ
             foreach (GameObject item in m_spawnPrefab)
             {
                 GameObject gameObject = Object.Instantiate(item, base.transform.transform.position, base.transform.transform.rotation);
-                MonsterLabZConfig.MonsterLabZConfig.PluginLogger.LogWarning($"Adding {gameObject.name} to a parent");
+                MonsterLabZConfig.PluginLogger.LogWarning($"Adding {gameObject.name} to a parent");
                 gameObject.transform.SetParent(base.transform, worldPositionStays: true);
                 m_spawnedMobs.Add(gameObject);
                 Rigidbody rBody = gameObject.GetComponent<Rigidbody>();
