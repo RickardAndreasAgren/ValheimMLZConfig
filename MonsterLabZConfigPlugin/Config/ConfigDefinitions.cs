@@ -38,16 +38,19 @@ namespace MonsterLabZConfig
         }
         public (ConfigDefinition, ConfigEntry<T>) Bind(BepInEx.Configuration.ConfigFile config, T value)
         {
-            ConfigDescription extendedDescription =
+            ConfigEntry<T> useEntry;
+            if(!config.TryGetEntry<T>(Definition, out useEntry)) {
+                ConfigDescription extendedDescription =
                 new(
                     Description.Description +
-                    (SyncOn? " [Synced with Server]" : " [Not Synced with Server]"),
+                    (SyncOn ? " [Synced with Server]" : " [Not Synced with Server]"),
                     Description.AcceptableValues, Description.Tags);
-            ConfigEntry<T> configEntry = config.Bind(Definition, value, extendedDescription);
+                useEntry = config.Bind(Definition, value, extendedDescription);
+            }
 
-            SyncedConfigEntry<T> syncedConfigEntry = MonsterLabZConfig.Sync.AddConfigEntry(configEntry);
+            SyncedConfigEntry<T> syncedConfigEntry = MonsterLabZConfig.Sync.AddConfigEntry(useEntry);
             syncedConfigEntry.SynchronizedConfig = SyncOn;
-            return (Definition, configEntry);
+            return (Definition, useEntry);
         }
     }
 }

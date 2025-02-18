@@ -15,11 +15,13 @@ namespace MonsterLabZConfig.PrefabIniters
             new Creature("dybassets", "ML_AshHuldraQueen2")
             {
                 Biome = Heightmap.Biome.None,
-                ConfigurationEnabled = false
+                ConfigurationEnabled = false,
+                CanSpawn = false
             };
             Creature creature2 = new Creature("dybassets", "ML_AshHuldraQueen3")
             {
-                Biome = Heightmap.Biome.None
+                Biome = Heightmap.Biome.None,
+                CanSpawn = false
             };
             creature2.ConfigurationEnabled = false;
             creature2.Drops["TrophyAshHuldraQueen"].Amount = new Range(1f, 1f);

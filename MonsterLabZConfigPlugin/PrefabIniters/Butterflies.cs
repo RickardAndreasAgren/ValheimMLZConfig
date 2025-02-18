@@ -19,14 +19,17 @@ namespace MonsterLabZConfig.PrefabIniters
                 creature = new Creature("dybassets", "Rainbow_Butterfly")
                 {
                     Biome = Heightmap.Biome.None,
+                    CanSpawn = false
                 };
                 creature2 = new Creature("dybassets", "Green_Butterfly")
                 {
                     Biome = Heightmap.Biome.None,
+                    CanSpawn = false
                 }; ;
                 creature3 = new Creature("dybassets", "Silkworm_Butterfly")
                 {
                     Biome = Heightmap.Biome.None,
+                    CanSpawn = false
                 }; ;
 
 
@@ -36,6 +39,7 @@ namespace MonsterLabZConfig.PrefabIniters
                     {
                         collection
                             .ConfigureWorldSpawner(733)
+                            .SetTemplateName("GenRainbow_Butterfly")
                             .SetPrefabName("Rainbow_Butterfly")
                             .SetConditionBiomes(Heightmap.Biome.Meadows)
                             .SetMinLevel(1)
@@ -45,6 +49,7 @@ namespace MonsterLabZConfig.PrefabIniters
                     {
                         collection
                             .ConfigureWorldSpawner(734)
+                            .SetTemplateName("GenGreen_Butterfly")
                             .SetPrefabName("Green_Butterfly")
                             .SetConditionBiomes(Heightmap.Biome.BlackForest)
                             .SetMinLevel(1)
@@ -54,6 +59,7 @@ namespace MonsterLabZConfig.PrefabIniters
                     {
                         collection
                             .ConfigureWorldSpawner(735)
+                            .SetTemplateName("GenSilkworm_Butterfly")
                             .SetPrefabName("Silkworm_Butterfly")
                             .SetConditionBiomes(Heightmap.Biome.Mistlands)
                             .SetMinLevel(1)

@@ -12,7 +12,8 @@ namespace MonsterLabZConfig.PrefabIniters
 
             Creature creature = new Creature("dybassets", "EvilShadow")
             {
-                Biome = Heightmap.Biome.None
+                Biome = Heightmap.Biome.None,
+                CanSpawn = false
             };
 
             if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
@@ -21,6 +22,7 @@ namespace MonsterLabZConfig.PrefabIniters
                 {
                     collection
                         .ConfigureWorldSpawner(709)
+                        .SetTemplateName("GenEvilShadow")
                         .SetPrefabName("EvilShadow")
                         .SetConditionBiomes(Heightmap.Biome.Swamp)
                         .SetMinLevel(1)

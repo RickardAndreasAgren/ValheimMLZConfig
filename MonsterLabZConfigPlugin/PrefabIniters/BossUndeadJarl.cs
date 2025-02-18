@@ -16,22 +16,26 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "NormalSkeletonWarrior_Boss")
                 {
-                    Biome = Heightmap.Biome.None
+                    Biome = Heightmap.Biome.None,
+                    CanSpawn = false
                 };
                 creature2 = new Creature("dybassets", "NormalSkeletonWarrior_Spawn")
                 {
-                    Biome = Heightmap.Biome.None
+                    Biome = Heightmap.Biome.None,
+                    CanSpawn = false
                 };
             }
             else
             {
                 creature = new Creature("dybassets", "NormalSkeletonWarrior_Boss")
                 {
-                    Biome = Heightmap.Biome.None
+                    Biome = Heightmap.Biome.None,
+                    CanSpawn = false
                 };
                 creature2 = new Creature("dybassets", "NormalSkeletonWarrior_Spawn")
                 {
-                    Biome = Heightmap.Biome.None
+                    Biome = Heightmap.Biome.None,
+                    CanSpawn = false
                 };
             }
             creature.Localize().English("Undead Jarl").Japanese("骸骨");

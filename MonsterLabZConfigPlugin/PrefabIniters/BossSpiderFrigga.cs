@@ -12,7 +12,8 @@ namespace MonsterLabZConfig.PrefabIniters
 
             Creature creature = new Creature("dybassets", "Spider_Boss")
             {
-                Biome = Heightmap.Biome.None
+                Biome = Heightmap.Biome.None,
+                CanSpawn = false
             };
 
             creature.Drops["FriggaHand"].Amount = new Range(1f, 1f);
@@ -22,11 +23,13 @@ namespace MonsterLabZConfig.PrefabIniters
             new Creature("dybassets", "SpiderBoss_Egg")
             {
                 Biome = Heightmap.Biome.None,
-                ConfigurationEnabled = false
+                ConfigurationEnabled = false,
+                CanSpawn = false
             };
             new Creature("dybassets", "Spider_Hatchling")
             {
-                Biome = Heightmap.Biome.None
+                Biome = Heightmap.Biome.None,
+                CanSpawn = false
             };
             new Creature("dybassets", "BlackSpider").Biome = Heightmap.Biome.None;
             ItemManager.PrefabManager.RegisterPrefab("dybassets", "Spider_Boss_Ragdoll");

@@ -17,14 +17,17 @@ namespace MonsterLabZConfig.PrefabIniters
                 new Creature("dybassets", "ML_HailStorm")
                 {
                     Biome = Heightmap.Biome.None,
+                    CanSpawn = false
                 };
                 new Creature("dybassets", "ML_LightningStorm")
                 {
                     Biome = Heightmap.Biome.None,
+                    CanSpawn = false
                 };
                 new Creature("dybassets", "ML_MeteorShower")
                 {
                     Biome = Heightmap.Biome.None,
+                    CanSpawn = false
                 };
 
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
@@ -33,6 +36,7 @@ namespace MonsterLabZConfig.PrefabIniters
                     {
                         collection
                             .ConfigureWorldSpawner(730)
+                            .SetTemplateName("GenHailStorm")
                             .SetPrefabName("ML_HailStorm")
                             .SetConditionBiomes(Heightmap.Biome.Mountain | Heightmap.Biome.DeepNorth)
                             .SetMinLevel(1)
@@ -42,6 +46,7 @@ namespace MonsterLabZConfig.PrefabIniters
                     {
                         collection
                             .ConfigureWorldSpawner(731)
+                            .SetTemplateName("GenLightningStorm")
                             .SetPrefabName("ML_LightningStorm")
                             .SetConditionBiomes(Heightmap.Biome.Meadows | Heightmap.Biome.Plains)
                             .SetMinLevel(1)
@@ -51,6 +56,7 @@ namespace MonsterLabZConfig.PrefabIniters
                     {
                         collection
                             .ConfigureWorldSpawner(732)
+                            .SetTemplateName("GenMeteorShower")
                             .SetPrefabName("ML_MeteorShower")
                             .SetConditionBiomes(Heightmap.Biome.AshLands)
                             .SetMinLevel(1)

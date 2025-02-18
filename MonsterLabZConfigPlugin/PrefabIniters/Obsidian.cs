@@ -15,14 +15,16 @@ namespace MonsterLabZConfig.PrefabIniters
             {
                 creature = new Creature("dybassets", "ObsidianGolem")
                 {
-                    Biome = Heightmap.Biome.None
+                    Biome = Heightmap.Biome.None,
+                    CanSpawn = false
                 };
             }
             else
             {
                 creature = new Creature("dybassets", "ObsidianGolem")
                 {
-                    Biome = Heightmap.Biome.None
+                    Biome = Heightmap.Biome.None,
+                    CanSpawn = false
                 };
             }
 
@@ -32,6 +34,7 @@ namespace MonsterLabZConfig.PrefabIniters
                 {
                     collection
                         .ConfigureWorldSpawner(708)
+                        .SetTemplateName("GenObsidianGolem")
                         .SetPrefabName("ObsidianGolem")
                         .SetConditionBiomes(Heightmap.Biome.Mountain)
                         .SetMinLevel(1)

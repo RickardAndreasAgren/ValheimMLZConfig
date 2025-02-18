@@ -12,7 +12,8 @@ namespace MonsterLabZConfig.PrefabIniters
 
             Creature creature = new Creature("dybassets", "NightmareDragon")
             {
-                Biome = Heightmap.Biome.None
+                Biome = Heightmap.Biome.None,
+                CanSpawn = false
             };
             creature.Drops["TrophyNightmareDragon"].Amount = new Range(1f, 1f);
             creature.Drops["TrophyNightmareDragon"].DropChance = 100f;

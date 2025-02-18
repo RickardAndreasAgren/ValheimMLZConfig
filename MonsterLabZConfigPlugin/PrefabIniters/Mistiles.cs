@@ -14,14 +14,16 @@ namespace MonsterLabZConfig.PrefabIniters
                 {
                     new Creature("dybassets", "ML_RedMistile_Aggressive")
                     {
-                        Biome = Heightmap.Biome.None
+                        Biome = Heightmap.Biome.None,
+                        CanSpawn = false
                     };
                 }
                 else
                 {
                     new Creature("dybassets", "ML_RedMistile_Aggressive")
                     {
-                        Biome = Heightmap.Biome.None
+                        Biome = Heightmap.Biome.None,
+                        CanSpawn = false
                     };
                 }
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
@@ -30,6 +32,7 @@ namespace MonsterLabZConfig.PrefabIniters
                     {
                         collection
                             .ConfigureWorldSpawner(704)
+                            .SetTemplateName("GenML_RedMistile_Aggressive")
                             .SetPrefabName("ML_RedMistile_Aggressive")
                             .SetConditionBiomes(Heightmap.Biome.AshLands)
                             .SetMinLevel(1)
@@ -43,14 +46,16 @@ namespace MonsterLabZConfig.PrefabIniters
                 {
                     new Creature("dybassets", "ML_RedMistile_Passive")
                     {
-                        Biome = Heightmap.Biome.None
+                        Biome = Heightmap.Biome.None,
+                        CanSpawn = false
                     };
                 }
                 else
                 {
                     new Creature("dybassets", "ML_RedMistile_Passive")
                     {
-                        Biome = Heightmap.Biome.None
+                        Biome = Heightmap.Biome.None,
+                        CanSpawn = false
                     };
                 }
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
@@ -59,6 +64,7 @@ namespace MonsterLabZConfig.PrefabIniters
                     {
                         collection
                             .ConfigureWorldSpawner(705)
+                            .SetTemplateName("GenML_RedMistile_Passive")
                             .SetPrefabName("ML_RedMistile_Passive")
                             .SetConditionBiomes(Heightmap.Biome.AshLands)
                             .SetMinLevel(1)
@@ -72,14 +78,16 @@ namespace MonsterLabZConfig.PrefabIniters
                 {
                     new Creature("dybassets", "ML_BlueMistile_Aggressive")
                     {
-                        Biome = Heightmap.Biome.None
+                        Biome = Heightmap.Biome.None,
+                        CanSpawn = false
                     };
                 }
                 else
                 {
                     new Creature("dybassets", "ML_BlueMistile_Aggressive")
                     {
-                        Biome = Heightmap.Biome.None
+                        Biome = Heightmap.Biome.None,
+                        CanSpawn = false
                     };
                 }
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
@@ -88,6 +96,7 @@ namespace MonsterLabZConfig.PrefabIniters
                     {
                         collection
                             .ConfigureWorldSpawner(706)
+                            .SetTemplateName("GenML_BlueMistile_Aggressive")
                             .SetPrefabName("ML_BlueMistile_Aggressive")
                             .SetConditionBiomes(Heightmap.Biome.AshLands)
                             .SetMinLevel(1)
@@ -101,14 +110,16 @@ namespace MonsterLabZConfig.PrefabIniters
                 {
                     new Creature("dybassets", "ML_BlueMistile_Passive")
                     {
-                        Biome = Heightmap.Biome.None
+                        Biome = Heightmap.Biome.None,
+                        CanSpawn = false
                     };
                 }
                 else
                 {
                     new Creature("dybassets", "ML_BlueMistile_Passive")
                     {
-                        Biome = Heightmap.Biome.None
+                        Biome = Heightmap.Biome.None,
+                        CanSpawn = false
                     };
                 }
 
@@ -118,6 +129,7 @@ namespace MonsterLabZConfig.PrefabIniters
                     {
                         collection
                             .ConfigureWorldSpawner(707)
+                            .SetTemplateName("GenML_BlueMistile_Passive")
                             .SetPrefabName("ML_BlueMistile_Passive")
                             .SetConditionBiomes(Heightmap.Biome.Meadows | Heightmap.Biome.AshLands)
                             .SetMinLevel(1)

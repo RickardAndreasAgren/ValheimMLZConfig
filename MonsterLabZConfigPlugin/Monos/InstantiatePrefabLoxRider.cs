@@ -1,9 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using CreatureManager;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using MonsterLabZConfig;
+using MonsterLabZConfig.Extensions;
 
-//namespace MonsterLabZConfig
-namespace MonsterLabZ
+namespace MonsterLabZConfig
 {
     public class InstantiatePrefabLoxRider : MonoBehaviour
     {
@@ -19,19 +22,27 @@ namespace MonsterLabZ
         {
             foreach (GameObject item in m_spawnPrefab)
             {
-                GameObject gameObject = Object.Instantiate(item, base.transform.transform.position, base.transform.transform.rotation);
-                MonsterLabZConfig.MonsterLabZConfig.PluginLogger.LogWarning($"Adding {gameObject.name} to a parent");
+                GameObject gameObject = GameObject.Instantiate(item, base.transform.transform.position, base.transform.transform.rotation);
                 ZLog.Log($"Adding {gameObject.name} to a parent");
-                gameObject.transform.SetParent(base.transform, worldPositionStays: true);
+
+                gameObject.transform.SetParent(base.transform.parent, worldPositionStays: true);
                 gameObject.layer = 17;
+                
                 Rigidbody rBody = gameObject.GetComponent<Rigidbody>();
                 if (rBody != null)
                 {
                     ZLog.Log($"{gameObject.name} prepared child RigidBody");
                     rBody.automaticCenterOfMass = false;
                     rBody.automaticInertiaTensor = false;
-                    rBody.isKinematic = false;
+                    rBody.isKinematic = true;
                 }
+
+                List<Rigidbody> bodies = gameObject.GetComponentsInChildren<Rigidbody>().ToList();
+                foreach(var b in bodies)
+                {
+                    ZLog.Log($"Dug out additional RigidBodies and adjusted in {gameObject.name}");
+                    rBody.isKinematic = true;
+                };
                 m_spawnedMobs.Add(gameObject);
             }
         }
@@ -48,7 +59,13 @@ namespace MonsterLabZ
                     rBody.automaticCenterOfMass = true;
                     rBody.automaticInertiaTensor = true;
                     rBody.isKinematic = false;
+                    rBody.useGravity = true;
                     spawnedMob.layer = 9;
+
+                    MonsterAI defaultAI = gameObject.GetComponent<MonsterAIMounted>();
+                    MonsterAI.Destroy(defaultAI);
+                    var returnedAI = gameObject.AddComponent<MonsterAI>();
+
                     Humanoid component = spawnedMob.GetComponent<Humanoid>();
                     if (component != null)
                     {

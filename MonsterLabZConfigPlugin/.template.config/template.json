@@ -1,31 +1,31 @@
 ﻿{
-  "author": "Azumatt",
+  "author": "Rickie26k",
   "classifications": [
-    "Creature Manager Mod"
+    "Creature Mod"
   ],
-  "name": "CreatureManagerModTemplate",
-  "identity": "Creature.Manager.Mod.Template",
-  "shortName": "cmmt",
+  "name": "MonsterLabZConfigPlugin",
+  "identity": "MonsterLabZConfigPlugin",
+  "shortName": "mlzc",
   "tags": {
     "language": "C#",
     "type": "project"
   },
-  "sourceName": "CreatureManagerModTemplate",
+  "sourceName": "MonsterLabZConfigPlugin",
   "preferNameDirectory": "true",
   "symbols": {
     "AuthorName": {
       "type": "parameter",
       "description": "The name of the person that you want to call the author of the mod.",
       "datatype": "string",
-      "defaultValue": "azumatt",
-      "replaces": "{azumatt}"
+      "defaultValue": "rickie26k",
+      "replaces": "{rickie26k}"
     }
   },
   "sources": [
     {
       "modifiers": [
         {
-          "exclude": [ ".git/**", ".idea/**", ".vs/**", "obj/**", "bin/**", "CreatureManagerModTemplate.sln", "CreatureManagerModTemplate.sln.DotSettings.user" ]
+          "exclude": [ ".git/**", ".idea/**", ".vs/**", "obj/**", "bin/**"]
         }
       ]
     }

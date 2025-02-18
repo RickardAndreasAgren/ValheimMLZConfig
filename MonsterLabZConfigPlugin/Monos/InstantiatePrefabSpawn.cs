@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using CreatureManager;
+using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using UnityEngine;
 using MonsterLabZConfig;
 
-//namespace MonsterLabZConfig
-namespace MonsterLabZ
+namespace MonsterLabZConfig
 {
     public class InstantiatePrefabSpawn : MonoBehaviour
     {
@@ -22,7 +23,6 @@ namespace MonsterLabZ
             foreach (GameObject item in m_spawnPrefab)
             {
                 GameObject gameObject = Object.Instantiate(item, base.transform.transform.position, base.transform.transform.rotation);
-                MonsterLabZConfig.MonsterLabZConfig.PluginLogger.LogWarning($"Adding {gameObject.name} to a parent");
                 ZLog.Log($"Adding {gameObject.name} to a parent");
                 gameObject.transform.SetParent(base.transform, worldPositionStays: true);
                 gameObject.layer = 17;
@@ -31,7 +31,7 @@ namespace MonsterLabZ
                 {
                     rBody.automaticCenterOfMass = false;
                     rBody.automaticInertiaTensor = false;
-                    rBody.isKinematic = false;
+                    rBody.isKinematic = true;
                 }
                 m_spawnedMobs.Add(gameObject);
             }
