@@ -1,0 +1,15 @@
+
+
+Optionals ?
+  CustomLocation ?
+
+Bonus projects?
+  Custom StatusEffect ?
+  Custom AI Expansion ?
+    Abilities
+  Custom Locations ?
+    Location
+    ZoneLocation & ExteriorPrefab ??
+    LocationPrefabLoadData = dungeonstarter ??
+    .blueprint => Location ???
+      .blueprint => Prefab, need processor to make into actual unity prefab asset on disk?

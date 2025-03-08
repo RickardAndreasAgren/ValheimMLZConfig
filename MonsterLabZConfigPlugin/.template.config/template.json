@@ -1,0 +1,33 @@
+﻿{
+  "author": "Rickie26k",
+  "classifications": [
+    "Creature Mod"
+  ],
+  "name": "MonsterLabZConfigPlugin",
+  "identity": "MonsterLabZConfigPlugin",
+  "shortName": "mlzc",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "sourceName": "MonsterLabZConfigPlugin",
+  "preferNameDirectory": "true",
+  "symbols": {
+    "AuthorName": {
+      "type": "parameter",
+      "description": "The name of the person that you want to call the author of the mod.",
+      "datatype": "string",
+      "defaultValue": "rickie26k",
+      "replaces": "{rickie26k}"
+    }
+  },
+  "sources": [
+    {
+      "modifiers": [
+        {
+          "exclude": [ ".git/**", ".idea/**", ".vs/**", "obj/**", "bin/**"]
+        }
+      ]
+    }
+  ]
+}

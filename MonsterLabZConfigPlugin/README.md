@@ -5,11 +5,6 @@ While config reloading is built in I would strongly advise to not change
 configuration for an existing world unless you know some of the inner workings
 with mod loading.
 
-This depends on the fix version, https://thunderstore.io/c/valheim/p/MonsterLabZFix/MonsterLabZ/
-and uses the dll as an import. To install this mod fully:
-Create a folder named Managed_Data in the MonsterLabZConfig plugin directory.
-Copy the MonsterLabZ.dll to this directory and rename it MonsterLabZ.libassembly
-
 ## This version has a little changes
 
 Original mod link: https://thunderstore.io/c/valheim/p/MonsterLabZ/MonsterLabZ/
