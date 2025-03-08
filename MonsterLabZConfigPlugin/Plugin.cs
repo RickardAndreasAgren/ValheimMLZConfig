@@ -11,7 +11,6 @@ using BepInEx.Configuration;
 using BepInEx.Logging;
 using HarmonyLib;
 using Jotunn.Utils;
-//using MonsterLabZ;
 using MonsterLabZConfig.Loaders;
 using ServerSyncStandalone::ServerSync;
 using SpawnThat.Spawners;
@@ -28,7 +27,7 @@ namespace MonsterLabZConfig
     {
         internal const string ModName = "MonsterLabZConfig";
         internal const string ModNameGUID = "monsterlabzconfig";
-        internal const string ModVersion = "1.0.0";
+        internal const string ModVersion = "1.0.1";
         internal const string Author = "Rickie26k";
         internal const string AuthorGUID = "rickie26k";
         private const string ModGUID = AuthorGUID + ".valheim." + ModNameGUID;
