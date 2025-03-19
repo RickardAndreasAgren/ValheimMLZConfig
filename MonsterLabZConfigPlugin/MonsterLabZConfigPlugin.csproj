@@ -98,6 +98,9 @@
     <Reference Include="Valheim.SpawnThat">
       <HintPath>Libs\Valheim.SpawnThat.dll</HintPath>
     </Reference>
+    <Reference Include="YamlDotNet">
+      <HintPath>Libs\YamlDotNet.dll</HintPath>
+    </Reference>
     <!--
     <Reference Include="MonsterLabZ">
       <HintPath>Libs\MonsterLabZ.dll</HintPath>
@@ -138,9 +141,6 @@
     <Reference Include="Unity.TextMeshPro">
       <HintPath>$(GamePath)\valheim_Data\Managed\Unity.TextMeshPro.dll</HintPath>
     </Reference>
-    <Reference Include="Jotunn">
-      <HintPath>$(GamePath)\BepInEx\plugins\Jotunn\Jotunn.dll</HintPath>
-    </Reference>
     <Reference Include="Valheim.SpawnThat">
       <HintPath>$(GamePath)\BepInEx\plugins\ASharpPen-Spawn_That\Valheim.SpawnThat.dll</HintPath>
     </Reference>
@@ -151,6 +151,7 @@
     <Compile Include="Config\PluginConfig.cs" />
     <Compile Include="Extensions\MonsterAIMounted.cs" />
     <Compile Include="Extensions\ConfigFileExtension.cs" />
+    <None Include="Loaders\Localization.cs" />
     <Compile Include="Loaders\Other.cs" />
     <Compile Include="Loaders\Bosses.cs" />
     <Compile Include="Loaders\PatchLoaded.cs" />
@@ -209,16 +210,19 @@
     <Content Include="environment.props" />
     <Content Include="ILRepack.targets" />
     <Content Include="Libs\CreatureManager.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Libs\ItemManager.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Libs\LocationManager.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Libs\ServerSync.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Libs\YamlDotNet.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="LICENSE.md" />
     <Content Include="README.md" />
@@ -233,7 +237,6 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="ILRepack.Lib.MSBuild.Task" Version="2.0.18.2" />
-    <PackageReference Include="YamlDotNet" Version="13.1.0" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

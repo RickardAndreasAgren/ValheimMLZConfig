@@ -1,6 +1,5 @@
 ﻿using CreatureManager;
 using ItemManager;
-using Jotunn.Configs;
 using SpawnThat.Spawners;
 
 namespace MonsterLabZConfig.PrefabIniters
