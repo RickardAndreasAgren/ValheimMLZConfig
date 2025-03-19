@@ -1,7 +1,4 @@
-﻿using Jotunn.Managers;
-using Jotunn.Entities;
-
-namespace MonsterLabZConfig.Loaders
+﻿namespace MonsterLabZConfig.Loaders
 {
     internal static class LocalizationLoader
     {

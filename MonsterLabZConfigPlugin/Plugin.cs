@@ -10,7 +10,6 @@ using BepInEx;
 using BepInEx.Configuration;
 using BepInEx.Logging;
 using HarmonyLib;
-using Jotunn.Utils;
 using MonsterLabZConfig.Loaders;
 using ServerSyncStandalone::ServerSync;
 using SpawnThat.Spawners;
@@ -21,17 +20,17 @@ using Paths = BepInEx.Paths;
 namespace MonsterLabZConfig
 {
     [BepInPlugin(ModGUID, ModName, ModVersion)]
-    // [BepInDependency(DependencyModGUID,BepInDependency.DependencyFlags.HardDependency)]
+    [BepInDependency(DependencyModGUID,BepInDependency.DependencyFlags.HardDependency)]
     [BepInDependency(Dependency2ModGUID, BepInDependency.DependencyFlags.SoftDependency)]
     public class MonsterLabZConfig : BaseUnityPlugin
     {
         internal const string ModName = "MonsterLabZConfig";
         internal const string ModNameGUID = "monsterlabzconfig";
-        internal const string ModVersion = "1.0.1";
+        internal const string ModVersion = "1.0.6";
         internal const string Author = "Rickie26k";
         internal const string AuthorGUID = "rickie26k";
         private const string ModGUID = AuthorGUID + ".valheim." + ModNameGUID;
-        // private const string DependencyModGUID = "MonsterLabZ";
+        private const string DependencyModGUID = "rickie26k.valheim.raikoneerlocalizations";
         private const string Dependency2ModGUID = "asharppen.valheim.spawn_that";
 
         internal static string ConnectionError = "MonsterLabZConfig: Failed to connect during application of plugin patches";
@@ -109,7 +108,7 @@ namespace MonsterLabZConfig
                     PluginLocalizationManager.LocalizationManager.ReadEmbeddedFileBytes(res, original);
                 }
             }
-            EmbeddedResourceBundle = AssetUtils.LoadAssetBundleFromResources("MonsterLabZ.assets.dybassets", original);
+            EmbeddedResourceBundle = LoadAssetBundle("MonsterLabZ.assets.dybassets", original);
         }
         public void MonsterLabZSpawnConfigs(ISpawnerConfigurationCollection spawnerConfig)
         {
@@ -118,6 +117,7 @@ namespace MonsterLabZConfig
             {
                 spawn(spawnerConfig);
             }
+            SpawnerConfigurationManager.OnConfigure -= MonsterLabZSpawnConfigs;
         }
 
         [HarmonyPatch(typeof(ZNetScene), "Awake")]
@@ -137,6 +137,28 @@ namespace MonsterLabZConfig
                     fixedReferences = true;
                 }
             }
+        }
+        private AssetBundle? LoadAssetBundle(string bundleName, Assembly sourceAssembly)
+        {
+
+            string text = null;
+            try
+            {
+                text = sourceAssembly.GetManifestResourceNames().Single((string str) => str.EndsWith(bundleName));
+            }
+            catch (Exception ex)
+            {
+                PluginLogger.LogError("AssetBundle " + bundleName + $" not found in assembly manifest. Error: {ex.StackTrace}");
+            }
+
+            if (text == null)
+            {
+                PluginLogger.LogError("AssetBundle " + bundleName + " not found in assembly manifest");
+                return null;
+            }
+
+            using Stream stream = sourceAssembly.GetManifestResourceStream(text);
+            return AssetBundle.LoadFromStream(stream);
         }
 
         private void OnDestroy()
