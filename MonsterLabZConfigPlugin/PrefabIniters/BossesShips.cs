@@ -21,6 +21,18 @@ namespace MonsterLabZConfig.PrefabIniters
         {
             if (!(bool)config[PluginConfig.DefFulingShip].BoxedValue || wildSetting == 0) return;
 
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "DwarfGoblin_Boat");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "DwarfGoblinShaman_Boat");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "DwarfGoblin_NoAttack");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "DwarfGoblin_Spawn");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_GoblinShip_Cargo");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_shipwater_surface");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_ship_move_slow");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_ship_move_fast");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ml_goblinship_spawn_projectile");
+            new Item("dybassets", "ml_aiship_move").Configurable = Configurability.Disabled;
+            new Item("dybassets", "ml_goblinship_spawn").Configurable = Configurability.Disabled;
+
             Creature creature;
             if (wildSetting > 1)
             {
@@ -49,7 +61,7 @@ namespace MonsterLabZConfig.PrefabIniters
                 };
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
                 {
-                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    MonsterLabZConfigPlugin.SpawnThatMonsters.Add((collection) =>
                     {
                         collection
                             .ConfigureWorldSpawner(750)
@@ -82,23 +94,28 @@ namespace MonsterLabZConfig.PrefabIniters
             creature.Drops["ML_GoblinShip_Cargo"].DropChance = 100f;
             creature.Drops["ML_GoblinShip_Cargo"].DropOnePerPlayer = false;
             creature.Drops["ML_GoblinShip_Cargo"].MultiplyDropByLevel = false;
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "DwarfGoblin_Boat");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "DwarfGoblinShaman_Boat");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "DwarfGoblin_NoAttack");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "DwarfGoblin_Spawn");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_GoblinShip_Cargo");
-            new Item("dybassets", "ml_aiship_move").Configurable = Configurability.Disabled;
-            new Item("dybassets", "ml_goblinship_spawn").Configurable = Configurability.Disabled;
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_shipwater_surface");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_ship_move_slow");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_ship_move_fast");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ml_goblinship_spawn_projectile");
         }
 
         private static void LoadDraugrShip(ConfigFile config)
         {
             Creature creature;
             if (!(bool)config[PluginConfig.DefDraugrShip].BoxedValue || wildSetting == 0) return;
+
+
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_Draugr_Boat");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_DraugrBomber_Boat");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_Draugr_Spawn");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_Draugr_ragdoll");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_DraugrShip_Cargo");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ml_draugrship_spawn_projectile");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "draugr_oozebomb_projectile");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "draugr_oozebomb_explosion");
+            new Item("dybassets", "ml_draugrship_spawn").Configurable = Configurability.Disabled;
+            new Item("dybassets", "Draugr_OozeBomb").Configurable = Configurability.Disabled;
+            new Item("dybassets", "ML_Draugr_Bow").Configurable = Configurability.Disabled;
+            new Item("dybassets", "draugrboat_axe").Configurable = Configurability.Disabled;
+            new Item("dybassets", "draugrboat_sword").Configurable = Configurability.Disabled;
+
             if (wildSetting > 1)
             {
                 creature = new Creature("dybassets", "ML_DraugrShip")
@@ -126,7 +143,7 @@ namespace MonsterLabZConfig.PrefabIniters
                 };
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
                 {
-                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    MonsterLabZConfigPlugin.SpawnThatMonsters.Add((collection) =>
                     {
                         collection
                             .ConfigureWorldSpawner(751)
@@ -155,19 +172,6 @@ namespace MonsterLabZConfig.PrefabIniters
             creature.Drops["ML_DraugrShip_Cargo"].DropChance = 100f;
             creature.Drops["ML_DraugrShip_Cargo"].DropOnePerPlayer = false;
             creature.Drops["ML_DraugrShip_Cargo"].MultiplyDropByLevel = false;
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_Draugr_Boat");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_DraugrBomber_Boat");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_Draugr_Spawn");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_Draugr_ragdoll");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_DraugrShip_Cargo");
-            new Item("dybassets", "ml_draugrship_spawn").Configurable = Configurability.Disabled;
-            new Item("dybassets", "Draugr_OozeBomb").Configurable = Configurability.Disabled;
-            new Item("dybassets", "ML_Draugr_Bow").Configurable = Configurability.Disabled;
-            new Item("dybassets", "draugrboat_axe").Configurable = Configurability.Disabled;
-            new Item("dybassets", "draugrboat_sword").Configurable = Configurability.Disabled;
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ml_draugrship_spawn_projectile");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "draugr_oozebomb_projectile");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "draugr_oozebomb_explosion");
         }
     }
 }

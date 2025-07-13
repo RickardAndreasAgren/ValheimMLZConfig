@@ -2,7 +2,7 @@
 using System.Reflection;
 using UnityEngine;
 
-namespace MonsterLabZConfig
+namespace MonsterLabZ
 {
     public class InstantiatePrefabBoat : MonoBehaviour
     {
@@ -16,27 +16,12 @@ namespace MonsterLabZConfig
 
         public void Start()
         {
-            ZLog.Log(GetType().Name + "." + MethodBase.GetCurrentMethod().Name + "()");
-            foreach (GameObject item in m_spawnPrefab)
-            {
-                ZLog.Log("[" + GetType().Name + "] Spawning " + item.name);
-                GameObject gameObject = Object.Instantiate(item, base.transform.transform.position, base.transform.transform.rotation);
-                gameObject.transform.SetParent(base.transform, worldPositionStays: true);
-                m_spawnedMobs.Add(gameObject);
-            }
+            return;
         }
 
         public void OnDestroy()
         {
-            ZLog.Log(GetType().Name + "." + MethodBase.GetCurrentMethod().Name + "()");
-            foreach (GameObject spawnedMob in m_spawnedMobs)
-            {
-                if (spawnedMob != null)
-                {
-                    ZLog.Log("[" + GetType().Name + "] Reparent " + spawnedMob.name);
-                    spawnedMob.transform.parent = null;
-                }
-            }
+            return;
         }
     }
 }

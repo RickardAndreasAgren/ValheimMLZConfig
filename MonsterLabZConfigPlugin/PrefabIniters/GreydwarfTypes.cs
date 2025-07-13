@@ -8,12 +8,23 @@ namespace MonsterLabZConfig.PrefabIniters
     {
         public static void init(BepInEx.Configuration.ConfigFile config)
         {
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "Greydwarf_Purple_Shroom");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "Greydwarf_Purple");
             ItemManager.PrefabManager.RegisterPrefab("dybassets", "Greydwarf_Purple_ragdoll");
+            var creature3 = new Creature("dybassets", "Greydwarf_Purple_Shroom")
+            {
+                Biome = Heightmap.Biome.None,
+                CanSpawn = false
+            };
+            creature3.Prefab.name = "$enemy_raigreydwarfpurple";
+            var creature4 = new Creature("dybassets", "Greydwarf_Purple")
+            {
+                Biome = Heightmap.Biome.None,
+                CanSpawn = false
+            };
+            creature4.Prefab.name = "$enemy_raigreydwarfpurpleshroom";
+
             if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
             {
-                MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                MonsterLabZConfigPlugin.SpawnThatMonsters.Add((collection) =>
                 {
                     collection
                         .ConfigureWorldSpawner(702)
@@ -24,7 +35,7 @@ namespace MonsterLabZConfig.PrefabIniters
                         .SetMaxLevel(3);
                 });
 
-                MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                MonsterLabZConfigPlugin.SpawnThatMonsters.Add((collection) =>
                 {
                     collection
                         .ConfigureWorldSpawner(703)

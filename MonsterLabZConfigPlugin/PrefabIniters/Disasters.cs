@@ -12,6 +12,19 @@ namespace MonsterLabZConfig.PrefabIniters
         {
             if (!(bool)config[PluginConfig.DefDisasters].BoxedValue) return;
 
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_ml_hailstorm");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_ml_hailstorm_hit");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "fx_ml_meteorshower_hit");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_HailStorm_Projectile");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_HailStorm_Spawn");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_LightningStorm_AOE");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_LightningStorm_Spawn");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_MeteorShower_AOE");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_MeteorShower_Spawn");
+            new Item("dybassets", "ML_MeteorShower_Start").Configurable = Configurability.Disabled;
+            new Item("dybassets", "ML_HailStorm_Start").Configurable = Configurability.Disabled;
+            new Item("dybassets", "ML_LightningStorm_Start").Configurable = Configurability.Disabled;
+
             if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue > 0)
             {
                 new Creature("dybassets", "ML_HailStorm")
@@ -32,7 +45,7 @@ namespace MonsterLabZConfig.PrefabIniters
 
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
                 {
-                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    MonsterLabZConfigPlugin.SpawnThatMonsters.Add((collection) =>
                     {
                         collection
                             .ConfigureWorldSpawner(730)
@@ -42,7 +55,7 @@ namespace MonsterLabZConfig.PrefabIniters
                             .SetMinLevel(1)
                             .SetMaxLevel(1);
                     });
-                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    MonsterLabZConfigPlugin.SpawnThatMonsters.Add((collection) =>
                     {
                         collection
                             .ConfigureWorldSpawner(731)
@@ -52,7 +65,7 @@ namespace MonsterLabZConfig.PrefabIniters
                             .SetMinLevel(1)
                             .SetMaxLevel(1);
                     });
-                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    MonsterLabZConfigPlugin.SpawnThatMonsters.Add((collection) =>
                     {
                         collection
                             .ConfigureWorldSpawner(732)
@@ -101,18 +114,6 @@ namespace MonsterLabZConfig.PrefabIniters
                 };
             }
             
-            new Item("dybassets", "ML_MeteorShower_Start").Configurable = Configurability.Disabled;
-            new Item("dybassets", "ML_HailStorm_Start").Configurable = Configurability.Disabled;
-            new Item("dybassets", "ML_LightningStorm_Start").Configurable = Configurability.Disabled;
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_ml_hailstorm");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_ml_hailstorm_hit");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "fx_ml_meteorshower_hit");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_HailStorm_Projectile");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_HailStorm_Spawn");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_LightningStorm_AOE");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_LightningStorm_Spawn");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_MeteorShower_AOE");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_MeteorShower_Spawn");
         }
     }
 }

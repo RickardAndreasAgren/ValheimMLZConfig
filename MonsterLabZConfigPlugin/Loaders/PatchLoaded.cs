@@ -17,7 +17,7 @@ namespace MonsterLabZConfig.Loaders
             ShaderSwapper.GatherCustomShaders(__instance);
         }
 
-        internal static void LoadPostfix()
+        public static void LoadPostfix()
         {
             ShaderSwapper.ReplaceCustomShaders();
             CommonResources.FindCommonResources();
@@ -92,7 +92,7 @@ namespace MonsterLabZConfig
         }
     }
 
-    internal static class ShaderSwapper
+    public static class ShaderSwapper
     {
 
         public static readonly Dictionary<string, Shader> customShaders = new Dictionary<string, Shader>();

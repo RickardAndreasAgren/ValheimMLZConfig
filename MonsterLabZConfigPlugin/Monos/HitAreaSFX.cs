@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace MonsterLabZConfig
+namespace MonsterLabZ
 {
     public class HitAreaSFX : MonoBehaviour, IDestructible
     {

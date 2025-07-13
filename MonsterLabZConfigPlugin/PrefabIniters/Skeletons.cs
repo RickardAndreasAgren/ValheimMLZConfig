@@ -13,22 +13,51 @@ namespace MonsterLabZConfig.PrefabIniters
         public static void init(BepInEx.Configuration.ConfigFile config)
         {
             NormalSkeleton(config);
+            FireSkeletonAssets(config);
             FireSkeleton(config);
             FireSkeletonNoFx(config);
-            FireSkeletonAssets(config);
+            IceSkeletonAssets(config);
             IceSkeleton(config);
             IceSkeletonNoFx(config);
             IceSkeletonT6(config);
-            IceSkeletonAssets(config);
+            PoisonSkeletonAssets(config);
             PoisonSkeleton(config);
             PoisonSkeletonNoFx(config);
-            PoisonSkeletonAssets(config);
             ChaosSkeleton(config);
             ChaosSkeletonNoFx(config);
         }
         private static void NormalSkeleton(BepInEx.Configuration.ConfigFile config)
         {
             if (!(bool)config[PluginConfig.DefNormalSkeleton].BoxedValue) return;
+
+
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_mlskeleton_attack");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_mlskeleton_cast");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_mlskeleton_taunt");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_skeletonwarrior_tauntburn");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_skeletonwarrior_heal_aoe");
+            new Item("dybassets", "attack_taunt_T1").Configurable = Configurability.Disabled;
+            new Item("dybassets", "attack_axe_left180_T1").Configurable = Configurability.Disabled;
+            new Item("dybassets", "attack_axe_leftlong_T1").Configurable = Configurability.Disabled;
+            new Item("dybassets", "attack_axe_right180_T1").Configurable = Configurability.Disabled;
+            new Item("dybassets", "attack_axe_rightlong_T1").Configurable = Configurability.Disabled;
+            new Item("dybassets", "attack_axe_slash_T1").Configurable = Configurability.Disabled;
+            new Item("dybassets", "attack_bow_T1").Configurable = Configurability.Disabled;
+            new Item("dybassets", "attack_club_right180_T1").Configurable = Configurability.Disabled;
+            new Item("dybassets", "attack_club_rightlong_T1").Configurable = Configurability.Disabled;
+            new Item("dybassets", "attack_club_slash_T1").Configurable = Configurability.Disabled;
+            new Item("dybassets", "attack_knife_right180_T1").Configurable = Configurability.Disabled;
+            new Item("dybassets", "attack_knife_rightlong_T1").Configurable = Configurability.Disabled;
+            new Item("dybassets", "attack_knife_secondary_T1").Configurable = Configurability.Disabled;
+            new Item("dybassets", "attack_pickaxe_left180_T1").Configurable = Configurability.Disabled;
+            new Item("dybassets", "attack_pickaxe_right180_T1").Configurable = Configurability.Disabled;
+            new Item("dybassets", "attack_pickaxe_slash_T1").Configurable = Configurability.Disabled;
+            new Item("dybassets", "attack_shield_T1").Configurable = Configurability.Disabled;
+            new Item("dybassets", "attack_sword_right180_T1").Configurable = Configurability.Disabled;
+            new Item("dybassets", "attack_sword_rightlong_T1").Configurable = Configurability.Disabled;
+            new Item("dybassets", "attack_sword_slash_T1").Configurable = Configurability.Disabled;
+            new Item("dybassets", "attack_unarmed_T1").Configurable = Configurability.Disabled;
+
             Creature creature;
             if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue > 0)
             {
@@ -41,7 +70,7 @@ namespace MonsterLabZConfig.PrefabIniters
 
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
                 {
-                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    MonsterLabZConfigPlugin.SpawnThatMonsters.Add((collection) =>
                     {
                         collection
                             .ConfigureWorldSpawner(712)
@@ -75,32 +104,6 @@ namespace MonsterLabZConfig.PrefabIniters
             creature.Drops["BoneFragments"].DropChance = 100f;
             creature.Drops["BoneFragments"].DropOnePerPlayer = false;
             creature.Drops["BoneFragments"].MultiplyDropByLevel = true;
-            new Item("dybassets", "attack_taunt_T1").Configurable = Configurability.Disabled;
-            new Item("dybassets", "attack_axe_left180_T1").Configurable = Configurability.Disabled;
-            new Item("dybassets", "attack_axe_leftlong_T1").Configurable = Configurability.Disabled;
-            new Item("dybassets", "attack_axe_right180_T1").Configurable = Configurability.Disabled;
-            new Item("dybassets", "attack_axe_rightlong_T1").Configurable = Configurability.Disabled;
-            new Item("dybassets", "attack_axe_slash_T1").Configurable = Configurability.Disabled;
-            new Item("dybassets", "attack_bow_T1").Configurable = Configurability.Disabled;
-            new Item("dybassets", "attack_club_right180_T1").Configurable = Configurability.Disabled;
-            new Item("dybassets", "attack_club_rightlong_T1").Configurable = Configurability.Disabled;
-            new Item("dybassets", "attack_club_slash_T1").Configurable = Configurability.Disabled;
-            new Item("dybassets", "attack_knife_right180_T1").Configurable = Configurability.Disabled;
-            new Item("dybassets", "attack_knife_rightlong_T1").Configurable = Configurability.Disabled;
-            new Item("dybassets", "attack_knife_secondary_T1").Configurable = Configurability.Disabled;
-            new Item("dybassets", "attack_pickaxe_left180_T1").Configurable = Configurability.Disabled;
-            new Item("dybassets", "attack_pickaxe_right180_T1").Configurable = Configurability.Disabled;
-            new Item("dybassets", "attack_pickaxe_slash_T1").Configurable = Configurability.Disabled;
-            new Item("dybassets", "attack_shield_T1").Configurable = Configurability.Disabled;
-            new Item("dybassets", "attack_sword_right180_T1").Configurable = Configurability.Disabled;
-            new Item("dybassets", "attack_sword_rightlong_T1").Configurable = Configurability.Disabled;
-            new Item("dybassets", "attack_sword_slash_T1").Configurable = Configurability.Disabled;
-            new Item("dybassets", "attack_unarmed_T1").Configurable = Configurability.Disabled;
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_mlskeleton_attack");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_mlskeleton_cast");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_mlskeleton_taunt");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_skeletonwarrior_tauntburn");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_skeletonwarrior_heal_aoe");
         }
         private static void FireSkeleton(BepInEx.Configuration.ConfigFile config)
         {
@@ -117,7 +120,7 @@ namespace MonsterLabZConfig.PrefabIniters
 
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
                 {
-                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    MonsterLabZConfigPlugin.SpawnThatMonsters.Add((collection) =>
                     {
                         collection
                             .ConfigureWorldSpawner(713)
@@ -164,7 +167,7 @@ namespace MonsterLabZConfig.PrefabIniters
 
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
                 {
-                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    MonsterLabZConfigPlugin.SpawnThatMonsters.Add((collection) =>
                     {
                         collection
                             .ConfigureWorldSpawner(714)
@@ -199,6 +202,7 @@ namespace MonsterLabZConfig.PrefabIniters
             if (!(bool)config[PluginConfig.DefFireSkeleton].BoxedValue && !(bool)config[PluginConfig.DefFireSkeletonNoFx].BoxedValue) return;
             ItemManager.PrefabManager.RegisterPrefab("dybassets", "BurningBonePileSpawner");
             ItemManager.PrefabManager.RegisterPrefab("dybassets", "FireSkeletonWarriorNoFx_Ragdoll");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_skeleton_death_fire");
             new Item("dybassets", "TrophySkeletonFire").Configurable = Configurability.Disabled;
             new Item("dybassets", "attack_shield_T5").Configurable = Configurability.Disabled;
             new Item("dybassets", "axe_dualcombo_T5").Configurable = Configurability.Disabled;
@@ -217,7 +221,6 @@ namespace MonsterLabZConfig.PrefabIniters
             new Item("dybassets", "sword_right180_T5").Configurable = Configurability.Disabled;
             new Item("dybassets", "sword_rightlong_T5").Configurable = Configurability.Disabled;
             new Item("dybassets", "sword_slash_T5").Configurable = Configurability.Disabled;
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_skeleton_death_fire");
         }
         private static void IceSkeleton(BepInEx.Configuration.ConfigFile config)
         {
@@ -233,7 +236,7 @@ namespace MonsterLabZConfig.PrefabIniters
                 };
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
                 {
-                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    MonsterLabZConfigPlugin.SpawnThatMonsters.Add((collection) =>
                     {
                         collection
                             .ConfigureWorldSpawner(715)
@@ -281,7 +284,7 @@ namespace MonsterLabZConfig.PrefabIniters
                 };
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
                 {
-                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    MonsterLabZConfigPlugin.SpawnThatMonsters.Add((collection) =>
                     {
                         collection
                             .ConfigureWorldSpawner(716)
@@ -324,7 +327,7 @@ namespace MonsterLabZConfig.PrefabIniters
                 };
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
                 {
-                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    MonsterLabZConfigPlugin.SpawnThatMonsters.Add((collection) =>
                     {
                         collection
                             .ConfigureWorldSpawner(717)
@@ -356,6 +359,7 @@ namespace MonsterLabZConfig.PrefabIniters
         private static void IceSkeletonAssets(ConfigFile config)
         {
             if (!(bool)config[PluginConfig.DefIceSkeletonT6].BoxedValue && !(bool)config[PluginConfig.DefIceSkeleton].BoxedValue && !(bool)config[PluginConfig.DefIceSkeletonNoFx].BoxedValue) return;
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_skeleton_death_ice");
             new Item("dybassets", "TrophySkeletonIce").Configurable = Configurability.Disabled;
             new Item("dybassets", "attack_atgeir_360_T3").Configurable = Configurability.Disabled;
             new Item("dybassets", "attack_atgeir_close_T3").Configurable = Configurability.Disabled;
@@ -388,7 +392,6 @@ namespace MonsterLabZConfig.PrefabIniters
             new Item("dybassets", "attack_sword_right180_T3").Configurable = Configurability.Disabled;
             new Item("dybassets", "attack_sword_rightlong_T3").Configurable = Configurability.Disabled;
             new Item("dybassets", "attack_sword_slash_T3").Configurable = Configurability.Disabled;
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_skeleton_death_ice");
         }
         private static void PoisonSkeleton(BepInEx.Configuration.ConfigFile config)
         {
@@ -404,7 +407,7 @@ namespace MonsterLabZConfig.PrefabIniters
 
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
                 {
-                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    MonsterLabZConfigPlugin.SpawnThatMonsters.Add((collection) =>
                     {
                         collection
                             .ConfigureWorldSpawner(717)
@@ -453,7 +456,7 @@ namespace MonsterLabZConfig.PrefabIniters
 
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
                 {
-                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    MonsterLabZConfigPlugin.SpawnThatMonsters.Add((collection) =>
                     {
                         collection
                             .ConfigureWorldSpawner(718)
@@ -473,10 +476,12 @@ namespace MonsterLabZConfig.PrefabIniters
                     CanSpawn = false
                 };
             }
+            creature2.Drops.None();
         }
         private static void PoisonSkeletonAssets(ConfigFile config)
         {
             if (!(bool)config[PluginConfig.DefPoisonSkeleton].BoxedValue && !(bool)config[PluginConfig.DefPoisonSkeletonNoFx].BoxedValue) return;
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_skeleton_death_poison");
             new Item("dybassets", "attack_axe_left180_T2").Configurable = Configurability.Disabled;
             new Item("dybassets", "attack_axe_leftlong_T2").Configurable = Configurability.Disabled;
             new Item("dybassets", "attack_axe_right180_T2").Configurable = Configurability.Disabled;
@@ -496,7 +501,6 @@ namespace MonsterLabZConfig.PrefabIniters
             new Item("dybassets", "attack_sword_right180_T2").Configurable = Configurability.Disabled;
             new Item("dybassets", "attack_sword_rightlong_T2").Configurable = Configurability.Disabled;
             new Item("dybassets", "attack_sword_slash_T2").Configurable = Configurability.Disabled;
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_skeleton_death_poison");
         }
         private static void ChaosSkeleton(BepInEx.Configuration.ConfigFile config)
         {
@@ -513,7 +517,7 @@ namespace MonsterLabZConfig.PrefabIniters
 
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
                 {
-                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    MonsterLabZConfigPlugin.SpawnThatMonsters.Add((collection) =>
                     {
                         collection
                             .ConfigureWorldSpawner(719)
@@ -552,7 +556,7 @@ namespace MonsterLabZConfig.PrefabIniters
 
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
                 {
-                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    MonsterLabZConfigPlugin.SpawnThatMonsters.Add((collection) =>
                     {
                         collection
                             .ConfigureWorldSpawner(720)

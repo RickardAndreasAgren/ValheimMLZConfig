@@ -10,6 +10,17 @@ namespace MonsterLabZConfig.PrefabIniters
         {
             if (!(bool)config[PluginConfig.DefDeepSeaSerpent].BoxedValue) return;
 
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "DeepSea_Serpent_Flying");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "projectile_serpent_laser");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_deepseaserpent_attack_trigger");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_serpent_laser");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_deepseaserpent_alerted");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_serpent_fire_launch");
+            new Item("dybassets", "TrophyDeepSeaSerpent").Configurable = Configurability.Disabled;
+            new Item("dybassets", "DeepSea_Serpent_Attack").Configurable = Configurability.Disabled;
+            new Item("dybassets", "DeepSea_Serpent_Cast").Configurable = Configurability.Disabled;
+            new Item("dybassets", "DeepSea_Serpent_Laser").Configurable = Configurability.Disabled;
+
             Creature creature;
             if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue > 0)
             {
@@ -20,7 +31,7 @@ namespace MonsterLabZConfig.PrefabIniters
                 };
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
                 {
-                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    MonsterLabZConfigPlugin.SpawnThatMonsters.Add((collection) =>
                     {
                         collection
                             .ConfigureWorldSpawner(734)
@@ -61,16 +72,6 @@ namespace MonsterLabZConfig.PrefabIniters
             creature.Drops["SerpentScale"].DropChance = 100f;
             creature.Drops["SerpentScale"].DropOnePerPlayer = false;
             creature.Drops["SerpentScale"].MultiplyDropByLevel = true;
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "DeepSea_Serpent_Flying");
-            new Item("dybassets", "TrophyDeepSeaSerpent").Configurable = Configurability.Disabled;
-            new Item("dybassets", "DeepSea_Serpent_Attack").Configurable = Configurability.Disabled;
-            new Item("dybassets", "DeepSea_Serpent_Cast").Configurable = Configurability.Disabled;
-            new Item("dybassets", "DeepSea_Serpent_Laser").Configurable = Configurability.Disabled;
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "projectile_serpent_laser");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_deepseaserpent_attack_trigger");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_serpent_laser");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_deepseaserpent_alerted");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_serpent_fire_launch");
         }
     }
 }

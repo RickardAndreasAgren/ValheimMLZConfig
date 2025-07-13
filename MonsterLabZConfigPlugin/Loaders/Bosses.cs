@@ -3,15 +3,15 @@ using MonsterLabZConfig.PrefabIniters;
 
 namespace MonsterLabZConfig.Loaders
 {
-    internal static class BossesLoader
+    public static class BossesLoader
     {
-        internal static void Load(ConfigFile config)
+        public static void Load(ConfigFile config)
         {
             LoadQuestBosses(config);
             LoadWildBosses(config);
         }
 
-        private static void LoadWildBosses(ConfigFile config)
+        public static void LoadWildBosses(ConfigFile config)
         {
             BossGolems.init(config);
             BossSurtr.init(config);
@@ -19,7 +19,7 @@ namespace MonsterLabZConfig.Loaders
             BossesShips.init(config);
         }
 
-        private static void LoadQuestBosses(ConfigFile config)
+        public static void LoadQuestBosses(ConfigFile config)
         {
             BossAddAsh.init(config);
 

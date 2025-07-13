@@ -17,6 +17,47 @@ namespace MonsterLabZConfig.PrefabIniters
             Creature creature2;
             Creature creature3;
 
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_goblin_loot_alert");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_goblin_loot_die");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_goblin_loot_hit");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_goblin_loot_idle");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_goblin_loot_taunt");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "DwarfGoblinSpear_projectile");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "DwarfGoblinSpearChitin_projectile");
+            new Item("dybassets", "DwarfGoblinBow").Configurable = Configurability.Disabled;
+            new Item("dybassets", "DwarfGoblinPickAxe").Configurable = Configurability.Disabled;
+            new Item("dybassets", "DwarfGoblinClub").Configurable = Configurability.Disabled;
+            new Item("dybassets", "DwarfGoblinSword").Configurable = Configurability.Disabled;
+            new Item("dybassets", "DwarfGoblinTorch").Configurable = Configurability.Disabled;
+            //new Item("dybassets", "DwarfGoblinShieldBlackMetal").Configurable = Configurability.Disabled;
+            new Item("dybassets", "DwarfGoblinShieldWood").Configurable = Configurability.Disabled;
+            new Item("dybassets", "DwarfGoblinArmBandFeathers").Configurable = Configurability.Disabled;
+            new Item("dybassets", "DwarfGoblinArmBandIron").Configurable = Configurability.Disabled;
+            new Item("dybassets", "DwarfGoblinArmorBronze").Configurable = Configurability.Disabled;
+            new Item("dybassets", "DwarfGoblinArmorFeathers").Configurable = Configurability.Disabled;
+            new Item("dybassets", "DwarfGoblinArmorIron").Configurable = Configurability.Disabled;
+            new Item("dybassets", "DwarfGoblinArmorLeather").Configurable = Configurability.Disabled;
+            new Item("dybassets", "DwarfGoblinHelmetBronze").Configurable = Configurability.Disabled;
+            new Item("dybassets", "DwarfGoblinHelmetLeather").Configurable = Configurability.Disabled;
+            new Item("dybassets", "DwarfGoblinHelmetSkull").Configurable = Configurability.Disabled;
+            new Item("dybassets", "DwarfGoblinShoulderPadIron").Configurable = Configurability.Disabled;
+            new Item("dybassets", "DwarfGoblinShoulderPadLeather").Configurable = Configurability.Disabled;
+            new Item("dybassets", "DwarfGoblinSpear").Configurable = Configurability.Disabled;
+            new Item("dybassets", "DwarfGoblinSpearLox").Configurable = Configurability.Disabled;
+            new Item("dybassets", "DwarfGoblinSpearChitin").Configurable = Configurability.Disabled;
+
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "DwarfGoblinShaman_ragdoll");
+            new Item("dybassets", "DwarfGoblinShamanBoat_attack_fireball").Configurable = Configurability.Disabled;
+            new Item("dybassets", "DwarfGoblinShaman_attack_fireball").Configurable = Configurability.Disabled;
+            new Item("dybassets", "DwarfGoblinShaman_attack_poke").Configurable = Configurability.Disabled;
+            new Item("dybassets", "DwarfGoblinShamanStaffBones").Configurable = Configurability.Disabled;
+            new Item("dybassets", "DwarfGoblinShamanStaffFeathers").Configurable = Configurability.Disabled;
+
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "DwarfGoblinLoot_ragdoll");
+            new Item("dybassets", "DwarfGoblinLoot_Run").Configurable = Configurability.Disabled;
+
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "DwarfGoblin_ragdoll");
+
             if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue > 0)
             {
                 if ((bool)config[PluginConfig.DefDwarfGoblin].BoxedValue)
@@ -49,7 +90,7 @@ namespace MonsterLabZConfig.PrefabIniters
 
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
                 {
-                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    MonsterLabZConfigPlugin.SpawnThatMonsters.Add((collection) =>
                     {
                         collection
                             .ConfigureWorldSpawner(735)
@@ -59,7 +100,7 @@ namespace MonsterLabZConfig.PrefabIniters
                             .SetMinLevel(1)
                             .SetMaxLevel(1);
                     });
-                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    MonsterLabZConfigPlugin.SpawnThatMonsters.Add((collection) =>
                     {
                         collection
                             .ConfigureWorldSpawner(736)
@@ -69,7 +110,7 @@ namespace MonsterLabZConfig.PrefabIniters
                             .SetMinLevel(1)
                             .SetMaxLevel(1);
                     });
-                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    MonsterLabZConfigPlugin.SpawnThatMonsters.Add((collection) =>
                     {
                         collection
                             .ConfigureWorldSpawner(737)
@@ -129,36 +170,6 @@ namespace MonsterLabZConfig.PrefabIniters
                     DwarfGoblinShamanParts(creature3);
                 }
             }
-            
-            
-            new Item("dybassets", "DwarfGoblinBow").Configurable = Configurability.Disabled;
-            new Item("dybassets", "DwarfGoblinPickAxe").Configurable = Configurability.Disabled;
-            new Item("dybassets", "DwarfGoblinClub").Configurable = Configurability.Disabled;
-            new Item("dybassets", "DwarfGoblinSword").Configurable = Configurability.Disabled;
-            new Item("dybassets", "DwarfGoblinTorch").Configurable = Configurability.Disabled;
-            new Item("dybassets", "DwarfGoblinShieldBlackMetal").Configurable = Configurability.Disabled;
-            new Item("dybassets", "DwarfGoblinShieldWood").Configurable = Configurability.Disabled;
-            new Item("dybassets", "DwarfGoblinArmBandFeathers").Configurable = Configurability.Disabled;
-            new Item("dybassets", "DwarfGoblinArmBandIron").Configurable = Configurability.Disabled;
-            new Item("dybassets", "DwarfGoblinArmorBronze").Configurable = Configurability.Disabled;
-            new Item("dybassets", "DwarfGoblinArmorFeathers").Configurable = Configurability.Disabled;
-            new Item("dybassets", "DwarfGoblinArmorIron").Configurable = Configurability.Disabled;
-            new Item("dybassets", "DwarfGoblinArmorLeather").Configurable = Configurability.Disabled;
-            new Item("dybassets", "DwarfGoblinHelmetBronze").Configurable = Configurability.Disabled;
-            new Item("dybassets", "DwarfGoblinHelmetLeather").Configurable = Configurability.Disabled;
-            new Item("dybassets", "DwarfGoblinHelmetSkull").Configurable = Configurability.Disabled;
-            new Item("dybassets", "DwarfGoblinShoulderPadIron").Configurable = Configurability.Disabled;
-            new Item("dybassets", "DwarfGoblinShoulderPadLeather").Configurable = Configurability.Disabled;
-            new Item("dybassets", "DwarfGoblinSpear").Configurable = Configurability.Disabled;
-            new Item("dybassets", "DwarfGoblinSpearLox").Configurable = Configurability.Disabled;
-            new Item("dybassets", "DwarfGoblinSpearChitin").Configurable = Configurability.Disabled;
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_goblin_loot_alert");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_goblin_loot_die");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_goblin_loot_hit");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_goblin_loot_idle");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_goblin_loot_taunt");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "DwarfGoblinSpear_projectile");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "DwarfGoblinSpearChitin_projectile");
 
             GoblinRider(config);
         }
@@ -169,7 +180,6 @@ namespace MonsterLabZConfig.PrefabIniters
             creature.Drops["Coins"].DropChance = 100f;
             creature.Drops["Coins"].DropOnePerPlayer = false;
             creature.Drops["Coins"].MultiplyDropByLevel = true;
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "DwarfGoblin_ragdoll");
         }
 
         private static void DwarfGoblinLootParts(Creature creature2)
@@ -186,8 +196,6 @@ namespace MonsterLabZConfig.PrefabIniters
             creature2.Drops["Ruby"].DropChance = 100f;
             creature2.Drops["Ruby"].DropOnePerPlayer = false;
             creature2.Drops["Ruby"].MultiplyDropByLevel = true;
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "DwarfGoblinLoot_ragdoll");
-            new Item("dybassets", "DwarfGoblinLoot_Run").Configurable = Configurability.Disabled;
 
         }
 
@@ -197,12 +205,6 @@ namespace MonsterLabZConfig.PrefabIniters
             creature3.Drops["Coins"].DropChance = 100f;
             creature3.Drops["Coins"].DropOnePerPlayer = false;
             creature3.Drops["Coins"].MultiplyDropByLevel = true;
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "DwarfGoblinShaman_ragdoll");
-            new Item("dybassets", "DwarfGoblinShamanBoat_attack_fireball").Configurable = Configurability.Disabled;
-            new Item("dybassets", "DwarfGoblinShaman_attack_fireball").Configurable = Configurability.Disabled;
-            new Item("dybassets", "DwarfGoblinShaman_attack_poke").Configurable = Configurability.Disabled;
-            new Item("dybassets", "DwarfGoblinShamanStaffBones").Configurable = Configurability.Disabled;
-            new Item("dybassets", "DwarfGoblinShamanStaffFeathers").Configurable = Configurability.Disabled;
         }
 
         private static void GoblinRider(BepInEx.Configuration.ConfigFile config)
@@ -220,7 +222,7 @@ namespace MonsterLabZConfig.PrefabIniters
                 };
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
                 {
-                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    MonsterLabZConfigPlugin.SpawnThatMonsters.Add((collection) =>
                     {
                         collection
                             .ConfigureWorldSpawner(729)

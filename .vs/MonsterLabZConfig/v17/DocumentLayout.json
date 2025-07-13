@@ -1,10 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "R:\\Dev\\Valheim\\MonsterLabZConfig\\",
+  "WorkspaceRootPath": "R:\\Dev\\Valheim\\RMonsterLabZConfig\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{56096451-98F7-4AC4-9705-6E4BCB64952A}|MonsterLabZConfigPlugin\\MonsterLabZConfigPlugin.csproj|r:\\dev\\valheim\\monsterlabzconfig\\monsterlabzconfigplugin\\plugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{56096451-98F7-4AC4-9705-6E4BCB64952A}|MonsterLabZConfigPlugin\\MonsterLabZConfigPlugin.csproj|solutionrelative:monsterlabzconfigplugin\\plugin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{56096451-98F7-4AC4-9705-6E4BCB64952F}|MonsterLabZConfigPatcher\\MonsterLabZConfigPatcher.csproj|r:\\dev\\valheim\\rmonsterlabzconfig\\monsterlabzconfigpatcher\\patcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56096451-98F7-4AC4-9705-6E4BCB64952F}|MonsterLabZConfigPatcher\\MonsterLabZConfigPatcher.csproj|solutionrelative:monsterlabzconfigpatcher\\patcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56096451-98F7-4AC4-9705-6E4BCB64952F}|MonsterLabZConfigPatcher\\MonsterLabZConfigPatcher.csproj|r:\\dev\\valheim\\rmonsterlabzconfig\\monsterlabzconfigpatcher\\blockade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{56096451-98F7-4AC4-9705-6E4BCB64952F}|MonsterLabZConfigPatcher\\MonsterLabZConfigPatcher.csproj|solutionrelative:monsterlabzconfigpatcher\\blockade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,19 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Plugin.cs",
-              "DocumentMoniker": "R:\\Dev\\Valheim\\MonsterLabZConfig\\MonsterLabZConfigPlugin\\Plugin.cs",
-              "RelativeDocumentMoniker": "MonsterLabZConfigPlugin\\Plugin.cs",
-              "ToolTip": "R:\\Dev\\Valheim\\MonsterLabZConfig\\MonsterLabZConfigPlugin\\Plugin.cs",
-              "RelativeToolTip": "MonsterLabZConfigPlugin\\Plugin.cs",
-              "ViewState": "AgIAAHEAAAAAAAAAAAAIwIcAAAAhAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Blockade.cs",
+              "DocumentMoniker": "R:\\Dev\\Valheim\\RMonsterLabZConfig\\MonsterLabZConfigPatcher\\Blockade.cs",
+              "RelativeDocumentMoniker": "MonsterLabZConfigPatcher\\Blockade.cs",
+              "ToolTip": "R:\\Dev\\Valheim\\RMonsterLabZConfig\\MonsterLabZConfigPatcher\\Blockade.cs",
+              "RelativeToolTip": "MonsterLabZConfigPatcher\\Blockade.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAABRAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T17:34:55.703Z",
+              "WhenOpened": "2025-07-06T10:27:27.142Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Patcher.cs",
+              "DocumentMoniker": "R:\\Dev\\Valheim\\RMonsterLabZConfig\\MonsterLabZConfigPatcher\\Patcher.cs",
+              "RelativeDocumentMoniker": "MonsterLabZConfigPatcher\\Patcher.cs",
+              "ToolTip": "R:\\Dev\\Valheim\\RMonsterLabZConfig\\MonsterLabZConfigPatcher\\Patcher.cs",
+              "RelativeToolTip": "MonsterLabZConfigPatcher\\Patcher.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAowFoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-06T10:24:30.643Z",
               "EditorCaption": ""
             }
           ]

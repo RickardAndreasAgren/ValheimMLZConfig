@@ -4,7 +4,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace MonsterLabZConfig
+namespace MonsterLabZ
 {
     public class AmbienceSpawn : MonoBehaviour
     {
@@ -22,30 +22,17 @@ namespace MonsterLabZConfig
 
         private void Start()
         {
-            m_time = Random.Range(0f, m_interval);
+            return;
         }
 
         private void Update()
         {
-            m_time += Time.deltaTime;
-            if (!((double)m_time <= (double)m_interval))
-            {
-                m_time = 0f;
-                Spawn();
-            }
+            return;
         }
 
         private void Spawn()
         {
-            Player localPlayer = Player.m_localPlayer;
-            if (localPlayer == null || (double)Vector3.Distance(localPlayer.transform.position, base.transform.position) > 250.0)
-            {
-                m_lastSpawnTime = Time.time;
-                return;
-            }
-
-            Object.Instantiate(m_AmbientPrefab, base.transform.position, base.transform.rotation);
-            m_lastSpawnTime = Time.time;
+            return;
         }
     }
 }

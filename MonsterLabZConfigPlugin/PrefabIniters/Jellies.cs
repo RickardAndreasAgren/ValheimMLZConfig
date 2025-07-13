@@ -9,6 +9,8 @@ namespace MonsterLabZConfig.PrefabIniters
         {
             if (!(bool)config[PluginConfig.DefJellyfish].BoxedValue) return;
 
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_jellyfish_death");
+
             Creature creature;
             if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue > 0)
             {
@@ -20,7 +22,7 @@ namespace MonsterLabZConfig.PrefabIniters
 
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
                 {
-                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    MonsterLabZConfigPlugin.SpawnThatMonsters.Add((collection) =>
                     {
                         collection
                             .ConfigureWorldSpawner(741)
@@ -52,7 +54,6 @@ namespace MonsterLabZConfig.PrefabIniters
             creature.Drops["Guck"].DropChance = 100f;
             creature.Drops["Guck"].DropOnePerPlayer = false;
             creature.Drops["Guck"].MultiplyDropByLevel = true;
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_jellyfish_death");
         }
     }
 }

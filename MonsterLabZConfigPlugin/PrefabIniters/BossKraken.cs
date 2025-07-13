@@ -11,6 +11,35 @@ namespace MonsterLabZConfig.PrefabIniters
             if ((short)config[PluginConfig.DefQuestToggle].BoxedValue < 1) return;
             if ((bool)config[PluginConfig.DefKraken].BoxedValue == false) return;
 
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "KrakenLD_ragdoll");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_kraken_alert");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_kraken_attack");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_kraken_death");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_kraken_hit");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_kraken_idle");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_kraken_taunt");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_krakenpoison_launch");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_kraken_attack");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_kraken_attacklightning");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_kraken_hit");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_kraken_spit");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_kraken_watersurface");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_krakenpoison_hit");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_krakenpoison_hitground");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_watersplash_kraken");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_krakenblob_attack");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_kraken_lightning_hit");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "inkblob_projectile");
+            new Item("dybassets", "KrakenMeat").Configurable = Configurability.Disabled;
+            new Item("dybassets", "kraken_attack1").Configurable = Configurability.Disabled;
+            new Item("dybassets", "kraken_attack2").Configurable = Configurability.Disabled;
+            new Item("dybassets", "kraken_attack3").Configurable = Configurability.Disabled;
+            new Item("dybassets", "kraken_attack4").Configurable = Configurability.Disabled;
+            new Item("dybassets", "kraken_attacklightning").Configurable = Configurability.Disabled;
+            new Item("dybassets", "kraken_poisonball").Configurable = Configurability.Disabled;
+            new Item("dybassets", "kraken_taunt").Configurable = Configurability.Disabled;
+            new Item("dybassets", "krakenblob_attack").Configurable = Configurability.Disabled;
+
             Creature creature;
             if ((short)config[PluginConfig.DefQuestToggle].BoxedValue == 1)
             {
@@ -21,7 +50,7 @@ namespace MonsterLabZConfig.PrefabIniters
                 };
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
                 {
-                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    MonsterLabZConfigPlugin.SpawnThatMonsters.Add((collection) =>
                     {
                         collection
                             .ConfigureWorldSpawner(783)
@@ -65,34 +94,6 @@ namespace MonsterLabZConfig.PrefabIniters
                 Biome = Heightmap.Biome.None,
                 ConfigurationEnabled = false
             };
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "KrakenLD_ragdoll");
-            new Item("dybassets", "KrakenMeat").Configurable = Configurability.Disabled;
-            new Item("dybassets", "kraken_attack1").Configurable = Configurability.Disabled;
-            new Item("dybassets", "kraken_attack2").Configurable = Configurability.Disabled;
-            new Item("dybassets", "kraken_attack3").Configurable = Configurability.Disabled;
-            new Item("dybassets", "kraken_attack4").Configurable = Configurability.Disabled;
-            new Item("dybassets", "kraken_attacklightning").Configurable = Configurability.Disabled;
-            new Item("dybassets", "kraken_poisonball").Configurable = Configurability.Disabled;
-            new Item("dybassets", "kraken_taunt").Configurable = Configurability.Disabled;
-            new Item("dybassets", "krakenblob_attack").Configurable = Configurability.Disabled;
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_kraken_alert");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_kraken_attack");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_kraken_death");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_kraken_hit");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_kraken_idle");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_kraken_taunt");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_krakenpoison_launch");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_kraken_attack");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_kraken_attacklightning");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_kraken_hit");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_kraken_spit");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_kraken_watersurface");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_krakenpoison_hit");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_krakenpoison_hitground");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_watersplash_kraken");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_krakenblob_attack");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_kraken_lightning_hit");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "inkblob_projectile");
         }
     }
 }

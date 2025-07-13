@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using static UnityEngine.ParticleSystem;
 
-namespace MonsterLabZConfig
+namespace MonsterLabZ
 {
     public class AIShipEffects : MonoBehaviour
     {
