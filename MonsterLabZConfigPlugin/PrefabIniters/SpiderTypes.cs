@@ -9,14 +9,6 @@ namespace MonsterLabZConfig.PrefabIniters
     {
         public static void init(BepInEx.Configuration.ConfigFile config)
         {
-            SpidersBrown(config);
-            SpidersForest(config);
-            SpidersFrigid(config);
-            SpidersFrost(config);
-            SpidersGreen(config);
-            SpidersTree(config);
-            SpidersTan(config);
-
             if ((bool)config[PluginConfig.DefTreeSpider].BoxedValue 
                 || (bool)config[PluginConfig.DefGreenSpider].BoxedValue
                 || (bool)config[PluginConfig.DefFrostSpider].BoxedValue
@@ -25,6 +17,26 @@ namespace MonsterLabZConfig.PrefabIniters
                 || (bool)config[PluginConfig.DefTanSpider].BoxedValue
                 || (bool)config[PluginConfig.DefBrownSpider].BoxedValue)
             {
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_footstep_spider");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_spider_alerted");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_spider_death");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_spider_hit");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_spider_idle");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_jumpingspider_spit");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_web_hit");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_spider_death");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_spider_hit");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "swoop_trail");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_jumpingspider_spit");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "jumpingspider_poison_aoe");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "web_projectile");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "TreeSpider_ragdoll");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "GreenSpider_ragdoll");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "FrostSpider_ragdoll");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "FrigidSpider_ragdoll");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "ForestSpider_ragdoll");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "BrownSpider_ragdoll");
+                ItemManager.PrefabManager.RegisterPrefab("dybassets", "TanSpider_ragdoll");
                 new Item("dybassets", "SpiderFang").Configurable = Configurability.Disabled;
                 new Item("dybassets", "spider_attack").Configurable = Configurability.Disabled;
                 new Item("dybassets", "spider_attack_jump").Configurable = Configurability.Disabled;
@@ -40,20 +52,14 @@ namespace MonsterLabZConfig.PrefabIniters
                 new Item("dybassets", "cavespider_leftattack").Configurable = Configurability.Disabled;
                 new Item("dybassets", "cavespider_rightattack").Configurable = Configurability.Disabled;
                 new Item("dybassets", "web_attack").Configurable = Configurability.Disabled;
-                ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_footstep_spider");
-                ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_spider_alerted");
-                ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_spider_death");
-                ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_spider_hit");
-                ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_spider_idle");
-                ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_jumpingspider_spit");
-                ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_web_hit");
-                ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_spider_death");
-                ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_spider_hit");
-                ItemManager.PrefabManager.RegisterPrefab("dybassets", "swoop_trail");
-                ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_jumpingspider_spit");
-                ItemManager.PrefabManager.RegisterPrefab("dybassets", "jumpingspider_poison_aoe");
-                ItemManager.PrefabManager.RegisterPrefab("dybassets", "web_projectile");
             }
+            SpidersBrown(config);
+            SpidersForest(config);
+            SpidersFrigid(config);
+            SpidersFrost(config);
+            SpidersGreen(config);
+            SpidersTree(config);
+            SpidersTan(config);
         }
 
         private static void SpidersTree(ConfigFile config)
@@ -76,7 +82,7 @@ namespace MonsterLabZConfig.PrefabIniters
 
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
                 {
-                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    MonsterLabZConfigPlugin.SpawnThatMonsters.Add((collection) =>
                     {
                         collection
                             .ConfigureWorldSpawner(721)
@@ -111,7 +117,6 @@ namespace MonsterLabZConfig.PrefabIniters
             creature.Drops["Ooze"].DropChance = 100f;
             creature.Drops["Ooze"].DropOnePerPlayer = false;
             creature.Drops["Ooze"].MultiplyDropByLevel = true;
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "TreeSpider_ragdoll");
         }
 
         private static void SpidersGreen(ConfigFile config)
@@ -128,7 +133,7 @@ namespace MonsterLabZConfig.PrefabIniters
                 };
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
                 {
-                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    MonsterLabZConfigPlugin.SpawnThatMonsters.Add((collection) =>
                     {
                         collection
                             .ConfigureWorldSpawner(722)
@@ -162,7 +167,6 @@ namespace MonsterLabZConfig.PrefabIniters
             creature.Drops["Ooze"].DropChance = 100f;
             creature.Drops["Ooze"].DropOnePerPlayer = false;
             creature.Drops["Ooze"].MultiplyDropByLevel = true;
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "GreenSpider_ragdoll");
         }
 
         private static void SpidersFrost(ConfigFile config)
@@ -179,7 +183,7 @@ namespace MonsterLabZConfig.PrefabIniters
                 };
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
                 {
-                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    MonsterLabZConfigPlugin.SpawnThatMonsters.Add((collection) =>
                     {
                         collection
                             .ConfigureWorldSpawner(723)
@@ -208,7 +212,6 @@ namespace MonsterLabZConfig.PrefabIniters
             creature.Drops["Ooze"].DropChance = 100f;
             creature.Drops["Ooze"].DropOnePerPlayer = false;
             creature.Drops["Ooze"].MultiplyDropByLevel = true;
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "FrostSpider_ragdoll");
         }
 
         private static void SpidersFrigid(ConfigFile config)
@@ -226,7 +229,7 @@ namespace MonsterLabZConfig.PrefabIniters
 
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
                 {
-                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    MonsterLabZConfigPlugin.SpawnThatMonsters.Add((collection) =>
                     {
                         collection
                             .ConfigureWorldSpawner(724)
@@ -255,7 +258,6 @@ namespace MonsterLabZConfig.PrefabIniters
             creature.Drops["Ooze"].DropChance = 100f;
             creature.Drops["Ooze"].DropOnePerPlayer = false;
             creature.Drops["Ooze"].MultiplyDropByLevel = true;
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "FrigidSpider_ragdoll");
         }
 
         private static void SpidersForest(ConfigFile config)
@@ -273,7 +275,7 @@ namespace MonsterLabZConfig.PrefabIniters
 
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
                 {
-                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    MonsterLabZConfigPlugin.SpawnThatMonsters.Add((collection) =>
                     {
                         collection
                             .ConfigureWorldSpawner(725)
@@ -301,7 +303,6 @@ namespace MonsterLabZConfig.PrefabIniters
             creature.Drops["Ooze"].DropChance = 100f;
             creature.Drops["Ooze"].DropOnePerPlayer = false;
             creature.Drops["Ooze"].MultiplyDropByLevel = true;
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ForestSpider_ragdoll");
         }
 
         private static void SpidersBrown(ConfigFile config)
@@ -319,7 +320,7 @@ namespace MonsterLabZConfig.PrefabIniters
 
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
                 {
-                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    MonsterLabZConfigPlugin.SpawnThatMonsters.Add((collection) =>
                     {
                         collection
                             .ConfigureWorldSpawner(726)
@@ -352,7 +353,6 @@ namespace MonsterLabZConfig.PrefabIniters
             creature.Drops["Ooze"].DropChance = 100f;
             creature.Drops["Ooze"].DropOnePerPlayer = false;
             creature.Drops["Ooze"].MultiplyDropByLevel = true;
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "BrownSpider_ragdoll");
         }
         private static void SpidersTan(ConfigFile config)
         {
@@ -368,7 +368,7 @@ namespace MonsterLabZConfig.PrefabIniters
                 };
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
                 {
-                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    MonsterLabZConfigPlugin.SpawnThatMonsters.Add((collection) =>
                     {
                         collection
                             .ConfigureWorldSpawner(727)
@@ -396,7 +396,6 @@ namespace MonsterLabZConfig.PrefabIniters
             creature.Drops["Ooze"].DropChance = 100f;
             creature.Drops["Ooze"].DropOnePerPlayer = false;
             creature.Drops["Ooze"].MultiplyDropByLevel = true;
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "TanSpider_ragdoll");
         }
     }
 }

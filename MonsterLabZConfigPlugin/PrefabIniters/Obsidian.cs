@@ -10,6 +10,14 @@ namespace MonsterLabZConfig.PrefabIniters
         {
             if (!(bool)config[PluginConfig.DefObsidianGolem].BoxedValue) return;
 
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ObsidianGolem_ragdoll");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_obsidiangolem_death");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_obsidiangolem_wakeup");
+            new Item("dybassets", "TrophyObsidianGolem").Configurable = Configurability.Disabled;
+            new Item("dybassets", "ObsidianGolem_clubs").Configurable = Configurability.Disabled;
+            new Item("dybassets", "ObsidianGolem_hat").Configurable = Configurability.Disabled;
+            new Item("dybassets", "ObsidianGolem_spikes").Configurable = Configurability.Disabled;
+
             Creature creature;
             if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue > 0)
             {
@@ -30,7 +38,7 @@ namespace MonsterLabZConfig.PrefabIniters
 
             if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
             {
-                MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                MonsterLabZConfigPlugin.SpawnThatMonsters.Add((collection) =>
                 {
                     collection
                         .ConfigureWorldSpawner(708)
@@ -54,13 +62,6 @@ namespace MonsterLabZConfig.PrefabIniters
             creature.Drops["Obsidian"].DropChance = 100f;
             creature.Drops["Obsidian"].DropOnePerPlayer = false;
             creature.Drops["Obsidian"].MultiplyDropByLevel = true;
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "ObsidianGolem_ragdoll");
-            new Item("dybassets", "TrophyObsidianGolem").Configurable = Configurability.Disabled;
-            new Item("dybassets", "ObsidianGolem_clubs").Configurable = Configurability.Disabled;
-            new Item("dybassets", "ObsidianGolem_hat").Configurable = Configurability.Disabled;
-            new Item("dybassets", "ObsidianGolem_spikes").Configurable = Configurability.Disabled;
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_obsidiangolem_death");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_obsidiangolem_wakeup");
         }
     }
 }

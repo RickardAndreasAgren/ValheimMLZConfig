@@ -10,6 +10,8 @@ namespace MonsterLabZConfig.PrefabIniters
         {
             if (!(bool)config[PluginConfig.DefHuldra].BoxedValue) return;
 
+            if ((bool)config[PluginConfig.DefHuldraQueen].BoxedValue == false || (short)config[PluginConfig.DefQuestToggle].BoxedValue == (short)0) HuldraAssets();
+
             Creature creature;
             if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue > 0)
             {
@@ -21,7 +23,7 @@ namespace MonsterLabZConfig.PrefabIniters
 
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
                 {
-                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    MonsterLabZConfigPlugin.SpawnThatMonsters.Add((collection) =>
                     {
                         collection
                             .ConfigureWorldSpawner(740)
@@ -48,7 +50,6 @@ namespace MonsterLabZConfig.PrefabIniters
                 };
             }
 
-            if ((bool)config[PluginConfig.DefHuldraQueen].BoxedValue == false || (short)config[PluginConfig.DefQuestToggle].BoxedValue == (short)0) HuldraAssets();
             creature.Drops["ML_HuldraTail"].Amount = new Range(1f, 1f);
             creature.Drops["ML_HuldraTail"].DropChance = 10f;
             creature.Drops["ML_HuldraTail"].DropOnePerPlayer = false;
@@ -64,6 +65,31 @@ namespace MonsterLabZConfig.PrefabIniters
             ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_AshHuldra_Ragdoll");
             ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_AshHuldraQueen2_Transform");
             ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_AshHuldraQueen3_Ragdoll");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_succubus_alert");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_succubus_attack");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_succubus_attack_secondary");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_succubus_death");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_succubus_hit");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_succubus_idle");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_succubus_taunt");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_succubus_transform");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_succubus_transform_return");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_succubusQ_alert");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_succubusQ_attack");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_succubusQ_attack_secondary");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_succubusQ_death");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_succubusQ_hit");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_succubusQ_idle");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_succubusQ_taunt");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_surtling_fireball_hit");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_flame_ring");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_succubus_firewave");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_succubus_transform_firewave");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_demon_return");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_succubusQ_fireball_expl");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "succubus_spawn_projectile");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "succubus_fire_aoe");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "succubusQ_projectile_fireskull");
             new Item("dybassets", "ML_HuldraTail").Configurable = Configurability.Disabled;
             new Item("dybassets", "TrophyAshHuldraQueen").Configurable = Configurability.Disabled;
             new Item("dybassets", "SuccubusArmorChaos").Configurable = Configurability.Disabled;
@@ -121,31 +147,6 @@ namespace MonsterLabZConfig.PrefabIniters
             new Item("dybassets", "succubusQ_fireball_right").Configurable = Configurability.Disabled;
             new Item("dybassets", "succubusQ_firewave").Configurable = Configurability.Disabled;
             new Item("dybassets", "succubusQ_stomp").Configurable = Configurability.Disabled;
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_succubus_alert");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_succubus_attack");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_succubus_attack_secondary");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_succubus_death");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_succubus_hit");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_succubus_idle");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_succubus_taunt");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_succubus_transform");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_succubus_transform_return");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_succubusQ_alert");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_succubusQ_attack");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_succubusQ_attack_secondary");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_succubusQ_death");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_succubusQ_hit");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_succubusQ_idle");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_succubusQ_taunt");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_surtling_fireball_hit");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_flame_ring");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_succubus_firewave");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_succubus_transform_firewave");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_demon_return");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_succubusQ_fireball_expl");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "succubus_spawn_projectile");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "succubus_fire_aoe");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "succubusQ_projectile_fireskull");
         }
     }
 }

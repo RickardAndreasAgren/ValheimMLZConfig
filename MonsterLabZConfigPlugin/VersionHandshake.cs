@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
 using HarmonyLib;
+#nullable enable
 
 namespace MonsterLabZConfig
 {
@@ -14,15 +15,15 @@ namespace MonsterLabZConfig
         private static void Prefix(ZNetPeer peer, ref ZNet __instance)
         {
             // Register version check call
-            MonsterLabZConfig.PluginLogger.LogDebug("Registering version RPC handler");
-            peer.m_rpc.Register($"{MonsterLabZConfig.ModName}_VersionCheck",
+            MonsterLabZConfigPlugin.PluginLogger.LogDebug("Registering version RPC handler");
+            peer.m_rpc.Register($"{MonsterLabZConfigPlugin.ModName}_VersionCheck",
                 new Action<ZRpc, ZPackage>(RpcHandlers.RPC_Plugin_Version));
 
             // Make calls to check versions
-            MonsterLabZConfig.PluginLogger.LogDebug("Invoking version check");
+            MonsterLabZConfigPlugin.PluginLogger.LogDebug("Invoking version check");
             ZPackage zpackage = new();
-            zpackage.Write(MonsterLabZConfig.ModVersion);
-            peer.m_rpc.Invoke($"{MonsterLabZConfig.ModName}_VersionCheck", zpackage);
+            zpackage.Write(MonsterLabZConfigPlugin.ModVersion);
+            peer.m_rpc.Invoke($"{MonsterLabZConfigPlugin.ModName}_VersionCheck", zpackage);
         }
     }
 
@@ -33,7 +34,7 @@ namespace MonsterLabZConfig
         {
             if (!__instance.IsServer() || RpcHandlers.ValidatedPeers.Contains(rpc)) return true;
             // Disconnect peer if they didn't send mod version at all
-            MonsterLabZConfig.PluginLogger.LogWarning(
+            MonsterLabZConfigPlugin.PluginLogger.LogWarning(
                 $"Peer ({rpc.m_socket.GetHostName()}) never sent version or couldn't due to previous disconnect, disconnecting");
             rpc.Invoke("Error", 3);
             return false; // Prevent calling underlying method
@@ -55,7 +56,7 @@ namespace MonsterLabZConfig
             {
                 __instance.m_connectionFailedError.fontSizeMax = 25;
                 __instance.m_connectionFailedError.fontSizeMin = 15;
-                __instance.m_connectionFailedError.text += "\n" + MonsterLabZConfig.ConnectionError;
+                __instance.m_connectionFailedError.text += "\n" + MonsterLabZConfigPlugin.ConnectionError;
             }
         }
     }
@@ -67,7 +68,7 @@ namespace MonsterLabZConfig
         {
             if (!__instance.IsServer()) return;
             // Remove peer from validated list
-            MonsterLabZConfig.PluginLogger.LogInfo(
+            MonsterLabZConfigPlugin.PluginLogger.LogInfo(
                 $"Peer ({peer.m_rpc.m_socket.GetHostName()}) disconnected, removing from validated list");
             _ = RpcHandlers.ValidatedPeers.Remove(peer.m_rpc);
         }
@@ -80,15 +81,15 @@ namespace MonsterLabZConfig
         public static void RPC_Plugin_Version(ZRpc rpc, ZPackage pkg)
         {
             string? version = pkg.ReadString();
-            MonsterLabZConfig.PluginLogger.LogInfo("Version check, local: " +
-                                                                                      MonsterLabZConfig.ModVersion +
+            MonsterLabZConfigPlugin.PluginLogger.LogInfo("Version check, local: " +
+                                                                                      MonsterLabZConfigPlugin.ModVersion +
                                                                                       ",  remote: " + version);
-            if (version != MonsterLabZConfig.ModVersion)
+            if (version != MonsterLabZConfigPlugin.ModVersion)
             {
-                MonsterLabZConfig.ConnectionError = $"{MonsterLabZConfig.ModName} Installed: {MonsterLabZConfig.ModVersion}\n Needed: {version}";
+                MonsterLabZConfigPlugin.ConnectionError = $"{MonsterLabZConfigPlugin.ModName} Installed: {MonsterLabZConfigPlugin.ModVersion}\n Needed: {version}";
                 if (!ZNet.instance.IsServer()) return;
                 // Different versions - force disconnect client from server
-                MonsterLabZConfig.PluginLogger.LogWarning($"Peer ({rpc.m_socket.GetHostName()}) has incompatible version, disconnecting...");
+                MonsterLabZConfigPlugin.PluginLogger.LogWarning($"Peer ({rpc.m_socket.GetHostName()}) has incompatible version, disconnecting...");
                 rpc.Invoke("Error", 3);
             }
             else
@@ -96,12 +97,12 @@ namespace MonsterLabZConfig
                 if (!ZNet.instance.IsServer())
                 {
                     // Enable mod on client if versions match
-                    MonsterLabZConfig.PluginLogger.LogInfo("Received same version from server!");
+                    MonsterLabZConfigPlugin.PluginLogger.LogInfo("Received same version from server!");
                 }
                 else
                 {
                     // Add client to validated list
-                    MonsterLabZConfig.PluginLogger.LogInfo(
+                    MonsterLabZConfigPlugin.PluginLogger.LogInfo(
                         $"Adding peer ({rpc.m_socket.GetHostName()}) to validated list");
                     ValidatedPeers.Add(rpc);
                 }

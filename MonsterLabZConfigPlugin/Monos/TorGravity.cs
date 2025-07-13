@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace MonsterLabZConfig
+namespace MonsterLabZ
 {
     public class TorGravity : MonoBehaviour
     {
@@ -20,29 +20,17 @@ namespace MonsterLabZConfig
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.attachedRigidbody != null)
-            {
-                affectedBod.Add(other.attachedRigidbody);
-            }
+            return;
         }
 
         private void OnTriggerExit(Collider other)
         {
-            if (other.attachedRigidbody != null)
-            {
-                affectedBod.Remove(other.attachedRigidbody);
-            }
+            return;
         }
 
         private void FixedUpdate()
         {
-            foreach (Rigidbody item in affectedBod)
-            {
-                Vector3 vector = base.transform.position - item.position;
-                float sqrMagnitude = (base.transform.position - item.position).sqrMagnitude;
-                float num = ForceGN * (item.mass - componRigidbody.mass) / sqrMagnitude;
-                item.AddForce(vector * num * BodyKf);
-            }
+            return;
         }
     }
 }

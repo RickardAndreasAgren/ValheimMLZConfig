@@ -1,6 +1,4 @@
-﻿extern alias ServerSyncStandalone;
-
-using BepInEx.Configuration;
+﻿using BepInEx.Configuration;
 using MonsterLabZConfig.PrefabIniters;
 using static UnityEngine.EventSystems.EventTrigger;
 
@@ -158,7 +156,7 @@ namespace MonsterLabZConfig
             (DefBalder, Balder) = new ConfigData<bool>("2 - Bosses", "Balder", true)
             .Describe("If MLZQuest is set to 1, this can be used. Balder settings. \r\n" +
                 "false: Disable Balder.\r\n" +
-                "(true): Enable Balder.\r\n", null, "MLZ", "Boss")
+                "(true): Enable Balder.\r\n", new AcceptableValueList<bool>(true, false), "MLZ", "Boss")
             .Bind(config, true);
         }
         public static void FriggaConfig(ConfigFile config)
@@ -166,7 +164,7 @@ namespace MonsterLabZConfig
             (DefFrigga, Frigga) = new ConfigData<bool>("2 - Bosses", "Frigga", true)
             .Describe("If MLZQuest is set to 1, this can be used. Frigga settings. \r\n" +
                 "false: Disable Frigga.\r\n" +
-                "(true): Enable Frigga.\r\n", null, "MLZ", "Boss")
+                "(true): Enable Frigga.\r\n", new AcceptableValueList<bool>(true, false), "MLZ", "Boss")
             .Bind(config, true);
         }
         public static void KrakenConfig(ConfigFile config)
@@ -174,7 +172,7 @@ namespace MonsterLabZConfig
             (DefKraken, Kraken) = new ConfigData<bool>("2 - Bosses", "Kraken", true)
             .Describe("If MLZQuest is set to 1, this can be used. Kraken settings. \r\n" +
                 "false: Disable Kraken.\r\n" +
-                "(true): Enable Kraken.\r\n", null, "MLZ", "Boss")
+                "(true): Enable Kraken.\r\n", new AcceptableValueList<bool>(true, false), "MLZ", "Boss")
             .Bind(config, true);
         }
         public static void HuldraConfig(ConfigFile config)
@@ -182,7 +180,7 @@ namespace MonsterLabZConfig
             (DefHuldraQueen, HuldraQueen) = new ConfigData<bool>("2 - Bosses", "HuldraQueen", true)
             .Describe("If MLZQuest is set to 1, this can be used. Huldra settings. \r\n" +
                 "false: Disable Huldra.\r\n" +
-                "(true): Enable Huldra.\r\n", null, "MLZ", "Boss")
+                "(true): Enable Huldra.\r\n", new AcceptableValueList<bool>(true, false), "MLZ", "Boss")
             .Bind(config, true);
         }
         public static void SurtrConfig(ConfigFile config)
@@ -190,7 +188,7 @@ namespace MonsterLabZConfig
             (DefSurtr, Surtr) = new ConfigData<bool>("2 - Bosses", "Surtr", true)
             .Describe("If WildBosses is set to 1, this can be used. Surtr settings. \r\n" +
                 "false: Disable Surtr.\r\n" +
-                "(true): Enable Surtr.\r\n", null, "MLZ", "Boss")
+                "(true): Enable Surtr.\r\n", new AcceptableValueList<bool>(true, false), "MLZ", "Boss")
             .Bind(config, true);
         }
         public static void IceGolemConfig(ConfigFile config)
@@ -198,7 +196,7 @@ namespace MonsterLabZConfig
             (DefIceGolem, IceGolem) = new ConfigData<bool>("2 - Bosses", "Ice Golem", true)
             .Describe("If WildBosses is set to 1, this can be used. Allows specific disablers. \r\n" +
                 "false: Disable IceGolem.\r\n" +
-                "(true): Enable IceGolem.\r\n", null, "MLZ", "Boss")
+                "(true): Enable IceGolem.\r\n", new AcceptableValueList<bool>(true, false), "MLZ", "Boss")
             .Bind(config, true);
         }
         public static void UndeadJarlConfig(ConfigFile config)
@@ -206,7 +204,7 @@ namespace MonsterLabZConfig
             (DefBossJarl, BossJarl) = new ConfigData<bool>("2 - Bosses", "Undead Jarl", true)
             .Describe("If WildBosses is set to 1, this can be used. Allows specific disablers. \r\n" +
                 "false: Disable Undead Jarl.\r\n" +
-                "(true): Enable Undead Jarl.\r\n", null, "MLZ", "Boss")
+                "(true): Enable Undead Jarl.\r\n", new AcceptableValueList<bool>(true, false), "MLZ", "Boss")
             .Bind(config, true);
         }
         public static void FireGolemConfig(ConfigFile config)
@@ -214,7 +212,7 @@ namespace MonsterLabZConfig
             (DefFireGolem, FireGolem) = new ConfigData<bool>("2 - Bosses", "Fire Golem", true)
             .Describe("If WildBosses is set to 1, this can be used. Allows specific disablers. \r\n" +
                 "false: Disable FireGolem.\r\n" +
-                "(true): Enable FireGolem.\r\n", null, "MLZ", "Boss")
+                "(true): Enable FireGolem.\r\n", new AcceptableValueList<bool>(true, false), "MLZ", "Boss")
             .Bind(config, true);
         }
         public static void DraugrShipConfig(ConfigFile config)
@@ -222,7 +220,7 @@ namespace MonsterLabZConfig
             (DefDraugrShip, DraugrShip) = new ConfigData<bool>("2 - Bosses", "Draugr Ship", true)
             .Describe("If WildBosses is set to 1, this can be used. Allows specific disablers. \r\n" +
                 "false: Disable DraugrShip.\r\n" +
-                "(true): Enable DraugrShip.\r\n", null, "MLZ", "Boss")
+                "(true): Enable DraugrShip.\r\n", new AcceptableValueList<bool>(true, false), "MLZ", "Boss")
             .Bind(config, true);
         }
         public static void FulingShipConfig(ConfigFile config)
@@ -230,7 +228,7 @@ namespace MonsterLabZConfig
             (DefFulingShip, FulingShip) = new ConfigData<bool>("2 - Bosses", "Fuling Ship", true)
             .Describe("If WildBosses is set to 1, this can be used. Allows specific disablers. \r\n" +
                 "false: Disable FulingShip.\r\n" +
-                "(true): Enable FulingShip.\r\n", null, "MLZ", "Boss")
+                "(true): Enable FulingShip.\r\n", new AcceptableValueList<bool>(true, false), "MLZ", "Boss")
             .Bind(config, true);
         }
         public static void Mobs(ConfigFile config)
@@ -277,7 +275,7 @@ namespace MonsterLabZConfig
             return new ConfigData<bool>("3 - Monsters", $"{name}", true)
             .Describe("Toggle individual monsters. \r\n" +
                 $"{(defaultEnabled ? "false" : "(false)")}: Disable {name}.\r\n" +
-                $"{(defaultEnabled ? "(true)" : "true")}: Enable {name}.\r\n", null, "MLZ", "Monster", "Creature")
+                $"{(defaultEnabled ? "(true)" : "true")}: Enable {name}.\r\n", new AcceptableValueList<bool>(true, false), "MLZ", "Monster", "Creature")
             .Bind(config, defaultEnabled);
         }
     }

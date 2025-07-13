@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace MonsterLabZConfig
+namespace MonsterLabZ
 {
     public class WaterSafing : MonoBehaviour
     {

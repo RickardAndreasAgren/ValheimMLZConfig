@@ -84,7 +84,7 @@
     </Reference>
     <Reference Include="ServerSync">
       <HintPath>Libs\ServerSync.dll</HintPath>
-      <Aliases>ServerSyncStandalone</Aliases>
+      <Aliases>Syncer</Aliases>
     </Reference>
     <Reference Include="CreatureManager">
       <HintPath>Libs\CreatureManager.dll</HintPath>
@@ -94,9 +94,6 @@
     </Reference>
     <Reference Include="ItemManager">
       <HintPath>Libs\ItemManager.dll</HintPath>
-    </Reference>
-    <Reference Include="Valheim.SpawnThat">
-      <HintPath>Libs\Valheim.SpawnThat.dll</HintPath>
     </Reference>
     <Reference Include="YamlDotNet">
       <HintPath>Libs\YamlDotNet.dll</HintPath>

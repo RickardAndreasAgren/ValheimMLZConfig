@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using MonsterLabZConfig;
 
-namespace MonsterLabZConfig
+namespace MonsterLabZ
 {
     public class InstantiatePrefabBoatKinematic : MonoBehaviour
     {
@@ -15,35 +16,12 @@ namespace MonsterLabZConfig
 
         public void Start()
         {
-            foreach (GameObject item in m_spawnPrefab)
-            {
-                GameObject gameObject = Object.Instantiate(item, base.transform.transform.position, base.transform.transform.rotation);
-                MonsterLabZConfig.PluginLogger.LogWarning($"Adding {gameObject.name} to a parent");
-                gameObject.transform.SetParent(base.transform, worldPositionStays: true);
-                m_spawnedMobs.Add(gameObject);
-                Rigidbody rBody = gameObject.GetComponent<Rigidbody>();
-                if (rBody != null)
-                {
-                    rBody.automaticCenterOfMass = false;
-                    rBody.automaticInertiaTensor = false;
-                    rBody.isKinematic = false;
-                }
-            }
+            return;
         }
 
         public void OnDestroy()
         {
-            foreach (GameObject spawnedMob in m_spawnedMobs)
-            {
-                if (spawnedMob != null)
-                {
-                    spawnedMob.transform.parent = null;
-                    var rBody = spawnedMob.GetComponent<Rigidbody>();
-                    rBody.automaticCenterOfMass = true;
-                    rBody.automaticInertiaTensor = true;
-                    rBody.isKinematic = false;
-                }
-            }
+            return;
         }
     }
 }

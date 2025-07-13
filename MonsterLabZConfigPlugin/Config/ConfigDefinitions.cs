@@ -1,10 +1,8 @@
-﻿extern alias ServerSyncStandalone;
-
+﻿extern alias Syncer;
 using BepInEx;
 using BepInEx.Configuration;
 using UnityEngine;
 using MonsterLabZConfig.Extensions;
-using ServerSyncStandalone::ServerSync;
 using System.IO;
 using YamlDotNet.Core.Tokens;
 
@@ -48,7 +46,7 @@ namespace MonsterLabZConfig
                 useEntry = config.Bind(Definition, value, extendedDescription);
             }
 
-            SyncedConfigEntry<T> syncedConfigEntry = MonsterLabZConfig.Sync.AddConfigEntry(useEntry);
+            Syncer.ServerSync.SyncedConfigEntry<T> syncedConfigEntry = MonsterLabZConfigPlugin.Sync.AddConfigEntry(useEntry);
             syncedConfigEntry.SynchronizedConfig = SyncOn;
             return (Definition, useEntry);
         }

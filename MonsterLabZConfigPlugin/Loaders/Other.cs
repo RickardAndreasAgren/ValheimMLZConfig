@@ -22,8 +22,6 @@ namespace MonsterLabZConfig.Loaders
         private static void ML_CustomProps()
         {
             ItemManager.PrefabManager.RegisterPrefab("dybassets", "CryptGateDoor");
-            new Item("dybassets", "ML_MoltenOrb").Configurable = Configurability.Disabled;
-            new Item("dybassets", "ML_Surtrstone_Fragment").Configurable = Configurability.Disabled;
             ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_Oak0_NoStatic");
             ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_Birch0_NoStatic");
             ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_Birch1_NoStatic");
@@ -47,11 +45,20 @@ namespace MonsterLabZConfig.Loaders
             ItemManager.PrefabManager.RegisterPrefab("dybassets", "fx_redcrystal_destruction_ml");
             ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_Incinerator_Weapons");
             ItemManager.PrefabManager.RegisterPrefab("dybassets", "ML_Torsten");
+            new Item("dybassets", "ML_MoltenOrb").Configurable = Configurability.Disabled;
+            new Item("dybassets", "ML_Surtrstone_Fragment").Configurable = Configurability.Disabled;
         }
 
         private static void NPC_Items()
         {
-
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "Block_Shield");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "npc_fire_arrow_projectile");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "NPC_Arrow_Stab");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "npc_sledge_aoe_hit");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "npc_sledge_jump_aoe_hit");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_npc_sledge_hit");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_metal_armor_block");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_metal_shield_block");
             new Item("dybassets", "attack_atgeir_360").Configurable = Configurability.Disabled;
             new Item("dybassets", "attack_atgeir_close").Configurable = Configurability.Disabled;
             new Item("dybassets", "attack_atgeir_long").Configurable = Configurability.Disabled;
@@ -247,14 +254,6 @@ namespace MonsterLabZConfig.Loaders
             new Item("dybassets", "NPC_Brown_Hair10").Configurable = Configurability.Disabled;
             new Item("dybassets", "NPC_Brown_Hair11").Configurable = Configurability.Disabled;
             new Item("dybassets", "NPC_Brown_Hair12").Configurable = Configurability.Disabled;
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "Block_Shield");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "npc_fire_arrow_projectile");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "NPC_Arrow_Stab");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "npc_sledge_aoe_hit");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "npc_sledge_jump_aoe_hit");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "vfx_npc_sledge_hit");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_metal_armor_block");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_metal_shield_block");
         }
     }
 }

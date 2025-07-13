@@ -5,11 +5,11 @@ using MonsterLabZConfig;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle(MonsterLabZConfig.MonsterLabZConfig.ModName)]
+[assembly: AssemblyTitle(MonsterLabZConfig.MonsterLabZConfigPlugin.ModName)]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany(MonsterLabZConfig.MonsterLabZConfig.Author)]
-[assembly: AssemblyProduct(MonsterLabZConfig.MonsterLabZConfig.ModName)]
+[assembly: AssemblyCompany(MonsterLabZConfig.MonsterLabZConfigPlugin.Author)]
+[assembly: AssemblyProduct(MonsterLabZConfig.MonsterLabZConfigPlugin.ModName)]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -32,5 +32,5 @@ using MonsterLabZConfig;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion(MonsterLabZConfig.MonsterLabZConfig.ModVersion)]
-[assembly: AssemblyFileVersion(MonsterLabZConfig.MonsterLabZConfig.ModVersion)]
+[assembly: AssemblyVersion(MonsterLabZConfig.MonsterLabZConfigPlugin.ModVersion)]
+[assembly: AssemblyFileVersion(MonsterLabZConfig.MonsterLabZConfigPlugin.ModVersion)]

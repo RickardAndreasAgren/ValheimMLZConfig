@@ -10,7 +10,7 @@ using HarmonyLib;
 using JetBrains.Annotations;
 using YamlDotNet.Serialization;
 
-namespace PluginLocalizationManager
+namespace MonsterLabZConfig
 {
 
     [PublicAPI]
@@ -23,6 +23,8 @@ namespace PluginLocalizationManager
         private static readonly ConditionalWeakTable<Localization, string> localizationLanguage = new();
 
         private static readonly List<WeakReference<Localization>> localizationObjects = new();
+
+        private static Assembly? registeredAssembly = null;
 
         private static BaseUnityPlugin? _plugin;
 
@@ -58,6 +60,11 @@ namespace PluginLocalizationManager
                 text = textProcessors.Aggregate(text, (current, kv) => current.Replace("{" + kv.Key + "}", kv.Value()));
             }
             localization.AddWord(key, text);
+        }
+
+        public static void RegisterAssembly(Assembly localizationAssembly)
+        {
+            registeredAssembly = localizationAssembly;
         }
 
         public static void AddPlaceholder<T>(string key, string placeholder, ConfigEntry<T> config, Func<T, string>? convertConfigValue = null) where T : notnull
@@ -135,6 +142,11 @@ namespace PluginLocalizationManager
             }
 
             Dictionary<string, string>? localizationTexts = new YamlDotNet.Serialization.DeserializerBuilder().IgnoreFields().Build().Deserialize<Dictionary<string, string>?>(System.Text.Encoding.UTF8.GetString(englishAssemblyData));
+            /*
+            foreach(KeyValuePair<string,string> kvp in localizationTexts)
+            {
+                MonsterLabZConfig.PluginLogger.LogMessage($"MLZ added key {kvp.Key} mapped to {kvp.Value}");
+            }*/
             if (localizationTexts is null)
             {
                 throw new Exception($"Localization for mod {plugin.Info.Metadata.Name} failed: Localization file was empty.");
@@ -194,6 +206,7 @@ namespace PluginLocalizationManager
         public static byte[]? ReadEmbeddedFileBytes(string resourceFileName, Assembly? containingAssembly = null)
         {
             using MemoryStream stream = new();
+            containingAssembly ??= registeredAssembly;
             containingAssembly ??= Assembly.GetCallingAssembly();
             if (containingAssembly.GetManifestResourceNames().FirstOrDefault(str => str.EndsWith(resourceFileName, StringComparison.Ordinal)) is { } name)
             {

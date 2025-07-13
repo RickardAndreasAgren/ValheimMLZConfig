@@ -9,23 +9,10 @@ namespace MonsterLabZConfig.PrefabIniters
     {
         public static void init(BepInEx.Configuration.ConfigFile config)
         {
-            Molluscan(config);
-            DeepMolluscan(config);
-
             if ((bool)config[PluginConfig.DefDeepMolluscan].BoxedValue || (bool)config[PluginConfig.DefMolluscan].BoxedValue)
             {
                 ItemManager.PrefabManager.RegisterPrefab("dybassets", "Molluscan_ragdoll");
                 ItemManager.PrefabManager.RegisterPrefab("dybassets", "DeepSeaMolluscan_ragdoll");
-                new Item("dybassets", "TrophyMolluscan").Configurable = Configurability.Disabled;
-                new Item("dybassets", "TrophyDeepSeaMolluscan").Configurable = Configurability.Disabled;
-                new Item("dybassets", "Molluscan_attack").Configurable = Configurability.Disabled;
-                new Item("dybassets", "Molluscan_attack2").Configurable = Configurability.Disabled;
-                new Item("dybassets", "Molluscan_attack3").Configurable = Configurability.Disabled;
-                new Item("dybassets", "Molluscan_taunt").Configurable = Configurability.Disabled;
-                new Item("dybassets", "MolluscanLand_attack").Configurable = Configurability.Disabled;
-                new Item("dybassets", "MolluscanLand_attack2").Configurable = Configurability.Disabled;
-                new Item("dybassets", "MolluscanLand_attack3").Configurable = Configurability.Disabled;
-                new Item("dybassets", "MolluscanLand_taunt").Configurable = Configurability.Disabled;
                 ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_molluscan_alert");
                 ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_molluscan_attack");
                 ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_molluscan_death");
@@ -38,7 +25,20 @@ namespace MonsterLabZConfig.PrefabIniters
                 ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_molluscanland_hit");
                 ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_molluscanland_idle");
                 ItemManager.PrefabManager.RegisterPrefab("dybassets", "sfx_molluscanland_taunt");
+                new Item("dybassets", "TrophyMolluscan").Configurable = Configurability.Disabled;
+                new Item("dybassets", "TrophyDeepSeaMolluscan").Configurable = Configurability.Disabled;
+                new Item("dybassets", "Molluscan_attack").Configurable = Configurability.Disabled;
+                new Item("dybassets", "Molluscan_attack2").Configurable = Configurability.Disabled;
+                new Item("dybassets", "Molluscan_attack3").Configurable = Configurability.Disabled;
+                new Item("dybassets", "Molluscan_taunt").Configurable = Configurability.Disabled;
+                new Item("dybassets", "MolluscanLand_attack").Configurable = Configurability.Disabled;
+                new Item("dybassets", "MolluscanLand_attack2").Configurable = Configurability.Disabled;
+                new Item("dybassets", "MolluscanLand_attack3").Configurable = Configurability.Disabled;
+                new Item("dybassets", "MolluscanLand_taunt").Configurable = Configurability.Disabled;
             }
+
+            Molluscan(config);
+            DeepMolluscan(config);
         }
 
         private static void Molluscan(ConfigFile config)
@@ -56,7 +56,7 @@ namespace MonsterLabZConfig.PrefabIniters
 
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
                 {
-                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    MonsterLabZConfigPlugin.SpawnThatMonsters.Add((collection) =>
                     {
                         collection
                             .ConfigureWorldSpawner(742)
@@ -110,7 +110,7 @@ namespace MonsterLabZConfig.PrefabIniters
 
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
                 {
-                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    MonsterLabZConfigPlugin.SpawnThatMonsters.Add((collection) =>
                     {
                         collection
                             .ConfigureWorldSpawner(743)

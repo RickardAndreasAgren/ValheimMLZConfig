@@ -10,6 +10,10 @@ namespace MonsterLabZConfig.PrefabIniters
         {
             if (!(bool)config[PluginConfig.DefTrollGiant].BoxedValue) return;
 
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "TrollGiant_Ragdoll");
+            new Item("dybassets", "trollgiant_slam").Configurable = Configurability.Disabled;
+            new Item("dybassets", "trollgiant_stomp").Configurable = Configurability.Disabled;
+
             Creature creature;
             if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue > 0)
             {
@@ -21,7 +25,7 @@ namespace MonsterLabZConfig.PrefabIniters
 
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
                 {
-                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    MonsterLabZConfigPlugin.SpawnThatMonsters.Add((collection) =>
                     {
                         collection
                             .ConfigureWorldSpawner(728)
@@ -41,10 +45,6 @@ namespace MonsterLabZConfig.PrefabIniters
                     CanSpawn = false
                 };
             }
-            
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "TrollGiant_Ragdoll");
-            new Item("dybassets", "trollgiant_slam").Configurable = Configurability.Disabled;
-            new Item("dybassets", "trollgiant_stomp").Configurable = Configurability.Disabled;
         }
     }
 }

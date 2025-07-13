@@ -35,7 +35,7 @@ namespace MonsterLabZConfig.PrefabIniters
 
                 if ((short)config[PluginConfig.DefMonsterSpawnData].BoxedValue == 2)
                 {
-                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    MonsterLabZConfigPlugin.SpawnThatMonsters.Add((collection) =>
                     {
                         collection
                             .ConfigureWorldSpawner(733)
@@ -45,7 +45,7 @@ namespace MonsterLabZConfig.PrefabIniters
                             .SetMinLevel(1)
                             .SetMaxLevel(1);
                     });
-                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    MonsterLabZConfigPlugin.SpawnThatMonsters.Add((collection) =>
                     {
                         collection
                             .ConfigureWorldSpawner(734)
@@ -55,7 +55,7 @@ namespace MonsterLabZConfig.PrefabIniters
                             .SetMinLevel(1)
                             .SetMaxLevel(1);
                     });
-                    MonsterLabZConfig.SpawnThatMonsters.Add((collection) =>
+                    MonsterLabZConfigPlugin.SpawnThatMonsters.Add((collection) =>
                     {
                         collection
                             .ConfigureWorldSpawner(735)

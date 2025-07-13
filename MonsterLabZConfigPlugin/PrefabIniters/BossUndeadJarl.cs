@@ -10,6 +10,9 @@ namespace MonsterLabZConfig.PrefabIniters
             if ((short)config[PluginConfig.DefWildBosses].BoxedValue < 1) return;
             if ((bool)config[PluginConfig.DefBossJarl].BoxedValue == false) return;
 
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "spawn_projectile_T1");
+            ItemManager.PrefabManager.RegisterPrefab("dybassets", "attack_spawn_T1");
+
             Creature creature;
             Creature creature2;
             if ((short)config[PluginConfig.DefWildBosses].BoxedValue == 1)
@@ -40,8 +43,6 @@ namespace MonsterLabZConfig.PrefabIniters
             }
             creature.Localize().English("Undead Jarl").Japanese("骸骨");
             creature2.Localize().English("Skeleton").Japanese("骸骨");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "spawn_projectile_T1");
-            ItemManager.PrefabManager.RegisterPrefab("dybassets", "attack_spawn_T1");
         }
     }
 }
